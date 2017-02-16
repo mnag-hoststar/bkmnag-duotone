@@ -1,0 +1,329 @@
+// ----------------------------------------
+// Duotone: LESS > Main > Typography
+// ----------------------------------------
+//
+// #Content Widget
+// #General Typography
+// #Link
+// #Unordered List
+// #Ordered List
+// #Block Quote
+// #Pre
+// #Code
+// #Table
+// #Horizontal Rule
+//
+// ----------------------------------------
+
+// ------------------------------
+// #Content Widget
+// ------------------------------
+
+.content {
+}
+
+// ------------------------------
+// #General Typography
+// ------------------------------
+
+
+h1, h2, h3, h4, h5, h6, p {
+	padding-bottom: 10px;
+	-webkit-font-smoothing: antialiased;
+}
+
+h1, .heading--1 {
+	padding-bottom: 20px;
+	font-family: @font__h1--font-family;
+	font-size: @font__h1--font-size;
+	font-weight: @font__h1--font-weight;
+	line-height: @font__h1--line-height;
+	letter-spacing: @font__h1--letter-spacing;
+	color: @color__h1--text;
+}
+
+h2, .heading--2 {
+	font-family: @font__h2--font-family;
+	font-size: @font__h2--font-size;
+	font-weight: @font__h2--font-weight;
+	line-height: @font__h2--line-height;
+	letter-spacing: @font__h2--letter-spacing;
+	color: @color__h2--text;
+}
+
+h3, .heading--3 {
+	font-family: @font__h3--font-family;
+	font-size: @font__h3--font-size;
+	font-weight: @font__h3--font-weight;
+	line-height: @font__h3--line-height;
+	letter-spacing: @font__h3--letter-spacing;
+	color: @color__h3--text;
+}
+
+h4, .heading--4 {
+	font-family: @font__h4--font-family;
+	font-size: @font__h4--font-size;
+	font-weight: @font__h4--font-weight;
+	line-height: @font__h4--line-height;
+	letter-spacing: @font__h4--letter-spacing;
+	color: @color__h4--text;
+}
+
+h5 {
+	font-family: @font__h4--font-family;
+	font-size: bkscale(@font__h4--font-size, 0.9);
+	font-weight: @font__h4--font-weight;
+	line-height: bkscale(@font__h4--line-height, 0.9);
+	letter-spacing: bkscale(@font__h4--letter-spacing, 0.9);
+	color: @color__h4--text;
+}
+
+h6 {
+	font-family: @font__h4--font-family;
+	font-size: bkscale(@font__h4--font-size, 0.8);
+	font-weight: @font__h4--font-weight;
+	line-height: bkscale(@font__h4--line-height, 0.8);
+	letter-spacing: bkscale(@font__h4--letter-spacing, 0.8);
+	color: @color__h4--text;
+}
+
+p, label {
+	font-family: @font__p--font-family;
+	font-size: @font__p--font-size;
+	font-weight: @font__p--font-weight;
+	line-height: @font__p--line-height;
+	letter-spacing: @font__p--letter-spacing;
+	color: @color__p--text;
+}
+
+// ------------------------------
+// #Link
+// ------------------------------
+
+a {
+	color: @color__link--text;
+	box-shadow: inset 0px -1px 0px 0px @color__link--text;
+	display: inline-block;
+	line-height: 1.5;
+
+    &:hover {
+        text-decoration: none;
+		box-shadow: inset 0px -2px 0px 0px @color__link--text;
+    }
+}
+
+a[class] {
+	box-shadow: none;
+
+    &:hover {
+		box-shadow: none;
+    }
+}
+
+// ------------------------------
+// #Unordered List
+// ------------------------------
+
+
+ul {
+	margin: 0 0 0 1.2em;
+	padding: 0;
+
+	li {
+		padding: 0 0 0 0.5em;
+		margin: 0 0 1em 0;
+
+		@media @tablet {
+			padding-left: 0;
+		}
+	}
+}
+
+// ------------------------------
+// #Ordered List
+// ------------------------------
+
+
+ol {
+	margin: 1em 0;
+	padding-left: 0;
+	counter-reset: ordered-counter;
+
+	li {
+		position: relative;
+		padding-left: 3em;
+		margin-bottom: 1em;
+		list-style-type: none;
+
+		@media @tablet {
+			padding-left: 2.5em;
+		}
+
+		// Custom Numbers
+
+		&:before {
+			min-width: 26px;
+			padding: 0 0.4em 0 0;
+			display: inline-block;
+			left: 0;
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
+			border-right: 1px solid fade(@color__p--text, 20%);
+			font-family: @font__h1--font-family;
+			content: counter(ordered-counter);
+			counter-increment: ordered-counter;
+			text-align: left;
+		}
+	}
+}
+
+// ------------------------------
+// #Block Quote
+// ------------------------------
+
+
+blockquote {
+	quotes: "\201C""\201D""\2018""\2019";
+	position: relative;
+	font-family: @font__h1--font-family;
+	text-align: center;
+	font-size: @font__h4--font-size;
+	line-height: @font__h4--line-height;
+	border-top: 1px solid fade(@color__p--text, 10%);
+	border-bottom: 1px solid fade(@color__p--text, 10%);
+	padding: 1.5em 50px;
+	width: 70%;
+	margin: 1.8em auto 0;
+
+	@media @tablet-horizontal {
+		font-size: bkscale(@font__h4--font-size, 0.9);
+		line-height: bkscale(@font__h4--line-height, 0.9);
+	}
+
+	@media @tablet {
+		font-size: bkscale(@font__h4--font-size, 0.8);
+		line-height: bkscale(@font__h4--line-height, 0.8);
+		width: auto;
+		padding: 1.2em 30px;
+	}
+
+	&:before, &:after {
+		color: @color__h4--text;
+		position: absolute;
+		font-size: 90px;
+		display: inline-block;
+		line-height: 1;
+		height: 0.5em;
+		@media @tablet {
+			font-size: 50px;
+		}
+	}
+
+	&:before {
+		content: open-quote;
+		top: 10px;
+		left: 0;
+	}
+	
+	.responsivecolumns & {
+		width: 100%;
+	}
+	
+	.columns-four-first &,
+	.columns-four-second &,
+	.columns-four-third &,
+	.columns-four-fourth & {
+		padding-right: 0;
+		
+		&:after {
+			display: none;
+		}
+	}
+}
+
+// ------------------------------
+// #Pre
+// ------------------------------
+
+pre {
+	display: block;
+	margin: 1em 0;
+	padding: 1em;
+	border: none;
+	border-radius: 0;
+	background-color: fade(@color__p--text, 10%);
+	overflow: auto;
+	color: @color__p--text;
+}
+
+// ------------------------------
+// #Code
+// ------------------------------
+
+
+code {
+	font-size: 0.9em;
+	background-color: transparent;
+	color: @color__p--text;
+}
+
+// ------------------------------
+// #Table
+// ------------------------------
+
+table {
+	overflow: auto;
+	width: 100%;
+	border: none;
+	border-collapse: separate;
+	border-spacing: 2px;
+	margin: 2em 0;
+
+	@media @tablet-horizontal {
+		font-size: bkscale(@font__p--font-size, 0.9);
+		line-height: bkscale(@font__p--line-height, 0.9);
+	}
+
+	@media @tablet {
+		font-size: bkscale(@font__p--font-size, 0.8);
+		line-height: bkscale(@font__p--line-height, 0.8);
+	}
+}
+
+// Table Cell
+
+td, th {
+	border: none;
+	background-color: lighten(desaturate(@color__primary, 80%), 14%);
+	color: @color__p--text;
+}
+
+// Thead
+
+table thead td {
+	background-color: @color__primary;
+}
+
+// ------------------------------
+// #Horizontal Rule
+// ------------------------------
+
+
+hr {
+	height: 5px;
+	background-color: @color__primary;
+	border: none;
+	margin: 2em 0;
+
+	@media @tablet-horizontal {
+		height: 3px;
+	}
+
+	@media @tablet {
+		height: 1px;
+	}
+}

@@ -1,0 +1,124 @@
+// ----------------------------------------
+// Duotone: LESS > Widgets > Gallery
+// ----------------------------------------
+//
+// #Item
+// #Image
+// #Caption
+//
+// ----------------------------------------
+
+// ------------------------------
+// #Item
+// ------------------------------
+
+
+.gallery__gallery-item {
+	float: left;
+	height: 0; // Height is achieved using padding-bottom
+	width: 20%;
+	padding-bottom: 20%;
+	overflow: hidden;
+	position: relative;
+	margin: 0;
+
+
+	// 4 Columns Layout
+	@media @tablet-horizontal {
+		width: 25%;
+		padding-bottom: 25%;
+	}
+
+
+	// 3 Columns Layout
+	@media @tablet {
+		width: 33.333%;
+		padding-bottom: 33.333%;
+	}
+
+
+	// 2 Columns Layout
+	@media @mobile {
+		width: 50%;
+		padding-bottom: 50%;
+	}
+}
+
+// ------------------------------
+// #Image
+// ------------------------------
+
+.gallery__image-link {
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 0;
+	padding-bottom: 100%;
+	background-size: cover;
+	background-position: center center;
+}
+
+.gallery__image {
+	display: none; // Using background image instead
+}
+
+
+
+// ------------------------------
+// #Caption
+// ------------------------------
+
+// Captions fade in/out
+
+.gallery__caption {
+	margin: 0; // LESS Framework reset
+	
+	.responsivecolumns & {
+		display: none;
+	}
+}
+
+.caption-link {
+	padding: 40px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	overflow: auto;
+	opacity: 0;
+	.transition(all, 0.30s, cubic-bezier(0, 0.72, 0.22, 1.46));
+	.transform-scale(1.5);
+
+    @media @tablet-horizontal {
+        padding: 20px;
+    }
+    @media @mobile {
+        padding: 20px;
+    }
+
+	&:hover {
+		opacity: 1;
+		.transform-scale(1);
+		background-color: fade(@color__gallery-caption--background, 70%);
+	}
+}
+
+// Image Title
+
+.gallery__image-title {
+	margin-bottom: 10px;
+	font-family: @font__feature-headline--font-family;
+	font-size: 18px;
+	font-weight: @font__feature-headline--font-weight;
+	line-height: 26px;
+	letter-spacing: 1px;
+	color: @color__gallery-title--text;
+	text-transform: uppercase;
+}
+
+.gallery__image-description {
+	color: @color__gallery-description--text;
+}

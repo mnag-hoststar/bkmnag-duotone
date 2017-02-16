@@ -1,0 +1,177 @@
+// ----------------------------------------
+// Duotone: LESS > Widgets > Widgets
+// ----------------------------------------
+//
+// #Widget Spacing
+// #Columns
+// #Page Title Widget
+// #Line Widget
+//
+// ----------------------------------------
+
+// -----------------------------
+// #Widget Spacing
+// -----------------------------
+
+// Standard Widgets
+
+.widget--zone-widget {
+    margin: 0;
+}
+
+.template-content .widget {
+    margin: 0 70px 70px;
+
+    @media @tablet-horizontal {
+        margin: 0 60px 60px;
+    }
+    @media @tablet {
+        margin: 0 40px 40px;
+    }
+    @media @mobile {
+        margin: 0 30px 30px;
+    }
+
+    &:first-child {
+        margin-top: 0;
+    }
+}
+
+// Full Width Widgets
+
+.template-content {
+    .widget[data-name="responsiveslideshow"],
+    .widget[data-widget-type="responsiveslideshow"],
+    .widget[data-name="youtube"],
+    .widget[data-name="map"],
+    .widget[data-name="youtube"],
+    .widget[data-name="gallery"],
+    .widget[data-name="blogpostlist"],
+    .widget[data-widget-type="blogpostlist"],
+    .widget[data-name="blogpost"],
+    .widget[data-widget-type="blogpost"],
+    .widget[data-name="ecomproductslist"],
+    .widget[data-name="ecomproduct"],
+    .widget[data-name="ecomfeaturedproducts"],
+    .widget[data-name="line"],
+    .widget[data-name="menusections"],
+    .widget[data-name="menu"],
+    .widget[data-name="image"] {
+        margin-top: 0!important; // Ensures correct spacing for default pages
+        margin-left: 0;
+        margin-right: 0;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+// -----------------------------
+// #Columns
+// -----------------------------
+
+.template-content {
+	.widget[data-name="content"] {
+		.responsivecolumns & {
+			@media @mobile {
+				margin-bottom: 20px;
+			}
+		}
+	}
+
+	.widget {
+		.responsivecolumns {
+			margin: 30px 0 0 0;
+
+			@media @mobile {
+				margin: 0 0 30px;
+
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+
+			&:first-child {
+				margin-top: 0;
+			}
+		}
+
+		.column {
+			@columns-tablet {
+				margin-bottom: 1.5em;
+			}
+
+			@columns-mobile {
+				margin-bottom: 1em;
+			}
+
+			@media @mobile {
+				margin-bottom: 30px;
+
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+		}
+	}
+}
+
+// -----------------------------
+// #Line Widget
+// -----------------------------
+
+.widget[data-name="line"] {
+	
+}
+
+.line {
+    line-height: 0;
+}
+
+hr.line__rule {
+	height: 3px;
+	background-color: darken(@color__container--background, 20%);
+}
+
+// -----------------------------
+// #Space Widget
+// -----------------------------
+
+.widget[data-name="space"] {
+}
+
+.space {
+}
+
+.space__spacer {
+}
+
+// -----------------------------
+// #Page Title Widget
+// -----------------------------
+
+.page-title {
+    padding: 6px 70px;
+    background-color: darken(@color__container--background, 4%);
+    border-bottom: 1px solid darken(@color__container--background, 10%);
+    text-align: center;
+
+    @media @tablet-horizontal {
+        padding: 6px 40px;
+    }
+    @media @tablet {
+        padding: 6px 20px;
+    }
+}
+
+.pagetitle-text {
+    padding-bottom: 0;
+    .heading--4;
+
+    @media @mobile {
+        font-size: bkscale(@font__h4--font-size, 0.7);
+        line-height: bkscale(@font__h4--line-height, 0.7);
+        text-align: center;
+    }
+}

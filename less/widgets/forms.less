@@ -1,0 +1,582 @@
+// ----------------------------------------
+// Duotone: LESS > Widgets > Forms
+// ----------------------------------------
+//
+// #Legend
+// #Form
+// #Label
+// #Text Inputs
+// #Placeholders
+// #Dropdowns
+// #Radio Buttons and Checkboxes
+// #Error Messages
+// 
+// #Sign Up Form
+// #Contact Form
+// #Advanced Contact Form
+//
+// ----------------------------------------
+
+// ------------------------------
+// #Legend
+// ------------------------------
+
+.form .legend {
+	position: absolute;
+	top: 0;
+	right: auto;
+	bottom: 0;
+	left: 0;
+	padding: 0 26px;
+	color: @color__form-legend--text;
+	background-color: @color__form-legend--background;
+	width: 33.33%;
+	font-family: @font__h2--font-family;
+	font-size: @font__h2--font-size;
+	line-height: bkscale(@font__button--font-size, 3);
+	text-align: right;
+
+	@media @tablet {
+		position: relative;
+		width: 100%;
+		margin-bottom: 10px;
+		text-align: left;
+		height: auto;
+		padding: 10px 20px;
+		font-size: 20px;
+		line-height: 24px;
+	}
+	
+	.responsivecolumns & {
+		width: 100%;
+	    background-color: transparent;
+	    position: relative;
+	    text-align: left;
+	    padding: 0;
+	    margin-bottom: 20px;
+	    color: @color__primary;
+	}
+}
+
+// ------------------------------
+// #Form
+// ------------------------------
+
+// Form Body
+
+.form .form-body {
+	width: 66.66%;
+	margin: 0 0 0 auto;
+	padding: 0 70px;
+
+	@media @tablet-horizontal {
+		padding: 0 40px;
+	}
+	
+	@media @tablet {
+		padding: 0 20px;
+		width: auto;
+	}
+	
+	@media @mobile {
+		display: block;
+	}
+	
+	.responsivecolumns & {
+		float: none;
+		width: auto;
+		padding: 0;
+	}
+}
+
+// Form Group
+
+.form .form-group {
+	margin-bottom: 26px;
+
+	@media @tablet {
+		margin-bottom: 16px;
+	}
+
+	.responsivecolumns & {
+		margin-bottom: 16px;
+	}
+
+	&:last-of-type {
+		margin-bottom: 0;
+	}
+}
+
+// ------------------------------
+// #Label
+// ------------------------------
+
+.form label {
+	display: block;
+    margin: 0 0 0.5em;
+	line-height: 1.5em;
+}
+
+// ------------------------------
+// #Text Inputs
+// ------------------------------
+
+input[type="search"],
+input[type="email"],
+input[type="password"],
+.input--single-line,
+.input--search,
+textarea {
+    background-color: transparent;
+    border: 0;
+    box-shadow: inset 0px -1px 0px 0px lighten(@color__p--text, 45%);
+    font-size:  @font__p--font-size;
+    font-weight: @font__p--font-weight;
+    display: inline-block;
+    color: @color__p--text;
+    padding: 0;
+    line-height: 1.2;
+    -webkit-transition: border-color 0.15s ease;
+    -moz-transition: border-color 0.15s ease;
+    -o-transition: border-color 0.15s ease;
+    transition: border-color 0.15s ease;
+    border-radius: 0;
+    -webkit-appearance: none;
+
+
+    &:focus {
+        box-shadow: inset 0px -1px 0px 0px @color__primary;
+    }
+
+    @media @mobile {
+        font-size: bkscale(@font__p--font-size, 0.9);
+    }
+}
+
+// Single Line Inputs
+
+input[type="search"],
+input[type="email"],
+input[type="password"],
+.input--single-line,
+.input--search,
+.product-filters .input--search {
+    height: 44px;
+
+    @media @mobile {
+        height: 44px;
+    }
+}
+
+// Multiple Lines Inputs
+
+textarea {
+    display: block;
+    border-color: transparent;
+    border-style: solid;
+    border-width: 1px 1px 0 1px;
+
+    &:focus {
+        border-color: transparent;
+    }
+
+    @media @mobile {
+        padding: 0.6em;
+        font-size: bkscale(@font__p--font-size, 0.9);
+    }
+}
+
+// ------------------------------
+// #Placeholders
+// ------------------------------
+
+::-webkit-input-placeholder {
+   color: @color__p--text;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: @color__p--text;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: @color__p--text;
+}
+
+:-ms-input-placeholder {
+   color: @color__p--text;
+}
+
+input:focus {
+    &::-webkit-input-placeholder {
+        color: transparent;
+    }
+
+    &:-moz-placeholder {
+        color: transparent;
+    }
+
+    &::-moz-placeholder {
+        color: transparent;
+    }
+
+    &:-ms-input-placeholder {
+        color: transparent;
+    }
+}
+
+// ------------------------------
+// #Dropdowns
+// ------------------------------
+
+// Select Wrap
+
+.select-wrap {
+    position: relative;
+    max-width: 200px;
+	margin-top: @font__p--font-size;
+
+    @media @mobile {
+        max-width: 100%;
+    }
+
+    &:hover {
+        box-shadow: inset 0px -1px 0px 0px @color__primary;
+    }
+	
+    // Icon
+
+    &:after {
+        content: '\f107';
+        font-family: 'FontAwesome', sans-serif;
+        display: inline-block;
+        height: 1em;
+        line-height: 1em;
+        text-align: center;
+        font-size: 20px;
+        color: @color__p--text;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        margin-top: -0.5em;
+        z-index: 900;
+    }
+}
+
+// Select
+
+.select {
+    border: none;
+    color: @color__p--text;
+    font-size: @font__p--font-size;
+    border-radius: 0;
+    background-color: transparent;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    padding: 0 1.5em 0 0;
+    display: block;
+    width: 100%;
+    position: relative;
+    z-index: 1000;
+
+    @media @tablet {
+        font-size: bkscale(@font__p--font-size, 0.9);
+    }
+
+    &:hover, &:focus {
+        background-color: transparent;
+    }
+
+}
+
+.select::-ms-expand {
+    display: none;
+}
+
+// Size Variations Mixins
+
+// Select - Medium Size
+
+.select.medium {
+    .select {
+        font-size: bkscale(@font__p--font-size, 0.82);
+    }
+
+    // Icon
+
+    &:after {
+        font-size: 18px;
+    }
+}
+
+// Select - Small Size
+
+.select.small {
+    .select {
+        font-size: bkscale(@font__p--font-size, 0.7);
+    }
+
+    // Icon
+
+    &:after {
+        font-size: 16px;
+    }
+}
+
+// ------------------------------
+// #Radio Buttons and Checkboxes
+// ------------------------------
+
+.option-list {
+	margin-top: @font__p--line-height / 2;
+}
+
+.option-item {
+	&.option-item--radio,
+	&.option-item--checkbox {
+		position: relative;
+		width: 100%;
+		margin-bottom: @font__p--line-height / 2;
+		padding: 0;
+		
+		label {
+			position: relative;
+			margin-left: @font__p--font-size * 2.5;
+			transform: scale(1);
+			
+			&:before {
+				content: " ";
+				position: absolute;
+				top: 50%;
+				left: @font__p--font-size * -2.5;
+				width: @font__p--font-size * 4/3;
+				height: @font__p--font-size * 4/3;
+				margin-top: -0.8em;
+				background-color: @color__body--background;
+				border: 2px solid lighten(@color__p--text, 20%);
+			}
+			
+			&:after {
+				opacity: 0;
+				position: absolute;
+				top: 50%;
+				.transition(opacity, 0.1s, ease-in-out);
+			}
+		}
+
+		input[type="radio"],
+		input[type="checkbox"] {
+			opacity: 0;
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			margin: 0 !important;
+			padding: 0 !important;
+			width: 100% !important;
+			height: 100% !important;
+			
+			&:checked + label:before {
+				border: 2px solid darken(@color__p--text, 20%);
+			}
+			
+			&:checked + label:after {
+				opacity: 1;
+			}
+		}
+	}
+	
+	&.option-item--radio {
+		label {
+			&:before {
+				border-radius: @font__p--font-size;
+			}
+			&:after {
+				content: " ";
+				border-radius: @font__p--font-size;
+				background-color: @color__form-legend--background;
+				left: @font__p--font-size * -2.5;
+				width: @font__p--font-size * 4/3;
+				height: @font__p--font-size * 4/3;
+				margin-top: -0.8em;
+				border: 4px solid @color__body--background;
+				.transform-scale(0.8);
+			}
+		}
+	}
+	
+	&.option-item--checkbox {
+		label {
+			&:after {
+				content: "\f00c";
+				font-family: 'FontAwesome', sans-serif;
+				color: @color__form-legend--background;
+				font-size: @font__p--font-size * 4.5/3;
+				left: @font__p--font-size * -7/3;
+				margin-top: -0.6em;
+			}
+		}
+	}
+}
+
+// ------------------------------
+// #Error Messages
+// ------------------------------
+
+.form {
+    input.error {
+        border: none !important;
+    }
+    textarea.error {
+        border: 1px solid @message-color--error !important;
+    }
+    .form-group {
+        .error {
+            border-bottom: 2px solid @message-color--error !important;
+            &:focus {
+                box-shadow: none;
+            }
+        }
+    }
+}
+
+// ------------------------------
+// #Sign Up Form
+// ------------------------------
+
+.signupform {
+	
+	// Legend
+	
+	.legend {
+		.responsivecolumns & {
+			width: auto;
+			display: block;
+			float: none;
+			position: relative;
+			text-align: left;
+			padding: 0;
+			background: none;
+			color: @color__primary;
+			margin-bottom: 10px;
+		}
+	}
+	
+	// Form Body
+	
+	.form-body {
+		display: -webkit-box;
+		display: -moz-box;
+		display: -ms-flexbox;
+		display: -webkit-flex;
+		display: flex;
+		-webkit-box-direction: normal;
+		-moz-box-direction: normal;
+		-webkit-box-orient: horizontal;
+		-moz-box-orient: horizontal;
+		-webkit-flex-direction: row;
+		-ms-flex-direction: row;
+		flex-direction: row;
+		-webkit-flex-wrap: nowrap;
+		-ms-flex-wrap: nowrap;
+		flex-wrap: nowrap;
+		-webkit-box-pack: start;
+		-moz-box-pack: start;
+		-webkit-justify-content: flex-start;
+		-ms-flex-pack: start;
+		justify-content: flex-start;
+		-webkit-align-content: stretch;
+		-ms-flex-line-pack: stretch;
+		align-content: stretch;
+		
+		.responsivecolumns & {
+			float: none;
+			width: auto;
+			padding: 0;
+		}
+		
+		.columns-three-left &,
+		.columns-three-right &,
+		.columns-three-middle &,
+		.columns-four-first &,
+		.columns-four-second &,
+		.columns-four-third &,
+		.columns-four-fourth & {
+			display: block;
+		}
+	}
+
+	// Form Group
+
+	.form-group {
+		margin-bottom: 0;
+		
+		&:first-child {
+			-webkit-box-flex: 0;
+			-moz-box-flex: 0;
+			-webkit-flex: 1 1 auto;
+			-ms-flex: 1 1 auto;
+			flex: 1 1 auto;
+			margin-right: 10px;
+			
+			@media @mobile {
+				margin-bottom: 10px;
+			}
+		
+			.columns-three-left &,
+			.columns-three-right &,
+			.columns-three-middle &,
+			.columns-four-first &,
+			.columns-four-second &,
+			.columns-four-third &,
+			.columns-four-fourth & {
+				margin-bottom: 10px;
+			}
+		}
+	}
+	
+	// Label
+
+	label {
+		display: none;
+
+	}
+}
+
+// ------------------------------
+// #Contact Form
+// ------------------------------
+
+.contactform {
+	
+	// Fieldset
+
+	.fieldset {
+		position: relative;
+	}
+
+	// Form Group
+
+	.form-group {
+
+		// Label Email
+		
+		.label--email {
+			display: none;
+		}
+	}
+
+	// Label
+
+	.label--message {
+		 @media @mobile {
+			font-size: bkscale(@font__p--font-size, 0.9);
+		}
+	}
+}
+
+// ------------------------------
+// #Advanced Contact Form
+// ------------------------------
+
+.advancedcontactform {}

@@ -1,0 +1,43 @@
+<!doctype html>
+<html class="no-js" lang="{{ page.seoLang }}">
+
+	<head>
+		<meta charset="utf-8" />
+		<title>{{ page.title }}</title>
+		<meta name="keywords" content="{{ page.keywords }}" />
+		<meta name="description" content="{{ page.description }}" />
+
+		{% if site.favicon %}
+			<link rel="icon" href="{{ site.favicon['favicon'] }}" type="image/x-icon" />
+			<link rel="SHORTCUT ICON" href="{{ site.favicon['thumbnail'] }}?v={{ "now"|date("U") }}" type="image/x-icon" />
+		{% endif %}
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+
+		{% include basekit.headScript %}
+	</head>
+
+	<body class="{{ page.backgroundClass }}">
+
+		<!-- Site Container Start (Required) -->
+		<div class="site-container">
+			{% block content %}
+			{% endblock %}
+		</div>
+		<!-- Site Container End (Required) -->
+
+		{% include "includes/footer.twig" %}
+		
+	    {% include basekit.bodyScript %}
+
+		<!-- jQuery -->
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		
+		<script src="{{ asset('js/html5shiv.js')}}"></script>
+		<script src="{{ asset('js/navigation.js')}}"></script>
+		<script src="{{ asset('js/custom.js')}}"></script>
+
+		{% block bodyscripts %}
+		
+		{% endblock %}
+	</body>
+</html>

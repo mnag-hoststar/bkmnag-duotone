@@ -1,0 +1,323 @@
+// ----------------------------------------
+// Duotone: LESS > Widgets > Slideshow
+// ----------------------------------------
+//
+// #Slideshow
+// #Slideshow Item
+// #Slide Navigation
+// #Slide Navigation Buttons
+// #Caption
+// #Pagination
+//
+// ----------------------------------------
+
+// ------------------------------
+// #Slideshow
+// ------------------------------
+
+.responsiveslideshow {
+	position: relative;
+	
+	// Slideshow Height
+	
+	.figure,
+	.slides-list {
+		min-height: 100px;
+		max-height: 700px;
+		padding-bottom: 40%;
+
+		@media @tablet {
+			padding-bottom: 54%;
+		}
+		@media @mobile {
+			padding-bottom: 70%;
+		}
+		
+		.columns-two-left &,
+		.columns-two-right & {
+			padding-bottom: 54%;
+		}
+	}
+
+	// Figure
+	
+	.figure {
+		background-color: transparent;
+		min-height: 0;
+		background-size: cover;
+		background-position: center;
+	}
+	
+	// Slides List
+	
+	.slides-list {
+		position: relative;
+		overflow: hidden;
+	}
+}
+
+// ------------------------------
+// #Slideshow Item
+// ------------------------------
+
+.responsiveslideshow {
+	.slide-item {
+		display: block;
+		position: relative;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		opacity: 0;
+		.transition(all, 0.3s, ease);
+		.transform-scale(1);
+
+		&.current {
+			opacity: 1;
+		}
+	}
+
+	// Prevents two slides from displaying at the same time
+	// because of slow JS state changes
+
+	.slide-item.current + .slide-item {
+		display: none;
+	}
+
+	.image {
+		display: none;
+	}
+}
+
+// ------------------------------
+// #Slide Navigation
+// ------------------------------
+
+
+.slide-navigation {
+	display: block;
+	position: absolute;
+	top: 45%;
+	left: 0;
+	right: 0;
+	min-height: 50px;
+	margin: 0;
+
+	@media @mobile {
+		top: inherit;
+		bottom: 0;
+	}
+	
+	.responsivecolumns & {
+		background-color: transparent;
+	}
+
+	// Button
+
+	.button {
+		position: absolute;
+		top: 0;
+		padding: 0;
+		text-align: center;
+		background-color: transparent;
+		box-shadow: none;
+		width: 50px;
+		height: 50px;
+		line-height: 50px;
+		font-size: 36px;
+
+
+		@media @tablet {
+			width: 40px;
+			height: 40px;
+			line-height: 40px;
+		}
+
+		&:before {
+			margin: 0;
+			color: #d8d8d8;
+			background-color: transparent;
+		}
+	}
+	
+	// Control Text
+
+	.control-text {
+		display: none;
+	}
+}
+
+// ------------------------------
+// #Slide Navigation Buttons
+// ------------------------------
+
+.responsiveslideshow {
+	
+	// Previous and Next Button
+
+	.previous-button:before,
+	.next-button:after {
+		@media @mobile {
+			font-size: 26px!important;
+		}
+	}
+	
+	// Previous Button
+
+	.previous-button {
+		left: 20px;
+
+		@media @tablet {
+			left: 0;
+		}
+
+		// Icon
+		&:before {
+			content: '\f104';
+			display: block;
+			margin: 0;
+			color: #bfbfbf;
+		}
+	}
+
+	// Next Button
+
+	.next-button {
+		right: 20px;
+
+		@media @tablet {
+			right: 0;
+		}
+
+		// Icon
+		&:after {
+			content: '\f105';
+			display: block;
+			margin: 0;
+			padding-left: 0.1em;
+			color: #bfbfbf;
+		}
+	}
+
+	// Pause Toggle
+
+	.pause-toggle {
+		top: 0;
+		bottom: 0;
+		left: 70px;
+		margin: auto;
+
+		@media @mobile {
+			display: none;
+		}
+
+		// Icon
+		&:before {
+			display: block;
+			margin: 0;
+			font-size: 14px;
+		}
+
+		// Play Icon
+
+		&.pause:before {
+			content: '\f04b';
+		}
+	}
+}
+
+// ------------------------------
+// #Caption
+// ------------------------------
+
+.responsiveslideshow {
+	.caption {
+		.flex-display;
+		.flex-direction(column);
+		.justify-content(center);
+
+		height: 100%;
+		margin: 0;
+		padding: 30px;
+		background-color: fade(@color__slideshow-caption--background, 50%);
+		text-align: center;
+
+		@media @tablet-horizontal {
+			padding: 10px 25px 15px;
+		}
+
+		@media @tablet {
+			left: 0;
+			bottom: 0;
+			right: 0;
+			padding: 5px 20px 5px;
+		}
+	}
+}
+
+// ------------------------------
+// #Pagination
+// ------------------------------
+
+.responsiveslideshow {
+
+	// Pagination Item
+
+	.pagination-item {
+		display: inline-block;
+		margin: 3px 5px;
+
+		// Button
+
+		.button {
+			opacity: .4;
+			background-color: @color__container--background;
+			width: 10px;
+			height: 10px;
+			display: block;
+			overflow: hidden;
+			text-indent: -120%;
+			border-radius: 7px;
+			padding: 0;
+
+			@media @tablet {
+				width: 8px;
+				height: 8px;
+			}
+		}
+
+		&.selected .button {
+			opacity: 1;
+			background-color: @color__container--background;
+		}
+	}
+
+	// Slide Pagination
+
+	.slide-pagination {
+		position: absolute;
+		bottom: 0;
+		left: 101px;
+		right: 101px;
+		min-height: 50px;
+
+		@media @tablet {
+			min-height: 40px;
+			bottom: -4px;
+		}
+	}
+
+	// Pagination List
+
+	.pagination-list {
+		text-align: center;
+		font-size: 0.1px;
+		min-height: 50px;
+		overflow: hidden;
+		padding-top: 14px;
+
+		@media @tablet {
+			padding-top: 10px;
+		}
+	}
+}

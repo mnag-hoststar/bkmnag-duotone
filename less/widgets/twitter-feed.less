@@ -1,0 +1,158 @@
+// ----------------------------------------
+// Duotone: LESS > Widgets > Twitter Feed
+// ----------------------------------------
+//
+// #Tweet Item
+// #Account Link
+// #Avatar
+// #Content
+// #Tweet Metadata
+//
+// ----------------------------------------
+
+// ------------------------------
+// #Tweet Item
+// ------------------------------
+
+.tweet-item {
+	position: relative;
+    display: inline-block;
+    float: left;
+    padding: 50px;
+    background-color: @color__secondary;
+    width: 31.333%;
+    margin-right: 3%;
+
+    @media @tablet-horizontal {
+        width: 48%;
+        margin-right: 2%;
+        margin-bottom: 2%;
+        padding: 40px;
+    }
+    @media @tablet {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 20px;
+        padding: 30px;
+    }
+
+    &:last-child {
+        margin-right: 0;
+    }
+
+	.responsivecolumns & {
+       width: 100%;
+	}
+}
+
+// ------------------------------
+// #Account Link
+// ------------------------------
+
+.twitter__account-link {
+    font-size: 19px;
+    line-height: 40px;
+    min-height: 40px;
+    margin-left: 55px;
+    color: @color__h2--text;
+
+	.responsivecolumns & {
+		@media only screen and (max-width: 1024px) {
+			line-height: 26px;
+		}
+	}
+}
+
+// ------------------------------
+// #Avatar
+// ------------------------------
+
+.twitter__avatar {
+    position: absolute;
+}
+
+.twitter__avatar-image {
+	width: 40px;
+	height: 40px;
+	display: block;
+}
+
+.avatar-link {
+    display: inline-block;
+}
+
+// ------------------------------
+// #Content
+// ------------------------------
+
+.tweet-content {
+    padding-top: 15px;
+    position: relative;
+
+    // Link
+	
+    a {
+        // Allows text wrap for long words without spacing
+        -ms-word-break: break-all;
+        word-break: break-all;
+        word-break: break-word;
+        -webkit-hyphens: auto;
+        -moz-hyphens: auto;
+        word-wrap: break-word;
+        hyphens: auto;
+        // Needed for Windows Mobile IE
+        display: inline-block;
+    }
+}
+
+// ------------------------------
+// #Tweet Metadata
+// ------------------------------
+
+.tweet-metadata {
+    font-family: @font__h4--font-family;
+	font-size: 12px;
+	color: fade(@color__p--text, 50%);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+    @media @tablet {
+        font-size: 10px;
+    }
+
+    a {
+        color: fade(@color__p--text, 50%);
+    }
+}
+
+// Tweet Source
+
+.tweet-source {
+	color: fade(@color__p--text, 50%);
+}
+
+// Timestamp
+
+.twitter__timestamp {
+	font-size: 12px;
+	color: @color__p--text;
+
+    @media @tablet {
+        font-size: 10px;
+    }
+}
+
+// Retweeted By
+
+.retweeted-by {
+    margin-left: 14px;
+
+	.columns-four-first &,
+	.columns-four-second &,
+	.columns-four-third &,
+	.columns-four-fourth & {
+		@media only screen and (max-width: 1024px) {
+			margin-left: 0;
+		}
+	}
+}

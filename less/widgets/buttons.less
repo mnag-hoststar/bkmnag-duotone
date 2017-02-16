@@ -1,0 +1,161 @@
+// ----------------------------------------
+// Duotone: LESS > Widgets > Buttons
+// ----------------------------------------
+//
+// #Button
+// #Tweet Button
+// #Click to Call
+// #Dropbox
+// #Facebook Like
+// #Paypal
+// #Social Icons
+//
+// ----------------------------------------
+
+// -----------------------------
+// #Button
+// -----------------------------
+
+.button {
+    position: relative;
+    border: none;
+    padding: 0 26px;
+    font-size:  @font__button--font-size;
+    line-height: @font__button--line-height;
+    font-weight: @font__button--font-weight;
+    display: inline-block;
+    cursor: pointer;
+    -webkit-transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    -o-transition: all 0.1s ease-in-out;
+    transition: all 0.1s ease-in-out;
+    text-align: left;
+    -webkit-appearance: none;
+    background-color: @color__button--background;
+    border-radius: 0;
+    color: @color__button--text;
+    text-transform: uppercase;
+
+    &:hover {
+        background-color: @color__button--background--hover;
+    }
+
+    @media @mobile {
+        padding: 0 20px;
+        font-size:  bkscale(@font__button--font-size, .9);
+        line-height: bkscale(@font__button--line-height, .8);
+    }
+
+    &:focus {
+        outline: none;
+    }
+}
+
+// -----------------------------
+// #Tweet Button
+// -----------------------------
+
+
+
+// -----------------------------
+// #Click to Call
+// -----------------------------
+
+.widget__clicktocall {
+
+    .phone-number-link {
+        .button;
+    }
+}
+
+// -----------------------------
+// #Dropbox
+// -----------------------------
+
+.dropbox__button,
+.dropbox__label {
+    vertical-align: top;
+}
+
+.dropbox__button {
+    margin-right: 0; // LESS Framework Reset
+}
+
+// Label
+
+.dropbox__label {
+    display: inline-block;
+    background-color: @color__button--background;
+    line-height: @font__button--line-height;
+    color: @color__button--text;
+    padding: 0 1em;
+    font-size: 14px;
+
+    @media @mobile {
+        font-size:  bkscale(@font__button--font-size, 0.88);
+    }
+}
+
+// -----------------------------
+// #Facebook Like
+// -----------------------------
+
+
+// -----------------------------
+// #Paypal
+// -----------------------------
+
+
+// -----------------------------
+// #Social Icons
+// -----------------------------
+
+// Social Link
+
+.social-link {
+	display: block;
+	text-align: center;
+
+	&:hover {
+		text-decoration: none;
+	}
+
+	// Icon
+
+	&:before {
+		font-size: 19px;
+		display: block;
+		width: 44px;
+		height: 44px;
+		line-height: 44px;
+		background-color: @color__button--background;
+		color: @color__button--text;
+		margin: 0 auto;
+
+		@media @tablet {
+			font-size: 20px;
+			width: 40px;
+			height: 40px;
+			line-height: 40px;
+		}
+
+		@media @mobile {
+			font-size: 16px;
+			width: 30px;
+			height: 30px;
+			line-height: 30px;
+		}
+
+	}
+
+	// Icon hover
+	&:hover:before {
+		background-color: @color__button--background--hover;
+	}
+}
+
+// Social Name
+
+.socialicons__social-name {
+	display: none;
+}

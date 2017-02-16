@@ -1,0 +1,31 @@
+// ----------------------------------------
+// Duotone: LESS > Plugins
+// ----------------------------------------
+//
+// #Paginatinon
+// 
+// ----------------------------------------
+
+// ------------------------------
+// #Paginatinon
+// ------------------------------
+
+.ecomproductslist,
+.blogpostlist {
+	.pagination-list {
+		.flex-display;
+		.justify-content(space-between);
+		margin: 30px;
+
+		@media @mobile {
+			margin: 20px 0;
+		}
+
+		.button {
+			&:before,
+			&:after {
+				font-size: 10px;
+			}
+		}
+	}
+}

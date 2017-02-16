@@ -1,0 +1,220 @@
+// ----------------------------------------
+// Duotone: LESS > Main > Messages
+// ----------------------------------------
+// 
+// #Variables
+// #General Messages
+// #Form Messages
+// #Basekit Messages
+// #Cookie Message
+// 
+// ----------------------------------------
+
+// ------------------------------
+// #Variables
+// ------------------------------
+
+@message-color--standard: #6e6e6e;
+@message-color--error: #d20000;
+@message-color--warning: #ffbc0b;
+@message-color--information: #aae6e8;
+@message-color--success: #bae914;
+@message-color--not-found: #6e6e6e;
+
+// ------------------------------
+// #General Messages
+// ------------------------------
+
+// Overall message styling
+
+.message {
+    position: relative;
+    clear: both;
+    padding: 1em;
+	padding-left: 3.5em;
+    margin: 1em auto;
+    background-color: #fff;
+	border: 1px solid;
+	border-color: @message-color--standard;
+
+    // Message Heading, Paragraph
+
+    h3, p {
+        margin: 0;
+        padding: 0;
+    }
+	
+	h3 {
+		margin-bottom: 10px;
+		font-size: @font__h3--font-size;
+		line-height: @font__h3--line-height;
+	}
+	
+	p {
+		font-size: @font__p--font-size;
+		line-height: @font__p--line-height;
+	}
+
+    // Consequetive Paragraphs
+
+    p + p {
+        margin-top: 0.35em;
+    }
+
+    // Strong text
+
+    strong {
+        font-weight: bold;
+    }
+
+    // Icon
+
+    &:before {
+        font-family: 'FontAwesome', sans-serif;
+        display: block;
+        width: 2.7em;
+        position: absolute;
+        top: -0.15em;
+        left: 0;
+        bottom: 0;
+        text-align: center;
+        padding-top: 0.7em;
+		font-size: 1.4em;
+    }
+}
+
+// Error
+
+.message--error {
+	border-color: @message-color--error;
+
+	// Message Heading, Paragraph, Icon
+	*, &:before {
+		color: darken(@message-color--error, 20%);
+	}
+
+	// Icon
+	&:before {
+		// Exclamation circle
+		content: "\f06a";
+	}
+}
+
+// Warning
+
+.message--warning {
+	border-color: @message-color--warning;
+
+	// Message Heading, Paragraph
+	* {
+		color: darken(@message-color--warning, 30%);
+	}
+
+	// Icon
+	&:before {
+		// Exclamation triangle
+		content: "\f071";
+		color: darken(@message-color--warning, 10%);
+	}
+}
+
+// Information
+
+.message--information {
+	border-color: @message-color--information;
+	color: @message-color--information;
+
+	// Message Heading, Paragraph
+	* {
+		color: darken(@message-color--information, 50%);
+	}
+
+	// Icon
+	&:before {
+		// Circled i
+		content: "\f05a";
+		color: darken(@message-color--information, 30%);
+	}
+}
+
+// Success
+
+.message--success {
+	border-color: @message-color--success;
+
+	// Message Heading, Paragraph
+	* {
+		color: darken(@message-color--success, 30%);
+	}
+
+	// Icon
+	&:before {
+		// Check mark
+		content: "\f00c";
+		color: darken(@message-color--success, 20%);
+	}
+}
+
+// Not Found
+
+.message--not-found {
+	border-color: @message-color--not-found;
+
+	// Heading 3, Paragraph, Icon
+	*, &:before {
+		color: darken(@message-color--not-found, 20%);
+	}
+
+	// Icon
+	&:before {
+		// Magnifying glass
+		content: "\f002";
+	}
+}
+
+// Message in Template's Footer
+
+.template-footer .message {
+    margin: 0;
+}
+
+// ------------------------------
+// #Form Messages
+// ------------------------------
+
+.overlay.success .message-box {
+    .message;
+    .message--success;
+}
+
+
+.overlay.fail .message-box {
+    .message;
+    .message--warning;
+}
+
+// ------------------------------
+// #Basekit Messages
+// ------------------------------
+
+// Basekit specific messages
+.bk-message {
+	
+	// If no content is provided, Basekit will provide
+	// an empty message.
+	&--empty {
+		
+	}
+}
+
+// ------------------------------
+// #Cookie Message
+// ------------------------------
+
+.bk-cookie-container {
+	// There are no styles for this yet.
+	// But the structure is here, just in case.
+	p, a {}
+	p a {}
+	.bk-cookie-close-button {}
+}

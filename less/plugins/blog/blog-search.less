@@ -1,0 +1,226 @@
+// ----------------------------------------
+// Duotone: LESS > Plugins > Blog > Blog Search
+// ----------------------------------------
+//
+// #Legend
+// #Form Body
+// #Label
+// #Button
+//
+// ----------------------------------------
+
+// -----------------------------
+// #Legend
+// -----------------------------
+
+.blogsearch {
+	.legend {
+        position: absolute;
+        top: 0;
+        right: auto;
+        bottom: 0;
+        left: 0;
+        padding: 0 26px;
+        color: @color__blogsearch-legend--text;
+        background-color: @color__blogsearch-legend--background;
+        width: 33%;
+        font-family: @font__h2--font-family;
+        font-size: @font__h2--font-size;
+        line-height: bkscale(@font__button--font-size, 3);
+        height: bkscale(@font__button--font-size, 3);
+        text-align: right;
+
+       @media @tablet {
+            position: relative;
+            width: 100%;
+            margin-bottom: 10px;
+            text-align: left;
+            height: auto;
+            line-height: 1;
+            padding: 20px;
+        }
+    }
+}
+
+// Column styles
+
+.responsivecolumns {
+    .blogsearch {
+		.legend {
+			width: auto;
+			display: block;
+			float: none;
+			position: relative;
+			text-align: left;
+			padding: 0;
+			background: none;
+		}
+	}
+	
+	.columns-three-left,
+    .columns-three-right,
+    .columns-three-middle,
+    .columns-four-first,
+    .columns-four-second,
+    .columns-four-third,
+    .columns-four-fourth {
+        .blogsearch {
+			.legend {
+				border-bottom: none;
+			}
+		}
+    }
+}
+	
+// -----------------------------
+// #Form Body
+// -----------------------------
+
+.blogsearch {
+    .form-body {
+        width: 66.66%;
+        margin: 0 0 0 auto;
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-direction: normal;
+        -moz-box-direction: normal;
+        -webkit-box-orient: horizontal;
+        -moz-box-orient: horizontal;
+        -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        -webkit-flex-wrap: nowrap;
+        -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+        -webkit-box-pack: start;
+        -moz-box-pack: start;
+        -webkit-justify-content: flex-start;
+        -ms-flex-pack: start;
+        justify-content: flex-start;
+        -webkit-align-content: stretch;
+        -ms-flex-line-pack: stretch;
+        align-content: stretch;
+		padding: 0 70px;
+		
+        @media @tablet-horizontal {
+            padding: 0 40px;
+        }
+        @media @tablet {
+            padding: 0 20px;
+            width: auto;
+        }
+    }
+
+    // Form Group
+
+    .form-group {
+        margin-bottom: 0;
+        &:first-child {
+            -webkit-box-flex: 0;
+            -moz-box-flex: 0;
+            -webkit-flex: 1 1 auto;
+            -ms-flex: 1 1 auto;
+            flex: 1 1 auto;
+            margin-right: 10px;
+        }
+    }
+
+    // First Form Group
+
+    .blogsearch__form-group:first-child {
+        @media @mobile {
+            margin-right: 3px; // LESS Framework reset
+        }
+    }
+
+    // Last Form Group
+
+    .form-group:last-child {
+        margin: 0;
+    }
+}
+
+// Column styles
+
+.responsivecolumns {
+    .blogsearch {
+		.form-body {
+			float: none;
+			width: auto;
+			border-left: none;
+			padding: 0;
+		}
+	}
+	
+    .columns-three-left,
+    .columns-three-right,
+    .columns-three-middle,
+    .columns-four-first,
+    .columns-four-second,
+    .columns-four-third,
+    .columns-four-fourth {
+        .blogsearch {
+				.form-body {
+				display: block;
+			}
+		}
+
+        // First Form Group
+
+        .blogsearch {
+			.form-group:first-child {
+				margin-bottom: 10px;
+			}
+		}
+    }
+}
+
+// -----------------------------
+// #Label
+// -----------------------------
+
+.blogsearch {
+	.label {
+        display: none;
+    }
+}
+
+// -----------------------------
+// #Button
+// -----------------------------
+
+.blogsearch {
+    .button--submit {
+        @media @tablet {
+            width: 50px;
+            overflow: hidden;
+            text-indent: 200px;
+            display: block;
+            position: relative;
+            padding: 0;
+
+            &:after {
+                content: '\f002';
+                font-family: 'FontAwesome', sans-serif;
+                position: absolute;
+                text-align: center;
+                line-height: bkscale(@font__button--font-size, 3);
+                color: @color__button--text;
+                font-size: 18px;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                right: 0;
+                text-indent: 0;
+            }
+        }
+        @media @mobile {
+            &:after {
+                line-height: bkscale(@font__button--font-size, 2.2);
+            }
+        }
+    }
+}

@@ -1,0 +1,25 @@
+{% extends "layout.twig" %}
+
+{% block content %}
+<!-- Page Content Start -->
+<section class="page page--home">
+	{% include "includes/header-feature.twig" %}
+
+	<!-- Zone Content Start -->
+    <div id="main-scroll" class="template-content">
+        <div class="container">
+            {{zone('main')|raw}}
+        </div>
+    </div>
+	<!-- Zone Content End -->
+	
+</section>
+<!-- Page Content End -->
+{% endblock %}
+
+{% block bodyscripts %}
+<!-- Body Scripts Start -->
+<script src="{{asset('js/header-feature.js')}}"></script>
+<script src="{{asset('js/smooth-scroll.js')}}"></script>
+<!-- Body Scripts End -->
+{% endblock %}
