@@ -25,14 +25,11 @@
     font-weight: @font__button--font-weight;
     display: inline-block;
     cursor: pointer;
-    -webkit-transition: all 0.1s ease-in-out;
-    -moz-transition: all 0.1s ease-in-out;
-    -o-transition: all 0.1s ease-in-out;
-    transition: all 0.1s ease-in-out;
+	.transition(all, 0.1s, ease-in-out);
     text-align: left;
-    -webkit-appearance: none;
+    .appearance(none);
     background-color: @color__button--background;
-    border-radius: 0;
+    .border-radius(0);
     color: @color__button--text;
     text-transform: uppercase;
 
@@ -61,7 +58,7 @@
 // #Click to Call
 // -----------------------------
 
-.widget__clicktocall {
+.clicktocall {
 
     .phone-number-link {
         .button;

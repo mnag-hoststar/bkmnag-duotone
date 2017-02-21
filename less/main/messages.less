@@ -29,13 +29,13 @@
 
 .message {
     position: relative;
-    clear: both;
     padding: 1em;
 	padding-left: 3.5em;
     margin: 1em auto;
     background-color: #fff;
 	border: 1px solid;
 	border-color: @message-color--standard;
+    .clearfix();
 
     // Message Heading, Paragraph
 
@@ -174,7 +174,7 @@
 
 // Message in Template's Footer
 
-.template-footer .message {
+.template__footer .message {
     margin: 0;
 }
 

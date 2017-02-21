@@ -19,10 +19,8 @@
 	<body class="{{ page.backgroundClass }}">
 
 		<!-- Site Container Start (Required) -->
-		<div class="site-container">
-			{% block content %}
-			{% endblock %}
-		</div>
+		{% block content %}
+		{% endblock %}
 		<!-- Site Container End (Required) -->
 
 		{% include "includes/footer.twig" %}

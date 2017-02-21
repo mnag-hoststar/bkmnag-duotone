@@ -129,23 +129,20 @@ input[type="password"],
 textarea {
     background-color: transparent;
     border: 0;
-    box-shadow: inset 0px -1px 0px 0px lighten(@color__p--text, 45%);
+	.box-shadow(inset 0px -1px 0px 0px lighten(@color__p--text, 45%));
     font-size:  @font__p--font-size;
     font-weight: @font__p--font-weight;
     display: inline-block;
     color: @color__p--text;
     padding: 0;
     line-height: 1.2;
-    -webkit-transition: border-color 0.15s ease;
-    -moz-transition: border-color 0.15s ease;
-    -o-transition: border-color 0.15s ease;
-    transition: border-color 0.15s ease;
-    border-radius: 0;
-    -webkit-appearance: none;
+	.transition(border-color, 0.15s, ease-in-out);
+    .border-radius(0);
+    .appearance(none);
 
 
     &:focus {
-        box-shadow: inset 0px -1px 0px 0px @color__primary;
+		.box-shadow(inset 0px -1px 0px 0px @color__primary);
     }
 
     @media @mobile {
@@ -240,7 +237,7 @@ input:focus {
     }
 
     &:hover {
-        box-shadow: inset 0px -1px 0px 0px @color__primary;
+		.box-shadow(inset 0px -1px 0px 0px @color__primary);
     }
 	
     // Icon
@@ -258,7 +255,6 @@ input:focus {
         right: 0;
         top: 50%;
         margin-top: -0.5em;
-        z-index: 900;
     }
 }
 
@@ -268,15 +264,13 @@ input:focus {
     border: none;
     color: @color__p--text;
     font-size: @font__p--font-size;
-    border-radius: 0;
+    .border-radius(0);
+    .appearance(none);
     background-color: transparent;
-    -webkit-appearance: none;
-    -moz-appearance: none;
     padding: 0 1.5em 0 0;
     display: block;
     width: 100%;
     position: relative;
-    z-index: 1000;
 
     @media @tablet {
         font-size: bkscale(@font__p--font-size, 0.9);
@@ -341,7 +335,7 @@ input:focus {
 		label {
 			position: relative;
 			margin-left: @font__p--font-size * 2.5;
-			transform: scale(1);
+			.transform-scale(1);
 			
 			&:before {
 				content: " ";
@@ -389,11 +383,11 @@ input:focus {
 	&.option-item--radio {
 		label {
 			&:before {
-				border-radius: @font__p--font-size;
+				.border-radius(@font__p--font-size);
 			}
 			&:after {
 				content: " ";
-				border-radius: @font__p--font-size;
+				.border-radius(@font__p--font-size);
 				background-color: @color__form-legend--background;
 				left: @font__p--font-size * -2.5;
 				width: @font__p--font-size * 4/3;
@@ -434,7 +428,7 @@ input:focus {
         .error {
             border-bottom: 2px solid @message-color--error !important;
             &:focus {
-                box-shadow: none;
+				.box-shadow(none);
             }
         }
     }

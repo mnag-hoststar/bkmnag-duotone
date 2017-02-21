@@ -1,15 +1,13 @@
 <!-- Header -->
-<header class="template-header">
-	<div class="flex-item">
+<header class="template__header">
+	<div class="template__company">
 		{{widget('logo', 'logo', {"defaultlogo": asset('images/logo.png')})|raw}}
 		{{widget('companyname', 'companyname', {
 			"business": "profile",
 			"showTplWidget":"0"
 		})|raw}}
 	</div>
-	<div class="flex-item">
-		<div class="template-navigation">
-			{{widget('extendednavigation', 'extendednavigation', {"align":"center"})|raw}}
-		</div>
+	<div class="template__navigation">
+		{{widget('extendednavigation', 'extendednavigation', {"align":"right"})|raw}}
 	</div>
 </header>

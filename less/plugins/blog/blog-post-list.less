@@ -138,18 +138,11 @@
         right: 0;
         bottom: 0;
         left: 0;
-        -webkit-transition: all 0.3s ease-in-out;
-        -moz-transition: all 0.3s ease-in-out;
-        -o-transition: all 0.3s ease-in-out;
-        transition: all 0.3s ease-in-out;
+		.transition(all, 0.3s, ease-in-out);
 
 
         &:hover {
-            -webkit-transform: scale(1.2);
-            -moz-transform: scale(1.2);
-            -o-transform: scale(1.2);
-            -ms-transform: scale(1.2);
-            transform: scale(1.2);
+			.transform-scale(1.2);
         }
     }
 
@@ -226,7 +219,7 @@
         color: @color__h2--text;
 
         &:hover {
-            box-shadow: inset 0px -1px 0px 0px @color__p--text;
+			.box-shadow(inset 0px -1px 0px 0px @color__p--text);
         }
     }
 }
@@ -248,7 +241,7 @@
         position: absolute;
         left: 0;
         bottom: 0;
-        box-shadow: inset 0px -1px 0px 0px @color__primary;
+		.box-shadow(inset 0px -1px 0px 0px @color__primary);
         display: inline-block;
         line-height: 1.5;
         color: @color__primary;

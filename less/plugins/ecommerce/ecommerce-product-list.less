@@ -167,7 +167,7 @@
 
     .input {
         padding-left: 14px;
-        box-shadow: none;
+		.box-shadow(none);
         background-color: @color__secondary;
         .heading--4;
         font-size: 14px;
@@ -311,7 +311,7 @@
 
 .ecomproductslist .listing-order {
     display: none;
-    clear: both;
+    .clearfix();
     font-size: bkscale(@font__p--font-size, 0.72);
     line-height: bkscale(@font__p--line-height, 0.72);
     color: fade(@color__p--text, 80%);
@@ -335,7 +335,7 @@
 // Listing Body
 
 .ecomproductslist .listing-body {
-    clear: both;
+    .clearfix();
 }
 
 // Product List
@@ -382,7 +382,7 @@
 
 .product-item {
     border-right: 1px solid fade(@color__p--text, 16%);
-    box-shadow: inset 0px -1px 0px 0px fade(@color__p--text, 16%);
+	.box-shadow(inset 0px -1px 0px 0px fade(@color__p--text, 16%));
 	padding: 40px;
 	width: 25%;
 	margin: 0;
@@ -421,12 +421,9 @@
 
     &.clickable {
         cursor: pointer;
-        -webkit-transition: all 0.1s ease-in-out;
-        -moz-transition: all 0.1s ease-in-out;
-        -o-transition: all 0.1s ease-in-out;
-        transition: all 0.1s ease-in-out;
+		.transition(all, 0.1s, ease-in-out);
         &:hover {
-            box-shadow: inset 0px 0px 0px 6px fade(@color__p--text, 16%);
+			.box-shadow(inset 0px 0px 0px 6px fade(@color__p--text, 16%));
         }
     }
 }

@@ -4,14 +4,15 @@
 //
 // #Content Widget
 // #General Typography
+// #Bold, Italic, Underlined
+// #Span
 // #Link
-// #Unordered List
-// #Ordered List
-// #Block Quote
+// #Small
 // #Pre
 // #Code
-// #Table
-// #Horizontal Rule
+// #Unordered and Ordered List
+// #Block Quote
+// #Highlighted Text
 //
 // ----------------------------------------
 
@@ -26,20 +27,34 @@
 // #General Typography
 // ------------------------------
 
-
-h1, h2, h3, h4, h5, h6, p {
-	padding-bottom: 10px;
-	-webkit-font-smoothing: antialiased;
+h1, h2, h3, h4, h5, h6 {
+	margin: 0;
+	padding: 0.8em 0;
+	
+	+ h2, + h3, + h4, + h5, + h6 {
+		padding-top: 0;
+	}
 }
 
 h1, .heading--1 {
-	padding-bottom: 20px;
 	font-family: @font__h1--font-family;
 	font-size: @font__h1--font-size;
 	font-weight: @font__h1--font-weight;
 	line-height: @font__h1--line-height;
 	letter-spacing: @font__h1--letter-spacing;
 	color: @color__h1--text;
+
+	@media @tablet {
+		font-size: bkscale(@font__h1--font-size, 0.9);
+		line-height: bkscale(@font__h1--line-height, 0.9);
+		letter-spacing: bkscale(@font__h1--letter-spacing, 0.9);
+	}
+
+	@media @mobile {
+		font-size: bkscale(@font__h1--font-size, 0.8);
+		line-height: bkscale(@font__h1--line-height, 0.8);
+		letter-spacing: bkscale(@font__h1--letter-spacing, 0.8);
+	}
 }
 
 h2, .heading--2 {
@@ -49,6 +64,18 @@ h2, .heading--2 {
 	line-height: @font__h2--line-height;
 	letter-spacing: @font__h2--letter-spacing;
 	color: @color__h2--text;
+
+	@media @tablet {
+		font-size: bkscale(@font__h2--font-size, 0.9);
+		line-height: bkscale(@font__h2--line-height, 0.9);
+		letter-spacing: bkscale(@font__h2--letter-spacing, 0.9);
+	}
+
+	@media @mobile {
+		font-size: bkscale(@font__h2--font-size, 0.8);
+		line-height: bkscale(@font__h2--line-height, 0.8);
+		letter-spacing: bkscale(@font__h2--letter-spacing, 0.8);
+	}
 }
 
 h3, .heading--3 {
@@ -58,6 +85,18 @@ h3, .heading--3 {
 	line-height: @font__h3--line-height;
 	letter-spacing: @font__h3--letter-spacing;
 	color: @color__h3--text;
+
+	@media @tablet {
+		font-size: bkscale(@font__h3--font-size, 0.9);
+		line-height: bkscale(@font__h3--line-height, 0.9);
+		letter-spacing: bkscale(@font__h3--letter-spacing, 0.9);
+	}
+
+	@media @mobile {
+		font-size: bkscale(@font__h3--font-size, 0.8);
+		line-height: bkscale(@font__h3--line-height, 0.8);
+		letter-spacing: bkscale(@font__h3--letter-spacing, 0.8);
+	}
 }
 
 h4, .heading--4 {
@@ -67,32 +106,105 @@ h4, .heading--4 {
 	line-height: @font__h4--line-height;
 	letter-spacing: @font__h4--letter-spacing;
 	color: @color__h4--text;
+	text-transform: uppercase;
+
+	@media @tablet {
+		font-size: bkscale(@font__h4--font-size, 0.9);
+		line-height: bkscale(@font__h4--line-height, 0.9);
+		letter-spacing: bkscale(@font__h4--letter-spacing, 0.9);
+	}
+
+	@media @mobile {
+		font-size: bkscale(@font__h4--font-size, 0.8);
+		line-height: bkscale(@font__h4--line-height, 0.8);
+		letter-spacing: bkscale(@font__h4--letter-spacing, 0.8);
+	}
 }
 
-h5 {
+h5, .heading--5 {
+	padding: 0.4em 0;
 	font-family: @font__h4--font-family;
-	font-size: bkscale(@font__h4--font-size, 0.9);
+	font-size: @font__h4--font-size;
 	font-weight: @font__h4--font-weight;
-	line-height: bkscale(@font__h4--line-height, 0.9);
-	letter-spacing: bkscale(@font__h4--letter-spacing, 0.9);
+	line-height: @font__h4--line-height;
+	letter-spacing: bkscale(@font__h4--letter-spacing, 0.8);
 	color: @color__h4--text;
+
+	@media @tablet {
+		font-size: bkscale(@font__h4--font-size, 0.9);
+		line-height: bkscale(@font__h4--line-height, 0.9);
+		letter-spacing: bkscale(@font__h4--letter-spacing, 0.7);
+	}
+
+	@media @mobile {
+		font-size: bkscale(@font__h4--font-size, 0.8);
+		line-height: bkscale(@font__h4--line-height, 0.8);
+		letter-spacing: bkscale(@font__h4--letter-spacing, 0.6);
+	}
 }
 
-h6 {
+h6, .heading--6 {
+	padding: 0.2em 0;
 	font-family: @font__h4--font-family;
 	font-size: bkscale(@font__h4--font-size, 0.8);
 	font-weight: @font__h4--font-weight;
 	line-height: bkscale(@font__h4--line-height, 0.8);
 	letter-spacing: bkscale(@font__h4--letter-spacing, 0.8);
 	color: @color__h4--text;
+
+	@media @tablet {
+		font-size: bkscale(@font__h4--font-size, 0.7);
+		line-height: bkscale(@font__h4--line-height, 0.7);
+		letter-spacing: bkscale(@font__h4--letter-spacing, 0.7);
+	}
+
+	@media @mobile {
+		font-size: bkscale(@font__h4--font-size, 0.6);
+		line-height: bkscale(@font__h4--line-height, 0.6);
+		letter-spacing: bkscale(@font__h4--letter-spacing, 0.6);
+	}
 }
 
-p, label {
+p, .paragraph, label {
 	font-family: @font__p--font-family;
 	font-size: @font__p--font-size;
 	font-weight: @font__p--font-weight;
 	line-height: @font__p--line-height;
 	letter-spacing: @font__p--letter-spacing;
+	color: @color__p--text;
+
+	@media @tablet {
+		font-size: bkscale(@font__p--font-size, 0.9);
+		line-height: bkscale(@font__p--line-height, 0.9);
+		letter-spacing: bkscale(@font__p--letter-spacing, 0.9);
+	}
+
+	@media @mobile {
+		font-size: bkscale(@font__p--font-size, 0.8);
+		line-height: bkscale(@font__p--line-height, 0.85);
+		letter-spacing: bkscale(@font__p--letter-spacing, 0.8);
+	}
+}
+
+// ------------------------------
+// #Bold, Italic, Underlined
+// ------------------------------
+
+b, strong {
+	font-weight: 900;
+}
+
+u {
+	text-decoration: none;
+	border-bottom: 1px solid;
+}
+
+// ------------------------------
+// #Span
+// ------------------------------
+
+span {
+	background-color: transparent;
 	color: @color__p--text;
 }
 
@@ -101,29 +213,77 @@ p, label {
 // ------------------------------
 
 a {
-	color: @color__link--text;
-	box-shadow: inset 0px -1px 0px 0px @color__link--text;
 	display: inline-block;
-	line-height: 1.5;
+	color: @color__p--text;
+	line-height: 1.5em;
+	overflow: visible;
+	border-bottom: 4px solid fade(@color__link--text, 80%);
+	background-color: transparent;
+	margin: -2px -2px -4px;
+	padding: 0 2px;
+	height: auto;
+	.transition(all, 0.15s, ease-in);
 
-    &:hover {
+    &, &:hover {
         text-decoration: none;
-		box-shadow: inset 0px -2px 0px 0px @color__link--text;
     }
+	
+	&:hover {
+		background-color: fade(@color__link--text, 60%);
+		border-bottom: 4px solid fade(@color__link--text, 80%);
+		.transition(all, 0.15s, ease-in);
+	}
 }
 
 a[class] {
-	box-shadow: none;
-
-    &:hover {
-		box-shadow: none;
+    &, &:hover {
+		border-bottom: none;
+		margin: 0;
+		padding: 0;
+		height: auto;
+		background-color: transparent;
     }
 }
 
 // ------------------------------
-// #Unordered List
+// #Small
 // ------------------------------
 
+small {
+	color: @color__p--text;
+}
+
+// ------------------------------
+// #Preformatted Text and Code
+// ------------------------------
+
+pre, code {
+	display: block;
+	margin: 1em 0;
+	padding: 1em 1.5em;
+	border: none;
+	.border-radius(0);
+	background-color: fade(@color__p--text, 10%);
+	overflow: auto;
+	
+	.paragraph;
+	font-family: monospace;
+}
+
+code {
+	border-left: 10px solid @color__link--text;
+	background-color: fade(@color__p--text, 10%);
+}
+
+// ------------------------------
+// #Unordered and Ordered List
+// ------------------------------
+
+ul, ol {
+	li {
+		.paragraph;
+	}
+}
 
 ul {
 	margin: 0 0 0 1.2em;
@@ -138,11 +298,6 @@ ul {
 		}
 	}
 }
-
-// ------------------------------
-// #Ordered List
-// ------------------------------
-
 
 ol {
 	margin: 1em 0;
@@ -162,16 +317,14 @@ ol {
 		// Custom Numbers
 
 		&:before {
-			min-width: 26px;
+			min-width: 2em;
 			padding: 0 0.4em 0 0;
 			display: inline-block;
-			left: 0;
 			position: absolute;
 			top: 0;
+			left: 0;
 			bottom: 0;
-			-webkit-box-sizing: border-box;
-			-moz-box-sizing: border-box;
-			box-sizing: border-box;
+			.box-sizing(border-box);
 			border-right: 1px solid fade(@color__p--text, 20%);
 			font-family: @font__h1--font-family;
 			content: counter(ordered-counter);
@@ -185,48 +338,43 @@ ol {
 // #Block Quote
 // ------------------------------
 
-
 blockquote {
-	quotes: "\201C""\201D""\2018""\2019";
 	position: relative;
-	font-family: @font__h1--font-family;
+	margin: 1.8em auto 1em;
 	text-align: center;
-	font-size: @font__h4--font-size;
-	line-height: @font__h4--line-height;
-	border-top: 1px solid fade(@color__p--text, 10%);
-	border-bottom: 1px solid fade(@color__p--text, 10%);
 	padding: 1.5em 50px;
 	width: 70%;
-	margin: 1.8em auto 0;
-
+	font-family: @font__p--font-family;
+	font-size: bkscale(@font__p--font-size, 1.5);
+	line-height: bkscale(@font__p--line-height, 1.5);
+	font-style: italic;
+	
 	@media @tablet-horizontal {
-		font-size: bkscale(@font__h4--font-size, 0.9);
-		line-height: bkscale(@font__h4--line-height, 0.9);
+		width: 80%;
 	}
-
+	
 	@media @tablet {
-		font-size: bkscale(@font__h4--font-size, 0.8);
-		line-height: bkscale(@font__h4--line-height, 0.8);
+		font-size: bkscale(@font__p--font-size, 1.2);
+		line-height: bkscale(@font__p--line-height, 1.2);
 		width: auto;
-		padding: 1.2em 30px;
 	}
-
-	&:before, &:after {
-		color: @color__h4--text;
+	
+	&:before,
+	&:after {
 		position: absolute;
-		font-size: 90px;
-		display: inline-block;
-		line-height: 1;
-		height: 0.5em;
-		@media @tablet {
-			font-size: 50px;
-		}
+		content: "";
+		border-bottom: 10px solid fade(@color__p--text, 10%);
+		width: 100%;
 	}
-
+	
 	&:before {
-		content: open-quote;
-		top: 10px;
+		top: 0;
 		left: 0;
+	}
+	
+	&:after {
+		right: 0;
+		bottom: 0;
 	}
 	
 	.responsivecolumns & {
@@ -246,84 +394,13 @@ blockquote {
 }
 
 // ------------------------------
-// #Pre
+// #Highlighted Text
 // ------------------------------
 
-pre {
-	display: block;
-	margin: 1em 0;
-	padding: 1em;
-	border: none;
-	border-radius: 0;
-	background-color: fade(@color__p--text, 10%);
-	overflow: auto;
-	color: @color__p--text;
+::-moz-selection {
+    background: fade(@color__link--text, 20%);
 }
 
-// ------------------------------
-// #Code
-// ------------------------------
-
-
-code {
-	font-size: 0.9em;
-	background-color: transparent;
-	color: @color__p--text;
-}
-
-// ------------------------------
-// #Table
-// ------------------------------
-
-table {
-	overflow: auto;
-	width: 100%;
-	border: none;
-	border-collapse: separate;
-	border-spacing: 2px;
-	margin: 2em 0;
-
-	@media @tablet-horizontal {
-		font-size: bkscale(@font__p--font-size, 0.9);
-		line-height: bkscale(@font__p--line-height, 0.9);
-	}
-
-	@media @tablet {
-		font-size: bkscale(@font__p--font-size, 0.8);
-		line-height: bkscale(@font__p--line-height, 0.8);
-	}
-}
-
-// Table Cell
-
-td, th {
-	border: none;
-	background-color: lighten(desaturate(@color__primary, 80%), 14%);
-	color: @color__p--text;
-}
-
-// Thead
-
-table thead td {
-	background-color: @color__primary;
-}
-
-// ------------------------------
-// #Horizontal Rule
-// ------------------------------
-
-
-hr {
-	height: 5px;
-	background-color: @color__primary;
-	border: none;
-	margin: 2em 0;
-
-	@media @tablet-horizontal {
-		height: 3px;
-	}
-
-	@media @tablet {
-		height: 1px;
-	}
+::selection {
+    background: fade(@color__link--text, 20%);
 }

@@ -12,12 +12,12 @@
 // #Global Mixins
 // ------------------------------
 
-.box-sizing--border-box() {
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-    -ms-box-sizing: border-box;
-	-o-box-sizing: border-box;
-	box-sizing: border-box;
+.box-sizing(@attribute) {
+	-webkit-box-sizing: @attribute;
+	-moz-box-sizing: @attribute;
+    -ms-box-sizing: @attribute;
+	-o-box-sizing: @attribute;
+	box-sizing: @attribute;
 }
 
 .border-radius(@radius) {
@@ -34,7 +34,7 @@
 	appearance: @property;
 }
 
-.gradient (@origin, @origin@startColor, @endColor) {
+.gradient(@origin, @origin@startColor, @endColor) {
     background-color: @startColor;
     background: -webkit-linear-gradient(@origin, @startColor, @endColor);
     background: -moz-linear-gradient(@origin, @startColor, @endColor);
@@ -43,10 +43,10 @@
     background: linear-gradient(@origin, @startColor, @endColor);
 }
 
-.box-shadow (@x, @y, @blur, @color) {
-	-webkit-box-shadow: @x @y @blur @color;
-	-moz-box-shadow: @x @y @blur @color;
-	box-shadow: @x @y @blur @color;
+.box-shadow(@shadow) {
+	-webkit-box-shadow: @shadow;
+	-moz-box-shadow: @shadow;
+	box-shadow: @shadow;
 }
 
 .ellipsis(@width) {
@@ -56,7 +56,7 @@
 	text-overflow: ellipsis;
 }
 
-.clearfix {
+.clearfix() {
 	&:after {
 		content: " ";
 		display: block;
@@ -67,12 +67,6 @@
 // ------------------------------
 // #Animation
 // ------------------------------
-
-.hardware-acceleration {
-	-webkit-transform: translate3d(0, 0, 0);
-	-webkit-backface-visibility: hidden;
-	-webkit-perspective: 1000;
-}
 
 .transition(@property, @duration, @ease) {
 	-webkit-transition: @property @duration @ease;
@@ -120,6 +114,36 @@
 	-ms-transform: translate(@distance);
 	-o-transform: translate(@distance);
 	transform: translate(@distance);
+}
+
+// 3D Animations
+
+.transform-translate3d(@distance) {
+	-webkit-transform: translate3d(@distance);
+	-moz-transform: translate3d(@distance);
+	-ms-transform: translate3d(@distance);
+	-o-transform: translate3d(@distance);
+	transform: translate3d(@distance);
+}
+
+.backface-visibility(@attribute) {
+	-webkit-backface-visibility: @attribute;
+	-moz-backface-visibility: @attribute;
+	backface-visibility: @attribute;
+}
+
+.perspective(@attribute) {
+	-webkit-perspective: @attribute;
+	-moz-perspective: @attribute;
+	perspective: @attribute;
+}
+
+// Hardware Acceleration
+
+.hardware-acceleration {
+	.transform-translate3d(0, 0, 0);
+	.backface-visibility(hidden);
+	.perspective(1000);
 }
 
 // ------------------------------
