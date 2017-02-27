@@ -17,35 +17,27 @@ table {
 	border-collapse: separate;
 	border-spacing: 0;
 	margin: 1.5em 0;
-	
 	.paragraph;
 }
 
 // Table Cell
 
 td, th {
-	p;
 	border: none;
 	background-color: transparent;
 	word-break: break-all;
-
-	@media @tablet {
-		padding: 0.5em;
-	}
 }
 
 th {
-	font-family: @font__h4--font-family;
-	font-weight: @font__h4--font-weight;
-	border-bottom: 3px solid fade(@color__p--text, 10%);
-	color: fade(@color__p--text, 60%);
 	padding: 0.5em;
+	border-bottom: 3px solid @color-text--light;
+	.label-text;
 }
 
 td {
-	border-bottom: 1px solid fade(@color__p--text, 10%);
-	line-height: bkscale(@font__p--line-height, 0.8);
-	padding: 0.8em 0.5em;
+	border-bottom: 1px solid @color-text--light;
+	line-height: 1.2em;
+	padding: 1em 0.5em;
 }
 
 // Table Head

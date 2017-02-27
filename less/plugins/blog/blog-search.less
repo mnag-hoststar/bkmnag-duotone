@@ -15,60 +15,8 @@
 
 .blogsearch {
 	.legend {
-        position: absolute;
-        top: 0;
-        right: auto;
-        bottom: 0;
-        left: 0;
-        padding: 0 26px;
-        color: @color__blogsearch-legend--text;
-        background-color: @color__blogsearch-legend--background;
-        width: 33%;
-        font-family: @font__h2--font-family;
-        font-size: @font__h2--font-size;
-        line-height: bkscale(@font__button--font-size, 3);
-        height: bkscale(@font__button--font-size, 3);
-        text-align: right;
-
-       @media @tablet {
-            position: relative;
-            width: 100%;
-            margin-bottom: 10px;
-            text-align: left;
-            height: auto;
-            line-height: 1;
-            padding: 20px;
-        }
-    }
-}
-
-// Column styles
-
-.responsivecolumns {
-    .blogsearch {
-		.legend {
-			width: auto;
-			display: block;
-			float: none;
-			position: relative;
-			text-align: left;
-			padding: 0;
-			background: none;
-		}
-	}
-	
-	.columns-three-left,
-    .columns-three-right,
-    .columns-three-middle,
-    .columns-four-first,
-    .columns-four-second,
-    .columns-four-third,
-    .columns-four-fourth {
-        .blogsearch {
-			.legend {
-				border-bottom: none;
-			}
-		}
+		display: block;
+		h2;
     }
 }
 	
@@ -207,7 +155,6 @@
                 font-family: 'FontAwesome', sans-serif;
                 position: absolute;
                 text-align: center;
-                line-height: bkscale(@font__button--font-size, 3);
                 color: @color__button--text;
                 font-size: 18px;
                 top: 0;
@@ -219,7 +166,6 @@
         }
         @media @mobile {
             &:after {
-                line-height: bkscale(@font__button--font-size, 2.2);
             }
         }
     }

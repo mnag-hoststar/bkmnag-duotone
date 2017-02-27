@@ -17,8 +17,8 @@
 @message-color--standard: #6e6e6e;
 @message-color--error: #d20000;
 @message-color--warning: #ffbc0b;
-@message-color--information: #aae6e8;
-@message-color--success: #bae914;
+@message-color--information: #3ec9ff;
+@message-color--success: #9ac900;
 @message-color--not-found: #6e6e6e;
 
 // ------------------------------
@@ -30,11 +30,9 @@
 .message {
     position: relative;
     padding: 1em;
-	padding-left: 3.5em;
+	padding-left: 4em;
     margin: 1em auto;
-    background-color: #fff;
-	border: 1px solid;
-	border-color: @message-color--standard;
+	min-height: 3em;
     .clearfix();
 
     // Message Heading, Paragraph
@@ -45,14 +43,23 @@
     }
 	
 	h3 {
-		margin-bottom: 10px;
-		font-size: @font__h3--font-size;
-		line-height: @font__h3--line-height;
+		font-size: 1.8em;
+		line-height: 1em;
+		margin-top: -0.1em;
+		margin-bottom: 0.4em;
+		color: #fff;
 	}
 	
 	p {
+		padding: 0;
+		font-family: @font__h4--font-family;
+		line-height: @font__h4--line-height;
 		font-size: @font__p--font-size;
-		line-height: @font__p--line-height;
+		color: #fff;
+		
+		.make-font-a-little-smaller(@font__p--font-size);
+		.make-font-smaller(@font__p--font-size);
+		.make-font-a-lot-smaller(@font__p--font-size);
 	}
 
     // Consequetive Paragraphs
@@ -72,98 +79,71 @@
     &:before {
         font-family: 'FontAwesome', sans-serif;
         display: block;
-        width: 2.7em;
+        width: 2.4em;
         position: absolute;
-        top: -0.15em;
+		top: 0.5em;
         left: 0;
         bottom: 0;
         text-align: center;
-        padding-top: 0.7em;
-		font-size: 1.4em;
+		font-size: 1.8em;
+		line-height: 1em;
+		.border-radius(50%);
+		color: #fff;
     }
 }
 
 // Error
 
 .message--error {
-	border-color: @message-color--error;
-
-	// Message Heading, Paragraph, Icon
-	*, &:before {
-		color: darken(@message-color--error, 20%);
-	}
+	background-color: @message-color--error;
 
 	// Icon
 	&:before {
 		// Exclamation circle
-		content: "\f06a";
+		content: "\f12a";
 	}
 }
 
 // Warning
 
 .message--warning {
-	border-color: @message-color--warning;
-
-	// Message Heading, Paragraph
-	* {
-		color: darken(@message-color--warning, 30%);
-	}
+	background-color: @message-color--warning;
 
 	// Icon
 	&:before {
 		// Exclamation triangle
 		content: "\f071";
-		color: darken(@message-color--warning, 10%);
 	}
 }
 
 // Information
 
 .message--information {
-	border-color: @message-color--information;
-	color: @message-color--information;
-
-	// Message Heading, Paragraph
-	* {
-		color: darken(@message-color--information, 50%);
-	}
+	background-color: @message-color--information;
 
 	// Icon
 	&:before {
 		// Circled i
-		content: "\f05a";
-		color: darken(@message-color--information, 30%);
+		content: "\f129";
 	}
 }
 
 // Success
 
 .message--success {
-	border-color: @message-color--success;
-
-	// Message Heading, Paragraph
-	* {
-		color: darken(@message-color--success, 30%);
-	}
+	background-color: @message-color--success;
 
 	// Icon
 	&:before {
 		// Check mark
 		content: "\f00c";
-		color: darken(@message-color--success, 20%);
 	}
 }
 
 // Not Found
 
 .message--not-found {
-	border-color: @message-color--not-found;
-
-	// Heading 3, Paragraph, Icon
-	*, &:before {
-		color: darken(@message-color--not-found, 20%);
-	}
+	background-color: @message-color--not-found;
 
 	// Icon
 	&:before {
@@ -212,9 +192,53 @@
 // ------------------------------
 
 .bk-cookie-container {
-	// There are no styles for this yet.
-	// But the structure is here, just in case.
-	p, a {}
-	p a {}
-	.bk-cookie-close-button {}
+	display: none; // TODO: set to "table" before publishing the template.
+	text-align: left;
+	border: none;
+	position: fixed;
+	top: 80px;
+	bottom: unset;
+	left: 0;
+	right: 0;
+	margin: 0;
+	text-align: center;
+	width: 100%;
+	
+	p, a, .bk-cookie-close-button {
+		display: table-cell;
+	}
+	
+	p, a {
+		.paragraph;
+		color: #fff;
+		
+		&, &:hover {
+			color: #fff;
+		}
+	}
+	
+	p {
+		padding: 0.5em 1em 1em 1em;
+	}
+	
+	.bk-cookie-close-button {
+		position: static;
+		vertical-align: middle;
+		padding: 1em 2em;
+		.appearance(none);
+		background-color: @color__button--background;
+		font-family: @font__button--font-family;
+		font-size: @font__button--font-size;
+		font-weight: @font__button--font-weight;
+		line-height: @font__button--line-height;
+		letter-spacing: @font__button--letter-spacing;
+		color: @color__button--text;
+		text-transform: uppercase;
+		text-align: center;
+		
+		&:hover {
+			padding: 1em 2em;
+			background-color: @color__button--background;
+		}
+	}
 }

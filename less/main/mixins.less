@@ -49,8 +49,7 @@
 	box-shadow: @shadow;
 }
 
-.ellipsis(@width) {
-	width: @width;
+.ellipsis() {
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
@@ -61,6 +60,12 @@
 		content: " ";
 		display: block;
 		clear: both;
+	}
+}
+
+.focus {
+	&:focus {
+        outline: none;
 	}
 }
 
@@ -144,6 +149,35 @@
 	.transform-translate3d(0, 0, 0);
 	.backface-visibility(hidden);
 	.perspective(1000);
+}
+
+// ------------------------------
+// #Font Mixins
+// ------------------------------
+
+// These two mixins only make the font smaller when its
+// over a certain size. Otherwise it will be too small
+// on mobile.
+
+.make-font-a-little-smaller(@font-size, @size-mobile: 0.95) when (@font-size >= 13px) {
+	@media @mobile {
+		font-size: @font-size*@size-mobile;
+	}
+}
+
+.make-font-smaller(@font-size, @size-mobile: 0.9) when (@font-size >= 15px) {
+	@media @mobile {
+		font-size: @font-size*@size-mobile;
+	}
+}
+
+.make-font-a-lot-smaller(@font-size, @size-tablet: 0.9, @size-mobile: 0.8) when (@font-size >= 17px) {
+	@media @tablet {
+		font-size: @font-size*@size-tablet;
+	}
+	@media @mobile {
+		font-size: @font-size*@size-mobile;
+	}
 }
 
 // ------------------------------

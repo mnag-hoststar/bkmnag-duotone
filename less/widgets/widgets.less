@@ -17,13 +17,23 @@
 	width: 100%;
 }
 
+.widget--zone-widget,
+.widget {
+	margin: 0;
+    padding: 1em 0;
+}
+
 .template__content {
 	> .widget,
 	.bk-zone > .widget {
 		> * {
 			width: 80%;
 			max-width: @max-layout-width;
-			margin: 1em auto;
+			margin: 0 auto;
+
+			@media @tablet {
+				width: 90%;
+			}
 		}
 	}
 	
@@ -33,6 +43,7 @@
 		margin: 1em 0;
 	}
 }
+
 
 // -----------------------------
 // #Columns
@@ -98,7 +109,7 @@
 
 hr.line__rule {
 	height: 3px;
-	background-color: darken(@color__container--background, 20%);
+	background-color: fade(@color__p--text, 60%);
 }
 
 // -----------------------------

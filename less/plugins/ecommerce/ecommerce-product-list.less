@@ -202,7 +202,6 @@
         }
         @media @mobile {
             &:after {
-                line-height: bkscale(@font__button--font-size, 2.2);
             }
         }
     }
@@ -312,8 +311,6 @@
 .ecomproductslist .listing-order {
     display: none;
     .clearfix();
-    font-size: bkscale(@font__p--font-size, 0.72);
-    line-height: bkscale(@font__p--line-height, 0.72);
     color: fade(@color__p--text, 80%);
     border-bottom: 1px solid fade(@color__p--text, 16%);
 	padding: 20px 70px;
@@ -323,8 +320,6 @@
     }
     @media @tablet {
         padding: 12px 20px;
-        font-size: bkscale(@font__p--font-size, 0.65);
-        line-height: bkscale(@font__p--line-height, 0.65);
     }
 }
 
@@ -477,12 +472,9 @@
 // Item Title
 
 .product-item-title {
-    font-size: @font__h3--font-size;
-    line-height: @font__h3--line-height;
+	h3;
 
     @media @tablet {
-        font-size: bkscale(@font__h3--font-size, 0.8);
-        line-height: bkscale(@font__h3--line-height, 0.8);
     }
      // Title Links
 
@@ -503,22 +495,15 @@
 // ------------------------------
 
 .ecomfeaturedproducts .listing-title {
-    background-color: @color__secondary;
-    font-family: @font__h2--font-family;
-    font-size: @font__h2--font-size;
-    color: @color__p--text;
-	 padding: 26px 70px;
+	h2;
+	padding: 26px 70px;
 
     @media @tablet-horizontal {
         padding: 26px 40px;
-        font-size: bkscale(@font__h2--font-size, 0.8);
-        line-height: bkscale(@font__h2--line-height, 0.8);
     }
 
     @media @tablet {
         padding:  20px;
-        font-size: bkscale(@font__h2--font-size, 0.7);
-        line-height: bkscale(@font__h2--line-height, 0.7);
     }
 	
 	// Column styles

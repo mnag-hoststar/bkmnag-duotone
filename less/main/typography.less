@@ -5,6 +5,7 @@
 // #Content Widget
 // #General Typography
 // #Bold, Italic, Underlined
+// #Label
 // #Span
 // #Link
 // #Small
@@ -29,53 +30,41 @@
 
 h1, h2, h3, h4, h5, h6 {
 	margin: 0;
-	padding: 0.8em 0;
+	padding: 0.5em 0;
 	
 	+ h2, + h3, + h4, + h5, + h6 {
 		padding-top: 0;
 	}
 }
 
+p {
+	padding: 0.5em 0;
+}
+
 h1, .heading--1 {
 	font-family: @font__h1--font-family;
-	font-size: @font__h1--font-size;
 	font-weight: @font__h1--font-weight;
+	font-size: @font__h1--font-size;
 	line-height: @font__h1--line-height;
 	letter-spacing: @font__h1--letter-spacing;
 	color: @color__h1--text;
-
-	@media @tablet {
-		font-size: bkscale(@font__h1--font-size, 0.9);
-		line-height: bkscale(@font__h1--line-height, 0.9);
-		letter-spacing: bkscale(@font__h1--letter-spacing, 0.9);
-	}
-
-	@media @mobile {
-		font-size: bkscale(@font__h1--font-size, 0.8);
-		line-height: bkscale(@font__h1--line-height, 0.8);
-		letter-spacing: bkscale(@font__h1--letter-spacing, 0.8);
-	}
+	
+	.make-font-a-little-smaller(@font__h1--font-size);
+	.make-font-smaller(@font__h1--font-size);
+	.make-font-a-lot-smaller(@font__h1--font-size);
 }
 
 h2, .heading--2 {
 	font-family: @font__h2--font-family;
-	font-size: @font__h2--font-size;
 	font-weight: @font__h2--font-weight;
+	font-size: @font__h2--font-size;
 	line-height: @font__h2--line-height;
 	letter-spacing: @font__h2--letter-spacing;
 	color: @color__h2--text;
-
-	@media @tablet {
-		font-size: bkscale(@font__h2--font-size, 0.9);
-		line-height: bkscale(@font__h2--line-height, 0.9);
-		letter-spacing: bkscale(@font__h2--letter-spacing, 0.9);
-	}
-
-	@media @mobile {
-		font-size: bkscale(@font__h2--font-size, 0.8);
-		line-height: bkscale(@font__h2--line-height, 0.8);
-		letter-spacing: bkscale(@font__h2--letter-spacing, 0.8);
-	}
+	
+	.make-font-a-little-smaller(@font__h2--font-size);
+	.make-font-smaller(@font__h2--font-size);
+	.make-font-a-lot-smaller(@font__h2--font-size);
 }
 
 h3, .heading--3 {
@@ -85,105 +74,59 @@ h3, .heading--3 {
 	line-height: @font__h3--line-height;
 	letter-spacing: @font__h3--letter-spacing;
 	color: @color__h3--text;
-
-	@media @tablet {
-		font-size: bkscale(@font__h3--font-size, 0.9);
-		line-height: bkscale(@font__h3--line-height, 0.9);
-		letter-spacing: bkscale(@font__h3--letter-spacing, 0.9);
-	}
-
-	@media @mobile {
-		font-size: bkscale(@font__h3--font-size, 0.8);
-		line-height: bkscale(@font__h3--line-height, 0.8);
-		letter-spacing: bkscale(@font__h3--letter-spacing, 0.8);
-	}
+	
+	.make-font-a-little-smaller(@font__h3--font-size);
+	.make-font-smaller(@font__h3--font-size);
+	.make-font-a-lot-smaller(@font__h3--font-size);
 }
 
 h4, .heading--4 {
 	font-family: @font__h4--font-family;
-	font-size: @font__h4--font-size;
 	font-weight: @font__h4--font-weight;
+	font-size: @font__h4--font-size;
 	line-height: @font__h4--line-height;
 	letter-spacing: @font__h4--letter-spacing;
 	color: @color__h4--text;
 	text-transform: uppercase;
-
-	@media @tablet {
-		font-size: bkscale(@font__h4--font-size, 0.9);
-		line-height: bkscale(@font__h4--line-height, 0.9);
-		letter-spacing: bkscale(@font__h4--letter-spacing, 0.9);
-	}
-
-	@media @mobile {
-		font-size: bkscale(@font__h4--font-size, 0.8);
-		line-height: bkscale(@font__h4--line-height, 0.8);
-		letter-spacing: bkscale(@font__h4--letter-spacing, 0.8);
-	}
+	
+	.make-font-a-little-smaller(@font__h4--font-size);
+	.make-font-smaller(@font__h4--font-size);
+	.make-font-a-lot-smaller(@font__h4--font-size);
 }
 
 h5, .heading--5 {
-	padding: 0.4em 0;
 	font-family: @font__h4--font-family;
-	font-size: @font__h4--font-size;
 	font-weight: @font__h4--font-weight;
+	font-size: @font__h4--font-size;
 	line-height: @font__h4--line-height;
-	letter-spacing: bkscale(@font__h4--letter-spacing, 0.8);
+	letter-spacing: @font__h4--letter-spacing;
 	color: @color__h4--text;
-
-	@media @tablet {
-		font-size: bkscale(@font__h4--font-size, 0.9);
-		line-height: bkscale(@font__h4--line-height, 0.9);
-		letter-spacing: bkscale(@font__h4--letter-spacing, 0.7);
-	}
-
-	@media @mobile {
-		font-size: bkscale(@font__h4--font-size, 0.8);
-		line-height: bkscale(@font__h4--line-height, 0.8);
-		letter-spacing: bkscale(@font__h4--letter-spacing, 0.6);
-	}
+	
+	.make-font-a-little-smaller(@font__h4--font-size, 0.9);
+	.make-font-smaller(@font__h4--font-size);
+	.make-font-a-lot-smaller(@font__h4--font-size);
 }
 
 h6, .heading--6 {
-	padding: 0.2em 0;
+	padding-bottom: 0.2em;
 	font-family: @font__h4--font-family;
-	font-size: bkscale(@font__h4--font-size, 0.8);
 	font-weight: @font__h4--font-weight;
-	line-height: bkscale(@font__h4--line-height, 0.8);
-	letter-spacing: bkscale(@font__h4--letter-spacing, 0.8);
+	font-size: @font__h4--font-size*0.8;
+	line-height: @font__h4--line-height*0.8;
+	letter-spacing: @font__h4--letter-spacing*0.8;
 	color: @color__h4--text;
-
-	@media @tablet {
-		font-size: bkscale(@font__h4--font-size, 0.7);
-		line-height: bkscale(@font__h4--line-height, 0.7);
-		letter-spacing: bkscale(@font__h4--letter-spacing, 0.7);
-	}
-
-	@media @mobile {
-		font-size: bkscale(@font__h4--font-size, 0.6);
-		line-height: bkscale(@font__h4--line-height, 0.6);
-		letter-spacing: bkscale(@font__h4--letter-spacing, 0.6);
-	}
+	
+	.make-font-a-little-smaller(@font__h4--font-size, 0.7);
+	.make-font-smaller(@font__h4--font-size, 0.7);
+	.make-font-a-lot-smaller(@font__h4--font-size, 0.7, 0.6);
 }
 
-p, .paragraph, label {
-	font-family: @font__p--font-family;
-	font-size: @font__p--font-size;
-	font-weight: @font__p--font-weight;
-	line-height: @font__p--line-height;
-	letter-spacing: @font__p--letter-spacing;
-	color: @color__p--text;
-
-	@media @tablet {
-		font-size: bkscale(@font__p--font-size, 0.9);
-		line-height: bkscale(@font__p--line-height, 0.9);
-		letter-spacing: bkscale(@font__p--letter-spacing, 0.9);
-	}
-
-	@media @mobile {
-		font-size: bkscale(@font__p--font-size, 0.8);
-		line-height: bkscale(@font__p--line-height, 0.85);
-		letter-spacing: bkscale(@font__p--letter-spacing, 0.8);
-	}
+p, .paragraph {
+	// This is already defined in the html tag.
+	
+	.make-font-a-little-smaller(@font__p--font-size);
+	.make-font-smaller(@font__p--font-size);
+	.make-font-a-lot-smaller(@font__p--font-size);
 }
 
 // ------------------------------
@@ -200,12 +143,21 @@ u {
 }
 
 // ------------------------------
+// #Label
+// ------------------------------
+
+label, .label-text {
+	font-family: @font__h4--font-family;
+	font-size: 0.9em;
+	color: @color-text--faded;
+}
+
+// ------------------------------
 // #Span
 // ------------------------------
 
 span {
 	background-color: transparent;
-	color: @color__p--text;
 }
 
 // ------------------------------
@@ -215,14 +167,14 @@ span {
 a {
 	display: inline-block;
 	color: @color__p--text;
-	line-height: 1.5em;
+	line-height: 1.3em;
 	overflow: visible;
-	border-bottom: 4px solid fade(@color__link--text, 80%);
+	border-bottom: 4px solid @color-highlight--light;
 	background-color: transparent;
 	margin: -2px -2px -4px;
 	padding: 0 2px;
 	height: auto;
-	.transition(all, 0.15s, ease-in);
+	.transition(all, 0.1s, ease-in);
 
     &, &:hover {
         text-decoration: none;
@@ -230,8 +182,7 @@ a {
 	
 	&:hover {
 		background-color: fade(@color__link--text, 60%);
-		border-bottom: 4px solid fade(@color__link--text, 80%);
-		.transition(all, 0.15s, ease-in);
+		border-bottom: 4px solid @color-highlight--light;
 	}
 }
 
@@ -263,7 +214,7 @@ pre, code {
 	padding: 1em 1.5em;
 	border: none;
 	.border-radius(0);
-	background-color: fade(@color__p--text, 10%);
+	background-color: @color-text--lightest;
 	overflow: auto;
 	
 	.paragraph;
@@ -271,8 +222,7 @@ pre, code {
 }
 
 code {
-	border-left: 10px solid @color__link--text;
-	background-color: fade(@color__p--text, 10%);
+	border-left: 10px solid @color-highlight;
 }
 
 // ------------------------------
@@ -310,10 +260,6 @@ ol {
 		margin-bottom: 1em;
 		list-style-type: none;
 
-		@media @tablet {
-			padding-left: 2.5em;
-		}
-
 		// Custom Numbers
 
 		&:before {
@@ -325,7 +271,7 @@ ol {
 			left: 0;
 			bottom: 0;
 			.box-sizing(border-box);
-			border-right: 1px solid fade(@color__p--text, 20%);
+			border-right: 1px solid @color-text--lighter;
 			font-family: @font__h1--font-family;
 			content: counter(ordered-counter);
 			counter-increment: ordered-counter;
@@ -344,18 +290,16 @@ blockquote {
 	text-align: center;
 	padding: 1.5em 50px;
 	width: 70%;
-	font-family: @font__p--font-family;
-	font-size: bkscale(@font__p--font-size, 1.5);
-	line-height: bkscale(@font__p--line-height, 1.5);
 	font-style: italic;
+	font-family: @font__p--font-family;
+	font-size: 1.5em;
+	line-height: 1.5em;
 	
 	@media @tablet-horizontal {
 		width: 80%;
 	}
 	
 	@media @tablet {
-		font-size: bkscale(@font__p--font-size, 1.2);
-		line-height: bkscale(@font__p--line-height, 1.2);
 		width: auto;
 	}
 	
@@ -363,7 +307,7 @@ blockquote {
 	&:after {
 		position: absolute;
 		content: "";
-		border-bottom: 10px solid fade(@color__p--text, 10%);
+		border-bottom: 10px solid @color-text--lightest;
 		width: 100%;
 	}
 	
@@ -398,9 +342,9 @@ blockquote {
 // ------------------------------
 
 ::-moz-selection {
-    background: fade(@color__link--text, 20%);
+    background: @color-highlight--lighter;
 }
 
 ::selection {
-    background: fade(@color__link--text, 20%);
+    background: @color-highlight--lighter;
 }

@@ -99,11 +99,6 @@
         padding: 0;
         .heading--2;
         color: @color__blogpost-title--text;
-
-        @media @tablet {
-            font-size: bkscale(@font__h2--font-size, 0.7);
-            line-height: bkscale(@font__h2--line-height, 0.7);
-        }
     }
 }
 
@@ -127,16 +122,6 @@
             color: fade(@color__p--text, 80%);
             display: block;
             margin-bottom: 2em;
-
-            @media @tablet-horizontal {
-                font-size: bkscale(@font__p--font-size, 0.9);
-                line-height: bkscale(@font__p--line-height, 0.9);
-            }
-
-            @media @tablet {
-                font-size: bkscale(@font__p--font-size, 0.8);
-                line-height: bkscale(@font__p--line-height, 0.8);
-            }
         }
     }
 	
@@ -183,18 +168,6 @@
         // Links
 
         a {
-            .underline;
-
-            @media @tablet-horizontal {
-                font-size: bkscale(@font__p--font-size, 0.9);
-                line-height: bkscale(@font__p--line-height, 0.9);
-            }
-
-            @media @tablet {
-                font-size: bkscale(@font__p--font-size, 0.8);
-                line-height: bkscale(@font__p--line-height, 0.8);
-            }
-
             &:first-letter {
                 text-transform: uppercase;
             }

@@ -30,7 +30,10 @@ html, body {
     background-color: @color__body--background;
 	text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
 	text-rendering: optimizeLegibility !important;
-	-webkit-font-smoothing: antialiased !important;
+	
+	.make-font-a-little-smaller(@font__p--font-size);
+	.make-font-smaller(@font__p--font-size);
+	.make-font-a-lot-smaller(@font__p--font-size);
 	
 	// iOS fix of VH unit
     width: -webkit-calc(100% - 0px);
