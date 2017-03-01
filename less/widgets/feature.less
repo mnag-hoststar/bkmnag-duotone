@@ -7,13 +7,9 @@
 // Header Feature
 
 .header-feature {
-    @media @mobile {
-        .flex-display;
-        .flex-direction(column);
-    }
-
-    [data-widget-type="feature"] {
-        .flex-order(2);
+    .widget[data-widget-type="feature"] {
+    	overflow: hidden;
+		padding: 0;
     }
 }
 
@@ -50,7 +46,7 @@
 
 .feature__content-wrap {
     position: relative;
-    .flex-display;
+    .display-flex;
     .align-items(center);
 
     height: 900px;

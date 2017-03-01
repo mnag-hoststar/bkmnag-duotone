@@ -11,114 +11,19 @@
 // #Image
 // ------------------------------
 
-// Image Link
-
-.image-link {
-    display: inline-block;
-    overflow: visible;
-}
-
-// Image Figure
-
-.imagewidget__figure {
-    margin: 0;
-}
-
-// Image Alignment
-
-.imagewidget__caption,
-.imagewidget {
-    text-align: center;
-}
-
-// Image Caption
-
-.imagewidget__caption {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-
-    .flex-display;
-    .flex-direction(column);
-    .justify-content(center);
-
-    height: 100%;
-    margin: 0;
-    padding: 30px;
-    background-color: fade(@color__image-caption--background, 50%);
-    text-align: center;
-
-    @media @tablet-horizontal {
-        padding: 10px 25px 15px;
-    }
-
-    @media @tablet {
-        padding: 5px 20px 5px;
-    }
-}
-
-// Image Title
-
-.imagewidget .image-title:after {
-    margin: 0 auto;
-}
-
 // ------------------------------
 // #Title & Description
 // ------------------------------
 
-.responsiveslideshow__image-title,
-.responsiveslideshow__image-description,
-.imagewidget__image-title,
-.imagewidget__image-description {
-    width: 100%;
-    max-width: 850px;
-    margin: 0 auto;
-    text-align: center;
-}
-
 // Image Title
 
-.responsiveslideshow__image-title,
-.imagewidget__image-title {
-    font-family: @font__feature-headline--font-family;
-    font-size: 32px;
-    font-weight: @font__feature-headline--font-weight;
-    line-height: 40px;
-    letter-spacing: 2px;
-    color: @color__feature-headline--text;
-    text-transform: uppercase;
-
-    @media @tablet {
-        font-size: 28px;
-        line-height: 32px;
-    }
-    @media @mobile {
-        font-size: 22px;
-        line-height: 20px;
-    }
+.image-title {
+	.heading--4;
+	color: @color__image-title--text;
 }
 
 // Image Description
 
-.responsiveslideshow__image-description,
-.imagewidget__image-description,
-.gallery__image-description {
-    font-family: @font__feature-strapline--font-family;
-    font-size: @font__feature-strapline--font-size;
-    font-weight: @font__feature-strapline--font-weight;
-    line-height: @font__feature-strapline--line-height;
-    letter-spacing: @font__feature-strapline--letter-spacing;
-    color: @color__feature-strapline--text;
-
-    @media @tablet {
-        font-size: 12px;
-        line-height: 30px;
-    }
-    @media @mobile {
-        font-size: 11px;
-        line-height: 18px;
-    }
+.image-description {
+	color: @color__image-description--text;
 }

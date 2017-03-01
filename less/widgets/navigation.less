@@ -4,11 +4,10 @@
 //
 // #Logo & Company Name
 // #Navigation
-// #Navigation Overlay
-// #Navigation Body and Toggle Button
+// #Navigation Toggle Button
+// #Navigation Body
 // #Navigation List
 // #Navigation Items
-// #Navigation Toggle
 //
 // ----------------------------------------
 
@@ -17,18 +16,27 @@
 // ------------------------------
 
 .template__company {
-	&,
+	display: table;
+	float: left;
+	margin-right: 1em;
+	padding: 0;
+	
+	@media @tablet {
+		margin-right: 4em;
+	}
+	
 	.widget {
 		display: table-cell;
-    	vertical-align: middle;
+		vertical-align: middle;
 	}
 }
 
 .logo {
-	padding-right: 20px;
+	padding-right: 1em;
+    font-size: 1em;
 	
 	&__logo-image {
-		max-height: 40px;
+		max-height: 3em;
 	}
 }
 
@@ -41,17 +49,18 @@
 		font-family: @font__companyname--font-family;
 		font-size: @font__companyname--font-size;
 		font-weight: @font__companyname--font-weight;
-		line-height: font__companyname--line-height;
+		line-height: @font__companyname--line-height;
 		letter-spacing: @font__companyname--letter-spacing;
 		color: @color__companyname--text;
 		text-transform: uppercase;
 
-		&:hover {
+		.make-font-a-little-smaller(@font__companyname--font-size);
+		.make-font-smaller(@font__companyname--font-size);
+		.make-font-a-lot-smaller(@font__companyname--font-size);
+
+		&:hover,
+		&:active {
 			text-decoration: none;
-		}
-		@media @tablet-horizontal, @tablet {
-			display: inline-block;
-			vertical-align: middle;
 		}
 	}
 }
@@ -60,10 +69,12 @@
 // #Navigation
 // ------------------------------
 
-.template__navigation {
-}
+.template__navigation {}
 
 .widget[data-widget-type="extendednavigation"] {
+	padding: 0;
+	position: static;
+	
 	&.open {
 		@media @tablet {
 			position: absolute;
@@ -76,75 +87,11 @@
 }
 
 // ------------------------------
-// #Navigation Overlay
+// #Navigation Toggle Button
 // ------------------------------
-
-// Open Navigation Page Overlay that appears on
-// tablet sizes.
-
-.extendednavigation {
-	@media @tablet {
-		&:before {
-			content: "";
-			display: block;
-			position: fixed;
-			top: 0;
-			right: 0;
-			bottom: 0;
-			left: 0;
-			background: #000;
-			opacity: 0;
-			.transition(all, 0.5s, ease);
-			height: 0;
-		}
-
-		&.open:before {
-			height: auto;
-			margin: 0 auto;
-			background-color: @color__h1--text;
-			opacity: 1;
-		}
-	}
-}
-
-// ------------------------------
-// #Navigation Body and Toggle Button
-// ------------------------------
-
-// Navigation Body
-
-.navigation-body {
-	.transition(opacity, 0.8s, ease);
-	
-	@media @tablet {
-		outline: 0;
-		height: 0;
-		width: 0;
-		opacity: 0;
-	}
-	
-	// When Navigation is open
-
-	.open & {
-		display: block;
-		opacity: 1;
-		width: auto;
-		overflow: auto;
-		position: fixed;
-		right:0;
-		top: 0;
-		bottom: 0;
-		left: 0;
-		height: 100%;
-		opacity: 1;
-
-		@media @mobile {
-			padding-bottom: 45px;
-		}
-	}
-}
 
 // Navigation Toggle Button
+// It only appears on tablet and mobile sizes.
 
 .navigation-toggle {
 	display: none;
@@ -152,31 +99,40 @@
 	@media @tablet {
 		
 		// Displays as Icon's Middle Bar
-		
-		.hardware-acceleration;
-		.transition(all, 0.25s, ease-in-out);
+		z-index: 100;
 		cursor: pointer;
-		background-color: @color__feature-headline--text;
+		background: @color__navigation--text;
 		background-clip: content-box;
-		width: 47px;
-		height: 47px;
-		margin-left: auto;
-		padding: 22px 10px;
-		position: relative;
-		text-indent: 200%;
+		width: 28px;
+		height: 3px;
+		padding: 0;
 		display: block;
+		position: absolute;
+		top: 0;
+		right: 0;
+		margin: 28px 20px;
+		font-size: 26px;
+		text-indent: 10000px;
+		.transition(background, 0s, ease-in, 0.05s);
+
+		.make-font-a-little-smaller(@font__companyname--font-size);
+		.make-font-smaller(@font__companyname--font-size);
+		.make-font-a-lot-smaller(@font__companyname--font-size);
 
 		// Top and Bottom Navigation Item Bar
 
-		&:after, &:before {
+		&:after,
+		&:before {
 			content: "";
 			height: 3px;
-			width: 27px;
+			width: 28px;
 			position: absolute;
 			display: block;
-			background: @color__feature-headline--text;
+			background-color: @color__navigation--text;
 			margin-right: 0;
 			margin-left: 0;
+			.transition-duration-2items(0.05s, 0.05s);
+			.transition-delay-2items(0.05s, 0s);
 
 			@media @mobile {
 				height: 2px;
@@ -186,18 +142,23 @@
 		// Top Bar
 		
 		&:before {
-			top: 13px;
+			top: 0.4em;
+		  	.transition-property-2items(top, transform);
 		}
 
 		// Bottom Bar
 		
 		&:after {
-			bottom: 13px;
+			bottom: 0.4em;
+			.transition-property-2items(bottom, transform);
 		}
-	}
 
-	&:hover {
-		opacity: .6;
+		&:hover,
+		&:active {
+			&, &:before, &:after {
+				background-color: @color__navigation--text;
+			}
+		}
 	}
 
 	// Toggle Button Open
@@ -207,30 +168,63 @@
 			
 			// Middle bar
 			
-			position: relative;
-			background-color: fade(@color-swatch7, 0%);
+			background: transparent;
+			
+			// Top and bottom bar
+			
+			&:before,
+			&:after {
+			  .transition-delay-2items(0s, 0.05s);
+			}
 			
 			// Top Bar
 
 			&:before {
-				top: 23px;
+				top: 0;
 				background: @color__navigation--text;
 				.transform-rotate(45deg);
-
-				@media @mobile {
-					top: 21px;
-				}
 
 			}
 			
 			// Bottom Bar
 
 			&:after {
-				bottom: 21px;
+				bottom: 0;
 				background: @color__navigation--text;
 				.transform-rotate(-45deg);
 			}
-			
+		}
+	}
+}
+
+// ------------------------------
+// #Navigation Body
+// ------------------------------
+
+// Dark overlay on tablet and mobile.
+
+.navigation-body {
+	.transition(opacity, 0s, ease);
+	
+	// This is only shown in Tablet and Mobile
+	
+	@media @tablet {
+		outline: 0;
+		height: 0;
+		width: 0;
+		opacity: 0;
+		
+		// When Navigation is open
+
+		.open & {
+			display: block;
+			opacity: 1;
+			width: auto;
+			overflow: auto;
+			height: auto;
+			height: 100vh;
+			background-color: rgba(0,0,0, 0.9);
+			.transition(opacity, 0.25s, ease);
 		}
 	}
 }
@@ -241,103 +235,77 @@
 // ------------------------------
 
 .navigation-list {
-	display: table;
-    height: 100%;
-    width: auto;
+	padding: 1em 0;
 	
     @media @tablet {
 		display: block;
 		height: auto;
 		max-width: 500px;
-		margin: 13% auto 0;
+		margin: 3em auto 0;
 		text-align: center;
 	}
-
-    @media @mobile {
-    	margin-top: 20%;
-    }
 }
 
 // ------------------------------
 // #Navigation Items
 // ------------------------------
 
-// Vertically center aligning Item names
-
-.template__navigation,
-.widget[data-widget-type="extendednavigation"],
-.extendednavigation,
-.navigation-body {
-	height: 100%;
-}
-
 // Navigation Normal Item
 
 .navigation-item {
-	display: table-cell;
-    vertical-align: middle;
-	position: relative;
+	position: static;
 	margin-bottom: 0;
 	padding: 0;
-	text-align: center;
-
-	&, * {
-		-webkit-tap-highlight-color: rgba(0,0,0,0);
+	
+    @media @tablet {
+		display: block;
+		text-align: center;
 	}
-}
-
-// Item name
-
-.navigation-item {
+	
 	.item-name {
-		.box-shadow(inset 0px 0px 0px 2px fade(@color__navigation--text, 0%));
-		padding: 1em 1.5em;
+		position: relative;
+		padding: 0 0.5em 0 1em;
 		text-transform: uppercase;
-		
 		font-family: @font__navigation--font-family;
 		font-size: @font__navigation--font-size;
 		font-weight: @font__navigation--font-weight;
 		line-height: @font__navigation--line-height;
 		letter-spacing: @font__navigation--letter-spacing;
 		color: @color__navigation--text;
-		
-		&:hover {
-			color: @color__navigation--text;
+	
+		@media @tablet {
+			padding: 0.5em 0;
 		}
-
-		@media @mobile {
-			font-size: 15px;
+	
+		.make-font-a-little-smaller(@font__navigation--font-size);
+		.make-font-smaller(@font__navigation--font-size);
+		.make-font-a-lot-smaller(@font__navigation--font-size);
+		
+		&:hover,
+		&:active {
+			color: darken(@color__navigation--text, 20%);
+			
+			@media @tablet {
+				color: darken(@color__navigation--text, 20%);
+			}
 		}
 	}
 
 	&.selected > .item-name {
-		color: @color__navigation--text--selected;
+		color: @color__navigation--text--hover;
+
+		@media @tablet {
+			color: darken(@color__navigation--text, 60%);
+		}
 	}
 
-	&.selected:hover > .item-name {
+	&.selected:hover > .item-name,
+	&.selected:active > .item-name {
 		.box-shadow(none);
 	}
 }
 
 // Navigation Folder Item
-
-.navigation-list.folder {
-	.transition(all, 0.15s, ease-in-out);
-
-	// Open Folder Navigation Item
-
-	&.open {
-		margin-bottom: 30px;
-	}
-	
-	// If the Folder has a Submenu
-
-	&.item-name--parent {
-		margin-left: .4em;
-	}
-}
-
-// Folder Item Name
 
 .navigation-item.folder {
 	
@@ -345,68 +313,91 @@
 	
 	> .item-name {
 		&:after {
+			right: 0.5em;
+			margin-left: 0.3em;
+			width: 1em;
+    		height: 1em;
+			line-height: 1em;
+			font-size: 1.2em;
 			content: "\f107";
 			font-family: 'FontAwesome', sans-serif;
-			margin-left: 0.4em;
-			display: inline-block;
-			width: 0.8em;
-			height: 0.8em;
-			line-height: 0.8em;
-			text-align: center;
-			// Folder icon animation
-			.transform-rotate(-90deg);
-			.transition(all, 0.15s, ease-in-out);
+			text-align: right;
 		}
 	}
-
-	// Selected Navigation Folder
-
-	&.selected:hover > .item-name {
-		.box-shadow(none);
-	}
-
-	// Open Navigation Folder
-
+	
 	&.folder-open > .item-name {
-		color: @color__navigation--text--selected;
-
-		&:after {
-
-			// Folder icon animation
-
-			.transform-rotate(0deg);
-		}
+		color: darken(@color__navigation--text, 20%);
 	}
 }
 
 // Navigation Folder Submenu
 
 .navigation-list--children {
-	position: absolute;
-	margin-top: 0;
-	white-space: inherit;
-	opacity: 0;
-	padding-right: 0;
-	background-color: darken(@color__h1--text, 3%);
-	.transition(opacity, 0.5s, ease-in-out);
-    overflow: visible;
+	
+	.navigation-item.folder &,
+	.navigation-item.folder:hover &,
+	.navigation-item.folder:active & {
+    	overflow: hidden;
+		opacity: 0;
+    	margin: 0;
+		height: 0;
+		position: absolute;
+		margin: 0;
+		padding: 0.5em 0;
+		background-color: @color__navigation-list--background;
+		overflow: visible;
+		text-align: center;
+		.transition(opacity, 0s, ease-in);
 
-	@media @tablet {
-		padding-top: 0;
+		@media @tablet {
+			position: static;
+			margin: 0;
+			padding: 0;
+		}
+	}
+	
+	.navigation-item.folder.folder-open & {
+    	overflow: visible;
+		display: block;
+		opacity: 1;
+		height: auto;
+		.transition(opacity, 0.15s, ease-in);
+
+		@media @tablet {
+			position: static;
+			margin: 0 0 0.5em;
+			padding: 0;
+		}
 	}
 }
+
+// Navigation Folder Submenu Single Item
+
 .navigation-item--child {
-    display: block;
-    text-align: center;
+	display: inline-block;
+
+	@media @tablet {
+		display: block;
+	}
 
 	.item-name {
-		text-overflow: ellipsis;
+		color: @color__navigation-item--text;
+		line-height: 1em;
+
+		@media @tablet {
+			padding: 1em 0;
+		}
+		
+		&:hover,
+		&:active {
+			color: @color__navigation-item--text--hover;
+		}
 	}
 
 	// Selected Folder Item
 
 	&.selected .item-name {
-		color: @color__navigation--text--selected;
+		color: @color__navigation-item--text--selected;
 	}
 }
 
@@ -415,8 +406,8 @@
 	// Open Submenu
 	
 	&.folder-open:hover .navigation-list--children,
+	&.folder-open:active .navigation-list--children,
 	&.folder-open .navigation-list--children {
 		opacity: 1;
 	}
 }
-

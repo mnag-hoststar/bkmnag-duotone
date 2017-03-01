@@ -60,9 +60,6 @@
             padding-bottom: 1em;
             font-family: @font__h1--font-family;
             text-transform: uppercase;
-            font-size: 12px;
-            letter-spacing: 2px;
-            line-height: 1;
             color: @color__p--text;
 
             &:nth-last-of-type(-n+2) {
@@ -112,8 +109,7 @@
     // Item Title
 
     .summary-item-title {
-        font-family: @font__h1--font-family;
-        font-size: @font__h4--font-size;
+		heading--4;
     }
 
 	// Item Link
@@ -171,7 +167,6 @@
 
         @media @basketsummary-medium, @mobile {
             margin: 0 -5px 0 auto;
-            width: 80px;
             max-width: 100%;
         }
 
@@ -234,7 +229,6 @@
         width: 100px;
         height: 100px;
         display: block;
-        line-height: 80px;
         background-position: -100%;
         background-color: #fff;
         padding: 10px;
@@ -244,8 +238,6 @@
         .image {
             display: inline-block;
             vertical-align: middle;
-            max-width: 80px;
-            max-height: 80px;
         }
     }
 

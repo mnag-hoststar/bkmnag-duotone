@@ -68,9 +68,7 @@
             "font-weight": "400",
             "line-height": "24px",
             "letter-spacing": "0px",
-            "color": "@color-swatch4",
-            "background-color": "@color-swatch3",
-            "background-color-hover": "darken(@color-swatch3,5%)"
+            "color": "@color-swatch4"
         }
     },
     "styles": {
@@ -84,11 +82,11 @@
             "color__body--background": "@color-swatch7",
             "color__container--background": "fade(@font-swatch5-color, 10%)",
             "color__link--text": "@color__primary",
-            "font__companyname--font-family": "@font-swatch2-font-family",
+            "font__companyname--font-family": "@font-swatch1-font-family",
             "font__companyname--font-size": "26px",
             "font__companyname--font-weight": "400",
-            "font__companyname--line-height": "32px",
-            "font__companyname--letter-spacing": "2px",
+            "font__companyname--line-height": "unit(24px*0.05, em)",
+            "font__companyname--letter-spacing": "unit(1px/10, em)",
             "color__companyname--text": "@color__body--background"
         },
         "typography": {
@@ -123,18 +121,27 @@
             "font__p--letter-spacing": "unit(@font-swatch5-letter-spacing/10, em)",
             "color__p--text": "@font-swatch5-color"
         },
-        "header": {
-            "color__header--background": "#22242b"
-        },
+		"header": {
+			"color__header--background": "@color__primary",
+			"color__header--border": "@color__primary"
+		},
+		"footer": {
+			"color__footer--background": "@color__primary",
+			"color__footer--border": "@color__secondary"
+		},
         "navigation": {
-			"color__navigation--background": "@color__primary",
-            "font__navigation--font-family": "@font-swatch6-font-family",
-            "font__navigation--font-size": "12px",
-            "font__navigation--font-weight": "900",
-            "font__navigation--line-height": "26px",
-            "font__navigation--letter-spacing": "1px",
-            "color__navigation--text": "#9a9ca5",
-            "color__navigation--text--selected": "@color__body--background"
+            "font__navigation--font-family": "@font-swatch4-font-family",
+            "font__navigation--font-size": "14px",
+            "font__navigation--font-weight": "700",
+            "font__navigation--line-height": "@font-swatch4-line-height",
+            "font__navigation--letter-spacing": "unit(1px/10, em)",
+            "color__navigation--text": "@color-swatch7",
+            "color__navigation--text--hover": "@color__secondary",
+            "color__navigation--text--selected": "@color__secondary",
+			"color__navigation-list--background": "@color__secondary",
+			"color__navigation-item--text": "@color__body--background",
+            "color__navigation-item--text--hover": "@color__primary",
+            "color__navigation-item--text--selected": "@color__primary"
         },
         "button": {
             "color__button--background": "@color__secondary",
@@ -151,6 +158,10 @@
         "form": {
             "color__form--background": "@color__container--background"
         },
+        "image": {
+			"color__image-title--text": "@color__h3--text",
+			"color__image-description--text": "@color__p--text"
+		},
         "gallery": {
             "color__gallery-caption--background": "#26292f",
             "color__gallery-title--text": "@color__body--background",
