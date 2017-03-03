@@ -159,18 +159,24 @@
             "color__form--background": "@color__container--background"
         },
         "image": {
+            "color__image--background": "@color__container--background",
 			"color__image-title--text": "@color__h3--text",
 			"color__image-description--text": "@color__p--text"
 		},
         "gallery": {
-            "color__gallery-caption--background": "#26292f",
-            "color__gallery-title--text": "@color__body--background",
-            "color__gallery-description--text": "#bebebe"
+            "color__gallery--background": "@color__container--background",
+            "color__gallery-caption--background": "@color__secondary",
+            "color__gallery-title--text": "#fff",
+            "color__gallery-description--text": "fade(#fff, 80%)"
         },
         "slideshow": {
-            "color__slideshow-caption--background": "#26292f",
-            "color__slideshow-title--text": "@color__body--background",
-            "color__slideshow-description--text": "#bebebe"
+            "color__slideshow--background": "@color__container--background",
+            "color__slideshow-caption--background": "@color__secondary",
+            "color__slideshow-title--text": "#fff",
+            "color__slideshow-description--text": "fade(#fff, 80%)",
+            "color__slideshow-pagination-item--background": "@color__secondary",
+            "color__slideshow-pagination-item--text": "#fff",
+            "color__slideshow-pagination-item--text--selected": "@color__primary"
         },
         "feature": {
             "color__feature-content--background": "#26292f",

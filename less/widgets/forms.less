@@ -25,8 +25,7 @@
 .widget[data-name="signupform"],
 .widget[data-name="contactform"],
 .widget[data-name="advancedcontactform"] {
-	margin: 1em 0;
-	padding: 2em 0;
+	.container-background-spacing();
 	background: @color__form--background;
 }
 
@@ -102,7 +101,7 @@ textarea {
     border: 1px solid @color-text--light;
 	height: 3rem;
     color: @color__p--text;
-	.transition(all, 0.1s, ease-in-out);
+	.transition();
     .border-radius(0);
     .appearance(none);
 	
@@ -184,9 +183,8 @@ input:focus {
 	
 	.label--radio,
 	.label--checkbox {
-		font-family: @font__p--font-family;
-		font-size: 1em;
-		color: @color__p--text;
+		.paragraph;
+		line-height: 1.5em;
 	}
 
 	.option-item--radio,
@@ -216,7 +214,7 @@ input:focus {
 			&:after {
 				opacity: 0;
 				position: absolute;
-				.transition(opacity, 0.1s, ease-in-out);
+				.transition(opacity, 0.1s);
 			}
 		}
 	}

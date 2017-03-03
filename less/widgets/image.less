@@ -3,7 +3,7 @@
 // ----------------------------------------
 //
 // #Image
-// #Title & Description
+// #Caption
 //
 // ----------------------------------------
 
@@ -11,9 +11,25 @@
 // #Image
 // ------------------------------
 
+.widget[data-name="image"] {
+	.container-background-spacing();
+	background: @color__image--background;
+}
+
 // ------------------------------
-// #Title & Description
+// #Caption
 // ------------------------------
+
+// Conditional if the container background 
+// is the same as the page background.
+
+.image-caption-spacing() when not (@color__container--background = @color__body--background) {
+	margin-bottom: 0;
+}
+
+.imagewidget__caption {
+	.image-caption-spacing();
+}
 
 // Image Title
 

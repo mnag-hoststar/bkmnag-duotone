@@ -4,10 +4,9 @@
 //
 // #Slideshow
 // #Slideshow Item
-// #Slide Navigation
+// #Slide Caption
 // #Slide Navigation Buttons
-// #Caption
-// #Pagination
+// #Slide Pagination
 //
 // ----------------------------------------
 
@@ -15,207 +14,194 @@
 // #Slideshow
 // ------------------------------
 
-.responsiveslideshow {
+.widget[data-name="responsiveslideshow"] .responsiveslideshow {
 	position: relative;
+	overflow: hidden;
+	width: 100%;
+	max-width: none;
+	height: 40vw;
+	padding-bottom: 40%;
+	background-color: @color__slideshow--background;
 	
-	// Slideshow Height
-	
-	.figure,
-	.slides-list {
-		min-height: 100px;
-		max-height: 700px;
-		padding-bottom: 40%;
+	@media @tablet-horizontal {
+		height: 60vw;
+		padding-bottom: 60%;
+	}
+}
 
-		@media @tablet {
-			padding-bottom: 54%;
-		}
-		@media @mobile {
-			padding-bottom: 70%;
-		}
-		
-		.columns-two-left &,
-		.columns-two-right & {
-			padding-bottom: 54%;
-		}
-	}
-
-	// Figure
-	
-	.figure {
-		background-color: transparent;
-		min-height: 0;
-		background-size: cover;
-		background-position: center;
-	}
-	
-	// Slides List
-	
-	.slides-list {
-		position: relative;
-		overflow: hidden;
-	}
+.responsiveslideshow__slides-list {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
 }
 
 // ------------------------------
 // #Slideshow Item
 // ------------------------------
 
-.responsiveslideshow {
-	.slide-item {
-		display: block;
-		position: relative;
-		top: 0;
-		left: 0;
-		right: 0;
-		bottom: 0;
-		opacity: 0;
-		.transition(all, 0.3s, ease);
-		.transform-scale(1);
+.responsiveslideshow__slide-item {
+	position: absolute;
+	display: block;
+	opacity: 0;
+	margin: 0;
+	padding: 0;
+	height: 100%;
+    width: 100%;
 
-		&.current {
-			opacity: 1;
-		}
+	&.current {
+		opacity: 1;
 	}
-
+	
 	// Prevents two slides from displaying at the same time
 	// because of slow JS state changes
-
-	.slide-item.current + .slide-item {
-		display: none;
-	}
-
-	.image {
+	
+	&.current + .slide-item {
 		display: none;
 	}
 }
 
+.responsiveslideshow .figure {
+	background-color: transparent;
+	background-size: cover;
+	background-position: center;
+	height: 100%;
+    width: 100%;
+	min-height: 0;
+}
+
+.responsiveslideshow__image {
+	display: none;
+}
+
 // ------------------------------
-// #Slide Navigation
+// #Slide Caption
 // ------------------------------
 
-
-.slide-navigation {
-	display: block;
+.responsiveslideshow .caption {
 	position: absolute;
-	top: 45%;
-	left: 0;
-	right: 0;
-	min-height: 50px;
+	top: 0;
+	bottom: 0;
 	margin: 0;
+	padding: 3em 0;
+	background-color: fade(@color__slideshow-caption--background, 80%);
+	text-align: center;
+	.display-flex();
+    .flex-direction(column);
+    .justify-content(center);
+}
 
-	@media @mobile {
-		top: inherit;
-		bottom: 0;
+.responsiveslideshow__image-title,
+.responsiveslideshow__image-description {
+	margin: 0 auto;
+	max-width: 32em;
+    width: 80%;
+
+	@media @tablet {
+		width: 90%;
 	}
+}
+
+.responsiveslideshow__image-title {
+	margin-bottom: 0.5em;
+	color: @color__slideshow-title--text;
+	font-size: @font__p--font-size*1.1;
 	
-	.responsivecolumns & {
-		background-color: transparent;
-	}
+	.make-font-a-little-smaller(@font__p--font-size*1.1);
+	.make-font-smaller(@font__p--font-size*1.1);
+	.make-font-a-lot-smaller(@font__p--font-size*1.1);
+}
 
-	// Button
-
-	.button {
-		position: absolute;
-		.box-shadow(none);
-		top: 0;
-		padding: 0;
-		text-align: center;
-		background-color: transparent;
-		width: 50px;
-		height: 50px;
-		line-height: 50px;
-		font-size: 36px;
-
-
-		@media @tablet {
-			width: 40px;
-			height: 40px;
-			line-height: 40px;
-		}
-
-		&:before {
-			margin: 0;
-			color: #d8d8d8;
-			background-color: transparent;
-		}
-	}
-	
-	// Control Text
-
-	.control-text {
-		display: none;
-	}
+.responsiveslideshow__image-description {
+	color: @color__slideshow-description--text;
+	line-height: 1.3em;
 }
 
 // ------------------------------
 // #Slide Navigation Buttons
 // ------------------------------
 
-.responsiveslideshow {
-	
-	// Previous and Next Button
 
-	.previous-button:before,
-	.next-button:after {
-		@media @mobile {
-			font-size: 26px!important;
-		}
+
+.slide-navigation {
+	display: block;
+	position: absolute;
+	top: 0;
+    left: 0;
+    right: 0;
+	margin: 0;
+	opacity: 0;
+	.transition(opacity);
+	
+	// Controls are only show when the
+	// slideshow is hovered over.
+
+	.widget[data-name="responsiveslideshow"]:hover &,
+	.widget[data-name="responsiveslideshow"]:focus & {
+		opacity: 1;
 	}
 	
-	// Previous Button
+	// Button
 
-	.previous-button {
-		left: 20px;
+	.button {
+		position: absolute;
+		top: 50%;
+		margin: 0;
+		padding: 0;
+		height: 2.5em;
+		width: 2.5em;
+	    border: none;
+		background-color: fade(@color__slideshow-pagination-item--background, 80%);
+		font-size: 25px;
+		.box-shadow(none);
+		.transition(background-color);
+		z-index: 2;
 
 		@media @tablet {
-			left: 0;
+			font-size: 20px;
 		}
+		
+		&:before,
+		&:after {
+			display: block;
+			margin-right: 0;
+    		margin-left: 0;
+			font-size: 1em;
+		}
+	}
+
+	.control-text {
+		display: none;
+	}
+
+	.previous-button {
+		left: 50%;
+    	margin-left: -3.75em;
+		padding-right: 0em;
 
 		// Icon
 		&:before {
-			content: '\f104';
-			display: block;
-			margin: 0;
-			color: #bfbfbf;
 		}
 	}
 
-	// Next Button
-
 	.next-button {
-		right: 20px;
-
-		@media @tablet {
-			right: 0;
-		}
+    	right: 50%;
+    	margin-right: -3.75em;
+		padding-left: 0.3em;
 
 		// Icon
 		&:after {
-			content: '\f105';
-			display: block;
-			margin: 0;
-			padding-left: 0.1em;
-			color: #bfbfbf;
 		}
 	}
 
-	// Pause Toggle
-
 	.pause-toggle {
-		top: 0;
-		bottom: 0;
-		left: 70px;
-		margin: auto;
-
-		@media @mobile {
-			display: none;
-		}
+		left: 50%;
+		margin-left: -1.25em;
+		padding-left: 0.15em;
 
 		// Icon
 		&:before {
-			display: block;
-			margin: 0;
-			font-size: 14px;
 		}
 
 		// Play Icon
@@ -227,97 +213,63 @@
 }
 
 // ------------------------------
-// #Caption
+// #Slide Pagination
 // ------------------------------
 
-.responsiveslideshow {
-	.caption {
-		.display-flex;
-		.flex-direction(column);
-		.justify-content(center);
-
-		height: 100%;
-		margin: 0;
-		padding: 30px;
-		background-color: fade(@color__slideshow-caption--background, 50%);
-		text-align: center;
-
-		@media @tablet-horizontal {
-			padding: 10px 25px 15px;
-		}
-
-		@media @tablet {
-			left: 0;
-			bottom: 0;
-			right: 0;
-			padding: 5px 20px 5px;
-		}
-	}
-}
-
-// ------------------------------
-// #Pagination
-// ------------------------------
-
-.responsiveslideshow {
-
-	// Pagination Item
-
-	.pagination-item {
-		display: inline-block;
-		margin: 3px 5px;
-
-		// Button
-
-		.button {
-			opacity: .4;
-			background-color: @color__container--background;
-			width: 10px;
-			height: 10px;
-			display: block;
-			overflow: hidden;
-			text-indent: -120%;
-			.border-radius(7px);
-			padding: 0;
-
-			@media @tablet {
-				width: 8px;
-				height: 8px;
-			}
-		}
-
-		&.selected .button {
-			opacity: 1;
-			background-color: @color__container--background;
-		}
-	}
-
-	// Slide Pagination
-
-	.slide-pagination {
-		position: absolute;
-		bottom: 0;
-		left: 101px;
-		right: 101px;
-		min-height: 50px;
-
-		@media @tablet {
-			min-height: 40px;
-			bottom: -4px;
-		}
-	}
-
-	// Pagination List
+.slide-pagination {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	z-index: 1;
 
 	.pagination-list {
-		text-align: center;
-		font-size: 0.1px;
-		min-height: 50px;
+		margin-top: 0;
+		padding: 0
+	}
+}
+	
+.pagination-item {
+	position: relative;
+    margin: 0 0 40px;
+	padding: 0 8px;
+    height: 0;
+
+	@media @tablet {
+		margin: 0 0 35px;
+		padding: 0 4px;
+	}
+
+	.button {
+		background-color: @color__slideshow-pagination-item--background;
+		width: 18px;
+		height: 18px;
+		display: block;
 		overflow: hidden;
-		padding-top: 14px;
+		text-indent: -10000px;
+		.border-radius(50%);
+		padding: 0;
+		border: 4px solid @color__slideshow-pagination-item--text;
 
 		@media @tablet {
-			padding-top: 10px;
+			width: 16px;
+			height: 16px;
+		}
+		
+		&:hover {
+			margin: 0;
+			padding: 0;
+			.box-shadow(none);
+		}
+	}
+
+	&.selected .button {
+		top: -1px;
+		background: @color__slideshow-pagination-item--text--selected;
+		border-width: 3px;
+		.transform-scale(1.5);
+
+		@media @tablet {
+			.transform-scale(1.3);
 		}
 	}
 }

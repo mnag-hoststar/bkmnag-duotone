@@ -23,76 +23,17 @@
 // ------------------------------
 
 .profile {
-	
-    // Typography
-	
-    a, h2, h3, p {
+     h1, h2, h3, p, a {
         position: relative;
         display: inline-block;
         padding: 0;
-    }
-    h2, h3, p {
         .paragraph;
     }
-}
-
-.template__header {
-    .profile {
-		.strapline,
-        .description,
-        .tweet-content,
-        .tweet-content a,
-        .copyright {
-            font-size: 12px;
-            line-height: 22px;
-
-            @media @mobile {
-                line-height: 18px;
-            }
-        }
-		
-        @media @mobile {
-			padding-left: 20px;
-
-			.twitter,
-			.companyaddress,
-			.companydescription,
-			.companycopyright {
-				padding-top: 6px;
-			}
-			.companyheadline,
-			.companystrapline {
-				padding: 6px 0;
-				line-height: 18px;
-			}
-
-			// Typography
-
-			a, h2, h3, p {
-				position: relative;
-				display: inline-block;
-				padding-bottom: 0;
-				font-family: @font__h4--font-family;
-				font-size: 12px;
-				font-weight: 400;
-				line-height: 22px;
-				letter-spacing: 3px;
-				color: @color__feature-headline--text;
-				text-transform: uppercase;
-
-				@media @mobile {
-					line-height: 18px;
-				}
-			}
-		}
-	}
 }
 
 // ------------------------------
 // #Company Strapline
 // ------------------------------
-
-
 
 // ------------------------------
 // #Company Description
@@ -106,7 +47,11 @@
 
 .profile {
     .address p {
-        padding-left: 10px;
+        padding-left: 0.4em;
+		
+		&:first-child {
+        	padding-left: 0;
+		}
 
         &:after {
             position: absolute;
@@ -122,96 +67,27 @@
     }
 }
 
-.template__header {
-    .profile {
-        .companyaddress {
-            margin-left: -10px;
-        }
-        .address p {
-            font-size: 12px;
-            line-height: 22px;
-        }
-	}
-}
-
 // ------------------------------
 // #Email Address
 // ------------------------------
-
-.template__header {
-	.profile {
-		.emailaddress__email {
-			@media @tablet {
-				.display-flex;
-				color: transparent;
-
-				&:before,
-				&:after {
-					font-family: 'FontAwesome', sans-serif;
-					text-rendering: auto;
-					-moz-osx-font-smoothing: grayscale;
-				}
-
-				&:before {
-					display: inline-block;
-					content: "\f003";
-					font-size: 22px;
-					color: @color__feature-headline--text;
-				}
-			}
-		}
-	}
-}
 
 // ------------------------------
 // #Company Phone
 // ------------------------------
 
-.template__header {
-    .profile {
-		.phone-number {
-            @media @tablet {
-                display: none;
-            }
-        }
-        .phone-number-link:before {
-            display: none;
-
-            @media @tablet {
-                position: relative;
-                top: 3px;
-                display: inline-block;
-                font-size: 24px;
-            }
-            @media @mobile {
-                font-size: 21px;
-            }
-        }
-	}
-}
-
 // ------------------------------
 // #Business Name
 // ------------------------------
 
-
-
 // ------------------------------
 // #Company Copyright
 // ------------------------------
-
-
 
 // ------------------------------
 // #Twitter
 // ------------------------------
 
 .profile {
-    .avatar,
-    .account-link,
-    .tweet-metadata {
-        display: none;
-    }
     .tweet-item {
         width: 100%;
         background-color: transparent;

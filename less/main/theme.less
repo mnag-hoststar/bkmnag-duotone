@@ -4,7 +4,6 @@
 // This contains all styles that are not
 // widgets.
 //
-// #Theme Mixins
 // #Header
 // #Site Styles
 // #Header
@@ -13,21 +12,6 @@
 // #Footer
 //
 // ----------------------------------------
-
-// ------------------------------
-// #Theme Mixins
-// ------------------------------
-
-// Conditionals in case the header background 
-// and the bottom border have the same color.
-
-.header-border-removal() when (@color__header--background = @color__header--border) {
-	border-bottom-width: 0;
-}
-
-.footer-border-removal() when (@color__footer--background = @color__footer--border) {
-	border-top-width: 0;
-}
 
 // ------------------------------
 // #Header

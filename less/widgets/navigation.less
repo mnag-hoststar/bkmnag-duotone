@@ -58,8 +58,7 @@
 		.make-font-smaller(@font__companyname--font-size);
 		.make-font-a-lot-smaller(@font__companyname--font-size);
 
-		&:hover,
-		&:active {
+		&:hover {
 			text-decoration: none;
 		}
 	}
@@ -153,8 +152,7 @@
 			.transition-property-2items(bottom, transform);
 		}
 
-		&:hover,
-		&:active {
+		&:hover {
 			&, &:before, &:after {
 				background-color: @color__navigation--text;
 			}
@@ -204,7 +202,7 @@
 // Dark overlay on tablet and mobile.
 
 .navigation-body {
-	.transition(opacity, 0s, ease);
+	.transition(opacity, 0s);
 	
 	// This is only shown in Tablet and Mobile
 	
@@ -224,7 +222,7 @@
 			height: auto;
 			height: 100vh;
 			background-color: rgba(0,0,0, 0.9);
-			.transition(opacity, 0.25s, ease);
+			.transition(opacity, 0.25s);
 		}
 	}
 }
@@ -281,8 +279,7 @@
 		.make-font-smaller(@font__navigation--font-size);
 		.make-font-a-lot-smaller(@font__navigation--font-size);
 		
-		&:hover,
-		&:active {
+		&:hover {
 			color: darken(@color__navigation--text, 20%);
 			
 			@media @tablet {
@@ -347,7 +344,7 @@
 		background-color: @color__navigation-list--background;
 		overflow: visible;
 		text-align: center;
-		.transition(opacity, 0s, ease-in);
+		.transition(opacity, 0s);
 
 		@media @tablet {
 			position: static;
@@ -361,7 +358,7 @@
 		display: block;
 		opacity: 1;
 		height: auto;
-		.transition(opacity, 0.15s, ease-in);
+		.transition(opacity);
 
 		@media @tablet {
 			position: static;
@@ -388,8 +385,7 @@
 			padding: 1em 0;
 		}
 		
-		&:hover,
-		&:active {
+		&:hover {
 			color: @color__navigation-item--text--hover;
 		}
 	}

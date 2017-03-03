@@ -2,42 +2,44 @@
 // Duotone: LESS > Widgets > Gallery
 // ----------------------------------------
 //
-// #Item
+// #Whole Gallery
+// #Single Gallery Item
 // #Image
 // #Caption
 //
 // ----------------------------------------
 
 // ------------------------------
-// #Item
+// #Whole Gallery
 // ------------------------------
 
+.widget[data-name="gallery"] {
+	.container-background-spacing();
+	background: @color__gallery--background;
+}
+
+.gallery-list {
+	font-size: 0em;
+	margin: -5px;
+}
+
+// ------------------------------
+// #Single Gallery Item
+// ------------------------------
 
 .gallery__gallery-item {
-	float: left;
-	height: 0; // Height is achieved using padding-bottom
-	width: 20%;
-	padding-bottom: 20%;
-	overflow: hidden;
 	position: relative;
+	display: inline-block;
+	overflow: hidden;
 	margin: 0;
-
-
-	// 4 Columns Layout
+	width: 25%;
+	padding-bottom: 25%;
+	
 	@media @tablet-horizontal {
-		width: 25%;
-		padding-bottom: 25%;
-	}
-
-
-	// 3 Columns Layout
-	@media @tablet {
 		width: 33.333%;
 		padding-bottom: 33.333%;
 	}
-
-
-	// 2 Columns Layout
+	
 	@media @mobile {
 		width: 50%;
 		padding-bottom: 50%;
@@ -48,77 +50,80 @@
 // #Image
 // ------------------------------
 
-.gallery__image-link {
+.gallery__figure {
+    position: absolute;
+	top: 5px;
+    bottom: 5px;
+    left: 5px;
+    right: 5px;
+	
+	&:hover {
+		
+		& > .gallery__caption {
+			opacity: 1;
+			background-color: fade(@color__gallery-caption--background, 80%);
+		}
+	}
+}
+
+a.gallery__image-link {
 	display: block;
 	position: absolute;
 	top: 0;
 	left: 0;
 	width: 100%;
-	height: 0;
-	padding-bottom: 100%;
+	height: 100%;
 	background-size: cover;
 	background-position: center center;
 }
 
+// Using the background image instead
+
 .gallery__image {
-	display: none; // Using background image instead
+	display: none;
 }
-
-
 
 // ------------------------------
 // #Caption
 // ------------------------------
 
-// Captions fade in/out
-
 .gallery__caption {
-	margin: 0; // LESS Framework reset
-	
-	.responsivecolumns & {
-		display: none;
-	}
-}
-
-.caption-link {
-	padding: 40px;
+	opacity: 0;
 	position: absolute;
 	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	overflow: auto;
-	opacity: 0;
-	.transition(all, 0.30s, cubic-bezier(0, 0.72, 0.22, 1.46));
-	.transform-scale(1.5);
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0;
+    overflow: hidden;
+	height: 100%;
+	.transition(opacity);
+}
 
-    @media @tablet-horizontal {
-        padding: 20px;
-    }
-    @media @mobile {
-        padding: 20px;
-    }
-
-	&:hover {
-		opacity: 1;
-		.transform-scale(1);
-		background-color: fade(@color__gallery-caption--background, 70%);
+a.caption-link {
+	padding: 40px;
+	height: 100%;
+    width: 100%;
+	overflow: hidden;
+	text-align: center;
+	
+	@media @layout-width-breakpoint {
+		padding: 30px;
+	}
+	
+	@media @tablet-horizontal {
+		padding: 20px;
 	}
 }
 
 // Image Title
 
 .gallery__image-title {
-	margin-bottom: 10px;
-	font-family: @font__feature-headline--font-family;
-	font-size: 18px;
-	font-weight: @font__feature-headline--font-weight;
-	line-height: 26px;
-	letter-spacing: 1px;
+	margin-bottom: 0.5em;
 	color: @color__gallery-title--text;
-	text-transform: uppercase;
 }
 
 .gallery__image-description {
 	color: @color__gallery-description--text;
+	line-height: 1.3em;
 }

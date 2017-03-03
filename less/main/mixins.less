@@ -4,6 +4,8 @@
 //
 // #Global Mixins
 // #Animation
+// #Font Mixins
+// #Theme Mixins
 // #Flexbox LESS mixins
 //
 // ----------------------------------------
@@ -73,7 +75,7 @@
 // #Animation
 // ------------------------------
 
-.transition(@property, @duration, @ease, @delay: 0s) {
+.transition(@property: all, @duration: 0.15s, @ease: ease-in-out, @delay: 0s) {
 	-webkit-transition: @property @duration @ease @delay;
 	-moz-transition: @property @duration @ease @delay;
     -ms-transition: @property @duration @ease @delay;
@@ -218,6 +220,28 @@
 	@media @mobile {
 		font-size: @font-size*@size-mobile;
 	}
+}
+
+// ------------------------------
+// #Theme Mixins
+// ------------------------------
+
+// Conditionals in case the header background 
+// and the bottom border have the same color.
+
+.header-border-removal() when (@color__header--background = @color__header--border) {
+	border-bottom-width: 0;
+}
+
+.footer-border-removal() when (@color__footer--background = @color__footer--border) {
+	border-top-width: 0;
+}
+
+// Conditional if the container background 
+// is the same as the page background.
+
+.container-background-spacing() when not (@color__container--background = @color__body--background) {
+	padding: 2em 0;
 }
 
 // ------------------------------
