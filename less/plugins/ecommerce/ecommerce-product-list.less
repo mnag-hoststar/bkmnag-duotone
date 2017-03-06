@@ -77,9 +77,13 @@
 // #Product Search
 // ------------------------------
 
+.product-filters {
+	
+}
+
 .product-filters .fieldset--search {
 	padding: 20px 40px;
-	width: 33.33%;
+	width: 100%/3;
 
 	@media (max-width: 1024px) {
 		width: 100%;
@@ -213,7 +217,7 @@
 
 .product-filters .fieldset--filters {
     padding: 12px 70px 8px;
-    width: 66.66%;
+    width: 100%*2/3;
     // background-color: @color__ecomproductslist-filters--background;
 
     @media (max-width: 1024px) {
@@ -379,16 +383,16 @@
     border-right: 1px solid fade(@color__p--text, 16%);
 	.box-shadow(inset 0px -1px 0px 0px fade(@color__p--text, 16%));
 	padding: 40px;
-	width: 25%;
+	width: 100%/4;
 	margin: 0;
 
 	@media @tablet-horizontal {
         padding: 30px;
-		width: 33.33%;
+		width: 100%/3;
 	}
 
 	@media @tablet {
-		width: 50%;
+		width: 100%/2;
         padding: 20px;
 	}
 	@media @mobile {
@@ -397,7 +401,7 @@
 	}
 	
 	.responsivecolumns & {
-		width: 50%;
+		width: 100%/2;
 		margin: 0;
 	}
 	

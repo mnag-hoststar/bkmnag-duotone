@@ -2,6 +2,7 @@
 // Duotone: LESS > Widgets > Slideshow
 // ----------------------------------------
 //
+// #Slideshow Mixins
 // #Slideshow
 // #Slideshow Item
 // #Slide Caption
@@ -9,6 +10,18 @@
 // #Slide Pagination
 //
 // ----------------------------------------
+
+// ------------------------------
+// #Slideshow Mixins
+// ------------------------------
+
+.controls-font-size() {
+	font-size: 25px;
+
+	@media @tablet {
+		font-size: 20px;
+	}
+}
 
 // ------------------------------
 // #Slideshow
@@ -80,6 +93,7 @@
 // ------------------------------
 
 .responsiveslideshow .caption {
+	display: block;
 	position: absolute;
 	top: 0;
 	bottom: 0;
@@ -90,6 +104,7 @@
 	.display-flex();
     .flex-direction(column);
     .justify-content(center);
+	.controls-font-size();
 }
 
 .responsiveslideshow__image-title,
@@ -122,8 +137,6 @@
 // #Slide Navigation Buttons
 // ------------------------------
 
-
-
 .slide-navigation {
 	display: block;
 	position: absolute;
@@ -153,14 +166,10 @@
 		width: 2.5em;
 	    border: none;
 		background-color: fade(@color__slideshow-pagination-item--background, 80%);
-		font-size: 25px;
 		.box-shadow(none);
 		.transition(background-color);
 		z-index: 2;
-
-		@media @tablet {
-			font-size: 20px;
-		}
+		.controls-font-size();
 		
 		&:before,
 		&:after {

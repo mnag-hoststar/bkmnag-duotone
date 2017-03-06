@@ -2,6 +2,8 @@
 // Duotone: LESS > Widgets > Embeds
 // ----------------------------------------
 //
+// #Google Maps
+// #Soundcloud
 // #YouTube
 // #Disqus
 // #Embed
@@ -11,8 +13,28 @@
 // ----------------------------------------
 
 // -----------------------------
+// #Google Maps
+// -----------------------------
+
+.widget[data-name="map"] .map {
+	background-color: @color__container--background;
+	width: 100%;
+	max-width: none;
+}
+
+// -----------------------------
+// #Soundcloud
+// -----------------------------
+
+// -----------------------------
 // #YouTube
 // -----------------------------
+
+.widget[data-name="youtube"] .youtube {
+	background-color: @color__container--background;
+	width: 100%;
+	max-width: none;
+}
 
 // -----------------------------
 // #Disqus
@@ -21,6 +43,14 @@
 // -----------------------------
 // #Embed
 // -----------------------------
+
+// Vimeo embed
+// This makes the video be full width.
+
+iframe[src*="vimeo"] {
+	width: 100%;
+    height: 56.25vw;
+}
 
 // -----------------------------
 // #LinkedIn Profile

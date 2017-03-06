@@ -4,6 +4,7 @@
 //
 // #Global Mixins
 // #Animation
+// #Layout Mixins
 // #Font Mixins
 // #Theme Mixins
 // #Flexbox LESS mixins
@@ -68,6 +69,18 @@
 .focus {
 	&:focus {
         outline: none;
+	}
+}
+
+// Font size change to make inline-block
+// formatting work.
+.inline-block-font-hack() {
+	font-size: 0;
+	
+	> * {
+		display: inline-block;
+		vertical-align: top;
+		font-size: 1em;
 	}
 }
 
@@ -235,13 +248,6 @@
 
 .footer-border-removal() when (@color__footer--background = @color__footer--border) {
 	border-top-width: 0;
-}
-
-// Conditional if the container background 
-// is the same as the page background.
-
-.container-background-spacing() when not (@color__container--background = @color__body--background) {
-	padding: 2em 0;
 }
 
 // ------------------------------

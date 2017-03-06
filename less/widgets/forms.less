@@ -2,6 +2,7 @@
 // Duotone: LESS > Widgets > Forms
 // ----------------------------------------
 //
+// #Conditonal Mixins
 // #Form Background
 // #Legend
 // #Form
@@ -19,13 +20,24 @@
 // ----------------------------------------
 
 // ------------------------------
+// #Conditonal Mixins
+// ------------------------------
+
+// Conditional if the form background 
+// is the same as the page background.
+
+.form-widget-background--spacing() when not (@color__form--background = @color__body--background) {
+	padding: 2em 0;
+}
+
+// ------------------------------
 // #Global Form Styles
 // ------------------------------
 
 .widget[data-name="signupform"],
 .widget[data-name="contactform"],
 .widget[data-name="advancedcontactform"] {
-	.container-background-spacing();
+	.form-widget-background--spacing();
 	background: @color__form--background;
 }
 

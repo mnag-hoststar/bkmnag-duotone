@@ -2,17 +2,29 @@
 // Duotone: LESS > Widgets > Image
 // ----------------------------------------
 //
+// #Conditonal Mixins
 // #Image
 // #Caption
 //
 // ----------------------------------------
 
 // ------------------------------
+// #Conditonal Mixins
+// ------------------------------
+
+// Conditional if the image background 
+// is the same as the page background.
+
+.image-widget-background--spacing() when not (@color__image--background = @color__body--background) {
+	padding: 2em 0;
+}
+
+// ------------------------------
 // #Image
 // ------------------------------
 
 .widget[data-name="image"] {
-	.container-background-spacing();
+	.image-widget-background--spacing();
 	background: @color__image--background;
 }
 
@@ -23,12 +35,12 @@
 // Conditional if the container background 
 // is the same as the page background.
 
-.image-caption-spacing() when not (@color__container--background = @color__body--background) {
+.image-caption--spacing() when not (@color__image--background = @color__body--background) {
 	margin-bottom: 0;
 }
 
 .imagewidget__caption {
-	.image-caption-spacing();
+	.image-caption--spacing();
 }
 
 // Image Title

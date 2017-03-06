@@ -25,7 +25,6 @@
 .profile {
      h1, h2, h3, p, a {
         position: relative;
-        display: inline-block;
         padding: 0;
         .paragraph;
     }
@@ -39,32 +38,14 @@
 // #Company Description
 // ------------------------------
 
-
-
 // ------------------------------
 // #Company Address
 // ------------------------------
 
-.profile {
-    .address p {
-        padding-left: 0.4em;
-		
-		&:first-child {
-        	padding-left: 0;
-		}
+// Widget outside the profile.
 
-        &:after {
-            position: absolute;
-            top: 0;
-            right: -6px;
-            display: inline-block;
-            content: ",";
-        }
-
-        &:last-child:after {
-            display: none;
-        }
-    }
+.address p {
+	padding: 0;
 }
 
 // ------------------------------
@@ -88,33 +69,29 @@
 // ------------------------------
 
 .profile {
-    .tweet-item {
-        width: 100%;
-        background-color: transparent;
-        padding: 0;
-    }
-    .tweet-content {
-       padding: 0;
-    }
-}
-
-.template__header {
-    .profile {
-        .avatar,
-        .account-link,
-        .tweet-metadata {
-            display: none;
-        }
+	.twitter__tweet-wrap {
+		margin-left: 4.6em;
+	}
 		
-        .tweet-content {
-            a {
-                color: lighten(@color__primary, 35%);
-
-                &:hover {
-                    text-decoration: underline;
-                }
-            }
-        }
+	.twitter__tweet-item {
+		width: 100%;
+		background-color: transparent;
+		margin: 0;
+		padding: 0;
+	}
+	
+	.twitter__avatar {
+		margin: 0 1em 0 0;
+	}
+	
+	a.twitter__account-link {
+		padding: 0 0 0.3em;
+		min-height: 0;
+	}
+	
+	.tweet-metadata {
+		position: static;
+		padding: 0;
 	}
 }
 
@@ -123,103 +100,8 @@
 // ------------------------------
 
 .profile {
-    .form-body {
-        .display-flex;
-        .justify-content(center);
-    }
-    .form-group {
-        margin-bottom: 0;
-    }
-    .label {
-        display: none;
-    }
-}
-
-.template__header {
-    .profile {
-        .signupform {
-            margin-left: -20px;
-            padding-bottom: 0;
-
-            @media @mobile {
-                max-height: 43px;
-            }
-        }
-
-        .legend {
-            display: none;
-        }
-
-        .form-body {
-            .justify-content(inherit);
-        }
-
-        // Input
-		
-        .input,
-        .button {
-			.box-shadow(none);
-            .feature__button;
-            margin: 0;
-            line-height: 40px;
-
-            @media @mobile {
-                border-top: 0;
-                border-bottom: 0;
-                border-left: 0;
-                border-width: 1px;
-                line-height: 43px;
-            }
-        }
-		
-        .input {
-            max-width: 170px;
-            margin-top: 0;
-
-            @media @mobile {
-                max-width: 140px;
-            }
-        }
-
-        // Placeholder
-		
-        .input::-webkit-input-placeholder {
-            opacity: .4;
-            font-family: @font__h4--font-family;
-            font-size: 13px;
-            font-weight: 400;
-            color: @color__companyname--text;
-        }
-        .input:-moz-placeholder {
-            opacity: .4;
-            font-family: @font__h4--font-family;
-            font-size: 13px;
-            font-weight: 400;
-            color: @color__companyname--text;
-        }
-        .input:-ms-input-placeholder {
-            opacity: .4;
-            font-family: @font__h4--font-family;
-            font-size: 13px;
-            font-weight: 400;
-            color: @color__companyname--text;
-        }
-        .input::-ms-input-placeholder {
-            opacity: .4;
-            font-family: @font__h4--font-family;
-            font-size: 13px;
-            font-weight: 400;
-            color: @color__companyname--text;
-        }
-
-        // Button
-        .button {
-            position: relative;
-            top: 1px;
-            margin-top: 0;
-            padding: 0 10px;
-            border-left: 0;
-        }
+	.form {
+		max-width: 100%;
 	}
 }
 

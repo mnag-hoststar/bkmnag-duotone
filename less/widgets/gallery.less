@@ -10,17 +10,28 @@
 // ----------------------------------------
 
 // ------------------------------
+// #Conditonal Mixins
+// ------------------------------
+
+// Conditional if the gallery background 
+// is the same as the page background.
+
+.gallery-widget-background--spacing() when not (@color__gallery--background = @color__body--background) {
+	padding: 2em 0;
+}
+
+// ------------------------------
 // #Whole Gallery
 // ------------------------------
 
 .widget[data-name="gallery"] {
-	.container-background-spacing();
+	.gallery-widget-background--spacing();
 	background: @color__gallery--background;
 }
 
 .gallery-list {
-	font-size: 0em;
 	margin: -5px;
+	.inline-block-font-hack();
 }
 
 // ------------------------------
@@ -29,20 +40,19 @@
 
 .gallery__gallery-item {
 	position: relative;
-	display: inline-block;
 	overflow: hidden;
 	margin: 0;
-	width: 25%;
-	padding-bottom: 25%;
+	width: 100%/4;
+	padding-bottom: 100%/4;
 	
 	@media @tablet-horizontal {
-		width: 33.333%;
-		padding-bottom: 33.333%;
+		width: 100%/3;
+		padding-bottom: 100%/3;
 	}
 	
 	@media @mobile {
-		width: 50%;
-		padding-bottom: 50%;
+		width: 100%/2;
+		padding-bottom: 100%/2;
 	}
 }
 
@@ -101,6 +111,7 @@ a.gallery__image-link {
 }
 
 a.caption-link {
+	display: block;
 	padding: 40px;
 	height: 100%;
     width: 100%;

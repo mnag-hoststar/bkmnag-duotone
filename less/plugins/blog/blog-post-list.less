@@ -65,9 +65,10 @@
 // ------------------------------
 
 .blogpostlist {
+	.inline-block-font-hack();
+	
     .post-article {
-        position: relative;
-        width: 33.33%;
+        width: 100%/3;
         background-color: @color__secondary;
         margin-bottom: 0;
 
@@ -76,7 +77,7 @@
         }
 
         @media @tablet-horizontal {
-            width: 50%;
+        	width: 100%/2;
         }
 
         @media @tablet {

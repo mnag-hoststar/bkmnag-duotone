@@ -197,12 +197,10 @@
             "color__feature-button--background--hover": "fade(@color__body--background, 4%)",
             "color__feature-button--text": "@color__body--background"
         },
-        "menu": {
-            "color__menusections--background": "@color__secondary",
-            "color__menu--background": "fade(@color__secondary, 3%)",
-            "color__menu-section-header--background": "@color__secondary",
-            "color__menu-section-featured--background": "@color__secondary"
-        },
+		"twitter": {
+			"color__twitter--background": "@color__container--background",
+			"color__twitter-item--background": "@color__body--background"
+		},
         "blog": {
             "color__blogsearch-legend--text": "@color__form-legend--text",
             "color__blogpostlist-article--background": "@color__secondary",
@@ -213,6 +211,12 @@
             "color__ecomproductslist-product-title--text": "@color__p--text",
             "color__ecomproduct-title--text": "@color__h2--text",
             "color__ecomproduct-price--text": "@color__p--text"
+        },
+        "menu": {
+            "color__menusections--background": "@color__secondary",
+            "color__menu--background": "color__container--background",
+            "color__menu-section-header--background": "@color__secondary",
+            "color__menu-section-featured--background": "@color__secondary"
         }
     }
 }
