@@ -30,7 +30,7 @@
 .widget[data-name="responsiveslideshow"] .responsiveslideshow {
 	position: relative;
 	overflow: hidden;
-	width: 100%;
+	width: auto;
 	max-width: none;
 	height: 40vw;
 	padding-bottom: 40%;
@@ -101,9 +101,9 @@
 	padding: 3em 0;
 	background-color: fade(@color__slideshow-caption--background, 80%);
 	text-align: center;
-	.display-flex();
+	.display-flex(flex);
     .flex-direction(column);
-    .justify-content(center);
+    .justify-content(center, center);
 	.controls-font-size();
 }
 
@@ -111,10 +111,10 @@
 .responsiveslideshow__image-description {
 	margin: 0 auto;
 	max-width: 32em;
-    width: 80%;
+    width: @layout-width-desktop;
 
 	@media @tablet {
-		width: 90%;
+		width: @layout-width-tablet;
 	}
 }
 
@@ -225,7 +225,7 @@
 // #Slide Pagination
 // ------------------------------
 
-.slide-pagination {
+.responsiveslideshow__slide-pagination {
 	position: absolute;
 	bottom: 0;
 	width: 100%;
@@ -237,7 +237,7 @@
 	}
 }
 	
-.pagination-item {
+.responsiveslideshow__pagination-item {
 	position: relative;
     margin: 0 0 40px;
 	padding: 0 8px;

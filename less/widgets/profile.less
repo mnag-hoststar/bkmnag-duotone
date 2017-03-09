@@ -76,8 +76,12 @@
 	.twitter__tweet-item {
 		width: 100%;
 		background-color: transparent;
-		margin: 0;
+		margin: 2em 0;
 		padding: 0;
+		
+		&:last-child {
+			margin-bottom: 2em;
+		}
 	}
 	
 	.twitter__avatar {
@@ -89,9 +93,16 @@
 		min-height: 0;
 	}
 	
+	.tweet-content {
+		&, & a {
+			line-height: 1.5em;
+		}
+	}
+	
 	.tweet-metadata {
 		position: static;
-		padding: 0;
+    	display: block;
+		padding: 0.5em 0 0 0;
 	}
 }
 

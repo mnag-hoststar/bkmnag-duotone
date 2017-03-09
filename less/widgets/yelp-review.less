@@ -9,19 +9,13 @@
 	}
 	
 	&__review-header {
-		padding-top: 2em;
+		padding-top: 2.2em;
 	}
 	
 	&__review-title {
-		float: left;
 		.heading--4;
 		padding: 0 1em 0 0;
-		font-size: @font__p--font-size;
 		.twitter__account-link--spacing();
-
-		.make-font-a-little-smaller(@font__p--font-size);
-		.make-font-smaller(@font__p--font-size);
-		.make-font-a-lot-smaller(@font__p--font-size);
 	}
 
 	&__author-label {
@@ -51,9 +45,15 @@
 		
 		.review-text {
 			padding-bottom: 0;
+			line-height: 1.5em;
 		}
 		.review-link {
 			a;
+			font-size: @font__p--font-size;
+
+			.make-font-a-little-smaller(@font__p--font-size);
+			.make-font-smaller(@font__p--font-size);
+			.make-font-a-lot-smaller(@font__p--font-size);
 		}
 	}
 
@@ -63,7 +63,12 @@
 	}
 	
 	&__timestamp {
-		padding: 0.4em;
+		.timestamp-styles;
 		background-color: @color-text--lightest;
+		font-size: @font__p--font-size;
+
+		.make-font-a-little-smaller(@font__p--font-size);
+		.make-font-smaller(@font__p--font-size);
+		.make-font-a-lot-smaller(@font__p--font-size);
 	}
 }

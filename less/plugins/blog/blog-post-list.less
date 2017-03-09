@@ -2,6 +2,7 @@
 // Duotone: LESS > Plugins > Blog > Blog Posts List
 // ----------------------------------------
 //
+// #Conditional Mixins
 // #All posts
 // #Single Article
 // #Image
@@ -11,101 +12,55 @@
 //
 // ----------------------------------------
 
+// ------------------------------
+// #Conditional Mixins
+// ------------------------------
+
+// Conditional if the Blog Post List background 
+// is not the same as the Blog Article background.
+
+.blogpostlist-article-background--spacing() when not (@color__blogpostlist--background = @color__blogpostlist-article--background) {
+	padding: 2em 0;
+}
+
+// Conditional if the Blog Post List background 
+// is the same as the page background.
+
+.blogpostlist-widget-background--spacing() when (@color__blogpostlist--background = @color__body--background) {
+	padding: 1em 0;
+}
 
 // ------------------------------
 // #All posts
 // ------------------------------
 
-
-.blogpostlist {
-    .post-items {
-        display: -ms-flexbox;
-        display: -webkit-flex;
-        display: flex;
-        -webkit-flex-direction: row;
-        -ms-flex-direction: row;
-        flex-direction: row;
-        -webkit-flex-wrap: wrap;
-        -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-        -webkit-justify-content: flex-start;
-        -ms-flex-pack: start;
-        justify-content: flex-start;
-        -webkit-align-content: flex-start;
-        -ms-flex-line-pack: start;
-        align-content: flex-start;
-        -webkit-align-items: stretch;
-        -ms-flex-align: stretch;
-        align-items: stretch;
-
-        @media @tablet {
-            display: block;
-        }
-    }
+.widget[data-name="blogpostlist"] {
+	background-color: @color__blogpostlist--background;
+	.blogpostlist-article-background--spacing();
+	.blogpostlist-widget-background--spacing();
 }
 
-.responsivecolumns {
-    .columns-four-first,
-    .columns-four-second,
-    .columns-four-third,
-    .columns-four-fourth,
-    .columns-three-left,
-    .columns-three-right,
-    .columns-three-middle {
-		.blogpostlist {
-			.post-items {
-				display: block;
-			}
-		}
-	}
+.blogpostlist__post-items {
+	.inline-block-font-hack();
+	.display-flex(flex);
+    .flex-wrap(wrap);
+    .align-items(stretch, stretch);
+	.item--margin-size--border();
 }
 
 // ------------------------------
 // #Single Article
 // ------------------------------
 
-.blogpostlist {
-	.inline-block-font-hack();
+.blogpostlist__post-article {
+	position: relative;
+	.item--margin-size--3to1-cols();
+	background-color: @color__blogpostlist-article--background;
+	.clearfix();
 	
-    .post-article {
-        width: 100%/3;
-        background-color: @color__secondary;
-        margin-bottom: 0;
-
-        &:nth-child(2n) {
-            background-color: darken(@color__secondary, 3%);
-        }
-
-        @media @tablet-horizontal {
-        	width: 100%/2;
-        }
-
-        @media @tablet {
-            width: 100%;
-        }
-    }
-}
-
-.responsivecolumns {
-    .blogpostlist {
-        .post-article {
-            width: 100%;
-        }
-	}
-	
-    .columns-four-first,
-    .columns-four-second,
-    .columns-four-third,
-    .columns-four-fourth,
-    .columns-three-left,
-    .columns-three-right,
-    .columns-three-middle {
-		.blogpostlist {
-			.post-article {
-				width: auto;
-				background-color: transparent !important;
-			}
-		}
+	@media @mobile {
+		.display-flex(flex);
+		.flex-direction(inherit);
 	}
 }
 
@@ -114,23 +69,21 @@
 // ------------------------------
 
 .blogpostlist {
-    .post-image {
-        height: 0;
-        padding-bottom: 50%;
+    &__post-image {
         position: relative;
         overflow: hidden;
-
-        @media @tablet-horizontal {
-            padding-bottom: 45%;
-        }
-        @media @tablet {
-            padding-bottom: 40%;
-        }
+        height: 0;
+		padding-bottom: 56.25%;
+		
+		@media @mobile {
+			float: left;
+			height: 100%;
+			width: 25%;
+    		padding-bottom: 0;
+		}
     }
-
-    // Image Link
 	
-    .image-link {
+    &__image-link {
         background-position: center center;
         background-size: cover;
         position: absolute;
@@ -139,16 +92,11 @@
         bottom: 0;
         left: 0;
 		.transition(all, 0.3s);
-
-
-        &:hover {
-			.transform-scale(1.2);
-        }
     }
 
-    // Image
+    // Using the background image instead.
 
-    .blogpostlist__image {
+    &__image {
         display: none;
     }
 }
@@ -157,157 +105,87 @@
 // #Content
 // ------------------------------
 
-.blogpostlist {
-    .post-content {
-        margin: 0;
-		padding: 50px 50px 110px;
-		
-        @media @tablet-horizontal {
-            padding: 40px 40px 100px;
-        }
-        @media @tablet {
-            padding: 25px 20px 10px 20px;
-        }
-    }
+.blogpostlist__post-content {
+	margin: 0;
+	padding: 4em 1.5em 1.5em;
+	font-size: @font__p--font-size;
+
+	.make-font-a-little-smaller(@font__p--font-size);
+	.make-font-smaller(@font__p--font-size);
+	.make-font-a-lot-smaller(@font__p--font-size);
 }
 
-.responsivecolumns {
-    .blogpostlist {
-        .post-content {
-            padding-bottom: 1em;
-        }
-	}
-	
-    .columns-four-first,
-    .columns-four-second,
-    .columns-four-third,
-    .columns-four-fourth,
-    .columns-three-left,
-    .columns-three-right,
-    .columns-three-middle {
-		.blogpostlist {
-			.post-content {
-				padding: 1em 0;
-			}
-		}
-	}
+.blogpostlist__post-title {
+	.heading--3;
+	padding: 0;
 }
 
-// Post Header
-
-.blogpostlist {
-    .post-header {
-        margin-bottom: 20px;
-
-        @media @tablet {
-            margin-bottom: 10px;
-        }
-    }
-
-    // Title Link
-	
-    .title-link {
-        color: @color__h2--text;
-
-        &:hover {
-			.box-shadow(inset 0px -1px 0px 0px @color__p--text);
-        }
-    }
+a.blogpostlist__title-link {
+	color: @color__h3--text;
 }
 
 // Post Excerpt
 	
-.blogpostlist {
-    .post-excerpt p {
-        color: lighten(@color__p--text, 8%);
-    }
+.blogpostlist__post-excerpt p {
+	line-height: 1.5em;
+	color: lighten(@color__p--text, 8%);
+	
+	@media @mobile {
+		display: none;
+	}
 }
 
 // Read more
 
-.blogpostlist {
-    .read-more {
-        position: absolute;
-        left: 0;
-        bottom: 0;
-		.box-shadow(inset 0px -1px 0px 0px @color__primary);
-        display: inline-block;
-        line-height: 1.5;
-        color: @color__primary;
-		margin: 0 0 50px 50px;
-		
-        @media @tablet-horizontal {
-            margin: 0 0 40px 40px;
-        }
-        @media @tablet {
-            margin: 0;
-            position: relative;
-        }
-
-        &:hover {
-            opacity: .65;
-        }
-    }
+a.blogpostlist__read-more {
+	a;
 }
 
-.responsivecolumns {
-    .blogpostlist {
-        .read-more {
-            position: relative;
-            margin: 0;
-        }
-    }
+// This style only activates if the article has an image.
+
+.blogpostlist__post-image ~ .blogpostlist__post-content {
+	@media @mobile {
+		width: 75%;
+	}
 }
 
 // ------------------------------
 // #Footer
 // ------------------------------
 
-.blogpostlist {
-    .post-footer {
-        .timestamp {
-            color: fade(@color__p--text, 50%);
-            display: inline-block;
-            position: absolute;
-            bottom: 0;
-            right: 0;
-            margin: 0;
-			padding: 0 50px 50px;
-			
-            @media @tablet-horizontal {
-                padding: 0 40px 40px;
-            }
-            @media @tablet {
-                position: relative;
-                padding: 0 0 30px 20px;
-            }
-        }
-    }
+.blogpostlist__post-footer {
+	position: absolute;
+	top: 0;
+    left: 0;
+    right: 0;
+	padding: 0 1.5em;
+	font-size: @font__p--font-size;
+
+	.make-font-a-little-smaller(@font__p--font-size);
+	.make-font-smaller(@font__p--font-size);
+	.make-font-a-lot-smaller(@font__p--font-size);
+
+	.timestamp {
+		display: inline-block;
+		margin: 1.5em 0 0;
+		background: @color__blogpostlist-title--background;
+		.timestamp-styles;
+	}
 }
 
-.responsivecolumns {
-    .blogpostlist {
-        .post-footer .timestamp {
-            position: relative;
-            display: block;
-        }
-	}
+// This style only activates if the article has an image.
+
+.blogpostlist__post-image ~ .blogpostlist__post-footer {
+	margin-top: 56.25%;
 	
-    .columns-four-first,
-    .columns-four-second,
-    .columns-four-third,
-    .columns-four-fourth,
-    .columns-three-left,
-    .columns-three-right,
-    .columns-three-middle {
-		.blogpostlist {
-			.post-footer .timestamp {
-				padding: 0 0 2em 0;
-			}
-		}
-    }
+	@media @mobile {
+		left: 25%;
+		margin-top: 0;
+	}
 }
 
 // ------------------------------
 // #Paginatinon
 // ------------------------------
+
+// For pagination, see less/plugins/plugins.less.

@@ -2,7 +2,7 @@
 // Duotone: LESS > Widgets > Forms
 // ----------------------------------------
 //
-// #Conditonal Mixins
+// #Conditional Mixins
 // #Form Background
 // #Legend
 // #Form
@@ -20,11 +20,11 @@
 // ----------------------------------------
 
 // ------------------------------
-// #Conditonal Mixins
+// #Conditional Mixins
 // ------------------------------
 
 // Conditional if the form background 
-// is the same as the page background.
+// is not the same as the page background.
 
 .form-widget-background--spacing() when not (@color__form--background = @color__body--background) {
 	padding: 2em 0;
@@ -42,14 +42,10 @@
 }
 
 .form {
-	max-width: 60%;
+	max-width: 80%;
 	margin: 0 auto;
 
 	@media @tablet-horizontal {
-		max-width: 80%;
-	}
-
-	@media @tablet {
 		max-width: 100%;
 	}
 }
@@ -422,8 +418,7 @@ input:focus {
 // #Contact Form
 // ------------------------------
 
-.contactform {
-}
+.contactform {}
 
 // ------------------------------
 // #Advanced Contact Form

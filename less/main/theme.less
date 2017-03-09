@@ -66,8 +66,7 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
 // #Page Styles
 // ------------------------------
 
-.page {
-}
+.page {}
 
 // ------------------------------
 // #Content
@@ -86,9 +85,9 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
 // Container
 
 .container {
-	.display-flex;
-	.justify-content(space-between);
-	.align-items(center);
+	.display-flex(flex);
+	.justify-content(space-between, distribute);
+	.align-items(center, center);
 
 	@media @mobile {
 		display: block;

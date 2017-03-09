@@ -2,6 +2,7 @@
 // Duotone: LESS > Widgets > Gallery
 // ----------------------------------------
 //
+// #Conditional Mixins
 // #Whole Gallery
 // #Single Gallery Item
 // #Image
@@ -10,11 +11,11 @@
 // ----------------------------------------
 
 // ------------------------------
-// #Conditonal Mixins
+// #Conditional Mixins
 // ------------------------------
 
 // Conditional if the gallery background 
-// is the same as the page background.
+// is not the same as the page background.
 
 .gallery-widget-background--spacing() when not (@color__gallery--background = @color__body--background) {
 	padding: 2em 0;
@@ -87,7 +88,7 @@ a.gallery__image-link {
 	background-position: center center;
 }
 
-// Using the background image instead
+// Using the background image instead.
 
 .gallery__image {
 	display: none;
@@ -112,19 +113,16 @@ a.gallery__image-link {
 
 a.caption-link {
 	display: block;
-	padding: 40px;
+	padding: 2em;
 	height: 100%;
     width: 100%;
 	overflow: hidden;
 	text-align: center;
-	
-	@media @layout-width-breakpoint {
-		padding: 30px;
-	}
-	
-	@media @tablet-horizontal {
-		padding: 20px;
-	}
+	font-size: @font__p--font-size;
+
+	.make-font-a-little-smaller(@font__p--font-size);
+	.make-font-smaller(@font__p--font-size);
+	.make-font-a-lot-smaller(@font__p--font-size);
 }
 
 // Image Title

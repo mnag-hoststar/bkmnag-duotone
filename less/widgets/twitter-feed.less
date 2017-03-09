@@ -2,8 +2,7 @@
 // Duotone: LESS > Widgets > Twitter Feed
 // ----------------------------------------
 //
-// #Variables
-// #Conditonal Mixins
+// #Conditional Mixins
 // #Tweet Item
 // #Avatar
 // #Account Link
@@ -13,20 +12,21 @@
 // ----------------------------------------
 
 // ------------------------------
-// #Variables
-// ------------------------------
-
-@twitter__tweet-item--margin-size: 1%;
-
-// ------------------------------
-// #Conditonal Mixins
+// #Conditional Mixins
 // ------------------------------
 
 // Conditional if the container background 
-// is the same as the page background.
+// is not the same as the page background.
 
-.twitter-widget-background--spacing() when not (@color__twitter--background = @color__twitter-item--background) {
+.twitter-body-background--spacing() when not (@color__twitter--background = @color__body--background) {
 	padding: 2em 0;
+}
+
+// Conditionals if the container background 
+// is the same as the item background.
+
+.twitter-widget-background--spacing() when (@color__twitter--background = @color__twitter-item--background) {
+	padding: 1em 0;
 }
 
 .twitter__avatar--spacing() when (@color__twitter--background = @color__twitter-item--background) {
@@ -63,6 +63,7 @@
 // ------------------------------
 
 .widget[data-name="twitter"] {
+	.twitter-body-background--spacing();
 	.twitter-widget-background--spacing();
 	background-color: @color__twitter--background;
 }
@@ -73,10 +74,10 @@
 
 .twitter__tweet-list {
 	.inline-block-font-hack();
-	.display-flex();
+	.display-flex(flex);
     .flex-wrap(wrap);
-    .align-items(stretch);
-	margin: -@twitter__tweet-item--margin-size;
+    .align-items(stretch, stretch);
+	.item--margin-size--border();
 }
 
 // ------------------------------
@@ -84,29 +85,16 @@
 // ------------------------------
 
 .tweet-item {
-    width: 100%/3-@twitter__tweet-item--margin-size*2;
-	background-color: @color__twitter-item--background;
-	margin: @twitter__tweet-item--margin-size;
 	position: relative;
 	padding: 0;
+	background-color: @color__twitter-item--background;
+	.item--margin-size--2to1-cols();
 	font-size: @font__p--font-size;
 	.clearfix();
 	
 	.make-font-a-little-smaller(@font__p--font-size);
 	.make-font-smaller(@font__p--font-size);
 	.make-font-a-lot-smaller(@font__p--font-size);
-	
-	&:last-child {
-		margin-bottom: @twitter__tweet-item--margin-size;
-	}
-
-    @media @tablet-horizontal {
-		width: 100%/2-@twitter__tweet-item--margin-size*2;
-    }
-
-    @media @mobile {
-		width: 100%;
-    }
 }
 
 // ------------------------------
@@ -132,7 +120,7 @@
 
 a.twitter__account-link {
     display: block;
-	padding: 1.5em 1.5em 0;
+	padding: 1.5em 1.5em 0 6.1em;
 	min-height: 5.1em;
 	.heading--4;
 	font-size: @font__p--font-size;
@@ -150,7 +138,6 @@ a.twitter__account-link {
 .tweet-content {
 	padding: 1em 1.5em 4.5em;
     line-height: 1.5em;
-	word-wrap: break-word;
 	.tweet-content--spacing();
 }
 

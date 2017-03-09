@@ -2,18 +2,18 @@
 // Duotone: LESS > Widgets > Image
 // ----------------------------------------
 //
-// #Conditonal Mixins
+// #Conditional Mixins
 // #Image
 // #Caption
 //
 // ----------------------------------------
 
 // ------------------------------
-// #Conditonal Mixins
+// #Conditional Mixins
 // ------------------------------
 
 // Conditional if the image background 
-// is the same as the page background.
+// is not the same as the page background.
 
 .image-widget-background--spacing() when not (@color__image--background = @color__body--background) {
 	padding: 2em 0;
@@ -33,7 +33,7 @@
 // ------------------------------
 
 // Conditional if the container background 
-// is the same as the page background.
+// is not the same as the page background.
 
 .image-caption--spacing() when not (@color__image--background = @color__body--background) {
 	margin-bottom: 0;

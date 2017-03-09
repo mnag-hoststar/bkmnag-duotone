@@ -6,6 +6,9 @@
 // #Image
 // #Post Content
 // #Post Footer
+// #Post Timestamp
+// #Post Attributes
+// #Sharing Links
 //
 // ----------------------------------------
 
@@ -13,14 +16,18 @@
 // #Article
 // ------------------------------
 
-.blogpost {
+.widget[data-name="blogpost"] {
+	padding: 0;
 
-    // Blog Article
-	
-    .post-article {
-        position: relative;
-        margin-bottom: 2em;
-    }
+	.blogpost {
+		width: auto;
+		max-width: none;
+	}
+}
+
+.blogpost__post-article {
+	position: relative;
+	margin-bottom: 2em;
 }
 
 // ------------------------------
@@ -28,25 +35,20 @@
 // ------------------------------
 
 .blogpost {
-    .post-image {
-    }
-	
-	// Image Link
-
 	.image-link {
 		display: block;
-
-		// Container Width * 0.66
-		height: 0;
-		padding-bottom: 30%;
-
+		height: 40vw;
+		padding-bottom: 40%;
 		background-position: center;
 		background-size: cover;
 
 		@media @tablet {
-			padding-bottom: 40%;
+			height: 60vw;
+			padding-bottom: 60%;
 		}
-
+		
+		// Using the background image instead.
+		
 		.image {
 			display: none;
 		}
@@ -58,47 +60,22 @@
 // ------------------------------
 
 .blogpost {
-	.post-content {
-        margin: 0;
-    }
-    .post-body,
-    .post-footer {
-        max-width: 66.666%;
-        margin: 0 auto;
-
-        @media @tablet {
-            max-width: 90%;
-        }
+	&__post-content,
+	&__post-footer {
+		margin: 0 auto;
+		.template__content--width();
+    	max-width: 50em;
     }
 	
-    // Post Excerpt / Post Body
-
-    .post-body {
-    	.clearfix();
-        padding: 60px 0;
-
-        @media @tablet {
-            padding: 20px 0;
-        }
-    }
-
-    // Post Header / Title
-	
-    .post-header {
-        background-color: @color__blogpost-title--background;
-        padding: 20px 16.666%;
-
-        @media @tablet {
-            padding: 10px 5%;
-        }
-
+    &__post-header {
+        padding: 2em 0 1em;
     }
 	
-    .post-title {
+    &__post-title {
         margin: 0;
         padding: 0;
         .heading--2;
-        color: @color__blogpost-title--text;
+        color: @color__blogpostlist-title--text;
     }
 }
 
@@ -106,111 +83,135 @@
 // #Post Footer
 // ------------------------------
 
-.blogpost {
-	.post-footer {
-        position: relative;
+.blogpost__post-footer {
+	position: relative;
+}
 
-        @media @tablet {
-            padding: 0 20px 20px;
-        }
+// ------------------------------
+// #Post Timestamp
+// ------------------------------
 
-        // Timestamp
+.blogpost__post-footer .timestamp {
+	position: absolute;
+	top: -4.5em;
+    left: 0;
+    right: auto;
+	display: block;
+	margin: 0;
+	background-color: @color-text--lightest;
+	.timestamp-styles;
+}
 
-        .timestamp {
-            position: absolute;
-            right: 70px;
-            color: fade(@color__p--text, 80%);
-            display: block;
-            margin-bottom: 2em;
-        }
-    }
+// ------------------------------
+// #Post Attributes
+// ------------------------------
+
+.blogpost__post-attributes {
+	display: table;
+	margin: 5em 0 2em;
+	padding: 2em 0 0;
 	
-    // Post Attributes
-
-    .post-attributes {
-        display: -ms-flexbox;
-        display: -webkit-flex;
-        display: flex;
-        -webkit-flex-direction: row;
-        -ms-flex-direction: row;
-        flex-direction: row;
-        -webkit-flex-wrap: wrap;
-        -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-        -webkit-justify-content: flex-start;
-        -ms-flex-pack: start;
-        justify-content: flex-start;
-        -webkit-align-content: flex-start;
-        -ms-flex-line-pack: start;
-        align-content: flex-start;
-        -webkit-align-items: stretch;
-        -ms-flex-align: stretch;
-        align-items: stretch;
-
-        @media @mobile {
-            display: block;
-        }
-    }
+	@media @mobile {
+		display: block;
+	}
 	
-    // Post Category / Post Tags
+	&:before {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		content: " ";
+		border-bottom: 0.5em solid @color-text--lightest;
+		width: 100%;
+	}
+}
+
+// ------------------------------
+// #Post Category and Tags
+// ------------------------------
+
+.post-category, .post-tags {
+    display: table-cell;
 	
-    .post-category, .post-tags {
-        margin-bottom: 2em;
+	@media @mobile {
+    	display: block;
+	}
+}
 
-        @media @tablet-horizontal {
-            margin-bottom: 1em;
-        }
-
-        @media @tablet {
-            margin-bottom: 1em;
-        }
-
-        // Links
-
-        a {
-            &:first-letter {
-                text-transform: uppercase;
-            }
-        }
-    }
-
-    // Post Category
+.post-category {
+    padding: 0 2em 0 0;
 	
-    .post-category {
-        margin-right: 50px;
+	@media @mobile {
+    	padding: 0;
+	}
+}
 
-        @media @mobile {
-            margin-right: 0;
-        }
-    }
+.post-tags {
+    width: 100%;
 	
-    // Category Title / Tags Title
+	@media @mobile {
+		margin-top: 1em;
+    	width: auto;
+	}
+}
 
-    .blogpost__category-title,
-    .blogpost__tags-title {
-        padding: 5px 0;
-        font-family: @font__h4--font-family;
-        color: lighten(@color__p--text, 30%);
-        display: block;
-        margin-bottom: 5px;
-        text-transform: uppercase;
-    }
-	
-    // Tags List
+.blogpost__category-link,
+.blogpost__tag-link {
+    hyphens: none;
+}
 
-    .blogpost__tag-list {
-        display: block;
-    }
-	
-    // Tags Item
+// ------------------------------
+// #Sharing Links
+// ------------------------------
 
-    .blogpost__tag-item {
-        margin-right: 1.5em;
-    }
+.blogpost__sharing-links {
+	.clearfix();
+}
+
+.blogpost__network-item {
+	display: inline-block;
+    margin: 0 1em 0 0;
+	padding: 0;
 	
-    // Sharing Links
+	@media @mobile {
+		display: block;
+    	margin: 0;
+	}
+}
+
+.blogpost__button {
+	&, &:hover {
+		margin: 0;
+		padding: 0;
+		.box-shadow(none);
+		background-color: transparent;
+		border: none;
+		font-family: @font__p--font-family;
+		font-size: @font__p--font-size;
+		font-weight: @font__p--font-weight;
+		line-height: @font__p--line-height;
+		letter-spacing: @font__p--letter-spacing;
+		color: @color__p--text;
+		text-transform: none;
 	
-    .blogpost__sharing-links {
-        .clearfix();
-    }
+		.make-font-a-little-smaller(@font__p--font-size);
+		.make-font-smaller(@font__p--font-size);
+		.make-font-a-lot-smaller(@font__p--font-size);
+	}
+	
+	&:before {
+		.transition();
+		float: left;
+		padding: 0.2em;
+		background: @color-text--lightest;
+		width: 1.5em;
+		height: 1.5em;
+		margin-top: -0.2em;
+		
+	}
+	
+	&:hover:before {
+		background: @color__button--background;
+		color: @color__button--text;
+	}
 }

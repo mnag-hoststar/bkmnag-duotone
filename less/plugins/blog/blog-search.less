@@ -2,22 +2,39 @@
 // Duotone: LESS > Plugins > Blog > Blog Search
 // ----------------------------------------
 //
+// #Conditional Mixins
 // #Legend
 // #Form Body
-// #Label
-// #Button
 //
 // ----------------------------------------
 
 // -----------------------------
+// #Conditional Mixins
+// -----------------------------
+
+// Conditional if the container background 
+// is not the same as the page background.
+
+.blogsearch-widget-background--spacing() when not (@color__blogsearch--background = @color__body--background) {
+	padding: 2em 0;
+}
+
+.widget[data-name="blogsearch"] {
+	.blogsearch-widget-background--spacing();
+	background-color: @color__blogsearch--background;
+}
+
+.widget[data-name="blogsearch"] .blogsearch {
+	width: auto;
+	max-width: none;
+}
+
+// -----------------------------
 // #Legend
 // -----------------------------
 
-.blogsearch {
-	.legend {
-		display: block;
-		h2;
-    }
+.blogsearch__legend {
+	display: none;
 }
 	
 // -----------------------------
@@ -25,147 +42,19 @@
 // -----------------------------
 
 .blogsearch {
-    .form-body {
-        width: 66.66%;
-        margin: 0 0 0 auto;
-        display: -webkit-box;
-        display: -moz-box;
-        display: -ms-flexbox;
-        display: -webkit-flex;
-        display: flex;
-        -webkit-box-direction: normal;
-        -moz-box-direction: normal;
-        -webkit-box-orient: horizontal;
-        -moz-box-orient: horizontal;
-        -webkit-flex-direction: row;
-        -ms-flex-direction: row;
-        flex-direction: row;
-        -webkit-flex-wrap: nowrap;
-        -ms-flex-wrap: nowrap;
-        flex-wrap: nowrap;
-        -webkit-box-pack: start;
-        -moz-box-pack: start;
-        -webkit-justify-content: flex-start;
-        -ms-flex-pack: start;
-        justify-content: flex-start;
-        -webkit-align-content: stretch;
-        -ms-flex-line-pack: stretch;
-        align-content: stretch;
-		padding: 0 70px;
-		
-        @media @tablet-horizontal {
-            padding: 0 40px;
-        }
-        @media @tablet {
-            padding: 0 20px;
-            width: auto;
-        }
-    }
-
-    // Form Group
-
-    .form-group {
-        margin-bottom: 0;
-        &:first-child {
-            -webkit-box-flex: 0;
-            -moz-box-flex: 0;
-            -webkit-flex: 1 1 auto;
-            -ms-flex: 1 1 auto;
-            flex: 1 1 auto;
-            margin-right: 10px;
-        }
-    }
-
-    // First Form Group
-
-    .blogsearch__form-group:first-child {
-        @media @mobile {
-            margin-right: 3px; // LESS Framework reset
-        }
-    }
-
-    // Last Form Group
-
-    .form-group:last-child {
-        margin: 0;
-    }
+	.signupform;
 }
 
-// Column styles
-
-.responsivecolumns {
-    .blogsearch {
-		.form-body {
-			float: none;
-			width: auto;
-			border-left: none;
-			padding: 0;
-		}
+.blogsearch__form {
+	width: 60%;
+	max-width: 1400px;
+    margin: 0 auto;
+	
+	@media @tablet-horizontal {
+		width: 80%;
 	}
 	
-    .columns-three-left,
-    .columns-three-right,
-    .columns-three-middle,
-    .columns-four-first,
-    .columns-four-second,
-    .columns-four-third,
-    .columns-four-fourth {
-        .blogsearch {
-				.form-body {
-				display: block;
-			}
-		}
-
-        // First Form Group
-
-        .blogsearch {
-			.form-group:first-child {
-				margin-bottom: 10px;
-			}
-		}
-    }
-}
-
-// -----------------------------
-// #Label
-// -----------------------------
-
-.blogsearch {
-	.label {
-        display: none;
-    }
-}
-
-// -----------------------------
-// #Button
-// -----------------------------
-
-.blogsearch {
-    .button--submit {
-        @media @tablet {
-            width: 50px;
-            overflow: hidden;
-            text-indent: 200px;
-            display: block;
-            position: relative;
-            padding: 0;
-
-            &:after {
-                content: '\f002';
-                font-family: 'FontAwesome', sans-serif;
-                position: absolute;
-                text-align: center;
-                color: @color__button--text;
-                top: 0;
-                left: 0;
-                bottom: 0;
-                right: 0;
-                text-indent: 0;
-            }
-        }
-        @media @mobile {
-            &:after {
-            }
-        }
-    }
+	@media @tablet {
+		width: 90%;
+	}
 }

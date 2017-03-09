@@ -166,16 +166,16 @@
         "gallery": {
             "color__gallery--background": "@color__container--background",
             "color__gallery-caption--background": "@color__secondary",
-            "color__gallery-title--text": "#fff",
-            "color__gallery-description--text": "fade(#fff, 80%)"
+            "color__gallery-title--text": "@color-swatch7",
+            "color__gallery-description--text": "fade(@color-swatch7, 80%)"
         },
         "slideshow": {
             "color__slideshow--background": "@color__container--background",
             "color__slideshow-caption--background": "@color__secondary",
-            "color__slideshow-title--text": "#fff",
-            "color__slideshow-description--text": "fade(#fff, 80%)",
+            "color__slideshow-title--text": "@color-swatch7",
+            "color__slideshow-description--text": "fade(@color-swatch7, 80%)",
             "color__slideshow-pagination-item--background": "@color__secondary",
-            "color__slideshow-pagination-item--text": "#fff",
+            "color__slideshow-pagination-item--text": "@color-swatch7",
             "color__slideshow-pagination-item--text--selected": "@color__primary"
         },
         "feature": {
@@ -202,10 +202,13 @@
 			"color__twitter-item--background": "@color__body--background"
 		},
         "blog": {
-            "color__blogsearch-legend--text": "@color__form-legend--text",
-            "color__blogpostlist-article--background": "@color__secondary",
-            "color__blogpost-title--background": "@color__secondary",
-            "color__blogpost-title--text": "@color__h1--text"
+			"color__blogsearch--background": "@color__form--background",
+			"color__blogpostlist--background": "@color__body--background",
+            "color__blogpostlist-article--background": "fade(@font-swatch5-color, 10%)",
+            "color__blogpostlist-title--background": "@color-swatch7",
+            "color__blogpost-title--text": "@color__h2--text",
+            "color__blogpost-article--background": "@color__primary",
+            "color__blogpostlist-title--text": "@color__blogpost-title--text"
         },
         "ecommerce": {
             "color__ecomproductslist-product-title--text": "@color__p--text",

@@ -21,8 +21,7 @@
 // #Content Widget
 // ------------------------------
 
-.content {
-}
+.content {}
 
 // ------------------------------
 // #General Typography
@@ -37,8 +36,14 @@ h1, h2, h3, h4, h5, h6 {
 	}
 }
 
-p {
+// Break long words.
+h1, h2, h3, h4, h5, h6, p {
+	word-wrap: break-word;
+}
+
+p, a {
 	padding: 0.5em 0;
+    hyphens: auto;
 }
 
 h1, .heading--1 {
@@ -121,7 +126,7 @@ h6, .heading--6 {
 	.make-font-a-lot-smaller(@font__h4--font-size, 0.7, 0.6);
 }
 
-p, .paragraph {
+p, .paragraph, ul, ol, li {
 	// This is already defined in the html tag.
 	
 	.make-font-a-little-smaller(@font__p--font-size);
@@ -150,6 +155,8 @@ label, .label-text {
 	font-family: @font__h4--font-family;
 	font-size: 0.9em;
 	color: @color-text--faded;
+	word-wrap: normal;
+    hyphens: none;
 }
 
 // ------------------------------
@@ -230,7 +237,7 @@ code {
 // ------------------------------
 
 ul {
-	margin: 0 0 0 1.2em;
+	margin: 0.5em 0 0.5em 1.2em;
 	padding: 0;
 
 	li {
@@ -244,7 +251,7 @@ ul {
 }
 
 ol {
-	margin: 1em 0;
+	margin: 0.5em 0;
 	padding-left: 0;
 	counter-reset: ordered-counter;
 
@@ -301,8 +308,13 @@ blockquote {
 	&:after {
 		position: absolute;
 		content: "";
-		border-bottom: 10px solid @color-text--lightest;
+		border-bottom: 0.5em solid @color-text--lightest;
 		width: 100%;
+		font-size: @font__p--font-size;
+
+		.make-font-a-little-smaller(@font__p--font-size);
+		.make-font-smaller(@font__p--font-size);
+		.make-font-a-lot-smaller(@font__p--font-size);
 	}
 	
 	&:before {
@@ -316,7 +328,8 @@ blockquote {
 	}
 	
 	.responsivecolumns & {
-		width: 100%;
+		width: auto;
+		max-width: none;
 	}
 	
 	.columns-four-first &,
