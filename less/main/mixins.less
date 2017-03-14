@@ -253,7 +253,10 @@
 
 // Item margin size.
 // This is the margin between various items like
-// tweets, blog posts and shop items.
+// gallery images, tweets, blog posts and 
+// ecommerce product items.
+
+@item--margin-size: 1%;
 
 .item--margin-size--border(@item--margin-size: 1%) {
 	margin: -@item--margin-size;
@@ -461,10 +464,10 @@
 // auto | flex-start | flex-end | center | baseline | stretch
 // For -ms-flex-item-align
 // start | end | center | stretch | justify | distribute
-.align-self(@align: auto) {
+.align-self(@align: auto, @ms-align: start) {
 	-webkit-align-self: @align;
 	-moz-align-self: @align;
 	-ms-align-self: @align;
-	-ms-flex-item-align: @align;
+	-ms-flex-item-align: @ms-align;
 	align-self: @align;
 }

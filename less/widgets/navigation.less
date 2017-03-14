@@ -232,7 +232,7 @@
 // ------------------------------
 
 .navigation-list {
-	padding: 1em 0;
+	padding: 0.5em 0;
 	
     @media @tablet {
 		display: block;
@@ -279,10 +279,10 @@
 		.make-font-a-lot-smaller(@font__navigation--font-size);
 		
 		&:hover {
-			color: darken(@color__navigation--text, 20%);
+			color: @color__navigation--text--hover;
 			
 			@media @tablet {
-				color: darken(@color__navigation--text, 20%);
+				color: @color__navigation--text--hover;
 			}
 		}
 	}
@@ -291,7 +291,7 @@
 		color: @color__navigation--text--hover;
 
 		@media @tablet {
-			color: darken(@color__navigation--text, 60%);
+			color: @color__navigation--text--hover;
 		}
 	}
 
@@ -322,7 +322,7 @@
 	}
 	
 	&.folder-open > .item-name {
-		color: darken(@color__navigation--text, 20%);
+		color: lighten(@color__navigation--text--hover, 20%);
 	}
 }
 

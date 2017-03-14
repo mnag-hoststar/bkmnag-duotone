@@ -26,7 +26,7 @@
     z-index: 100;
 	padding: 0 1em;
 	min-height: 60px;
-	border-bottom: 10px solid @color__header--border;
+	border-bottom: 0.5em solid @color__header--border;
 	.header-border-removal();
 }
 
@@ -84,15 +84,7 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
 
 // Container
 
-.container {
-	.display-flex(flex);
-	.justify-content(space-between, distribute);
-	.align-items(center, center);
-
-	@media @mobile {
-		display: block;
-	}
-}
+.container { }
 
 // ------------------------------
 // #Footer
@@ -102,18 +94,7 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
     width: 100%;
     background-color: @color__footer--background;
     text-align: center;
-    border-top: 10px solid @color__footer--border;
-	.footer-border-removal()
-
-    // Widget
-    .widget {
-		padding: 40px 70px;
-		
-        @media @tablet-horizontal {
-            padding: 30px 40px;
-        }
-        @media @tablet {
-            padding: 20px 20px;
-        }
-    }
+    border-top: 0.5em solid @color__footer--border;
+	.footer-border-removal();
+	.template__content--width();
 }

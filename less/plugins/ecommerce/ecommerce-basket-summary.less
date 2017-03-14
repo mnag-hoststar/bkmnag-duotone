@@ -4,7 +4,13 @@
 // 
 // #Variables
 // #Title
-// #Table
+// #Table Styles
+// #Cell Image
+// #Cell Title and Quantity
+// #Cell Quantity, Total and Price
+// #Cell Title
+// #Cell Quantity
+// #Cell Total and Price
 // #Button
 // 
 // ----------------------------------------
@@ -19,242 +25,272 @@
 // #Title
 // ------------------------------
 
-.summary-title {
-}
+.summary-title { }
 
 // ------------------------------
-// #Table
+// #Table Styles
 // ------------------------------
 
 .summary-table {
-    border-collapse: separate;
-    border-spacing: 0 10px;
-    width: 100%;
-    margin: 0;
-	
-    // Table and Cells Reset
-
-    &, td, th, .cell {
-        border: none;
-        background: transparent;
-        padding: 0;
-        padding-top: 10px;
-        padding-bottom: 10px;
-		
-    }
-	
 	&, .table-row, .cell, .summary-body {
 		@media @basketsummary-medium, @mobile {
 			display: block;
 		}
 	}
 
-    // Row Heading
-
     .table-row--heading {
 		@media @basketsummary-medium, @mobile {
             display: none;
 		}
-			
-        .cell {
-            padding-bottom: 1em;
-            font-family: @font__h1--font-family;
-            text-transform: uppercase;
-            color: @color__p--text;
-
-            &:nth-last-of-type(-n+2) {
-                text-align: right;
-            }
-        }
-    }
-	
-    // Product Item Row
-
-    .table-row:not(.table-row--heading):not(.table-row--order-total) {
-        .cell  {
-            background-color: @color__secondary;
-        }
     }
 	
 	.table-row {
 		@media @basketsummary-medium, @mobile {
 			overflow: hidden;
-			background-color: @color__secondary;
-			margin-bottom: 10px;
-			.clearfix();
+			border-top: 1px solid @color-text--light;
 			border-bottom: none;
+			padding: 0.5em 0;
+			.clearfix();
+			
+			&:last-child {
+				border: none;
+				padding: 0;
+			}
+		}
+			
+		&:nth-last-of-type(2) .cell {
+			border: none;
 		}
 	}
-	
-    // Cell Image
+		
+	.cell {
+		padding: 0.5em;
 
-    .cell--image {
-        width: 126px;
-        padding-left: 10px;
+		&:last-child,
+		&:nth-last-of-type(-n+2) {
+			text-align: right;
+
+			@media @basketsummary-medium, @mobile {
+				text-align: left;
+			}
+		}
+		
+		@media @basketsummary-medium, @mobile {
+        	border: none;
+		}
+		
+		> * {
+			padding: 0;
+		}
+	}
+}
+
+// ------------------------------
+// #Cell Image
+// ------------------------------
+
+.ecombasketsummary {
+    &__cell.cell--image {
 		
 		@media @basketsummary-medium, @mobile {
 			float: left;
+			padding-right: 1em;
+			width: 30%;
+		}
+
+		.summary-item-link {
+			display: block;
+			background-image: none !important;
+			text-align: center;
+
+			.image {
+				display: inline-block;
+				vertical-align: middle;
+				max-width: 100%;
+    			max-height: 80px;
+		
+				@media @basketsummary-medium, @mobile {
+    				max-height: none;
+				}
+			}
 		}
 	}
+}
 
-    // Cell Title
+// ------------------------------
+// #Cell Title and Quantity
+// ------------------------------
 
-    .cell--title {
-        width: auto;
-        padding-right: 10px;
-        padding-left: 16px;
-
-    }
-
-    // Item Title
-
-    .summary-item-title {
-		heading--4;
-    }
-
-	// Item Link
-
-	.summary-item-link {
-		color: @color__p--text;
+.ecombasketsummary {
+	.cell--title, .cell--quantity {
+		@media @basketsummary-medium, @mobile {
+			padding-left: 30%;
+		}
 	}
-	
-	// Cell Total, Cell Price, Cell Quantity
+}
 
+// ------------------------------
+// #Cell Quantity, Total and Price
+// ------------------------------
+	
+.ecombasketsummary {
 	.cell--price, .cell--total, .cell--quantity {
+		width: 7em;
+		
+		@media @layout-width-breakpoint {
+			width: 6em;
+		}
+		
+		@media @tablet-horizontal {
+			width: 5.5em;
+		}
+		
 		@media @basketsummary-medium, @mobile {
 			&:before {
 				content: attr(data-title);
 				display: block;
-				font-size: 13px;
-				color: fade(@color__p--text, 80%);
+				.label-text;
 			}
 		}
 	}
-	
-    // Cell Quantity
+}
 
-    .cell--quantity {
-        padding: 0 16px 0 0;
-        width: 10%;
-        min-width: 100px;
-		
+// ------------------------------
+// #Cell Title
+// ------------------------------
+
+.ecombasketsummary {
+    &__cell.cell--title {
+        width: auto;
+    }
+
+    &__summary-item-title {
+		line-height: 1.5em;
+    }
+}
+
+// ------------------------------
+// #Cell Quantity
+// ------------------------------
+
+.ecombasketsummary {
+    &__cell.cell--quantity {
 		@media @basketsummary-medium, @mobile {
-            .clearfix();
-            padding: 6px 10px;
-            text-align: right;
             position: relative;
-            width: auto;
+			width: auto;
+            .clearfix();
 
             // Pseudo Label - LESS Framework
 
             &:before {
-                height: 30px;
-                line-height: 30px !important;
                 display: block;
-                position: absolute;
-                right: 90px;
-                top: 6px;
             }
         }
     }
 	
-	.quantity-wrap {
-		width: 100%;
-		height: 30px;
-		line-height: 30px;
-		font-size: 16px;
+	&__quantity-wrap {
 		background-color: transparent;
-
-        @media @basketsummary-medium, @mobile {
-            margin: 0 -5px 0 auto;
-            max-width: 100%;
-        }
-
-		// Button Quantity
+		min-width: 6em;
+		
+		@media @basketsummary-medium, @mobile {
+			width: 0;
+		}
 
 		.button--quantity {
-			width: 30px;
-			height: 30px;
-			line-height: 30px;
-			text-align: center;
-			background-color: darken(@color__button--background, 5%);
+			postion: relative;
+			color: @color__button--background;
 			
-            @media @basketsummary-medium, @mobile {
-                line-height: 20px;
-            }
+			&:hover {
+				color: @color__button--background--hover;
+			}
+			
+			&, &:hover {
+				width: @font__p--line-height;
+				height: @font__p--line-height;
+				padding: 0;
+				border: none;
+				font-size: @font__p--font-size;
+				line-height: @font__p--line-height;
+	
+				.make-font-a-little-smaller(@font__p--font-size);
+				.make-font-smaller(@font__p--font-size);
+				.make-font-a-lot-smaller(@font__p--font-size);
+			}
 		}
-
-		// Quantity Field
-
-		.quantity-field {
-			color: @color__p--text;
+		.button.quantity-minus,
+		.button.quantity-plus {
+			&:after {
+				position: absolute;
+				top: 0.5em;
+    			left: 0.5em;
+				margin: 0;
+				padding: 0;
+				border: none;
+				font-family: 'FontAwesome', sans-serif;
+				color: @color__button--text;
+				font-size: @font__p--font-size;
+				line-height: 1em;
+	
+				.make-font-a-little-smaller(@font__p--font-size);
+				.make-font-smaller(@font__p--font-size);
+				.make-font-a-lot-smaller(@font__p--font-size);
+			}
+			
+			&:hover:after {
+				color: @color__button--text--hover;
+			}
+		}
+		
+		.button.quantity-minus {
+			&:after {
+				content: "\f068";
+			}
+		}
+		
+		.button.quantity-plus {
+			&:after {
+				content: "\f067";
+			}
 		}
 	}
+}
 
-    // Cell Total, Cell Price
+// ------------------------------
+// #Cell Total and Price
+// ------------------------------
 
-	.cell--price, .cell--total {
+.ecombasketsummary {
+	&__cell.cell--price,
+	&__cell.cell--total {
 		@media @basketsummary-medium, @mobile {
             float: left;
-            width: 50%;
-            border-top: 1px solid @color__container--background !important;
-            padding: 6px 10px;
-            background-color: darken(@color__container--background, 8%) !important;
+            width: 30%;
+			padding-left: 0;
         }
 	}
+	&__cell.cell--price {
+		@media @basketsummary-medium, @mobile {
+            margin-left: 30%;
+        }
+	}
+}
+
+// ------------------------------
+// #Subtotal Row
+// ------------------------------
+
+.ecombasketsummary {
+    &__cell.cell--order-total {
+        text-align: right;
+        background-color: @color-text--lightest;
+		border-top: 0.2em solid @color-text--light;
+		border-bottom: none;
+    }
 	
-    .cell--total {
-        text-align: right;
-        padding: 0 16px;
-    }
-    .cell--price {
-        padding: 0 0 0 16px;
-        text-align: right;
-		
-        @media @basketsummary-medium, @mobile {
-            clear: left;
-        }
-    }
-
-    // Order Total
-
-    .cell--order-total {
-        text-align: right;
-        background-color: @color__container--background;
-    }
-
-    // Cell Image Item Link
-
-    .cell--image .summary-item-link {
-        width: 100px;
-        height: 100px;
-        display: block;
-        background-position: -100%;
-        background-color: #fff;
-        padding: 10px;
-
-        // Image
-
-        .image {
-            display: inline-block;
-            vertical-align: middle;
-        }
-    }
-
-    // Row Order Total
-
-    .table-row--order-total {
-        background-color: transparent;
-    }
-
-	// Order Total
-	
-	.order-total {
-		color: @color__p--text;
-
-         @media @basketsummary-medium, @mobile {
-            text-align: center;
-        }
+	&__order-total {
+		@media @basketsummary-medium, @mobile {
+			text-align: center;
+		}
 	}
 }
 
@@ -264,13 +300,5 @@
 
 .summary-form {
     text-align: right;
-
-    @media @basketsummary-medium, @mobile {
-        text-align: center;
-    }
-
-    .button--submit {
-        background-color: @color__primary;
-        color: @color__container--background;
-    }
+	max-width: 100%;
 }

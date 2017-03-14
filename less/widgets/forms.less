@@ -296,8 +296,6 @@ input:focus {
 
 .select-wrap {
     position: relative;
-    max-width: 50%;
-	margin-top: 1em;
 
     @media @mobile {
         max-width: 100%;
@@ -338,6 +336,7 @@ input:focus {
     color: @color__p--text;
     .border-radius(0);
     .appearance(none);
+	.transition();
 
     @media @mobile {
 		padding: 0 2.7em 0 0.6em;
@@ -403,14 +402,14 @@ input:focus {
 			width: 100%;
 			padding-right: 0.5em;
 		}
+
+		label {
+			display: none;
+		}
 		
 		.button {
 			white-space: nowrap;
 		}
-	}
-
-	label {
-		display: none;
 	}
 }
 

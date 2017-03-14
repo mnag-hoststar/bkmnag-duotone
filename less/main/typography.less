@@ -37,13 +37,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 // Break long words.
-h1, h2, h3, h4, h5, h6, p {
-	word-wrap: break-word;
+h1, h2, h3, h4, h5, h6, p, a {
+	word-break: break-word;
 }
 
 p, a {
 	padding: 0.5em 0;
-    hyphens: auto;
 }
 
 h1, .heading--1 {
@@ -121,9 +120,9 @@ h6, .heading--6 {
 	letter-spacing: @font__h4--letter-spacing*0.8;
 	color: @color__h4--text;
 	
-	.make-font-a-little-smaller(@font__h4--font-size, 0.7);
-	.make-font-smaller(@font__h4--font-size, 0.7);
-	.make-font-a-lot-smaller(@font__h4--font-size, 0.7, 0.6);
+	.make-font-a-little-smaller(@font__h4--letter-spacing*0.8);
+	.make-font-smaller(@font__h4--letter-spacing*0.8);
+	.make-font-a-lot-smaller(@font__h4--letter-spacing*0.8);
 }
 
 p, .paragraph, ul, ol, li {
@@ -156,7 +155,6 @@ label, .label-text {
 	font-size: 0.9em;
 	color: @color-text--faded;
 	word-wrap: normal;
-    hyphens: none;
 }
 
 // ------------------------------
@@ -176,10 +174,10 @@ a {
 	color: @color__p--text;
 	line-height: 1.3em;
 	overflow: visible;
-	border-bottom: 4px solid @color-highlight--light;
+	border-bottom: 0.3em solid @color-highlight--light;
 	background-color: transparent;
-	margin: 0 -2px;
-	padding: 0 2px;
+	margin: 0 -0.15em;
+	padding: 0 0.15em;
 	height: auto;
 	.transition();
 
@@ -189,7 +187,7 @@ a {
 	
 	&:hover {
 		background-color: fade(@color__link--text, 60%);
-		border-bottom: 4px solid @color-highlight--light;
+		border-bottom: 0.3em solid @color-highlight--light;
 	}
 }
 
@@ -229,7 +227,7 @@ pre, code {
 }
 
 code {
-	border-left: 10px solid @color-highlight;
+	border-left: 0.5em solid @color-highlight;
 }
 
 // ------------------------------
@@ -289,7 +287,7 @@ blockquote {
 	position: relative;
 	margin: 1.8em auto 1em;
 	text-align: center;
-	padding: 1.5em 50px;
+	padding: 1.5em 2.5em;
 	width: 70%;
 	font-style: italic;
 	font-family: @font__p--font-family;

@@ -3,6 +3,7 @@
 // ----------------------------------------
 //
 // #Conditional Mixins
+// #Search Container
 // #Legend
 // #Form Body
 //
@@ -19,6 +20,10 @@
 	padding: 2em 0;
 }
 
+// -----------------------------
+// #Search Container
+// -----------------------------
+
 .widget[data-name="blogsearch"] {
 	.blogsearch-widget-background--spacing();
 	background-color: @color__blogsearch--background;
@@ -29,32 +34,4 @@
 	max-width: none;
 }
 
-// -----------------------------
-// #Legend
-// -----------------------------
-
-.blogsearch__legend {
-	display: none;
-}
-	
-// -----------------------------
-// #Form Body
-// -----------------------------
-
-.blogsearch {
-	.signupform;
-}
-
-.blogsearch__form {
-	width: 60%;
-	max-width: 1400px;
-    margin: 0 auto;
-	
-	@media @tablet-horizontal {
-		width: 80%;
-	}
-	
-	@media @tablet {
-		width: 90%;
-	}
-}
+// For the rest of the search form styles, see less/plugins/plugins.less.

@@ -73,10 +73,8 @@
 // ------------------------------
 
 .twitter__tweet-list {
-	.inline-block-font-hack();
 	.display-flex(flex);
     .flex-wrap(wrap);
-    .align-items(stretch, stretch);
 	.item--margin-size--border();
 }
 
@@ -89,12 +87,7 @@
 	padding: 0;
 	background-color: @color__twitter-item--background;
 	.item--margin-size--2to1-cols();
-	font-size: @font__p--font-size;
 	.clearfix();
-	
-	.make-font-a-little-smaller(@font__p--font-size);
-	.make-font-smaller(@font__p--font-size);
-	.make-font-a-lot-smaller(@font__p--font-size);
 }
 
 // ------------------------------

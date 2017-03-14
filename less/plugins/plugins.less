@@ -2,33 +2,83 @@
 // Duotone: LESS > Plugins
 // ----------------------------------------
 //
+// #Search Form
+// #Item Price
 // #Tags and Categories
 // #Paginatinon
 // 
 // ----------------------------------------
 
 // ------------------------------
+// #Search Form
+// ------------------------------
+
+.blogsearch,
+.fieldset.ecomproductslist__fieldset--search {
+	.signupform;
+}
+
+.blogsearch__form,
+.ecomproductslist__form {
+	width: 60%;
+	max-width: 1400px;
+    margin: 0 auto;
+	
+	@media @tablet-horizontal {
+		width: 80%;
+	}
+	
+	@media @tablet {
+		width: 90%;
+	}
+}
+
+// Styles only for the Ecommerce Product List.
+
+.product-filters .input--search {
+	height: 3rem;
+}
+
+// ------------------------------
+// #Item Price
+// ------------------------------
+
+.item-price {
+    display: inline-block;
+	background-color: @color-text--lightest;
+    margin: 0.5em 0;
+    padding: 0.4em 0.5em;
+	height: 2em;
+    line-height: 1em;
+}
+
+// ------------------------------
 // #Tags and Categories
 // ------------------------------
-	
+
 .post-category,
 .post-tags {
 	padding: 0;
 }
 
+.post-category *,
+.post-tags * {
+	word-break: normal;
+}
+
 .category-title,
 .tags-title {
-	label;
+	display: block;
+	.label-text;
 	padding: 0;
 }
 
-.tag-list {
+.tag-list,
+.dietary-list {
 	.clearfix();
 	
 	li {
 		float: left;
-		margin: 0;
-		padding: 0;
 		
 		&:last-child {
 			margin-right: 0;
@@ -40,6 +90,8 @@
 .tag-item,
 .dietary-list {
 	line-height: 1em;
+    margin: 0;
+	padding: 0;
 }
 
 a.category-link,
@@ -49,7 +101,7 @@ a.tag-link,
 	background: @color__blogpost-article--background;
 	margin: 0.4em 0.8em 0.4em 0;
 	padding: 0.6em;
-	line-height: 1em;
+	line-height: 1.2em;
 	letter-spacing: @font__h4--letter-spacing;
 	text-transform: uppercase;
 	font-size: @font__h4--font-size*0.8;
@@ -86,6 +138,7 @@ a.tag-link,
 
 	a.button--pagination {
 		.link-button;
+		.transition();
 		
 		&:before {
 			float: left;
@@ -104,6 +157,11 @@ a.tag-link,
 .blogpostlist {
 	.pagination-list {
 		.justify-content(space-between);
+	}
+
+	.pagination-item {
+		margin: 0;
+		padding: 0;
 	}
 
 	.control-text {
@@ -126,5 +184,19 @@ a.tag-link,
 				margin: 0.1em -0.3em 0 -0.1em;
 			}
 		}
+	}
+}
+
+// Styles only for the Ecommerce Product List.
+
+.ecomproductslist,
+.ecomfeaturedproducts {
+	.pagination-list {
+		.justify-content(center, center);
+	}
+
+	.pagination-item {
+		margin: 0;
+		padding: 0.4em;
 	}
 }

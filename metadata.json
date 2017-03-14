@@ -211,13 +211,14 @@
             "color__blogpostlist-title--text": "@color__blogpost-title--text"
         },
         "ecommerce": {
-            "color__ecomproductslist-product-title--text": "@color__p--text",
+            "color__ecomproductslist-filters--background": "@color__container--background",
+            "color__ecomproductslist-product-title--text": "@color__h3--text",
             "color__ecomproduct-title--text": "@color__h2--text",
             "color__ecomproduct-price--text": "@color__p--text"
         },
         "menu": {
             "color__menusections--background": "@color__secondary",
-            "color__menu--background": "color__container--background",
+            "color__menu--background": "@color__container--background",
             "color__menu-section-header--background": "@color__secondary",
             "color__menu-section-featured--background": "@color__secondary"
         }
