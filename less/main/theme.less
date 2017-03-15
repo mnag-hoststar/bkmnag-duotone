@@ -18,6 +18,9 @@
 // ------------------------------
 
 .template__header {
+	.display-flex(flex);
+	.align-items(center, center);
+	.justify-content(space-between, justify);
 	position: fixed;
 	top: 0;
     left: 0;
@@ -45,6 +48,11 @@
 }
 
 html, body {
+	font-family: @font__p--font-family;
+	font-size: @font__p--font-size;
+	font-weight: @font__p--font-weight;
+	line-height: unit(@font__p--line-height*0.1, em);
+	letter-spacing: @font__p--letter-spacing;
     background-color: @color__body--background;
 	text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
 	text-rendering: optimizeLegibility !important;
@@ -57,6 +65,16 @@ html, body {
     width: -webkit-calc(100% - 0px);
 }
 
+html {
+	height: 100%;
+}
+
+body {
+	min-height: 100%;
+	.display-flex(flex);
+  	.flex-direction(column);
+}
+
 // HTML5 Semantic Elements
 article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, section {
 	display: block;
@@ -66,7 +84,9 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
 // #Page Styles
 // ------------------------------
 
-.page {}
+.page {
+	.flex(1);
+}
 
 // ------------------------------
 // #Content
@@ -95,6 +115,52 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
     background-color: @color__footer--background;
     text-align: center;
     border-top: 0.5em solid @color__footer--border;
+	margin-top: 4em;
+	padding: 1em 0;
 	.footer-border-removal();
-	.template__content--width();
+		
+	@media @mobile {
+		margin-top: 2em;
+	}
+	
+	.widget {
+		padding: 0;
+	}
+	
+	&-container {
+		.display-flex(flex);
+		.align-items(center, center);
+		.template__content--width();
+		clearfix();
+		
+		@media @mobile {
+			display: block;
+		}
+		
+		&-left {
+			float: left;
+			width: 50%;
+			padding-right: 1em;
+			text-align: left;
+		}
+		
+		&-right {
+			float: right;
+			padding-left: 1em;
+			text-align: right;
+		}
+
+		&-left,
+		&-right {
+			width: 50%;
+			margin: 0.5em 0;
+			
+			@media @mobile {
+				float: none;
+				padding: 0;
+				width: auto;
+				text-align: center;
+			}
+		}
+	}
 }

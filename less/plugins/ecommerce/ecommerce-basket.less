@@ -26,7 +26,7 @@
 	
 	&:before {
 		float: right;
-    	margin: 0 0 0 0.3em;
+    	margin: 0.4em 0 0 0.3em;
 		font-size: @font__p--font-size*2;
 		
 		.make-font-a-little-smaller(@font__p--font-size*2);
@@ -42,6 +42,7 @@
 	.transition();
 	background-color: @color-text--lightest;
 	font-size: @font__p--font-size*0.9;
+	line-height: unit(@font__p--font-size*0.9*0.1, em);
 	
 	.make-font-a-little-smaller(@font__p--font-size*0.9);
 	.make-font-smaller(@font__p--font-size*0.9);

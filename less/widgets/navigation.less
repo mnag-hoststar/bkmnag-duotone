@@ -16,7 +16,6 @@
 // ------------------------------
 
 .template__company {
-	display: table;
 	float: left;
 	margin-right: 1em;
 	padding: 0;
@@ -37,6 +36,7 @@
 	
 	&__logo-image {
 		max-height: 3em;
+		min-height: 0.5em;
 	}
 }
 
@@ -48,7 +48,7 @@
 		font-family: @font__companyname--font-family;
 		font-size: @font__companyname--font-size;
 		font-weight: @font__companyname--font-weight;
-		line-height: @font__companyname--line-height;
+		line-height: unit(@font__companyname--line-height*0.1, em);
 		letter-spacing: @font__companyname--letter-spacing;
 		color: @color__companyname--text;
 		text-transform: uppercase;
@@ -97,6 +97,7 @@
 	@media @tablet {
 		
 		// Displays as Icon's Middle Bar
+		
 		z-index: 100;
 		cursor: pointer;
 		background: @color__navigation--text;
@@ -266,7 +267,7 @@
 		font-family: @font__navigation--font-family;
 		font-size: @font__navigation--font-size;
 		font-weight: @font__navigation--font-weight;
-		line-height: @font__navigation--line-height;
+		line-height: unit(@font__navigation--line-height*0.1, em);
 		letter-spacing: @font__navigation--letter-spacing;
 		color: @color__navigation--text;
 	

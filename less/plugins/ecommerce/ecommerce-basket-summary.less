@@ -52,6 +52,10 @@
 			padding: 0.5em 0;
 			.clearfix();
 			
+			&:nth-of-type(2) {
+				border-top-width: 0.2em;
+			}
+			
 			&:last-child {
 				border: none;
 				padding: 0;
@@ -205,12 +209,12 @@
 			}
 			
 			&, &:hover {
-				width: @font__p--line-height;
-				height: @font__p--line-height;
+				width: unit(@font__p--line-height*0.1, em);
+				height: unit(@font__p--line-height*0.1, em);
 				padding: 0;
 				border: none;
 				font-size: @font__p--font-size;
-				line-height: @font__p--line-height;
+				line-height: unit(@font__p--line-height*0.1, em);
 	
 				.make-font-a-little-smaller(@font__p--font-size);
 				.make-font-smaller(@font__p--font-size);
@@ -289,7 +293,7 @@
 	
 	&__order-total {
 		@media @basketsummary-medium, @mobile {
-			text-align: center;
+			text-align: right;
 		}
 	}
 }

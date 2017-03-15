@@ -14,6 +14,7 @@
 // #Unordered and Ordered List
 // #Block Quote
 // #Highlighted Text
+// #Icons
 //
 // ----------------------------------------
 
@@ -49,7 +50,7 @@ h1, .heading--1 {
 	font-family: @font__h1--font-family;
 	font-weight: @font__h1--font-weight;
 	font-size: @font__h1--font-size;
-	line-height: @font__h1--line-height;
+	line-height: unit(@font__h1--line-height*0.1, em);
 	letter-spacing: @font__h1--letter-spacing;
 	color: @color__h1--text;
 	
@@ -62,7 +63,7 @@ h2, .heading--2 {
 	font-family: @font__h2--font-family;
 	font-weight: @font__h2--font-weight;
 	font-size: @font__h2--font-size;
-	line-height: @font__h2--line-height;
+	line-height: unit(@font__h2--line-height*0.1, em);
 	letter-spacing: @font__h2--letter-spacing;
 	color: @color__h2--text;
 	
@@ -75,7 +76,7 @@ h3, .heading--3 {
 	font-family: @font__h3--font-family;
 	font-size: @font__h3--font-size;
 	font-weight: @font__h3--font-weight;
-	line-height: @font__h3--line-height;
+	line-height: unit(@font__h3--line-height*0.1, em);
 	letter-spacing: @font__h3--letter-spacing;
 	color: @color__h3--text;
 	
@@ -88,7 +89,7 @@ h4, .heading--4 {
 	font-family: @font__h4--font-family;
 	font-weight: @font__h4--font-weight;
 	font-size: @font__h4--font-size;
-	line-height: @font__h4--line-height;
+	line-height: unit(@font__h4--line-height*0.1, em);
 	letter-spacing: @font__h4--letter-spacing;
 	color: @color__h4--text;
 	text-transform: uppercase;
@@ -102,7 +103,7 @@ h5, .heading--5 {
 	font-family: @font__h4--font-family;
 	font-weight: @font__h4--font-weight;
 	font-size: @font__h4--font-size;
-	line-height: @font__h4--line-height;
+	line-height: unit(@font__h4--line-height*0.1, em);
 	letter-spacing: @font__h4--letter-spacing;
 	color: @color__h4--text;
 	
@@ -116,7 +117,7 @@ h6, .heading--6 {
 	font-family: @font__h4--font-family;
 	font-weight: @font__h4--font-weight;
 	font-size: @font__h4--font-size*0.8;
-	line-height: @font__h4--line-height*0.8;
+	line-height: unit(@font__h4--line-height*0.1, em);
 	letter-spacing: @font__h4--letter-spacing*0.8;
 	color: @color__h4--text;
 	
@@ -126,7 +127,11 @@ h6, .heading--6 {
 }
 
 p, .paragraph, ul, ol, li {
-	// This is already defined in the html tag.
+	font-family: @font__p--font-family;
+	font-size: @font__p--font-size;
+	font-weight: @font__p--font-weight;
+	line-height: unit(@font__p--line-height*0.1, em);
+	letter-spacing: @font__p--letter-spacing;
 	
 	.make-font-a-little-smaller(@font__p--font-size);
 	.make-font-smaller(@font__p--font-size);
@@ -352,4 +357,16 @@ blockquote {
 
 ::selection {
     background: @color-highlight--lighter;
+}
+
+// ------------------------------
+// #Icons
+// ------------------------------
+
+.icon:before {
+	margin-right: 0.5em;
+}
+
+.icon:after {
+	margin-left: 0.5em;
 }

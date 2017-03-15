@@ -27,7 +27,7 @@
 
 // Overall message styling
 
-.message {
+.widget .message {
     position: relative;
     padding: 1em;
 	padding-left: 3.5em;
@@ -52,8 +52,9 @@
 	
 	p {
 		padding: 0;
+		text-align: left;
 		font-family: @font__h4--font-family;
-		line-height: @font__h4--line-height;
+		line-height: unit(@font__h4--line-height*0.1, em);
 		font-size: @font__p--font-size;
 		color: #fff;
 		
@@ -230,7 +231,7 @@
 		font-family: @font__button--font-family;
 		font-size: @font__button--font-size;
 		font-weight: @font__button--font-weight;
-		line-height: @font__button--line-height;
+		line-height: unit(@font__button--line-height*0.1, em);
 		letter-spacing: @font__button--letter-spacing;
 		color: @color__button--text;
 		text-transform: uppercase;
