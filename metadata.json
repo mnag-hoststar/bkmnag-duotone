@@ -134,11 +134,11 @@
             "font__navigation--line-height": "@font-swatch4-line-height",
             "font__navigation--letter-spacing": "unit(1px/10, em)",
             "color__navigation--text": "@color-swatch7",
-            "color__navigation--text--hover": "@color__secondary",
+            "color__navigation--text--hover": "darken(@color-swatch7, 20%)",
             "color__navigation--text--selected": "@color__secondary",
 			"color__navigation-list--background": "@color__secondary",
 			"color__navigation-item--text": "@color-swatch7",
-            "color__navigation-item--text--hover": "@color__primary",
+            "color__navigation-item--text--hover": "mix(@color__navigation-item--text, @color__secondary, 20%)",
             "color__navigation-item--text--selected": "@color__primary"
         },
         "feature": {
@@ -197,13 +197,13 @@
         },
 		"twitter": {
 			"color__twitter--background": "@color__container--background",
-			"color__twitter-item--background": "@color-swatch7"
+			"color__twitter-item--background": "@color__body--background"
 		},
         "blog": {
 			"color__blogsearch--background": "@color__form--background",
-			"color__blogpostlist--background": "@color-swatch7",
+			"color__blogpostlist--background": "@color__body--background",
             "color__blogpostlist-article--background": "fade(@font-swatch5-color, 10%)",
-            "color__blogpostlist-title--background": "@color-swatch7",
+            "color__blogpostlist-title--background": "@color__body--background",
             "color__blogpost-title--text": "@color__h2--text",
             "color__blogpost-article--background": "@color__primary",
             "color__blogpostlist-title--text": "@color__blogpost-title--text"

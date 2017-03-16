@@ -98,30 +98,37 @@
 		
 		// Displays as Icon's Middle Bar
 		
-		z-index: 100;
-		cursor: pointer;
-		background: @color__navigation--text;
-		background-clip: content-box;
-		width: 28px;
-		height: 3px;
-		padding: 0;
-		display: block;
-		position: absolute;
-		top: 0;
-		right: 0;
-		margin: 28px 20px;
-		font-size: 26px;
-		text-indent: 10000px;
-		.transition(background, 0s, ease-in, 0.05s);
 
-		.make-font-a-little-smaller(@font__companyname--font-size);
-		.make-font-smaller(@font__companyname--font-size);
-		.make-font-a-lot-smaller(@font__companyname--font-size);
+		&, &:hover, &:focus {
+			z-index: 100;
+			cursor: pointer;
+			background: @color__navigation--text;
+			background-clip: content-box;
+			width: 28px;
+			height: 3px;
+			padding: 0;
+			display: block;
+			position: absolute;
+			top: 0;
+			right: 0;
+			margin: 28px 20px;
+			font-size: 26px;
+			text-indent: 10000px;
+			border: none;
+			.box-shadow(none);
+			.transition(background, 0s, ease-in, 0.05s);
+
+			.make-font-a-little-smaller(@font__companyname--font-size);
+			.make-font-smaller(@font__companyname--font-size);
+			.make-font-a-lot-smaller(@font__companyname--font-size);
+		}
 
 		// Top and Bottom Navigation Item Bar
 
 		&:after,
-		&:before {
+		&:before,
+		&:hover:after,
+		&:hover:before {
 			content: "";
 			height: 3px;
 			width: 28px;
@@ -140,21 +147,24 @@
 
 		// Top Bar
 		
-		&:before {
-			top: 0.4em;
+		&:before,
+		&:hover:before {
+			top: 0.3em;
 		  	.transition-property-2items(top, transform);
 		}
 
 		// Bottom Bar
 		
-		&:after {
-			bottom: 0.4em;
+		&:after,
+		&:hover:after {
+			bottom: 0.3em;
 			.transition-property-2items(bottom, transform);
 		}
 
 		&:hover {
 			&, &:before, &:after {
 				background-color: @color__navigation--text;
+				border: none;
 			}
 		}
 	}
@@ -323,7 +333,7 @@
 	}
 	
 	&.folder-open > .item-name {
-		color: lighten(@color__navigation--text--hover, 20%);
+		color: @color__navigation--text--hover;
 	}
 }
 
