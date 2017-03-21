@@ -193,23 +193,25 @@
 // ------------------------------
 
 .bk-cookie-container {
-	display: none; // TODO: set to "table" before publishing the template.
+	display: table;
 	text-align: left;
 	border: none;
 	position: fixed;
-	top: @header-height;
-	bottom: unset;
+	bottom: 0.5em;
 	left: 0;
 	right: 0;
-	margin: 0;
-	text-align: center;
 	width: 100%;
+	margin: 0 auto;
+	
+	@media @tablet {
+		bottom: 0;
+	}
 	
 	p, a, .bk-cookie-close-button {
 		display: table-cell;
 	}
 	
-	p, a {
+	p, p a {
 		.paragraph;
 		color: #fff;
 		
@@ -220,6 +222,10 @@
 	
 	p {
 		padding: 0.5em 1em 1em 1em;
+	}
+	
+	p a {
+		line-height: 1.3em;
 	}
 	
 	.bk-cookie-close-button {

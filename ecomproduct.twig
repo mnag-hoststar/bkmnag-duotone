@@ -2,16 +2,19 @@
 
 {% block content %}
 <!-- Page Content Start -->
-<section class="page page--404">
+<section class="page page--ecomproduct">
     {% include "includes/header.twig" %}
-
-	<!-- Zone Content Start -->
+	
+    <!-- Zone Content Start -->
     <div class="template__content">
         <div class="container">
+			{{widget('ecombasket', 'shopbasket', {})|raw}}
+			{{widget('ecomcategorieslist', 'productcategories', {})|raw}}}
             {{zone('main')|raw}}
+			{{widget('ecomproductslist', 'productlist', {})|raw}}
         </div>
     </div>
-	<!-- Zone Content End -->
+    <!-- Zone Content End -->
 	
 </section>
 <!-- Page Content End -->

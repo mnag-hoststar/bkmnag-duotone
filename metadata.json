@@ -31,7 +31,7 @@
     "fontSwatch": {
        "title": "Futura / Playfair Display",
         "font1": {
-            "font-family": "\"Futura\", Helvetica, Arial, sans-serif",
+            "font-family": "\"Futura\", Helvetica, sans-serif",
             "font-size": "50px",
             "font-weight": "900",
             "line-height": "12px",
@@ -39,7 +39,7 @@
             "color": "@color-swatch5"
         },
         "font2": {
-            "font-family": "\"Futura\", Helvetica, Arial, sans-serif",
+            "font-family": "\"Futura\", Helvetica, sans-serif",
             "font-size": "36px",
             "font-weight": "900",
             "line-height": "12px",
@@ -47,7 +47,7 @@
             "color": "@color-swatch5"
         },
         "font3": {
-            "font-family": "\"Futura\", Helvetica, Arial, sans-serif",
+            "font-family": "\"Futura\", Helvetica, sans-serif",
             "font-size": "26px",
             "font-weight": "900",
             "line-height": "12px",
@@ -55,7 +55,7 @@
             "color": "@color-swatch5"
         },
         "font4": {
-            "font-family": "\"Futura\", Helvetica, Arial, sans-serif",
+            "font-family": "\"Futura\", Helvetica, sans-serif",
             "font-size": "18px",
             "font-weight": "400",
             "line-height": "14px",
@@ -63,6 +63,46 @@
             "color": "@color-swatch5"
         },
         "font5": {
+            "font-family": "\"Playfair Display\", Palatino, Georgia, serif",
+            "font-size": "18px",
+            "font-weight": "400",
+            "line-height": "18px",
+            "letter-spacing": "0px",
+            "color": "@color-swatch4"
+        },
+        "font6": {
+            "font-family": "\"Playfair Display\", Palatino, Georgia, serif",
+            "font-size": "18px",
+            "font-weight": "400",
+            "line-height": "18px",
+            "letter-spacing": "0px",
+            "color": "@color-swatch4"
+        },
+        "font7": {
+            "font-family": "\"Playfair Display\", Palatino, Georgia, serif",
+            "font-size": "18px",
+            "font-weight": "400",
+            "line-height": "18px",
+            "letter-spacing": "0px",
+            "color": "@color-swatch4"
+        },
+        "font8": {
+            "font-family": "\"Playfair Display\", Palatino, Georgia, serif",
+            "font-size": "18px",
+            "font-weight": "400",
+            "line-height": "18px",
+            "letter-spacing": "0px",
+            "color": "@color-swatch4"
+        },
+        "font9": {
+            "font-family": "\"Playfair Display\", Palatino, Georgia, serif",
+            "font-size": "18px",
+            "font-weight": "400",
+            "line-height": "18px",
+            "letter-spacing": "0px",
+            "color": "@color-swatch4"
+        },
+        "font10": {
             "font-family": "\"Playfair Display\", Palatino, Georgia, serif",
             "font-size": "18px",
             "font-weight": "400",

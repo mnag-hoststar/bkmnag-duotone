@@ -37,7 +37,7 @@ $(document).ready(function() {
                 $('<li class="ecom-view-more" id="ecomscroll" href="#">&gt;</li>').click( function(){
                 $(this).siblings(':hidden').show().end();
             })
-            );
+		);
       }
     });
 
@@ -55,12 +55,4 @@ $(document).ready(function() {
             $('ul.product-gallery li:last').prependTo('ul.product-gallery');
         }
     });
-	
-	// Testing jQuery
-	
-	$("h1").filter(":even").addClass("background-color--secondary");
-	
-	// if ($(".widget h1").filter(":even")) {
-	//    $(".widget")addClass("background-color--secondary")
-	// }
 });

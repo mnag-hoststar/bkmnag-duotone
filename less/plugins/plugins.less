@@ -140,6 +140,20 @@ a.tag-link,
 		.link-button;
 		.transition();
 		
+		&.button--previous {
+			&, &:hover {
+				padding-left: @button-icon-padding;
+				padding-right: @button-padding;
+			}
+		}
+		
+		&.button--next {
+			&, &:hover {
+				padding-left: @button-padding;
+				padding-right: @button-icon-padding;
+			}
+		}
+		
 		&:before {
 			float: left;
 			margin-left: -0.2em;
@@ -172,6 +186,8 @@ a.tag-link,
 
 	a.button--pagination {
 		.link-button;
+		padding-left: @button-padding;
+		padding-right: @button-padding;
 		
 		&:before {
 			@media @mobile {

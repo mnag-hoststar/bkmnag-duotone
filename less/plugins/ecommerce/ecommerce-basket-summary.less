@@ -93,10 +93,22 @@
 // #Cell Image
 // ------------------------------
 
+.summary-table .cell--image {
+}
+
 .ecombasketsummary {
     &__cell.cell--image {
+		width: 10%;
+	
+		@media @layout-width-breakpoint {
+			width: 12%;
+		}
+
+		@media @tablet-horizontal {
+			width: 15%;
+		}
 		
-		@media @basketsummary-medium, @mobile {
+		@media @basketsummary-medium {
 			float: left;
 			padding-right: 1em;
 			width: 30%;
@@ -105,7 +117,11 @@
 		.summary-item-link {
 			display: block;
 			background-image: none !important;
-			text-align: center;
+			text-align: left;
+			
+			@media @tablet-horizontal {
+				text-align: center;
+			}
 
 			.image {
 				display: inline-block;
