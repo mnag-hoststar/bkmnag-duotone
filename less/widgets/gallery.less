@@ -25,9 +25,25 @@
 // #Whole Gallery
 // ------------------------------
 
+// Color correction for the background.
+// Adding the same background as the forms widget
+// to a content widget if there is one above it.
+
 .widget[data-name="gallery"] {
 	.gallery-widget-background--spacing();
+}
+
+.widget[data-name="gallery"],
+.widget--gallery-background {
 	background: @color__gallery--background;
+}
+
+.widget--gallery-background + .widget[data-name="gallery"] {
+    padding-top: 1em;
+}
+
+.widget--gallery-background {
+	padding-bottom: 0;
 }
 
 .gallery-list {

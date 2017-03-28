@@ -241,15 +241,16 @@
 		.button.quantity-plus {
 			&:after {
 				position: absolute;
-				top: 0.5em;
-    			left: 0.5em;
+				top: 0;
+    			left: 0;
 				margin: 0;
 				padding: 0;
 				border: none;
 				font-family: 'FontAwesome', sans-serif;
 				color: @color__button--text;
 				font-size: @font__p--font-size;
-				line-height: 1em;
+				line-height: unit(@font__p--line-height*0.1, em)+0.1;
+				width: unit(@font__p--line-height*0.1, em)+0.1;
 	
 				.make-font-a-little-smaller(@font__p--font-size);
 				.make-font-smaller(@font__p--font-size);
@@ -272,6 +273,10 @@
 				content: "\f067";
 			}
 		}
+	}
+	
+	&__quantity-field {
+		line-height: unit(@font__p--line-height*0.1, em);
 	}
 }
 

@@ -1,10 +1,10 @@
 {
     "name":"Duotone",
     "widgetVersion": 2,
-    "thumbnail":"images/the-edge-thumbnail.png",
+    "thumbnail":"duotone-thumbnail.png",
     "templateType":"standard",
     "pageTypes": [ "home", "404" ],
-    "screenshot":"images/the-edge-screenshot.jpg",
+    "screenshot":"duotone-screenshot.jpg",
      "images":[
         "images/gallery/gallery-image--1.jpg",
         "images/gallery/gallery-image--2.jpg",
@@ -29,9 +29,9 @@
         }
     },
     "fontSwatch": {
-       "title": "Futura / Playfair Display",
+       "title": "Poppins / Playfair Display",
         "font1": {
-            "font-family": "\"Futura\", Helvetica, sans-serif",
+			"font-family": "\"Poppins\", \"Montserrat\", \"Trebuchet MS\", Helvetica, sans-serif",
             "font-size": "50px",
             "font-weight": "900",
             "line-height": "12px",
@@ -39,7 +39,7 @@
             "color": "@color-swatch5"
         },
         "font2": {
-            "font-family": "\"Futura\", Helvetica, sans-serif",
+			"font-family": "\"Poppins\", \"Montserrat\", \"Trebuchet MS\", Helvetica, sans-serif",
             "font-size": "36px",
             "font-weight": "900",
             "line-height": "12px",
@@ -47,7 +47,7 @@
             "color": "@color-swatch5"
         },
         "font3": {
-            "font-family": "\"Futura\", Helvetica, sans-serif",
+			"font-family": "\"Poppins\", \"Montserrat\", \"Trebuchet MS\", Helvetica, sans-serif",
             "font-size": "26px",
             "font-weight": "900",
             "line-height": "12px",
@@ -55,7 +55,7 @@
             "color": "@color-swatch5"
         },
         "font4": {
-            "font-family": "\"Futura\", Helvetica, sans-serif",
+			"font-family": "\"Poppins\", \"Montserrat\", \"Trebuchet MS\", Helvetica, sans-serif",
             "font-size": "18px",
             "font-weight": "400",
             "line-height": "14px",
@@ -70,22 +70,27 @@
             "letter-spacing": "0px",
             "color": "@color-swatch4"
         },
-        "font6": {
+		"font6": {
             "font-family": "\"Playfair Display\", Palatino, Georgia, serif",
             "font-size": "18px",
             "font-weight": "400",
             "line-height": "18px",
             "letter-spacing": "0px",
-            "color": "@color-swatch4"
-        },
-        "font7": {
+            "color": "@color-swatch4",
+			"color-hover": "@color-swatch6",
+			"background-color": "@color-swatch7",
+			"background-color-hover": "@color-swatch7"
+		},
+		"font7": {
             "font-family": "\"Playfair Display\", Palatino, Georgia, serif",
             "font-size": "18px",
             "font-weight": "400",
             "line-height": "18px",
             "letter-spacing": "0px",
-            "color": "@color-swatch4"
-        },
+            "color": "@color-swatch4",
+			"background-color": "@color-swatch7",
+			"background-color-hover": "@color-swatch7"
+		},
         "font8": {
             "font-family": "\"Playfair Display\", Palatino, Georgia, serif",
             "font-size": "18px",
@@ -171,14 +176,13 @@
             "font__navigation--font-family": "@font-swatch4-font-family",
             "font__navigation--font-size": "14px",
             "font__navigation--font-weight": "700",
-            "font__navigation--line-height": "@font-swatch4-line-height",
+            "font__navigation--line-height": "20px",
             "font__navigation--letter-spacing": "unit(1px/10, em)",
             "color__navigation--text": "@color-swatch7",
             "color__navigation--text--hover": "darken(@color-swatch7, 20%)",
             "color__navigation--text--selected": "@color__secondary",
 			"color__navigation-list--background": "@color__secondary",
 			"color__navigation-item--text": "@color-swatch7",
-            "color__navigation-item--text--hover": "mix(@color__navigation-item--text, @color__secondary, 20%)",
             "color__navigation-item--text--selected": "@color__primary"
         },
         "feature": {
@@ -207,7 +211,7 @@
             "color__button--text--hover": "@color-swatch7",
             "color__button--border": "@color-swatch4",
             "font__button--font-family": "@font-swatch4-font-family",
-            "font__button--font-size": "14px",
+            "font__button--font-size": "16px",
             "font__button--font-weight": "700",
             "font__button--line-height": "@font-swatch4-line-height",
             "font__button--letter-spacing": "unit(1.5px/10, em)"

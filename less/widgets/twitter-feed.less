@@ -62,10 +62,26 @@
 // #Twitter Widget Container
 // ------------------------------
 
+// Color correction for the background.
+// Adding the same background as the forms widget
+// to a content widget if there is one above it.
+
 .widget[data-name="twitter"] {
 	.twitter-body-background--spacing();
 	.twitter-widget-background--spacing();
+}
+
+.widget[data-name="twitter"],
+.widget--twitter-background {
 	background-color: @color__twitter--background;
+}
+
+.widget--twitter-background + .widget[data-name="twitter"] {
+    padding-top: 1em;
+}
+
+.widget--twitter-background {
+	padding-bottom: 0;
 }
 
 // ------------------------------

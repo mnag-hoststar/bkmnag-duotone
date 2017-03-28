@@ -36,7 +36,7 @@
 // Styles only for the Ecommerce Product List.
 
 .product-filters .input--search {
-	height: 3rem;
+	height: @button-height;
 }
 
 // ------------------------------
@@ -139,30 +139,6 @@ a.tag-link,
 	a.button--pagination {
 		.link-button;
 		.transition();
-		
-		&.button--previous {
-			&, &:hover {
-				padding-left: @button-icon-padding;
-				padding-right: @button-padding;
-			}
-		}
-		
-		&.button--next {
-			&, &:hover {
-				padding-left: @button-padding;
-				padding-right: @button-icon-padding;
-			}
-		}
-		
-		&:before {
-			float: left;
-			margin-left: -0.2em;
-		}
-		
-		&:after {
-			float: right;
-			margin-right: -0.2em;
-		}
 	}
 }
 
@@ -170,12 +146,8 @@ a.tag-link,
 
 .blogpostlist {
 	.pagination-list {
-		.justify-content(space-between);
-	}
-
-	.pagination-item {
-		margin: 0;
-		padding: 0;
+		position: relative;
+		height: @button-height;
 	}
 
 	.control-text {
@@ -183,21 +155,39 @@ a.tag-link,
 			display: none;
 		}
 	}
+	
+	.pagination-item {
+		&:first-child {
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+		
+		&:last-child {
+			position: absolute;
+			top: 0;
+			right: 0;
+		}
+	}
 
 	a.button--pagination {
-		.link-button;
-		padding-left: @button-padding;
-		padding-right: @button-padding;
+		&:before,
+		&:after {
+			left: 0;
+    		right: 0;
+			width: auto;
+			text-align: center;
+		}
 		
 		&:before {
 			@media @mobile {
-				margin: 0.1em -0.2em 0 -0.2em;
+				margin-right: 0;
 			}
 		}
 		
 		&:after {
 			@media @mobile {
-				margin: 0.1em -0.3em 0 -0.1em;
+				margin-left: 0.3em;
 			}
 		}
 	}

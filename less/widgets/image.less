@@ -23,9 +23,25 @@
 // #Image
 // ------------------------------
 
+// Color correction for the background.
+// Adding the same background as the forms widget
+// to a content widget if there is one above it.
+
 .widget[data-name="image"] {
 	.image-widget-background--spacing();
+}
+
+.widget[data-name="image"],
+.widget--image-background {
 	background: @color__image--background;
+}
+
+.widget--image-background + .widget[data-name="image"] {
+    padding-top: 1em;
+}
+
+.widget--image-background {
+	padding-bottom: 0;
 }
 
 // ------------------------------

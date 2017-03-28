@@ -34,11 +34,35 @@
 // #Global Form Styles
 // ------------------------------
 
+// Color correction for the background.
+// Adding the same background as the forms widget
+// to a content widget if there is one above it.
+
 .widget[data-name="signupform"],
 .widget[data-name="contactform"],
 .widget[data-name="advancedcontactform"] {
 	.form-widget-background--spacing();
+}
+
+.widget[data-name="signupform"],
+.widget--signupform-background,
+.widget[data-name="contactform"],
+.widget--contactform-background,
+.widget[data-name="advancedcontactform"],
+.widget--advancedcontactform-background {
 	background: @color__form--background;
+}
+
+.widget--signupform-background + .widget[data-name="signupform"],
+.widget--contactform-background + .widget[data-name="contactform"],
+.widget--advancedcontactform-background + .widget[data-name="advancedcontactform"] {
+    padding-top: 1em;
+}
+
+.widget--signupform-background,
+.widget--contactform-background,
+.widget--advancedcontactform-background {
+	padding-bottom: 0;
 }
 
 .form {

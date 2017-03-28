@@ -39,6 +39,53 @@
 	}
 }
 
+// All page widgets fade in.
+
+@keyframes fadein {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+@-moz-keyframes fadein {
+	/* Firefox */
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+@-webkit-keyframes fadein {
+	/* Safari and Chrome */
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+@-o-keyframes fadein {
+	/* Opera */
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+.widget--zone-widget {
+	animation: fadein 1s;
+	-moz-animation: fadein 1s;
+	-webkit-animation: fadein 1s;
+	-o-animation: fadein 1s;
+}
 
 // -----------------------------
 // #Columns

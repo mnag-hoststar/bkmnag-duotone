@@ -15,6 +15,16 @@
 // #Logo & Company Name
 // ------------------------------
 
+.widget[data-widget-type="companyname"],
+.widget[data-widget-type="logo"] {
+	
+	// If the header is smaller when scrolling down.
+	
+	.template__header--small & {
+		padding: 0.5em 0;
+	}
+}
+
 .template__company {
 	float: left;
 	margin-right: 1em;
@@ -34,9 +44,26 @@
 	padding-right: 1em;
     font-size: 1em;
 	
+	&__logo-link {
+		.flex-display(flex);
+		.flex-direction(column);
+		.justify-content(center, center);
+	}
+	
 	&__logo-image {
 		max-height: 3em;
-		min-height: 0.5em;
+		
+		// If the header is smaller when scrolling down.
+		
+		.template__header--small & {
+			max-height: 1em;
+		}
+		
+		@media @tablet {
+			&, .template__header--small & {
+				max-height: 1.5em;
+			}
+		}
 	}
 }
 
@@ -59,6 +86,26 @@
 
 		&:hover {
 			text-decoration: none;
+		}
+		
+		// If the header is smaller when scrolling down.
+		
+		.template__header--small & {
+			font-size: @font__companyname--font-size*0.8;
+			
+			.make-font-a-little-smaller(@font__companyname--font-size*0.8);
+			.make-font-smaller(@font__companyname--font-size*0.8);
+			.make-font-a-lot-smaller(@font__companyname--font-size*0.8);
+		}
+		
+		@media @tablet {
+			&, .template__header--small & {
+				font-size: @font__companyname--font-size*0.8;
+				
+				.make-font-a-little-smaller(@font__companyname--font-size*0.8);
+				.make-font-smaller(@font__companyname--font-size*0.8);
+				.make-font-a-lot-smaller(@font__companyname--font-size*0.8);
+			}
 		}
 	}
 }
@@ -243,7 +290,8 @@
 // ------------------------------
 
 .navigation-list {
-	padding: 0.5em 0;
+	padding: 0;
+	line-height: 1em;
 	
     @media @tablet {
 		display: block;
@@ -264,6 +312,7 @@
 	position: static;
 	margin-bottom: 0;
 	padding: 0;
+	line-height: 1em;
 	
     @media @tablet {
 		display: block;
@@ -396,7 +445,7 @@
 		}
 		
 		&:hover {
-			color: @color__navigation-item--text--hover;
+			color: @color__navigation-item--text--selected;
 		}
 	}
 

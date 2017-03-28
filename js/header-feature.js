@@ -2,6 +2,7 @@
 // Duotone: JS > header-feature JS
 // ----------------------------------------
 
+// Feature parralax fade effect.
 
 var featureHeight = $(".header-feature").height();
 var featurePosition = $(".header-feature").position();
@@ -15,34 +16,27 @@ function checkFeatureDimensions() {
     featureTriggerValue = featureHeight + featurePosition.top;
     window_height = window.innerHeight;
 }
-
-
-
-
-// Feature parralax fade effect
 var scrollEffect = function (elem) {
 
-    // How high the window is
+	// How high the window is
 
-    if ( window.pageYOffset > (featureTriggerValue - window_height)  ) {
+	if ( window.pageYOffset > (featureTriggerValue - window_height)  ) {
 
-        if(featureTriggerValue > window_height) {
-            offsetAmount = window.pageYOffset - (featureTriggerValue - window_height);
-        }
-        else {
-            offsetAmount = window.pageYOffset;
-        }
+		if(featureTriggerValue > window_height) {
+			offsetAmount = window.pageYOffset - (featureTriggerValue - window_height);
+		}
+		else {
+			offsetAmount = window.pageYOffset/4;
+		}
 
-        // Apply styles as user scrolls
-        elem.setAttribute(
-            "style", "opacity:" + Math.max(0, parseFloat(1-(2/window_height*offsetAmount)).toFixed(2)) + "; -webkit-transform: translateY(" + offsetAmount + "px)"
-        );
-     }
-
+		// Apply styles as user scrolls
+		elem.setAttribute(
+			"style", "opacity:" + Math.max(0, parseFloat(1-(2/window_height*offsetAmount)).toFixed(2)) + "; -webkit-transform: translateY(" + offsetAmount + "px)"
+		);
+	}
 };
 
 var elem = document.querySelector('.content-inner-wrap');
-
 
 window.onscroll = function(e) {
     if (elem) {
@@ -53,4 +47,3 @@ window.onscroll = function(e) {
 $( window ).resize(function() {
   checkFeatureDimensions();
 });
-

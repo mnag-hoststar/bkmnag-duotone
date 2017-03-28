@@ -193,7 +193,7 @@
 // ------------------------------
 
 .bk-cookie-container {
-	display: table;
+	display: block;
 	text-align: left;
 	border: none;
 	position: fixed;
@@ -221,7 +221,8 @@
 	}
 	
 	p {
-		padding: 0.5em 1em 1em 1em;
+		line-height: 1.5em;
+		padding: 0.5em 8rem 1em 1em;
 	}
 	
 	p a {
@@ -229,10 +230,17 @@
 	}
 	
 	.bk-cookie-close-button {
-		position: static;
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		.flex-display(flex);
+		.flex-direction(column);
+		.justify-content(center, center);
 		vertical-align: middle;
 		padding: 1em 2em;
 		.appearance(none);
+		min-width: 7rem;
 		background-color: @color__button--background;
 		font-family: @font__button--font-family;
 		font-size: @font__button--font-size;
@@ -242,6 +250,7 @@
 		color: @color__button--text;
 		text-transform: uppercase;
 		text-align: center;
+		word-break: normal;
 		
 		&:hover {
 			padding: 1em 2em;

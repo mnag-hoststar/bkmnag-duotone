@@ -3,7 +3,20 @@
 {% block content %}
 <!-- Page Content Start -->
 <section class="page page--default">
-    {% include "includes/header.twig" %}
+	
+    <!-- Header -->
+	<header class="template__header">
+		<div class="template__company">
+			{{widget('logo', 'logo', {"defaultlogo": asset('images/logo.png')})|raw}}
+			{{widget('companyname', 'companyname', {
+				"business": "profile",
+				"showTplWidget":"0"
+			})|raw}}
+		</div>
+		<div class="template__navigation">
+			{{widget('extendednavigation', 'extendednavigation', {"align":"right"})|raw}}
+		</div>
+	</header>
 	
     <!-- Zone Content Start -->
     <div class="template__content">
