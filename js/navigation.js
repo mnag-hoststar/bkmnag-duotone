@@ -29,7 +29,7 @@ if (mq.matches) {
 
 var $output = $('#output');
 $(window).on('scroll', function () {
-	var scrollTop     = $(window).scrollTop()
+	var scrollTop = $(window).scrollTop()
 
 	if (scrollTop > 100) {
 		$('.template__header').addClass('template__header--small');
