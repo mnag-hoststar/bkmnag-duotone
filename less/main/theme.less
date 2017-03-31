@@ -66,7 +66,7 @@ html, body {
 }
 
 html {
-	height: 100%;
+	position: relative;
 }
 
 body {
@@ -85,7 +85,17 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
 // #Page Styles
 // ------------------------------
 
-.page {}
+.page {
+	margin-bottom: 10em;
+	
+	@media @tablet {
+		margin-bottom: 14em;
+	}
+	
+	@media @mobile {
+		margin-bottom: 15em;
+	}
+}
 
 // ------------------------------
 // #Content
@@ -110,11 +120,12 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
 // ------------------------------
 
 .template__footer {
+	position: absolute;
+	bottom: 0;
     width: 100%;
     background-color: @color__footer--background;
     text-align: center;
     border-top: 0.5em solid @color__footer--border;
-	margin-top: 4em;
 	padding: 1em 0;
 	.footer-border-removal();
 		

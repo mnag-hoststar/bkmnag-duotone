@@ -20,7 +20,7 @@
 .widget--zone-widget,
 .widget {
 	margin: 0;
-    padding: 1em 0;
+    padding: 0;
 	min-height: 1em;
 }
 
@@ -102,38 +102,168 @@
 
 	.widget {
 		.responsivecolumns {
-			margin: 30px 0 0 0;
-
-			@media @mobile {
-				margin: 0 0 30px;
-
-				&:last-child {
-					margin-bottom: 0;
-				}
-			}
-
-			&:first-child {
-				margin-top: 0;
+			
+			.widget--zone-widget,
+			.widget {
+			    padding: 0;
+			    
+			    & > * {
+			        width: 100%;
+			        padding: 0 1em;
+			    }
+			    
+			    & .content * {
+			        padding-top: 0;
+			    }
 			}
 		}
 
 		.column {
-			@columns-tablet {
-				margin-bottom: 1.5em;
-			}
-
-			@columns-mobile {
-				margin-bottom: 1em;
-			}
-
-			@media @mobile {
-				margin-bottom: 30px;
-
-				&:last-child {
-					margin-bottom: 0;
-				}
+			margin: 0 auto;
+			
+			@media @tablet {
+			    padding: 0%;
 			}
 		}
+	}
+}
+
+.responsivecolumns .columns-two-left,
+.responsivecolumns .columns-two-right {
+	width: 50%;
+}
+
+@media only screen and (max-width: 660px) {
+	.responsivecolumns .columns-two-left,
+	.responsivecolumns .columns-two-right {
+		width: 100%;
+	}
+}
+
+.columns-two-25-75 .responsivecolumns .columns-two-left {
+	width: 25%;
+}
+
+.columns-two-25-75 .responsivecolumns .columns-two-right {
+	width: 75%;
+}
+
+.columns-two-75-25 .responsivecolumns .columns-two-left {
+	width: 75%;
+}
+
+.columns-two-75-25 .responsivecolumns .columns-two-right {
+	width: 25%;
+}
+
+.columns-two-34-66 .responsivecolumns .columns-two-left {
+	width: 33.333%;
+}
+
+.columns-two-34-66 .responsivecolumns .columns-two-right {
+	width: 66.668%;
+}
+
+.columns-two-66-34 .responsivecolumns .columns-two-left {
+	width: 66.668%;
+}
+
+.columns-two-66-34 .responsivecolumns .columns-two-right {
+	width: 33.333%;
+}
+
+@media only screen and (max-width: 925px) {
+	.columns-two-75-25 .responsivecolumns .column,
+	.columns-two-25-75 .responsivecolumns .column,
+	.columns-two-66-34 .responsivecolumns .column,
+	.columns-two-34-66 .responsivecolumns .column {
+		width: 50%;
+	}
+}
+
+@media only screen and (max-width: 660px) {
+	.columns-two-75-25 .responsivecolumns .column,
+	.columns-two-25-75 .responsivecolumns .column,
+	.columns-two-66-34 .responsivecolumns .column,
+	.columns-two-34-66 .responsivecolumns .column {
+		width: 100%;
+	}
+}
+
+.responsivecolumns .columns-three-left,
+.responsivecolumns .columns-three-middle,
+.responsivecolumns .columns-three-right {
+	width: 33.3333333%;
+}
+
+@media only screen and (max-width: 700px) {
+	.responsivecolumns .columns-three-left,
+	.responsivecolumns .columns-three-middle,
+	.responsivecolumns .columns-three-right {
+		width: 100%;
+	}
+}
+
+.columns-three-25-25-50 .responsivecolumns .columns-three-left,
+.columns-three-25-25-50 .responsivecolumns .columns-three-middle {
+	width: 25%;
+}
+
+.columns-three-25-25-50 .responsivecolumns .columns-three-right {
+	width: 50%;
+}
+
+.columns-three-50-25-25 .responsivecolumns .columns-three-left {
+	width: 50%;
+}
+
+.columns-three-50-25-25 .responsivecolumns .columns-three-middle,
+.columns-three-50-25-25 .responsivecolumns .columns-three-right {
+	width: 25%;
+}
+
+@media only screen and (max-width: 925px) {
+	.columns-three-50-25-25 .responsivecolumns .column,
+	.columns-three-25-25-50 .responsivecolumns .column {
+		width: 33.333%;
+	}
+}
+
+@media only screen and (max-width: 479px) {
+	.columns-three-50-25-25 .responsivecolumns .column,
+	.columns-three-25-25-50 .responsivecolumns .column {
+		width: 100%;
+	}
+}
+
+.responsivecolumns .columns-four-first,
+.responsivecolumns .columns-four-second,
+.responsivecolumns .columns-four-third,
+.responsivecolumns .columns-four-fourth {
+	width: 25%;
+}
+
+@media only screen and (max-width: 925px) {
+	.responsivecolumns .columns-four-first,
+	.responsivecolumns .columns-four-second,
+	.responsivecolumns .columns-four-third,
+	.responsivecolumns .columns-four-fourth {
+		width: 50%;
+	}
+}
+
+@media only screen and (max-width: 479px) {
+	.responsivecolumns .columns-four-first,
+	.responsivecolumns .columns-four-second,
+	.responsivecolumns .columns-four-third,
+	.responsivecolumns .columns-four-fourth {
+		width: 100%;
+	}
+}
+
+@media only screen and (max-width: 925px) {
+	.responsivecolumns .columns-four-third {
+		clear: left;
 	}
 }
 

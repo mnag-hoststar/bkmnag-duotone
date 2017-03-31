@@ -292,7 +292,7 @@ blockquote {
 	position: relative;
 	margin: 1.8em auto 1em;
 	text-align: center;
-	padding: 1.5em 2.5em;
+	padding: 1.5em 2.5em !important;
 	width: 70%;
 	font-style: italic;
 	font-family: @font__p--font-family;
@@ -333,17 +333,7 @@ blockquote {
 	.responsivecolumns & {
 		width: auto;
 		max-width: none;
-	}
-	
-	.columns-four-first &,
-	.columns-four-second &,
-	.columns-four-third &,
-	.columns-four-fourth & {
-		padding-right: 0;
-		
-		&:after {
-			display: none;
-		}
+	    margin-top: 0.5em;
 	}
 }
 
