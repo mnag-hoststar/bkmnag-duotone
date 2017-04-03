@@ -59,6 +59,7 @@
 
 .ecomproductslist__product-filters {
 	background-color: @color__ecomproductslist-filters--background;
+	margin: 2em 0;
 	.productsearch-widget-background--spacing();
 	
 	form {
@@ -221,7 +222,11 @@
 
 .product-item-title {
 	.heading--3;
-	color: @color__ecomproductslist-product-title--text;
+	font-size: @font__p--font-size;
+
+	.make-font-a-little-smaller(@font__p--font-size);
+	.make-font-smaller(@font__p--font-size);
+	.make-font-a-lot-smaller(@font__p--font-size);
 }
 
 .product-item-price {

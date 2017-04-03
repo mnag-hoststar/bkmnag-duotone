@@ -16,6 +16,16 @@
 // #Button
 // -----------------------------
 
+.widget[data-name="button"],
+.widget[data-name="tweet"],
+.widget[data-name="clicktocall"],
+.widget[data-name="dropbox"],
+.widget[data-name="facebooklike"],
+.widget[data-name="paypalbuynow"] {
+	margin: 1em 0;
+}
+
+
 button,
 .button,
 .link-button,
@@ -32,16 +42,19 @@ button,
 	.transition();
     background-color: @color__button--background;
 	font-family: @font__button--font-family;
-	font-size: @font__button--font-size;
 	font-weight: @font__button--font-weight;
 	line-height: unit(@font__button--line-height*0.1, em);
 	letter-spacing: @font__button--letter-spacing;
     color: @color__button--text;
     text-transform: uppercase;
 	
-	.make-font-a-little-smaller(@font__button--font-size);
-	.make-font-smaller(@font__button--font-size);
-	.make-font-a-lot-smaller(@font__button--font-size);
+	&, & span, & a {
+		font-size: @font__button--font-size;
+	
+		.make-font-a-little-smaller(@font__button--font-size);
+		.make-font-smaller(@font__button--font-size);
+		.make-font-a-lot-smaller(@font__button--font-size);
+	}
 	
     &:hover {
 	    padding: 0 1.5em;

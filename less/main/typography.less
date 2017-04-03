@@ -168,6 +168,83 @@ label, .label-text {
 
 span {
 	background-color: transparent;
+	font-size: @font__p--font-size;
+	
+	.make-font-a-little-smaller(@font__p--font-size);
+	.make-font-smaller(@font__p--font-size);
+	.make-font-a-lot-smaller(@font__p--font-size);
+}
+
+span.wysiwyg-font-size-xx-small {
+	font-size: 10px;
+	
+	.make-font-a-little-smaller(10px);
+	.make-font-smaller(10px);
+	.make-font-a-lot-smaller(10px);
+}
+
+span.wysiwyg-font-size-x-small {
+	font-size: 12px;
+	
+	.make-font-a-little-smaller(12px);
+	.make-font-smaller(12px);
+	.make-font-a-lot-smaller(12px);
+}
+
+span.wysiwyg-font-size-smaller {
+	font-size: 14px;
+	
+	.make-font-a-little-smaller(14px);
+	.make-font-smaller(14px);
+	.make-font-a-lot-smaller(14px);
+}
+
+span.wysiwyg-font-size-small {
+	font-size: 16px;
+	
+	.make-font-a-little-smaller(16px);
+	.make-font-smaller(16px);
+	.make-font-a-lot-smaller(16px);
+}
+
+span..wysiwyg-font-size-medium {
+	font-size: 18px;
+	
+	.make-font-a-little-smaller(18px);
+	.make-font-smaller(18px);
+	.make-font-a-lot-smaller(18px);
+}
+
+span.wysiwyg-font-size-large {
+	font-size: 20px;
+	
+	.make-font-a-little-smaller(20px);
+	.make-font-smaller(20px);
+	.make-font-a-lot-smaller(20px);
+}
+
+span.wysiwyg-font-size-larger {
+	font-size: 24px;
+	
+	.make-font-a-little-smaller(24px);
+	.make-font-smaller(24px);
+	.make-font-a-lot-smaller(24px);
+}
+
+span.wysiwyg-font-size-x-large {
+	font-size: 28px;
+	
+	.make-font-a-little-smaller(28px);
+	.make-font-smaller(28px);
+	.make-font-a-lot-smaller(28px);
+}
+
+span.wysiwyg-font-size-xx-large {
+	font-size: 30px;
+	
+	.make-font-a-little-smaller(30px);
+	.make-font-smaller(30px);
+	.make-font-a-lot-smaller(30px);
 }
 
 // ------------------------------
@@ -296,11 +373,14 @@ blockquote {
 	width: 70%;
 	font-style: italic;
 	font-family: @font__p--font-family;
-	font-size: 1.5em;
-	line-height: 1.5em;
+	
+	span {
+		line-height: 1.5em;
+		font-size: 1.5em;
+	}
 	
 	@media @tablet-horizontal {
-		width: 80%;
+		width: @layout-width-desktop;
 	}
 	
 	@media @tablet {
