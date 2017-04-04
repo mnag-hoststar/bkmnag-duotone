@@ -9,6 +9,7 @@
 // #Content
 // #Footer
 // #Paginatinon
+// #Conditionals
 //
 // ----------------------------------------
 
@@ -17,17 +18,42 @@
 // ------------------------------
 
 // Conditional if the Blog Post List background 
-// is not the same as the Blog Article background.
-
-.blogpostlist-article-background--spacing() when not (@color__blogpostlist--background = @color__blogpostlist-article--background) {
-	padding: 2em 0;
-}
-
-// Conditional if the Blog Post List background 
 // is the same as the page background.
 
 .blogpostlist-widget-background--spacing() when (@color__blogpostlist--background = @color__body--background) {
 	padding: 1em 0;
+}
+
+// Conditional if the Blog Post List background 
+// is not the same as the Blog Article background.
+
+.blogpostlist-article-background--spacing() when (@color__blogpostlist--background = @color__blogpostlist-article--background) {
+	.widget[data-name="blogpostlist"] {
+		padding: 2em 0;
+	}
+	
+	.blogpostlist__post-content {
+		padding: 4em 0 1.5em;
+	
+		.responsivecolumns & {
+			padding: 4em 1.5em 1.5em;
+		}
+	}
+	
+	.blogpostlist__post-footer {
+		padding: 0;
+	
+		.responsivecolumns & {
+			padding: 0 1.5em;
+		}
+	}
+}
+
+// Conditional if the Date Background
+// is the same as the Blog Article background.
+
+.blogpostlist-title-background--spacing() when (@color__blogpostlist-title--background = @color__blogpostlist-article--background) {
+	padding: 0.4em 0;
 }
 
 // ------------------------------
@@ -36,7 +62,6 @@
 
 .widget[data-name="blogpostlist"] {
 	background-color: @color__blogpostlist--background;
-	.blogpostlist-article-background--spacing();
 	.blogpostlist-widget-background--spacing();
 }
 
@@ -44,6 +69,10 @@
 	.display-flex(flex);
     .flex-wrap(wrap);
 	.item--margin-size--border();
+	
+	.responsivecolumns & {
+		margin: 0;
+	}
 }
 
 // ------------------------------
@@ -135,7 +164,6 @@ a.blogpostlist__title-link {
 	
 .blogpostlist__post-excerpt p {
 	line-height: 1.5em;
-	color: lighten(@color__p--text, 8%);
 	
 	@media @mobile {
 		display: none;
@@ -177,6 +205,7 @@ a.blogpostlist__read-more {
 		margin: 1.5em 0 0;
 		background: @color__blogpostlist-title--background;
 		.timestamp-styles;
+		.blogpostlist-title-background--spacing();
 		
 		@media @mobile {
 			margin: 1em 0 0;
@@ -200,3 +229,9 @@ a.blogpostlist__read-more {
 // ------------------------------
 
 // For pagination, see less/plugins/plugins.less.
+
+// ------------------------------
+// #Conditionals
+// ------------------------------
+
+.blogpostlist-article-background--spacing();

@@ -20,7 +20,7 @@
 .widget--zone-widget,
 .widget {
 	margin: 0;
-    padding: 0;
+    padding: 0 0 1em 0;
 	min-height: 1em;
 }
 
@@ -93,18 +93,22 @@
 
 .template__content {
 	.widget[data-name="responsivecolumns"] {
-		width: 80%;
-		max-width: 1400px;
-		margin: 0 auto;
+		.template__content--width();
 		
 		.responsivecolumns {
 			width: initial;
 			max-width: none;
 			margin: 0 -1em;
 			
+			.column {
+    			margin: 1em 0;
+				padding: 0 1em;
+			}
+			
 			.widget--zone-widget,
 			.widget {
 			    padding: 0;
+				background-color: transparent;
 			    
 			    & > * {
 			        width: 100%;
@@ -126,95 +130,94 @@
 	}
 }
 
+// Two columns
+
 .responsivecolumns .columns-two-left,
 .responsivecolumns .columns-two-right {
 	width: 50%;
 	margin: 0;
-}
 
-@media only screen and (max-width: 660px) {
-	.responsivecolumns .columns-two-left,
-	.responsivecolumns .columns-two-right {
+	@media @mobile {
 		width: 100%;
 		margin: 0;
 	}
 }
 
-.columns-two-25-75 .responsivecolumns .columns-two-left {
-	width: 25%;
-	margin: 0;
-}
-
-.columns-two-25-75 .responsivecolumns .columns-two-right {
-	width: 75%;
-	margin: 0;
-}
-
-.columns-two-75-25 .responsivecolumns .columns-two-left {
-	width: 75%;
-	margin: 0;
-}
-
-.columns-two-75-25 .responsivecolumns .columns-two-right {
-	width: 25%;
-	margin: 0;
-}
-
-.columns-two-34-66 .responsivecolumns .columns-two-left {
-	width: 33.333%;
-	margin: 0;
-}
-
-.columns-two-34-66 .responsivecolumns .columns-two-right {
-	width: 66.668%;
-	margin: 0;
-}
-
-.columns-two-66-34 .responsivecolumns .columns-two-left {
-	width: 66.668%;
-	margin: 0;
-}
-
-.columns-two-66-34 .responsivecolumns .columns-two-right {
-	width: 33.333%;
-	margin: 0;
-}
-
-@media only screen and (max-width: 925px) {
-	.columns-two-75-25 .responsivecolumns .column,
-	.columns-two-25-75 .responsivecolumns .column,
-	.columns-two-66-34 .responsivecolumns .column,
-	.columns-two-34-66 .responsivecolumns .column {
-		width: 50%;
-		margin: 0;
-	}
-}
-
-@media only screen and (max-width: 660px) {
-	.columns-two-75-25 .responsivecolumns .column,
-	.columns-two-25-75 .responsivecolumns .column,
-	.columns-two-66-34 .responsivecolumns .column,
-	.columns-two-34-66 .responsivecolumns .column {
-		width: 100%;
-		margin: 0;
-	}
-}
+// Three columns
 
 .responsivecolumns .columns-three-left,
 .responsivecolumns .columns-three-middle,
 .responsivecolumns .columns-three-right {
 	width: 33.3333333%;
 	margin: 0;
-}
 
-@media only screen and (max-width: 700px) {
-	.responsivecolumns .columns-three-left,
-	.responsivecolumns .columns-three-middle,
-	.responsivecolumns .columns-three-right {
+	@media @mobile {
 		width: 100%;
 		margin: 0;
 	}
 }
+
+// Four Columns
+
+.responsivecolumns .columns-four-first,
+.responsivecolumns .columns-four-second,
+.responsivecolumns .columns-four-third,
+.responsivecolumns .columns-four-fourth {
+	width: 25%;
+	margin: 0;
+
+	@media only screen and (max-width: 1200px) {
+		width: 50%;
+		margin: 0;
+	}
+
+	@media @mobile {
+		width: 100%;
+	}
+}
+
+// Two columns, unevenly distributed
+
+.columns-two-25-75 .responsivecolumns .columns-two-left,
+.columns-two-75-25 .responsivecolumns .columns-two-right {
+	width: 25%;
+	margin: 0;
+}
+
+.columns-two-25-75 .responsivecolumns .columns-two-right,
+.columns-two-75-25 .responsivecolumns .columns-two-left {
+	width: 75%;
+	margin: 0;
+}
+
+.columns-two-34-66 .responsivecolumns .columns-two-left,
+.columns-two-66-34 .responsivecolumns .columns-two-right {
+	width: 33.333%;
+	margin: 0;
+}
+
+.columns-two-34-66 .responsivecolumns .columns-two-right,
+.columns-two-66-34 .responsivecolumns .columns-two-left {
+	width: 66.668%;
+	margin: 0;
+}
+
+.columns-two-75-25 .responsivecolumns .column,
+.columns-two-25-75 .responsivecolumns .column,
+.columns-two-66-34 .responsivecolumns .column,
+.columns-two-34-66 .responsivecolumns .column {
+	@media only screen and (max-width: 925px) {
+		width: 50%;
+		margin: 0;
+	}
+
+	@media @mobile {
+		width: 100%;
+		margin: 0;
+	}
+}
+
+// Three columns, unevenly distributed
 
 .columns-three-25-25-50 .responsivecolumns .columns-three-right,
 .columns-three-50-25-25 .responsivecolumns .columns-three-left {
@@ -232,42 +235,20 @@
 
 .columns-three-50-25-25 .responsivecolumns .column,
 .columns-three-25-25-50 .responsivecolumns .column {
-	
 	@media only screen and (max-width: 925px) {
 		width: 33.333%;
 		margin: 0;
 	}
 
-	@media only screen and (max-width: 479px) {
+	@media @mobile {
 		width: 100%;
 		margin: 0;
-	}
-}
-
-.responsivecolumns .columns-four-first,
-.responsivecolumns .columns-four-second,
-.responsivecolumns .columns-four-third,
-.responsivecolumns .columns-four-fourth {
-	width: 25%;
-	margin: 0;
-
-	@media @column4-breakpoint {
-		width: 50%;
-		margin: 0;
-	}
-
-	@media @tablet {
-		width: 100%;
 	}
 }
 
 // -----------------------------
 // #Line Widget
 // -----------------------------
-
-.widget[data-name="line"] {
-	
-}
 
 .line {
     line-height: 0;
@@ -282,21 +263,16 @@ hr.line__rule {
 // #Space Widget
 // -----------------------------
 
-.widget[data-name="space"] {
-}
-
-.space {
-}
-
-.space__spacer {
+.widget--zone-widget,
+.widget {
+	&[data-name="space"] {
+		height: 2em;
+	}
 }
 
 // -----------------------------
 // #Page Title Widget
 // -----------------------------
-
-.page-title {
-}
 
 .pagetitle-text {
     h1;

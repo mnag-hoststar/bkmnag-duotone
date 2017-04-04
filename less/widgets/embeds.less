@@ -30,12 +30,6 @@
 // #YouTube
 // -----------------------------
 
-.widget[data-name="youtube"] .youtube {
-	background-color: @color__container--background;
-	width: auto;
-	max-width: none;
-}
-
 // -----------------------------
 // #Disqus
 // -----------------------------
@@ -47,9 +41,14 @@
 // Vimeo embed
 // This makes the video be full width.
 
-iframe[src*="vimeo"] {
-	width: 100%;
-    height: 56.25vw;
+.embed-content {
+	iframe {
+		width: 100%;
+		
+		&[src*="vimeo"] {
+			height: 56.25vw;
+		}
+	}
 }
 
 // -----------------------------

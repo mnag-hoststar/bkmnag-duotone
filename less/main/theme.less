@@ -27,10 +27,14 @@
     right: 0;
 	background-color: @color__header--background;
     z-index: 100;
-	padding: 0 1em;
+	padding: 0.5em 1em;
 	border-bottom: 0.5em solid @color__header--border;
 	.header-border-removal();
 	.transition();
+	
+	&--small {
+		padding: 0 1em;
+	}
 }
 
 // ------------------------------

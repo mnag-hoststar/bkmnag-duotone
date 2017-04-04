@@ -50,7 +50,7 @@
 .widget--contactform-background,
 .widget[data-name="advancedcontactform"],
 .widget--advancedcontactform-background {
-	background: @color__form--background;
+	background-color: @color__form--background;
 }
 
 .widget--signupform-background + .widget[data-name="signupform"],
@@ -71,6 +71,10 @@
 
 	@media @tablet-horizontal {
 		max-width: 100%;
+	}
+	
+	.responsivecolumns & {
+		max-width: none;
 	}
 }
 
