@@ -41,6 +41,62 @@
 		height: 60vw;
 		padding-bottom: 60%;
 	}
+	
+	.responsivecolumns .columns-two-left &,
+	.responsivecolumns .columns-two-right & {
+		height: 30vw;
+		padding-bottom: 30%;
+	
+		@media @tablet-horizontal {
+			height: 40vw;
+			padding-bottom: 40%;
+		}
+	
+		@media @mobile {
+			height: 60vw;
+			padding-bottom: 60%;
+		}
+	}
+	
+	.responsivecolumns .columns-three-left &,
+	.responsivecolumns .columns-three-middle &,
+	.responsivecolumns .columns-three-right & {
+		height: 25vw;
+		padding-bottom: 25%;
+	
+		@media @tablet-horizontal {
+			height: 40vw;
+			padding-bottom: 40%;
+		}
+	
+		@media @mobile {
+			height: 60vw;
+			padding-bottom: 60%;
+		}
+	}
+	
+	.responsivecolumns .columns-four-first &,
+	.responsivecolumns .columns-four-second &,
+	.responsivecolumns .columns-four-third &,
+	.responsivecolumns .columns-four-fourth & {
+		height: 20vw;
+		padding-bottom: 20%;
+	
+		@media @tablet-horizontal {
+			height: 30vw;
+			padding-bottom: 30%;
+		}
+	
+		@media @tablet {
+			height: 40vw;
+			padding-bottom: 40%;
+		}
+	
+		@media @mobile {
+			height: 60vw;
+			padding-bottom: 60%;
+		}
+	}
 }
 
 .responsiveslideshow__slides-list {
@@ -95,17 +151,21 @@
 
 .responsiveslideshow .caption {
 	display: block;
+	.display-flex(flex);
+    .flex-direction(column);
+    .justify-content(center, center);
 	position: absolute;
 	top: 0;
 	bottom: 0;
 	margin: 0;
-	padding: 3em 0;
+	padding: 1em 0 2em;
 	background-color: fade(@color__slideshow-caption--background, 80%);
 	text-align: center;
-	.display-flex(flex);
-    .flex-direction(column);
-    .justify-content(center, center);
 	.controls-font-size();
+
+	@media @tablet {
+		padding: 2em 0 2.5em;
+	}
 }
 
 .responsiveslideshow__image-title,
@@ -117,12 +177,20 @@
 	@media @tablet {
 		width: @layout-width-tablet;
 	}
+	
+	.responsivecolumns & {
+    	width: @layout-width-desktop;
+	}
 }
 
 .responsiveslideshow__image-title {
 	margin-bottom: 0.5em;
 	color: @color__slideshow-title--text;
 	font-size: @font__p--font-size*1.1;
+	line-height: 1.4em;
+	white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 	
 	.make-font-a-little-smaller(@font__p--font-size*1.1);
 	.make-font-smaller(@font__p--font-size*1.1);
@@ -132,6 +200,11 @@
 .responsiveslideshow__image-description {
 	color: @color__slideshow-description--text;
 	line-height: 1.3em;
+	max-height: 3.9em;
+	overflow: hidden;
+	display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
 }
 
 // ------------------------------
@@ -256,6 +329,7 @@
 		background-color: @color__slideshow-pagination-item--background;
 		width: 18px;
 		height: 18px;
+		min-height: 18px;
 		display: block;
 		overflow: hidden;
 		text-indent: -10000px;

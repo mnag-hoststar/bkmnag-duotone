@@ -86,6 +86,7 @@
 		letter-spacing: @font__companyname--letter-spacing;
 		color: @color__companyname--text;
 		text-transform: uppercase;
+		word-break: normal;
 
 		.make-font-a-little-smaller(@font__companyname--font-size);
 		.make-font-smaller(@font__companyname--font-size);
@@ -191,7 +192,7 @@
 			display: block;
 			position: absolute;
 			top: 0;
-			right: 0;
+			right: 5px;
 			margin: 0;
 			padding: 9px 0;
     		height: 21px;
@@ -201,6 +202,7 @@
 			border: none;
 			.box-shadow(none);
 			.transition(background, 0s, ease-in, 0.05s);
+			overflow: hidden;
 
 			.make-font-a-little-smaller(@font__companyname--font-size);
 			.make-font-smaller(@font__companyname--font-size);

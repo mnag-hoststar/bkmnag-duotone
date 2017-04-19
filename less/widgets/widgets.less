@@ -3,6 +3,7 @@
 // ----------------------------------------
 //
 // #Global Widget Styles
+// #Widget with background spacing
 // #Columns
 // #Page Title Widget
 // #Line Widget
@@ -93,6 +94,15 @@
 	-o-animation: fadein 1s;
 }
 
+// ------------------------------
+// #Widget with background spacing
+// ------------------------------
+
+.widget[data-name="gallery"] + .widget[data-name="image"],
+.widget[data-name="image"] + .widget[data-name="gallery"] {
+	padding: 0 0 2em;
+}
+
 // -----------------------------
 // #Columns
 // -----------------------------
@@ -103,14 +113,14 @@
 		.responsivecolumns {
 			.widget--zone-widget,
 			.widget {
-			    padding: 0 0 1em;
+			    padding: 1em 0;
 				background-color: transparent;
 				
-				&:last-child {
-					padding-bottom: 0;
+				&:first-child {
+					padding-top: 0;
 
 					@media @mobile {
-						padding-bottom: 1em;
+						padding-top: 1em;
 					}
 				}
 			    
@@ -122,6 +132,22 @@
 			.widget[data-name="content"],
 			.widget[data-widget-type="content"] {
 				padding: 0;
+			}
+		}
+				
+		.responsivecolumns .columns-four-first,
+		.responsivecolumns .columns-four-second {
+			.widget--zone-widget,
+			.widget {
+				&:last-child {
+					@media only screen and (max-width: 1200px) {
+						padding-bottom: 2em;
+					}
+
+					@media @mobile {
+						padding-bottom: 1em;
+					}
+				}
 			}
 		}
 	}
