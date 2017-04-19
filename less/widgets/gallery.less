@@ -29,16 +29,19 @@
 // Adding the same background as the forms widget
 // to a content widget if there is one above it.
 
-.widget[data-name="gallery"] {
+.widget[data-name="gallery"],
+.widget[data-widget-type="gallery"] {
 	.gallery-widget-background--spacing();
 }
 
 .widget[data-name="gallery"],
+.widget[data-widget-type="gallery"],
 .widget--gallery-background {
 	background: @color__gallery--background;
 }
 
-.widget--gallery-background + .widget[data-name="gallery"] {
+.widget--gallery-background + .widget[data-name="gallery"],
+.widget--gallery-background + .widget[data-widget-type="gallery"] {
     padding-top: 1em;
 }
 
@@ -47,9 +50,8 @@
 }
 
 .gallery-list {
-	.display-flex(flex);
-    .flex-wrap(wrap);
-	margin: -0.5em;
+	margin: -8px;
+	font-size: 0;
 }
 
 // ------------------------------
@@ -58,22 +60,20 @@
 
 .gallery__gallery-item {
 	position: relative;
+	display: inline-block;
 	overflow: hidden;
 	margin: 0;
 	width: 100%/4;
-	height: 12em;
-	height: 20vw;
+	padding-bottom: 100%/4;
 	
 	@media @tablet-horizontal {
 		width: 100%/3;
-		height: 12em;
-		height: 28vw;
+		padding-bottom: 100%/3;
 	}
 	
 	@media @mobile {
 		width: 100%/2;
-		height: 14em;
-		height: 45vw;
+		padding-bottom: 100%/2;
 	}
 	
 	.responsivecolumns .columns-two-left &,
@@ -86,113 +86,22 @@
 	.responsivecolumns .columns-four-third &,
 	.responsivecolumns .columns-four-fourth & {
 		width: 100%/2;
-	}
-	
-	.responsivecolumns .columns-two-left &,
-	.responsivecolumns .columns-two-right & {
-		height: 16em;
-		height: 20vw;
-	
-		@media only screen and (max-width: 1300px) {
-			height: 13em;
-			height: 20vw;
-		}
-	
-		@media only screen and (max-width: 1200px) {
-			height: 12em;
-			height: 20vw;
-		}
-	
-		@media @tablet-horizontal {
-			height: 10em;
-			height: 20vw;
-		}
-	
-		@media @tablet {
-			height: 9em;
-			height: 20vw;
-		}
-	
-		@media @mobile {
-			height: 14em;
-			height: 45vw;
-		}
-	}
-	
-	.responsivecolumns .columns-three-left &,
-	.responsivecolumns .columns-three-middle &,
-	.responsivecolumns .columns-three-right & {
-		height: 13em;
-		height: 12vw;
-	
-		@media only screen and (max-width: 1300px) {
-			height: 13em;
-			height: 13vw;
-		}
-	
-		@media only screen and (max-width: 1200px) {
-			height: 12em;
-			height: 13vw;
-		}
-	
-		@media @tablet-horizontal {
-			height: 10em;
-			height: 13vw;
-		}
-	
-		@media @tablet {
-			height: 9em;
-			height: 13vw;
-		}
-	
-		@media @mobile {
-			height: 14em;
-			height: 45vw;
-		}
+		padding-bottom: 100%/2;
 	}
 	
 	.responsivecolumns .columns-four-first &,
 	.responsivecolumns .columns-four-second &,
 	.responsivecolumns .columns-four-third &,
 	.responsivecolumns .columns-four-fourth & {
-		height: 9em;
-		height: 9.5vw;
-	
-		@media only screen and (max-width: 1500px) {
-			height: 8em;
-			height: 9.5vw;
-		}
-	
-		@media only screen and (max-width: 1400px) {
-			height: 7em;
-			height: 9.5vw;
-		}
 	
 		@media only screen and (max-width: 1300px) {
 			width: 100%;
-			height: 13em;
-			height: 19vw;
+			padding-bottom: 100%;
 		}
 	
 		@media only screen and (max-width: 1200px) {
 			width: 100%/2;
-			height: 12em;
-			height: 20vw;
-		}
-	
-		@media @tablet-horizontal {
-			height: 10em;
-			height: 20vw;
-		}
-	
-		@media @tablet {
-			height: 9em;
-			height: 20vw;
-		}
-	
-		@media @mobile {
-			height: 14em;
-			height: 45vw;
+			padding-bottom: 100%/2;
 		}
 	}
 }
@@ -203,10 +112,10 @@
 
 .gallery__figure {
     position: absolute;
-	top: 0.5em;
-    bottom: 0.5em;
-    left: 0.5em;
-    right: 0.5em;
+	top: 8px;
+    bottom: 8px;
+    left: 8px;
+    right: 8px;
 	
 	&:hover {
 		

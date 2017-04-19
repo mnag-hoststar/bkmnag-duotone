@@ -19,9 +19,9 @@
 
 .header-feature {
 	margin-bottom: 2em;
+	overflow: hidden;
 	
     .widget[data-widget-type="feature"] {
-    	overflow: hidden;
 		padding: 0;
     }
 }
@@ -31,22 +31,30 @@
 // ------------------------------
 
 .feature__background-image {
-    position: relative;
+	.display-flex(flex);
+  	.flex-direction(column);
+	.justify-content(flex-end, end);
+	position: relative;
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    min-height: 90%;
-    min-height: 90vh;
-	font-size: @font__companyname--font-size;
-
-	.make-font-a-little-smaller(@font__companyname--font-size);
-	.make-font-smaller(@font__companyname--font-size);
-	.make-font-a-lot-smaller(@font__companyname--font-size);
+    min-height: 95%;
+    min-height: 95vh;
 
     @media @tablet {
         background-attachment: inherit;
         background-position-y: 0;
     }
+	
+	&:before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-color: fade(@color__feature-content--background, 10%);
+	}
 }
 
 // ------------------------------
@@ -54,17 +62,7 @@
 // ------------------------------
 
 .feature__content-wrap {
-	position: absolute;
-	top: 0;
-	width: 100%;
-	height: 100%;
-    .display-flex(flex);
-	.flex-direction(column);
-	.justify-content(flex-end, end);
-    padding: 4em 0;
-    min-height: 90%;
-    min-height: 90vh;
-	background-color: fade(@color__feature-content--background, 20%);
+    padding: 4em 0 2em;
 }
 
 // ------------------------------
@@ -82,6 +80,7 @@
 // ------------------------------
 
 .feature__headline {
+	padding: 2em 0 0.3em;
     text-transform: uppercase;
 	font-family: @font__feature-headline--font-family;
 	font-size: @font__feature-headline--font-size;
@@ -119,7 +118,7 @@
 // ------------------------------
 
 .feature__strapline {
-    padding: 0;
+    padding: 0 0 2em;
 	font-family: @font__feature-strapline--font-family;
 	font-size: @font__feature-strapline--font-size;
 	font-weight: @font__feature-strapline--font-weight;

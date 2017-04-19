@@ -16,18 +16,9 @@
 // #Button
 // -----------------------------
 
-.widget[data-name="button"],
-.widget[data-name="tweet"],
-.widget[data-name="clicktocall"],
-.widget[data-name="dropbox"],
-.widget[data-name="facebooklike"],
-.widget[data-name="paypalbuynow"] {
-	margin: 1em 0;
-}
-
-
 button,
 .button,
+a.button,
 .link-button,
 .tweet .button,
 .clicktocall .phone-number-link {
@@ -35,7 +26,7 @@ button,
     position: relative;
     display: inline-block;
 	border: 0.3em solid @color__button--background;
-    padding: 0 1.5em;
+	padding: 0 1.5em;
 	height: @button-height;
     .appearance(none);
     .border-radius(0);
@@ -47,14 +38,11 @@ button,
 	letter-spacing: @font__button--letter-spacing;
     color: @color__button--text;
     text-transform: uppercase;
-	
-	&, & span, & a {
-		font-size: @font__button--font-size;
-	
-		.make-font-a-little-smaller(@font__button--font-size);
-		.make-font-smaller(@font__button--font-size);
-		.make-font-a-lot-smaller(@font__button--font-size);
-	}
+	font-size: @font__button--font-size;
+
+	.make-font-a-little-smaller(@font__button--font-size);
+	.make-font-smaller(@font__button--font-size);
+	.make-font-a-lot-smaller(@font__button--font-size);
 	
     &:hover {
 	    padding: 0 1.5em;
@@ -84,7 +72,6 @@ button,
 .clicktocall .phone-number-link,
 .dropbox .button,
 .paypalbuynow .button {
-	
 	&:before,
 	&:after {
 		font-size: @font__button--font-size*1.5;
@@ -106,6 +93,7 @@ button,
 	}
 }
 
+a.button,
 .link-button,
 .tweet .button,
 .clicktocall .phone-number-link {
@@ -171,43 +159,33 @@ button,
 // The List of Social Icons
 
 .social-item {
-	margin: 0.25em 1.5em 0.25em 0;
-	padding: 0;
+	margin: 0.5em 0.5em 0.5em 0;
+    padding: 0;
+    background-color: @color__button--background;
+    width: 2.5em;
+    height: 2.5em;
+	
+	&:hover {
+        background-color: @color__button--background--hover;
+	}
 	
 	&:last-child {
 		margin-right: 0;
 	}
 	
-	.template__footer-container-right & {
-		margin: 0.25em 0 0.25em 1.5em;
+	.template__footer-container-left & {
+		margin: 0.5em 0.5em 0.5em 0;
 	
-		&:first-child {
-			margin-left: 0;
+		@media @mobile {
+			margin: 0.5em 0.25em;
 		}
 	}
 	
-	@media @mobile {
-		margin: 0.5em 1em;
-		
-		&:first-child,
-		&:last-child {
-			margin: 0.5em 1em;
-		}
-		
-		.template__footer-container-left & {
-			&,
-			&:first-child,
-			&:last-child {
-				margin: 0 1em 0.5em 1em;
-			}
-		}
-		
-		.template__footer-container-right & {
-			&,
-			&:first-child,
-			&:last-child {
-				margin: 0.5em 1em 0 1em;
-			}
+	.template__footer-container-right & {
+		margin: 0.5em 0 0.5em 0.5em;
+	
+		@media @mobile {
+			margin: 0.5em 0.25em;
 		}
 	}
 }
@@ -223,11 +201,12 @@ button,
 	// Icon
 
 	&:before {
+		display: block;
 		margin: 0 auto;
 		padding: 0;
+		line-height: 2em;
 		font-size: 1.2em;
-		display: block;
-		color: @color__button--background;
+		color: @color__button--text;
 	}
 }
 

@@ -27,16 +27,19 @@
 // Adding the same background as the forms widget
 // to a content widget if there is one above it.
 
-.widget[data-name="image"] {
+.widget[data-name="image"],
+.widget[data-widget-type="image"] {
 	.image-widget-background--spacing();
 }
 
 .widget[data-name="image"],
+.widget[data-widget-type="image"],
 .widget--image-background {
 	background: @color__image--background;
 }
 
-.widget--image-background + .widget[data-name="image"] {
+.widget--image-background + .widget[data-name="image"],
+.widget--image-background + .widget[data-widget-type="image"] {
     padding-top: 1em;
 }
 

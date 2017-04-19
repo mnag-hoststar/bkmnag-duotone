@@ -24,12 +24,14 @@
 // #Search Container
 // -----------------------------
 
-.widget[data-name="blogsearch"] {
+.widget[data-name="blogsearch"],
+.widget[data-widget-type="blogsearch"] {
 	.blogsearch-widget-background--spacing();
 	background-color: @color__blogsearch--background;
 }
 
-.widget[data-name="blogsearch"] .blogsearch {
+.widget[data-name="blogsearch"] .blogsearch,
+.widget[data-widget-type="blogsearch"] .blogsearch {
 	width: auto;
 	max-width: none;
 }

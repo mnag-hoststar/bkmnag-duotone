@@ -22,6 +22,10 @@
 	
 	.template__header--small & {
 		padding: 0.5em 0;
+	
+		@media @tablet {
+			padding: 0;
+		}
 	}
 }
 
@@ -54,6 +58,7 @@
 	&__logo-image {
 		max-height: 3em;
 		width: auto !important;
+		transition: inherit;
 		
 		// If the header is smaller when scrolling down.
 		
@@ -116,11 +121,27 @@
 // #Navigation
 // ------------------------------
 
-.template__navigation {}
+.template__navigation {
+	@media @tablet {
+		position: relative;
+		height: 21px;
+		width: 28px;
+	}
+}
 
 .widget[data-widget-type="extendednavigation"] {
+	margin-top: 0;
+	margin-bottom: 0;
 	padding: 0;
 	position: static;
+	
+	@media @tablet {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+	}
 	
 	&.open {
 		@media @tablet {
@@ -132,6 +153,19 @@
 		}
 	}
 }
+
+.extendednavigation {
+	@media @tablet {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+	}
+}
+
+
+
 
 // ------------------------------
 // #Navigation Toggle Button
@@ -147,20 +181,21 @@
 		
 		// Displays as Icon's Middle Bar
 		
-
 		&, &:hover, &:focus {
 			z-index: 100;
 			cursor: pointer;
 			background: @color__navigation--text;
 			background-clip: content-box;
-			width: 28px;
 			height: 3px;
 			padding: 0;
 			display: block;
 			position: absolute;
 			top: 0;
 			right: 0;
-			margin: 26px 20px;
+			margin: 0;
+			padding: 9px 0;
+    		height: 21px;
+			width: 28px;
 			font-size: 26px;
 			text-indent: 10000px;
 			border: none;
@@ -198,7 +233,7 @@
 		
 		&:before,
 		&:hover:before {
-			top: 0.3em;
+			top: 0;
 		  	.transition-property-2items(top, transform);
 		}
 
@@ -206,7 +241,7 @@
 		
 		&:after,
 		&:hover:after {
-			bottom: 0.3em;
+			bottom: 0;
 			.transition-property-2items(bottom, transform);
 		}
 
@@ -225,7 +260,7 @@
 			
 			// Middle bar
 			
-			background: transparent;
+			background-color: transparent;
 			
 			// Top and bottom bar
 			
@@ -237,7 +272,7 @@
 			// Top Bar
 
 			&:before {
-				top: 0;
+				top: 9px;
 				background: @color__navigation--text;
 				.transform-rotate(45deg);
 
@@ -246,7 +281,7 @@
 			// Bottom Bar
 
 			&:after {
-				bottom: 0;
+				bottom: 9px;
 				background: @color__navigation--text;
 				.transform-rotate(-45deg);
 			}
@@ -274,6 +309,11 @@
 		// When Navigation is open
 
 		.open & {
+			position: fixed;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
 			display: block;
 			opacity: 1;
 			width: auto;
@@ -299,7 +339,7 @@
 		display: block;
 		height: auto;
 		max-width: 500px;
-		margin: 3em auto 0;
+		margin: 3em auto 2em;
 		text-align: center;
 	}
 }
@@ -350,10 +390,10 @@
 	}
 
 	&.selected > .item-name {
-		color: @color__navigation--text--hover;
+		color: @color__navigation--text--selected;
 
 		@media @tablet {
-			color: @color__navigation--text--hover;
+			color: @color__navigation--text--selected;
 		}
 	}
 
@@ -383,6 +423,16 @@
 			font-family: 'FontAwesome', sans-serif;
 			text-align: right;
 		}
+	}
+	
+	&.folder-open > .item-name {
+		@media @tablet {	
+			padding: 0 0.2em 0.5em 1em;
+		}
+	}
+	
+	@media @tablet {
+		padding: 0.5em 0;
 	}
 	
 	&.folder-open > .item-name {

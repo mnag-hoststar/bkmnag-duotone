@@ -16,7 +16,8 @@
 // #Article
 // ------------------------------
 
-.widget[data-name="blogpost"] {
+.widget[data-name="blogpost"],
+.widget[data-widget-type="blogpost"] {
 	padding: 0;
 
 	.blogpost {
@@ -153,6 +154,11 @@
 		margin-top: 1em;
     	width: auto;
 	}
+}
+
+.blogpost__tags-title,
+.blogpost__category-title {
+	.label-text;
 }
 
 // ------------------------------

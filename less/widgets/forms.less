@@ -39,23 +39,49 @@
 // to a content widget if there is one above it.
 
 .widget[data-name="signupform"],
+.widget[data-widget-type="signupform"],
 .widget[data-name="contactform"],
-.widget[data-name="advancedcontactform"] {
+.widget[data-widget-type="contactform"],
+.widget[data-name="advancedcontactform"],
+.widget[data-widget-type="advancedcontactform"] {
 	.form-widget-background--spacing();
+	
+	.responsivecolumns & {
+		padding-top: 2em;
+		padding-bottom: 2em;
+		
+		&:first-child {
+			padding-top: 0;
+		}
+		
+		&:last-child {
+			padding-bottom: 0;
+
+			@media @mobile {
+				padding-bottom: 2em;
+			}
+		}
+	}
 }
 
 .widget[data-name="signupform"],
+.widget[data-widget-type="signupform"],
 .widget--signupform-background,
 .widget[data-name="contactform"],
+.widget[data-widget-type="contactform"],
 .widget--contactform-background,
 .widget[data-name="advancedcontactform"],
+.widget[data-widget-type="advancedcontactform"],
 .widget--advancedcontactform-background {
 	background-color: @color__form--background;
 }
 
 .widget--signupform-background + .widget[data-name="signupform"],
+.widget--signupform-background + .widget[data-widget-type="signupform"],
 .widget--contactform-background + .widget[data-name="contactform"],
-.widget--advancedcontactform-background + .widget[data-name="advancedcontactform"] {
+.widget--contactform-background + .widget[data-widget-type="contactform"],
+.widget--advancedcontactform-background + .widget[data-name="advancedcontactform"],
+.widget--advancedcontactform-background + .widget[data-widget-type="advancedcontactform"] {
     padding-top: 1em;
 }
 

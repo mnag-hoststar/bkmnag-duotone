@@ -16,7 +16,8 @@
 // #Google Maps
 // -----------------------------
 
-.widget[data-name="map"] .map {
+.widget[data-name="map"] .map,
+.widget[data-widget-type="map"] .map {
 	background-color: @color__container--background;
 	width: auto;
 	max-width: none;
@@ -30,6 +31,36 @@
 // #YouTube
 // -----------------------------
 
+// .
+
+.template__content .widget .embed {
+	
+}
+
+.embed-wrap--video {
+    position: relative;
+    padding-bottom: 0;
+    padding-top: 0;
+    height: auto;
+	
+	iframe {
+		position: static;
+		top: auto;
+    	left: auto;
+	}
+}
+
+// This also counts for when a YouTube Movie is embedded.
+
+iframe[src*="youtube"] {
+	width: 100%;
+    height: 44.6vw;
+	
+	@media @mobile {
+		height: 49.6vw;
+	}
+}
+
 // -----------------------------
 // #Disqus
 // -----------------------------
@@ -41,14 +72,9 @@
 // Vimeo embed
 // This makes the video be full width.
 
-.embed-content {
-	iframe {
-		width: 100%;
-		
-		&[src*="vimeo"] {
-			height: 56.25vw;
-		}
-	}
+.embed-content iframe[src*="vimeo"] {
+	width: 100%;
+	height: 56.25vw;
 }
 
 // -----------------------------

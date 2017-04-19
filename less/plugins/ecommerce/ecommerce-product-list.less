@@ -34,12 +34,16 @@
 // ------------------------------
 
 .widget[data-name="ecomproductslist"],
-.widget[data-name="ecomfeaturedproducts"] {
+.widget[data-widget-type="ecomproductslist"],
+.widget[data-name="ecomfeaturedproducts"],
+.widget[data-widget-type="ecomfeaturedproducts"] {
 	padding-top: 0;
 }
 
 .widget[data-name="ecomproductslist"] .ecomproductslist,
-.widget[data-name="ecomfeaturedproducts"] .ecomfeaturedproducts {
+.widget[data-widget-type="ecomproductslist"] .ecomproductslist,
+.widget[data-name="ecomfeaturedproducts"] .ecomfeaturedproducts,
+.widget[data-widget-type="ecomfeaturedproducts"] .ecomfeaturedproducts {
 	width: auto;
 	max-width: none;
 }
@@ -169,11 +173,6 @@
 			background-color: @color-text--lightest;
 			.transition();
 		}
-		
-		&:hover:after {
-			height: 0.5em;
-			background-color: @color__p--text;
-		}
 
 		// Clickable item, class added via JS
 
@@ -203,6 +202,10 @@
 		.make-font-a-little-smaller(@font__p--font-size);
 		.make-font-smaller(@font__p--font-size);
 		.make-font-a-lot-smaller(@font__p--font-size);
+		
+		@media @mobile {
+			height: 150px;
+		}
 	}
 	
 	.image--thumb {
@@ -222,6 +225,7 @@
 
 .product-item-title {
 	.heading--3;
+	padding-top: 0;
 	font-size: @font__p--font-size;
 
 	.make-font-a-little-smaller(@font__p--font-size);

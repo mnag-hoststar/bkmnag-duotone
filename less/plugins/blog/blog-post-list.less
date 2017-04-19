@@ -28,7 +28,8 @@
 // is not the same as the Blog Article background.
 
 .blogpostlist-article-background--spacing() when (@color__blogpostlist--background = @color__blogpostlist-article--background) {
-	.widget[data-name="blogpostlist"] {
+	.widget[data-name="blogpostlist"],
+	.widget[data-widget-type="blogpostlist"] {
 		padding: 2em 0;
 	}
 	
@@ -60,7 +61,8 @@
 // #All posts
 // ------------------------------
 
-.widget[data-name="blogpostlist"] {
+.widget[data-name="blogpostlist"],
+.widget[data-widget-type="blogpostlist"] {
 	background-color: @color__blogpostlist--background;
 	.blogpostlist-widget-background--spacing();
 }
@@ -91,6 +93,8 @@
 	}
 	
 	.responsivecolumns & {
+		.display-flex(flex);
+		.flex-direction(inherit);
 		width: 100%;
 		margin: 0 0 1em;
 	}
@@ -108,6 +112,13 @@
 		padding-bottom: 56.25%;
 		
 		@media @mobile {
+			float: left;
+			height: 100%;
+			width: 25%;
+    		padding-bottom: 0;
+		}
+		
+		.responsivecolumns & {
 			float: left;
 			height: 100%;
 			width: 25%;
@@ -149,6 +160,10 @@
 	@media @mobile {
 		padding: 3.5em 1.5em 1.5em;
 	}
+		
+	.responsivecolumns & {
+		padding: 3.5em 1.5em 1.5em;
+	}
 }
 
 .blogpostlist__post-title {
@@ -164,10 +179,6 @@ a.blogpostlist__title-link {
 	
 .blogpostlist__post-excerpt p {
 	line-height: 1.5em;
-	
-	@media @mobile {
-		display: none;
-	}
 }
 
 // Read more
@@ -180,6 +191,10 @@ a.blogpostlist__read-more {
 
 .blogpostlist__post-image ~ .blogpostlist__post-content {
 	@media @mobile {
+		width: 75%;
+	}
+		
+	.responsivecolumns & {
 		width: 75%;
 	}
 }
@@ -210,6 +225,10 @@ a.blogpostlist__read-more {
 		@media @mobile {
 			margin: 1em 0 0;
 		}
+		
+		.responsivecolumns & {
+			margin: 1em 0 0;
+		}
 	}
 }
 
@@ -222,13 +241,25 @@ a.blogpostlist__read-more {
 		left: 25%;
 		margin-top: 0;
 	}
+		
+	.responsivecolumns & {
+		left: 25%;
+		margin-top: 0;
+	}
 }
 
 // ------------------------------
 // #Paginatinon
 // ------------------------------
 
-// For pagination, see less/plugins/plugins.less.
+.blogpostlist__post-list-footer {
+	.responsivecolumns & {
+		display: none;
+	}
+}
+
+// For the rest of the pagination,
+// see less/plugins/plugins.less.
 
 // ------------------------------
 // #Conditionals

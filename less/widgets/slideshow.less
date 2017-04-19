@@ -27,7 +27,8 @@
 // #Slideshow
 // ------------------------------
 
-.widget[data-name="responsiveslideshow"] .responsiveslideshow {
+.widget[data-name="responsiveslideshow"] .responsiveslideshow,
+.widget[data-widget-type="responsiveslideshow"] .responsiveslideshow {
 	position: relative;
 	overflow: hidden;
 	width: auto;
@@ -151,7 +152,9 @@
 	// slideshow is hovered over.
 
 	.widget[data-name="responsiveslideshow"]:hover &,
-	.widget[data-name="responsiveslideshow"]:focus & {
+	.widget[data-widget-type="responsiveslideshow"]:hover &,
+	.widget[data-name="responsiveslideshow"]:focus &,
+	.widget[data-widget-type="responsiveslideshow"]:focus & {
 		opacity: 1;
 	}
 	

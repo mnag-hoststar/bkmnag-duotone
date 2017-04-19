@@ -10,6 +10,7 @@
 // #Page Styles
 // #Content
 // #Footer
+// #Widget Overlay
 //
 // ----------------------------------------
 
@@ -31,9 +32,17 @@
 	border-bottom: 0.5em solid @color__header--border;
 	.header-border-removal();
 	.transition();
+		
+	@media @tablet {
+		padding: 1em;
+	}
 	
 	&--small {
 		padding: 0 1em;
+		
+		@media @tablet {
+			padding: 1em;
+		}
 	}
 }
 
@@ -52,6 +61,8 @@
 }
 
 html, body {
+	min-height: 100%;
+	min-height: 100vh;
 	font-family: @font__p--font-family;
 	font-size: @font__p--font-size;
 	font-weight: @font__p--font-weight;
@@ -74,7 +85,6 @@ html {
 }
 
 body {
-	height: 100%;
 	.display-flex(flex);
   	.flex-direction(column);
 	.justify-content(space-between, justify);
@@ -90,15 +100,7 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
 // ------------------------------
 
 .page {
-	margin-bottom: 10em;
-	
-	@media @tablet {
-		margin-bottom: 14em;
-	}
-	
-	@media @mobile {
-		margin-bottom: 15em;
-	}
+	margin-bottom: 15em;
 }
 
 // ------------------------------
@@ -108,7 +110,7 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
 // Main
 
 .template__content {
-	padding-top: @header-height;
+	padding-top: 8em;
 	
 	.page--home & {
 		padding-top: 0;
@@ -138,6 +140,7 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
 	}
 	
 	.widget {
+		margin: 0;
 		padding: 0;
 	}
 	
@@ -176,5 +179,18 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
 				text-align: center;
 			}
 		}
+	}
+}
+
+// ------------------------------
+// #Widget Overlay
+// ------------------------------
+
+// The green overlay of the template editor with the
+// move, settings and delete buttons.
+
+.widget-overlay {
+	.widget__item {
+		padding: 0;
 	}
 }

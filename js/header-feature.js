@@ -2,7 +2,7 @@
 // Duotone: JS > header-feature JS
 // ----------------------------------------
 
-// Feature parralax fade effect.
+// Feature parallax fade effect.
 
 var featureHeight = $(".header-feature").height();
 var featurePosition = $(".header-feature").position();

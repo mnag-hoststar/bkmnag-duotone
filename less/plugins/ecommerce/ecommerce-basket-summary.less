@@ -2,8 +2,6 @@
 // Duotone: LESS > Plugins > Ecommerce > Basket Summary
 // ----------------------------------------
 // 
-// #Variables
-// #Title
 // #Table Styles
 // #Cell Image
 // #Cell Title and Quantity
@@ -16,36 +14,24 @@
 // ----------------------------------------
 
 // ------------------------------
-// #Variables
-// ------------------------------
-
-@basketsummary-medium: ~"only screen and (max-width: 680px)";
-
-// ------------------------------
-// #Title
-// ------------------------------
-
-.summary-title { }
-
-// ------------------------------
 // #Table Styles
 // ------------------------------
 
 .summary-table {
 	&, .table-row, .cell, .summary-body {
-		@media @basketsummary-medium, @mobile {
+		@media @basketsummary-medium {
 			display: block;
 		}
 	}
 
     .table-row--heading {
-		@media @basketsummary-medium, @mobile {
+		@media @basketsummary-medium {
             display: none;
 		}
     }
 	
 	.table-row {
-		@media @basketsummary-medium, @mobile {
+		@media @basketsummary-medium {
 			overflow: hidden;
 			border-top: 1px solid @color-text--light;
 			border-bottom: none;
@@ -74,12 +60,12 @@
 		&:nth-last-of-type(-n+2) {
 			text-align: right;
 
-			@media @basketsummary-medium, @mobile {
+			@media @basketsummary-medium {
 				text-align: left;
 			}
 		}
 		
-		@media @basketsummary-medium, @mobile {
+		@media @basketsummary-medium {
         	border: none;
 		}
 		
@@ -129,7 +115,7 @@
 				max-width: 100%;
     			max-height: 80px;
 		
-				@media @basketsummary-medium, @mobile {
+				@media @basketsummary-medium {
     				max-height: none;
 				}
 			}
@@ -143,7 +129,7 @@
 
 .ecombasketsummary {
 	.cell--title, .cell--quantity {
-		@media @basketsummary-medium, @mobile {
+		@media @basketsummary-medium {
 			padding-left: 30%;
 		}
 	}
@@ -157,15 +143,7 @@
 	.cell--price, .cell--total, .cell--quantity {
 		width: 7em;
 		
-		@media @layout-width-breakpoint {
-			width: 6em;
-		}
-		
-		@media @tablet-horizontal {
-			width: 5.5em;
-		}
-		
-		@media @basketsummary-medium, @mobile {
+		@media @basketsummary-medium {
 			&:before {
 				content: attr(data-title);
 				display: block;
@@ -195,7 +173,7 @@
 
 .ecombasketsummary {
     &__cell.cell--quantity {
-		@media @basketsummary-medium, @mobile {
+		@media @basketsummary-medium {
             position: relative;
 			width: auto;
             .clearfix();
@@ -212,7 +190,7 @@
 		background-color: transparent;
 		min-width: 6em;
 		
-		@media @basketsummary-medium, @mobile {
+		@media @basketsummary-medium {
 			width: 0;
 		}
 
@@ -287,14 +265,14 @@
 .ecombasketsummary {
 	&__cell.cell--price,
 	&__cell.cell--total {
-		@media @basketsummary-medium, @mobile {
+		@media @basketsummary-medium {
             float: left;
             width: 30%;
 			padding-left: 0;
         }
 	}
 	&__cell.cell--price {
-		@media @basketsummary-medium, @mobile {
+		@media @basketsummary-medium {
             margin-left: 30%;
         }
 	}
@@ -313,7 +291,7 @@
     }
 	
 	&__order-total {
-		@media @basketsummary-medium, @mobile {
+		@media @basketsummary-medium {
 			text-align: right;
 		}
 	}

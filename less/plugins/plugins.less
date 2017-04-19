@@ -48,7 +48,6 @@
 	background-color: @color-text--lightest;
     margin: 0.5em 0;
     padding: 0.4em 0.5em;
-	height: 2em;
     line-height: 1em;
 }
 
@@ -66,8 +65,7 @@
 	word-break: normal;
 }
 
-.category-title,
-.tags-title {
+.product-attribute-title {
 	display: block;
 	.label-text;
 	padding: 0;
@@ -89,6 +87,7 @@
 .tag-list,
 .tag-item,
 .dietary-list {
+	display: block;
 	line-height: 1em;
     margin: 0;
 	padding: 0;
@@ -114,6 +113,30 @@ a.tag-link,
 	
 	&:hover {
 		background: @color__blogpost-article--background;
+	}
+	
+	@media @tablet {
+		padding: 0.8em;
+	}
+	
+	@media @mobile {
+		padding: 1em;
+	}
+	
+	.item-count {
+		font-size: @font__h4--font-size*0.8;
+	
+		.make-font-a-little-smaller(@font__h4--font-size, 0.7);
+		.make-font-smaller(@font__h4--font-size, 0.7);
+		.make-font-a-lot-smaller(@font__h4--font-size, 0.7, 0.6);
+	
+		@media @tablet {
+			padding: 0.8em;
+		}
+		
+		@media @mobile {
+			padding: 1em;
+		}
 	}
 }
 

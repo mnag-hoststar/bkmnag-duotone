@@ -19,19 +19,28 @@
     "colorSwatches":
     {
         "Swatch 1": {
+            "color1":"#b50202",
+            "color2":"#860000",
+            "color3":"#03050e",
+            "color4":"#03050e",
+            "color5":"#111820",
+            "color6":"#111820",
+            "color7":"#ffffff"
+        },
+        "Swatch 2": {
             "color1":"#ff3b68",
             "color2":"#26324f",
             "color3":"#03273b",
             "color4":"#03273b",
             "color5":"#283a51",
-            "color6":"#3d4c61",
+            "color6":"#283a51",
             "color7":"#ffffff"
         }
     },
     "fontSwatch": {
-       "title": "Poppins / Playfair Display",
+       "title": "Montserrat / Playfair Display",
         "font1": {
-			"font-family": "\"Poppins\", \"Montserrat\", \"Trebuchet MS\", Helvetica, sans-serif",
+			"font-family": "\"Montserrat\", \"Trebuchet MS\", Helvetica, sans-serif",
             "font-size": "50px",
             "font-weight": "900",
             "line-height": "12px",
@@ -39,7 +48,7 @@
             "color": "@color-swatch5"
         },
         "font2": {
-			"font-family": "\"Poppins\", \"Montserrat\", \"Trebuchet MS\", Helvetica, sans-serif",
+			"font-family": "\"Montserrat\", \"Trebuchet MS\", Helvetica, sans-serif",
             "font-size": "36px",
             "font-weight": "900",
             "line-height": "12px",
@@ -47,7 +56,7 @@
             "color": "@color-swatch5"
         },
         "font3": {
-			"font-family": "\"Poppins\", \"Montserrat\", \"Trebuchet MS\", Helvetica, sans-serif",
+			"font-family": "\"Montserrat\", \"Trebuchet MS\", Helvetica, sans-serif",
             "font-size": "26px",
             "font-weight": "900",
             "line-height": "12px",
@@ -55,7 +64,7 @@
             "color": "@color-swatch5"
         },
         "font4": {
-			"font-family": "\"Poppins\", \"Montserrat\", \"Trebuchet MS\", Helvetica, sans-serif",
+			"font-family": "\"Montserrat\", \"Trebuchet MS\", Helvetica, sans-serif",
             "font-size": "18px",
             "font-weight": "400",
             "line-height": "14px",
@@ -77,7 +86,7 @@
             "line-height": "18px",
             "letter-spacing": "0px",
             "color": "@color-swatch4",
-			"color-hover": "@color-swatch6",
+			"color-hover": "@color-swatch4",
 			"background-color": "@color-swatch7",
 			"background-color-hover": "@color-swatch7"
 		},
@@ -129,7 +138,7 @@
             "font__companyname--font-size": "26px",
             "font__companyname--font-weight": "400",
             "font__companyname--line-height": "12px",
-            "font__companyname--letter-spacing": "unit(1px/10, em)",
+            "font__companyname--letter-spacing": "unit(0.5px/10, em)",
             "color__companyname--text": "@color-swatch7"
         },
         "typography": {
@@ -180,13 +189,13 @@
             "font__navigation--letter-spacing": "unit(1px/10, em)",
             "color__navigation--text": "@color-swatch7",
             "color__navigation--text--hover": "darken(@color-swatch7, 20%)",
-            "color__navigation--text--selected": "@color__secondary",
+            "color__navigation--text--selected": "darken(@color-swatch7, 20%)",
 			"color__navigation-list--background": "@color__secondary",
 			"color__navigation-item--text": "@color-swatch7",
-            "color__navigation-item--text--selected": "@color__primary"
+            "color__navigation-item--text--selected": "darken(@color-swatch7, 20%)"
         },
         "feature": {
-            "color__feature-content--background": "@color__secondary",
+            "color__feature-content--background": "#161616",
             "font__feature-headline--font-family": "@font-swatch1-font-family",
             "font__feature-headline--font-size": "72px",
             "font__feature-headline--font-weight": "700",
