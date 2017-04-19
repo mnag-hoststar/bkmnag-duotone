@@ -1,0 +1,66 @@
+{% extends "layout.twig" %}
+
+{% block content %}
+<!-- Page Content Start -->
+<section class="page page--default">
+	
+    <!-- Header -->
+	<header class="template__header">
+		<div class="template__company">
+			{{widget('logo', 'logo', {"defaultlogo": asset('images/logo.png')})|raw}}
+			{{widget('companyname', 'companyname', {
+				"business": "profile",
+				"showTplWidget":"0"
+			})|raw}}
+		</div>
+		<div class="template__navigation">
+			{{widget('extendednavigation', 'extendednavigation', {"align":"right"})|raw}}
+		</div>
+	</header>
+	
+    <!-- Zone Content Start -->
+    <div class="template__content">
+        <div class="container">
+        {{zone('main')|raw}}
+        {{widget('content', 'home-gallery-text', {
+            content: '<p>These are our newest foods. From sweet to savory, 
+            you can be sure to find the most scrumptious meal for you. We offer 
+            fresh bread, straight from your local bakery. The ingredients for 
+            our salads and cereals come from local farmers. We do everything to 
+            make sure you have the healthiest products to get you started early 
+            and be productive.</p>'
+        })|raw}}
+	
+		{{widget('gallery', 'home-gallery', {
+    		'showTitle': true,
+    		'showDescription': true,
+    		'images':[
+    		{
+				'url':asset('/images/gallery/gallery-image--1.jpg'),
+				'title':'Band together',
+				'description': ''
+    		},
+    		{
+				'url':asset('/images/gallery/gallery-image--2.jpg'),
+				'title':'Throw voices',
+				'description': ''
+    		},
+    		{
+				'url':asset('/images/gallery/gallery-image--3.jpg'),
+				'title':'Rhythm crowds',
+				'description': ''
+    		},
+    		{
+				'url':asset('/images/gallery/gallery-image--4.jpg'),
+				'title':'Turn tables',
+				'description': ''
+    		}
+    	  ]
+    	})|raw}}
+        </div>
+    </div>
+    <!-- Zone Content End -->
+	
+</section>
+<!-- Page Content End -->
+{% endblock %}
