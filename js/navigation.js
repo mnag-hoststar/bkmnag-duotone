@@ -56,8 +56,6 @@ $('.template__content').css('padding-top', headerHeight +'px');
 $('.default section.page').css('padding-bottom', footerHeight +'px');
 
 $(window).resize(function() {
-	console.log($(window).width());
-	
 	if ($(window).width() < 720) {
 		var headerHeight = $('.template__header').outerHeight()+20;
 		var footerHeight = $('.template__footer').outerHeight()+20;
