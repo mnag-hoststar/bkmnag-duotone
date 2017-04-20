@@ -101,7 +101,7 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
 // ------------------------------
 
 .page {
-	margin-bottom: 15em;
+	padding-bottom: 15em;
 }
 
 // ------------------------------
@@ -111,7 +111,11 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
 // Main
 
 .template__content {
-	padding-top: 8em;
+	padding-top: @font__companyname--font-size * (@font__companyname--line-height*0.1)*2 + @font__navigation--font-size * (@font__navigation--line-height*0.1)*2;
+	
+	@media @tablet {
+		padding-top: @font__companyname--font-size * (@font__companyname--line-height*0.1)*3;
+	}
 	
 	.page--home & {
 		padding-top: 0;

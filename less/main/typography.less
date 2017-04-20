@@ -272,7 +272,6 @@ label, .label-text {
 a {
 	display: inline;
 	color: @color__p--text;
-	line-height: 1.3em;
 	overflow: visible;
 	border-bottom: 0.3em solid @color-highlight--light;
 	background-color: transparent;
@@ -389,14 +388,14 @@ blockquote {
 	text-align: center;
 	padding: 1.5em 2.5em !important;
 	width: 70%;
-    line-height: 1.5em;
+	line-height: unit(@font__p--line-height*0.1, em);
     font-size: 1.5em;
 	font-family: @font__p--font-family;
 	font-style: italic;
 	
 	span {
 		display: inline-block;
-		line-height: 1.5em;
+		line-height: unit(@font__p--line-height*0.1, em);
 	}
 	
 	@media @tablet-horizontal {
