@@ -32,7 +32,6 @@ a.button,
     .border-radius(0);
 	.transition();
     background-color: @color__button--background;
-	word-break: normal;
 	font-family: @font__button--font-family;
 	font-weight: @font__button--font-weight;
 	line-height: unit(@font__button--line-height*0.1, em);
@@ -104,6 +103,7 @@ a.button,
 
 .dropbox .button {
 	padding-left: 3.8em;
+	word-break: normal;
 	
 	&:before {
 		position: absolute;

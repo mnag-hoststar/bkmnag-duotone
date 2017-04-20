@@ -28,14 +28,8 @@
 // -----------------------------
 
 // -----------------------------
-// #YouTube
+// #YouTube, Vimeo
 // -----------------------------
-
-// .
-
-.template__content .widget .embed {
-	
-}
 
 .embed-wrap--video {
     position: relative;
@@ -50,14 +44,77 @@
 	}
 }
 
-// This also counts for when a YouTube Movie is embedded.
+// This also counts for when a YouTube or Vimeo Movie is embedded.
 
-iframe[src*="youtube"] {
+iframe[src*="youtube"],
+.embed-content iframe[src*="vimeo"] {
 	width: 100%;
-    height: 44.6vw;
+	height: 780px;
 	
-	@media @mobile {
-		height: 49.6vw;
+	@media only screen and (max-width: 1750px) {
+    	height: 44vw;
+	}
+	
+	@media @tablet {
+    	height: 49.6vw;
+	}
+	
+	.responsivecolumns .columns-two-left &,
+	.responsivecolumns .columns-two-right & {
+		height: 378px;
+	
+		@media only screen and (max-width: 1750px) {
+    		height: 21.2vw;
+		}
+		
+		@media @tablet {
+			height: 23.6vw;
+		}
+	
+		@media @mobile {
+			height: 49.6vw;
+		}
+	}
+	
+	.responsivecolumns .columns-three-left &,
+	.responsivecolumns .columns-three-middle &,
+	.responsivecolumns .columns-three-right & {
+		height: 245px;
+	
+		@media only screen and (max-width: 1750px) {
+    		height: 13.9vw;
+		}
+		
+		@media @tablet {
+			height: 15.6vw;
+		}
+	
+		@media @mobile {
+			height: 49.6vw;
+		}
+	}
+	
+	.responsivecolumns .columns-four-first &,
+	.responsivecolumns .columns-four-second &,
+	.responsivecolumns .columns-four-third &,
+	.responsivecolumns .columns-four-fourth & {
+		height: 177px;
+	
+		@media only screen and (max-width: 1750px) {
+    		height: 10.1vw;
+		}
+	
+		@media only screen and (max-width: 1200px) {
+    		height: 21.2vw;
+		}
+	
+		@media @tablet {
+			height: 23.6vw;
+		}
+	
+		@media @mobile {
+			height: 49.6vw;
+		}
 	}
 }
 
@@ -68,14 +125,6 @@ iframe[src*="youtube"] {
 // -----------------------------
 // #Embed
 // -----------------------------
-
-// Vimeo embed
-// This makes the video be full width.
-
-.embed-content iframe[src*="vimeo"] {
-	width: 100%;
-	height: 56.25vw;
-}
 
 // -----------------------------
 // #LinkedIn Profile
