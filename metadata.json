@@ -10,11 +10,7 @@
         "images/gallery/gallery-image--2.jpg",
         "images/gallery/gallery-image--3.jpg",
         "images/gallery/gallery-image--4.jpg",
-        "images/gallery/gallery-image--5.jpg",
-        "images/gallery/gallery-image--6.jpg",
-        "images/gallery/gallery-image--7.jpg",
-        "images/gallery/gallery-image--8.jpg",
-        "images/gallery/gallery-image--9.jpg"
+        "images/gallery/gallery-image--5.jpg"
     ],
     "colorSwatches":
     {
@@ -218,7 +214,7 @@
             "color__button--background--hover": "darken(@color__button--background, 4%)",
             "color__button--text": "@color-swatch7",
             "color__button--text--hover": "@color-swatch7",
-            "color__button--border": "@color-swatch4",
+            "color__button--border": "@color__secondary",
             "font__button--font-family": "@font-swatch4-font-family",
             "font__button--font-size": "16px",
             "font__button--font-weight": "700",
@@ -235,7 +231,7 @@
 		},
         "gallery": {
             "color__gallery--background": "@color__container--background",
-            "color__gallery-caption--background": "@color__secondary",
+            "color__gallery-caption--background": "fade(@color__secondary, 80%)",
             "color__gallery-title--text": "@color-swatch7",
             "color__gallery-description--text": "fade(@color-swatch7, 80%)"
         },
@@ -257,20 +253,13 @@
 			"color__blogpostlist--background": "@color__body--background",
             "color__blogpostlist-article--background": "fade(@font-swatch5-color, 10%)",
             "color__blogpostlist-title--background": "@color__body--background",
-            "color__blogpost-title--text": "@color__h2--text",
-            "color__blogpost-article--background": "@color__primary",
-            "color__blogpostlist-title--text": "@color__blogpost-title--text"
+            "color__blogpostlist-title--text": "@color__h2--text",
+            "color__blogpost-title--text": "@color__h2--text"
         },
         "ecommerce": {
             "color__ecomproductslist-filters--background": "@color__container--background",
             "color__ecomproductslist-product-title--text": "@color__h3--text",
-            "color__ecomproduct-title--text": "@color__h2--text",
-            "color__ecomproduct-price--text": "@color__p--text"
-        },
-        "menu": {
-            "color__menu--background": "@color__container--background",
-            "color__menu-section-header--background": "@color__secondary",
-            "color__menu-section-featured--background": "@color__secondary"
+            "color__ecomproduct-title--text": "@color__h2--text"
         }
     }
 }

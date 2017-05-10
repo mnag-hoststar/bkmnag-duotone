@@ -30,7 +30,8 @@
 }
 
 .template__company {
-	float: left;
+	display: table-cell;
+    vertical-align: middle;
 	margin-right: 1em;
 	padding: 0;
 	
@@ -56,19 +57,19 @@
 	}
 	
 	&__logo-image {
-		max-height: 3em;
-		width: auto !important;
 		transition: inherit;
 		
 		// If the header is smaller when scrolling down.
 		
 		.template__header--small & {
 			max-height: 1em;
+			width: auto !important;
 		}
 		
 		@media @tablet {
 			&, .template__header--small & {
 				max-height: 1.5em;
+				width: auto !important;
 			}
 		}
 	}
@@ -86,7 +87,8 @@
 		letter-spacing: @font__companyname--letter-spacing;
 		color: @color__companyname--text;
 		text-transform: uppercase;
-		word-break: normal;
+    	word-break: normal;
+		word-wrap: normal;
 
 		.make-font-a-little-smaller(@font__companyname--font-size);
 		.make-font-smaller(@font__companyname--font-size);
@@ -123,6 +125,9 @@
 // ------------------------------
 
 .template__navigation {
+	display: table-cell;
+    vertical-align: middle;
+	
 	@media @tablet {
 		position: relative;
 		height: 21px;
@@ -134,7 +139,6 @@
 	margin-top: 0;
 	margin-bottom: 0;
 	padding: 0;
-	position: static;
 	
 	@media @tablet {
 		position: absolute;
@@ -160,7 +164,7 @@
 		position: absolute;
 		top: 0;
 		left: 0;
-		right: 0;
+		right: 5px;
 		bottom: 0;
 	}
 }
@@ -192,7 +196,7 @@
 			display: block;
 			position: absolute;
 			top: 0;
-			right: 5px;
+			right: 0;
 			margin: 0;
 			padding: 9px 0;
     		min-height: 21px;
@@ -354,7 +358,7 @@
 // Navigation Normal Item
 
 .navigation-item {
-	position: static;
+	position: relative;
 	margin-bottom: 0;
 	padding: 0;
 	line-height: 1em;
@@ -455,6 +459,9 @@
     	margin: 0;
 		height: 0;
 		position: absolute;
+		right: 0;
+		left: auto;
+		min-width: 200px;
 		margin: 0;
 		padding: 0.5em 0;
 		background-color: @color__navigation-list--background;
@@ -487,15 +494,12 @@
 // Navigation Folder Submenu Single Item
 
 .navigation-item--child {
-	display: inline-block;
-
-	@media @tablet {
-		display: block;
-	}
+	display: block;
 
 	.item-name {
 		color: @color__navigation-item--text;
 		line-height: 1em;
+		padding: 0.5em 1em;
 
 		@media @tablet {
 			padding: 1em 0;

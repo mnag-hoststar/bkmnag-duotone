@@ -27,17 +27,20 @@
 
 // Overall message styling
 
-.widget .message {
+.message {
+	display: block;
     position: relative;
     padding: 1em;
 	padding-left: 3.5em;
     margin: 1em auto;
 	min-height: 3em;
     .clearfix();
+	color: #fff;
 
     // Message Heading, Paragraph
 
-    h3, p {
+    h3, p,
+	.message-text {
         margin: 0;
         padding: 0;
     }
@@ -50,7 +53,8 @@
 		color: #fff;
 	}
 	
-	p {
+	p,
+	.message-text {
 		padding: 0;
 		text-align: left;
 		font-family: @font__h4--font-family;
@@ -87,7 +91,6 @@
         bottom: 0;
         text-align: center;
 		font-size: 1.4em;
-		line-height: 1.4em;
 		.border-radius(50%);
 		color: #fff;
     }

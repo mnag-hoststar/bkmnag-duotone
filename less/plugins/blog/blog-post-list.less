@@ -21,17 +21,13 @@
 // is the same as the page background.
 
 .blogpostlist-widget-background--spacing() when (@color__blogpostlist--background = @color__body--background) {
-	padding: 1em 0;
+	padding: 2em 0 1em 0;
 }
 
 // Conditional if the Blog Post List background 
 // is not the same as the Blog Article background.
 
 .blogpostlist-article-background--spacing() when (@color__blogpostlist--background = @color__blogpostlist-article--background) {
-	.widget[data-name="blogpostlist"],
-	.widget[data-widget-type="blogpostlist"] {
-		padding: 2em 0;
-	}
 	
 	.blogpostlist__post-content {
 		padding: 4em 0 1.5em;
@@ -64,6 +60,7 @@
 .widget[data-name="blogpostlist"],
 .widget[data-widget-type="blogpostlist"] {
 	background-color: @color__blogpostlist--background;
+	padding: 2em 0;
 	.blogpostlist-widget-background--spacing();
 }
 
@@ -158,11 +155,11 @@
 	.make-font-a-lot-smaller(@font__p--font-size);
 	
 	@media @mobile {
-		padding: 3.5em 1.5em 1.5em;
+		padding: 4em 1.5em 1.5em;
 	}
 		
 	.responsivecolumns & {
-		padding: 3.5em 1.5em 1.5em;
+		padding: 4em 1.5em 1.5em;
 	}
 }
 
@@ -172,7 +169,7 @@
 }
 
 a.blogpostlist__title-link {
-	color: @color__h3--text;
+	color: @color__blogpostlist-title--text;
 }
 
 // Post Excerpt

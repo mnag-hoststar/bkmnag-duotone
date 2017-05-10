@@ -84,11 +84,7 @@
 	.responsivecolumns .columns-two-right &,
 	.responsivecolumns .columns-three-left &,
 	.responsivecolumns .columns-three-middle &,
-	.responsivecolumns .columns-three-right &,
-	.responsivecolumns .columns-four-first &,
-	.responsivecolumns .columns-four-second &,
-	.responsivecolumns .columns-four-third &,
-	.responsivecolumns .columns-four-fourth & {
+	.responsivecolumns .columns-three-right & {
 		width: 100%/2;
 		padding-bottom: 100%/2;
 	}
@@ -132,7 +128,7 @@
 		
 		& > .gallery__caption {
 			opacity: 1;
-			background-color: fade(@color__gallery-caption--background, 80%);
+			background-color: @color__gallery-caption--background;
 		}
 	}
 }

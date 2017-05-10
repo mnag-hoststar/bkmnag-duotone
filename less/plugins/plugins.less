@@ -16,6 +16,31 @@
 .blogsearch,
 .fieldset.ecomproductslist__fieldset--search {
 	.signupform;
+	
+	.form-group {
+		.responsivecolumns .columns-two-left &,
+		.responsivecolumns .columns-two-right &,
+		.responsivecolumns .columns-three-left &,
+		.responsivecolumns .columns-three-middle &,
+		.responsivecolumns .columns-three-right &,
+		.responsivecolumns .columns-four-first &,
+		.responsivecolumns .columns-four-second &,
+		.responsivecolumns .columns-four-third &,
+		.responsivecolumns .columns-four-fourth & {
+			display: block;
+			padding-right: 0;
+			
+			@media @mobile {
+				display: table-cell;
+			}
+			
+			&:first-child {
+				@media @mobile {
+					padding-right: 0.5em;
+				}
+			}
+		}
+	}
 }
 
 .blogsearch__form,
@@ -41,6 +66,12 @@
 
 .product-filters .input--search {
 	height: @button-height;
+}
+
+// Clear search button.
+
+.button.button--clear {
+	display: none;
 }
 
 // ------------------------------
@@ -101,7 +132,7 @@ a.category-link,
 a.tag-link,
 .dietary-item {
 	display: inline-block;
-	background: @color__blogpost-article--background;
+	background: fade(@color__button--background, 75%);
 	margin: 0.4em 0.8em 0.4em 0;
 	padding: 0.6em;
 	line-height: 1em;
@@ -116,7 +147,7 @@ a.tag-link,
 	.make-font-a-lot-smaller(@font__h4--font-size, 0.7, 0.6);
 	
 	&:hover {
-		background: @color__blogpost-article--background;
+		background: fade(@color__button--background, 75%);
 	}
 	
 	@media @tablet {
@@ -125,6 +156,7 @@ a.tag-link,
 	
 	@media @mobile {
 		padding: 1em;
+		line-height: 1em;
 	}
 	
 	.item-count {

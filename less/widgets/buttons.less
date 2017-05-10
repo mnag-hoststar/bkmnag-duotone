@@ -25,7 +25,7 @@ a.button,
     cursor: pointer;
     position: relative;
     display: inline-block;
-	border: 0.3em solid @color__button--background;
+	border: 0.3em solid @color__button--border;
 	padding: 0.5em 1.5em;
 	min-height: @button-height;
     .appearance(none);
@@ -47,7 +47,7 @@ a.button,
     &:hover {
 	    padding: 0.5em 1.5em;
 		min-height: @button-height;
-		.box-shadow(0px 10px 20px 0px fade(@color__button--border, 30%));
+		.box-shadow(0px 10px 20px 0px fade(@color__p--text, 30%));
 		border: 0.3em solid @color__button--background--hover;
         background-color: @color__button--background--hover;
     	color: @color__button--text--hover;
@@ -56,7 +56,7 @@ a.button,
 	// Focus style for easier keyboard navigation
 	
 	&:focus {
-    	border: 0.3em solid @color-highlight;
+    	border: 0.3em solid @color__button--background--hover;
 	}
 	
 	// Active style for when you press a button down
@@ -64,6 +64,15 @@ a.button,
 	&:active {
 		.box-shadow(none);
 		border: 0.3em solid @color__button--background;
+	}
+	
+	&[disabled] {
+		cursor: default;
+		opacity: 0.25;
+		
+		&:hover {
+			.box-shadow(none);
+		}
 	}
 }
 

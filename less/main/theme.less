@@ -19,15 +19,14 @@
 // ------------------------------
 
 .template__header {
-	.display-flex(flex);
-	.align-items(center, center);
-	.justify-content(space-between, justify);
+	display: table;
+	width: 100%;
 	position: fixed;
 	top: 0;
     left: 0;
     right: 0;
 	background-color: @color__header--background;
-    z-index: 100;
+    z-index: 11000;
 	padding: 0.5em 1em;
 	border-bottom: 0.5em solid @color__header--border;
 	.header-border-removal();
@@ -118,7 +117,7 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
 	}
 	
 	.page--home & {
-		padding-top: 0;
+		padding-top: 0 !important;
 	}
 }
 
@@ -194,8 +193,13 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
 // The green overlay of the template editor with the
 // move, settings and delete buttons.
 
-.widget-overlay {
+.template__content .widget .widget-overlay {
 	.widget__item {
 		padding: 0;
+	}
+	
+	&.hover {
+		width: auto;
+		max-width: none;
 	}
 }
