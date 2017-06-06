@@ -200,6 +200,17 @@ a.caption-link {
 
 .pswp {
 	width: 100% !important;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	
+	.template__content .widget > & {
+		width: auto;
+		max-width: none;
+		margin: 0;
+	}
 	
 	&__button,
 	&__button:focus,
@@ -207,5 +218,17 @@ a.caption-link {
 		border: none;
 		padding: 0;
 		.box-shadow(none);
+	}
+	
+	&__counter {
+		padding: 0 20px !important;
+		font-size: 16px !important;
+	}
+	
+	&__caption__center {
+		max-width: none !important;
+		padding: 10px 10px 20px !important;
+		text-align: center !important;
+		font-size: 16px !important;
 	}
 }

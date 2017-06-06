@@ -163,6 +163,32 @@ label, .label-text {
 	word-wrap: normal;
 }
 
+// -----------------------------
+// #Content
+// -----------------------------
+
+.widget[data-name="content"]:first-child,
+.widget[data-widget-type="content"]:first-child {
+	h1:first-child,
+	h2:first-child,
+	h3:first-child,
+	h4:first-child,
+	h5:first-child,
+	h6:first-child,
+	p:first-child {
+		padding-top: 0;
+	}
+}
+
+.widget[data-name="content"] span,
+.widget[data-widget-type="content"] span {
+	font-size: @font__p--font-size;
+	
+	.make-font-a-little-smaller(@font__p--font-size);
+	.make-font-smaller(@font__p--font-size);
+	.make-font-a-lot-smaller(@font__p--font-size);
+}
+
 // ------------------------------
 // #Span
 // ------------------------------
@@ -237,32 +263,6 @@ label, .label-text {
 	.make-font-a-little-smaller(30px);
 	.make-font-smaller(30px);
 	.make-font-a-lot-smaller(30px);
-}
-
-// -----------------------------
-// #Content
-// -----------------------------
-
-.widget[data-name="content"]:first-child,
-.widget[data-widget-type="content"]:first-child {
-	h1:first-child,
-	h2:first-child,
-	h3:first-child,
-	h4:first-child,
-	h5:first-child,
-	h6:first-child,
-	p:first-child {
-		padding-top: 0;
-	}
-}
-
-.widget[data-name="content"] span,
-.widget[data-widget-type="content"] span {
-	font-size: @font__p--font-size;
-	
-	.make-font-a-little-smaller(@font__p--font-size);
-	.make-font-smaller(@font__p--font-size);
-	.make-font-a-lot-smaller(@font__p--font-size);
 }
 
 // ------------------------------
