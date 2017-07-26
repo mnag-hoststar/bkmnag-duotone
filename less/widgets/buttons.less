@@ -39,6 +39,7 @@ a.button,
     color: @color__button--text;
     text-transform: uppercase;
 	font-size: @font__button--font-size;
+	word-break: break-all;
 
 	.make-font-a-little-smaller(@font__button--font-size);
 	.make-font-smaller(@font__button--font-size);
@@ -100,14 +101,6 @@ a.button,
 		margin-left: 0.5em;
 		right: 1em;
 	}
-}
-
-a.button,
-.link-button,
-.tweet .button,
-.clicktocall .phone-number-link {
-    display: table-cell;
-    vertical-align: middle;
 }
 
 .dropbox .button {

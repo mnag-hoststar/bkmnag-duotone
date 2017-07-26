@@ -207,11 +207,7 @@
 		}
 	
 		.responsivecolumns .columns-two-left &,
-		.responsivecolumns .columns-two-right & {
-			@media @layout-width-breakpoint {
-				margin: 0 -@item--margin-size*2;
-			}
-		}
+		.responsivecolumns .columns-two-right &,
 		.responsivecolumns .columns-three-left &,
 		.responsivecolumns .columns-three-middle &,
 		.responsivecolumns .columns-three-right &,
@@ -219,7 +215,11 @@
 		.responsivecolumns .columns-four-second &,
 		.responsivecolumns .columns-four-third &,
 		.responsivecolumns .columns-four-fourth & {
-			margin: 0 -@item--margin-size*2;
+			margin: 0;
+			
+			@media @mobile {
+				margin: 0 -@item--margin-size;
+			}
 		}
 	}
 }

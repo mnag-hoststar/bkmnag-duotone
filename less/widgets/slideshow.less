@@ -17,9 +17,11 @@
 
 .controls-font-size() {
 	font-size: 25px;
+	letter-spacing: 25px;
 
 	@media @tablet {
 		font-size: 20px;
+		letter-spacing: 20px;
 	}
 }
 
@@ -33,45 +35,61 @@
 	overflow: hidden;
 	width: auto;
 	max-width: none;
+	height: 40%;
 	height: 40vw;
 	padding-bottom: 40%;
+	padding-bottom: 40vw;
 	background-color: @color__slideshow--background;
 	
 	@media @tablet-horizontal {
+		height: 60%;
 		height: 60vw;
 		padding-bottom: 60%;
+		padding-bottom: 60vw;
 	}
 	
 	.responsivecolumns .columns-two-left &,
 	.responsivecolumns .columns-two-right & {
+		height: 30%;
 		height: 30vw;
 		padding-bottom: 30%;
+		padding-bottom: 30vw;
 	
 		@media @tablet-horizontal {
+			height: 40%;
 			height: 40vw;
 			padding-bottom: 40%;
+			padding-bottom: 40vw;
 		}
 	
 		@media @mobile {
+			height: 60%;
 			height: 60vw;
 			padding-bottom: 60%;
+			padding-bottom: 60vw;
 		}
 	}
 	
 	.responsivecolumns .columns-three-left &,
 	.responsivecolumns .columns-three-middle &,
 	.responsivecolumns .columns-three-right & {
+		height: 25%;
 		height: 25vw;
 		padding-bottom: 25%;
+		padding-bottom: 25vw;
 	
 		@media @tablet-horizontal {
+			height: 40%;
 			height: 40vw;
 			padding-bottom: 40%;
+			padding-bottom: 40vw;
 		}
 	
 		@media @mobile {
+			height: 60%;
 			height: 60vw;
 			padding-bottom: 60%;
+			padding-bottom: 60vw;
 		}
 	}
 	
@@ -79,22 +97,30 @@
 	.responsivecolumns .columns-four-second &,
 	.responsivecolumns .columns-four-third &,
 	.responsivecolumns .columns-four-fourth & {
+		height: 20%;
 		height: 20vw;
 		padding-bottom: 20%;
+		padding-bottom: 20vw;
 	
 		@media @tablet-horizontal {
+			height: 30%;
 			height: 30vw;
 			padding-bottom: 30%;
+			padding-bottom: 30vw;
 		}
 	
 		@media @tablet {
+			height: 40%;
 			height: 40vw;
 			padding-bottom: 40%;
+			padding-bottom: 40vw;
 		}
 	
 		@media @mobile {
+			height: 60%;
 			height: 60vw;
 			padding-bottom: 60%;
+			padding-bottom: 60vw;
 		}
 	}
 }

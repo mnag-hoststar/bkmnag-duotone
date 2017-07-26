@@ -2,9 +2,14 @@
     "name":"Duotone",
     "widgetVersion": 2,
     "thumbnail":"duotone-thumbnail.png",
-    "templateType":"standard",
-    "pageTypes": [ "home", "404" ],
     "screenshot":"duotone-screenshot.jpg",
+    "templateType":"standard",
+    "pageTypes": ["home", "404"],
+    "tags": {
+		"en": ["large", "typography", "blocky", "bold", "colors", "sans-serif"],
+		"fr": ["grand", "typographie", "angulaire", "audacieux", "couleurs", "sans-serif"],
+		"de": ["gross", "Typographie", "blockig", "kühn", "Farben", "serifenlos"]
+	},
      "images":[
         "images/gallery/gallery-image--1.jpg",
         "images/gallery/gallery-image--2.jpg",
@@ -21,15 +26,6 @@
             "color4":"#03050e",
             "color5":"#111820",
             "color6":"#111820",
-            "color7":"#ffffff"
-        },
-        "Swatch 2": {
-            "color1":"#ff3b68",
-            "color2":"#26324f",
-            "color3":"#03273b",
-            "color4":"#03273b",
-            "color5":"#283a51",
-            "color6":"#283a51",
             "color7":"#ffffff"
         }
     },
