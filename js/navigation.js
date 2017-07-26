@@ -4,31 +4,29 @@
 
 $( document ).ready(function() {
 	
+	// ------------------------------
 	// Change navigation if it matches tablet size.
+	// ------------------------------
 	
-	var tablet = '(max-width: 768px)';
-	var mq = window.matchMedia(tablet);
+	// Toggles class open to display/hide the whole navigation.
 
-	if (mq.matches) {
-		// Toggles class open to display/hide the whole navigation.
+	$('.navigation-toggle').click(function() {
+		$('.widget[data-widget-type="extendednavigation"]').toggleClass('open');
+	});
 
-		$('.navigation-toggle').click(function() {
-			$('.widget[data-widget-type="extendednavigation"]').toggleClass('open');
+	// Toggles class open to display/hide folders.
+
+	$('.navigation-item.folder').each(function() {
+		$(this).click(function() {
+			$(this).parent('.navigation-item.folder').toggleClass('open');
 		});
-
-		// Toggles class open to display/hide folders.
-
-		$('.navigation-item.folder').each(function() {
-			$(this).click(function() {
-				$(this).parent('.navigation-item.folder').toggleClass('open');
-			});
-		});
-	} else {
-	  // Toggle Menu becomes a normal menu.
-	}
+	});
 
 
+	
+	// ------------------------------
 	// Changes to the header when it's not at the top of the page.
+	// ------------------------------
 
 	var $output = $('#output');
 	$(window).on('scroll', function () {
@@ -43,8 +41,10 @@ $( document ).ready(function() {
 
 
 
+	// ------------------------------
 	// Change the top padding of the content depending on how high
 	// the navigation header and footer is.
+	// ------------------------------
 
 	var headerHeight;
 	var footerHeight;
@@ -73,8 +73,10 @@ $( document ).ready(function() {
 
 
 
+	// ------------------------------
 	// Feature Overlay Corrections
 	// The overlay of the feature should be below the header.
+	// ------------------------------
 	
 	var headerHeight = $('.template__header').outerHeight();
 	var featureOverlayTopDistance = $('.widget[data-widget-type="feature"] .widget-overlay').attr('style', 'top: ' + headerHeight + 'px');
