@@ -21,8 +21,6 @@ $( document ).ready(function() {
 			$(this).parent('.navigation-item.folder').toggleClass('open');
 		});
 	});
-
-
 	
 	// ------------------------------
 	// Changes to the header when it's not at the top of the page.
@@ -37,8 +35,6 @@ $( document ).ready(function() {
 			$('.template__header').removeClass('template__header--small');
 		}
 	});
-
-
 
 	// ------------------------------
 	// Change the top padding of the content depending on how high
@@ -69,9 +65,7 @@ $( document ).ready(function() {
 		$('.template__content').css('padding-top', headerHeight +'px');
 		$('.default section.page').css('padding-bottom', footerHeight +'px');
 	});
-
-
-
+	
 	// ------------------------------
 	// Feature Overlay Corrections
 	// The overlay of the feature should be below the header.
@@ -84,4 +78,12 @@ $( document ).ready(function() {
 		var headerHeight = $('.template__header').outerHeight();
 		var featureOverlayTopDistance = $('.widget[data-widget-type="feature"] .widget-overlay').attr('style', 'top: ' + headerHeight + 'px');
 	});
+    
+	// ------------------------------
+    // Hides other submenus when a main menu point with a submenu is clicked.
+	// ------------------------------
+    
+    $(".navigation-item").click(function(){
+        $(this).siblings(".navigation-item").removeClass("folder-open open");
+    });
 });

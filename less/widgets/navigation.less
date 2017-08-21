@@ -474,10 +474,6 @@
 			margin: 0;
 			padding: 0;
 		}
-		
-		.navigation-item--child {
-			white-space: nowrap;
-		}
 	}
 	
 	.navigation-item.folder.folder-open & {
@@ -499,6 +495,11 @@
 
 .navigation-item--child {
 	display: block;
+	white-space: nowrap;
+
+	@media @tablet {
+		white-space: normal;
+	}
 
 	.item-name {
 		color: @color__navigation-item--text;
