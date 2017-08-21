@@ -28,7 +28,6 @@ $( document ).ready(function() {
 	// Changes to the header when it's not at the top of the page.
 	// ------------------------------
 
-	var $output = $('#output');
 	$(window).on('scroll', function () {
 		var scrollTop = $(window).scrollTop();
 
