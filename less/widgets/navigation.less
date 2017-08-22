@@ -64,12 +64,14 @@
 		.template__header--small & {
 			max-height: 1em;
 			width: auto !important;
+			height: auto !important;
 		}
 		
 		@media @tablet {
 			&, .template__header--small & {
 				max-height: 1.5em;
 				width: auto !important;
+				height: auto !important;
 			}
 		}
 	}
@@ -162,10 +164,10 @@
 .extendednavigation {
 	@media @tablet {
 		position: absolute;
-		top: 0;
-		left: -5px;
+		top: 50%;
 		right: 5px;
 		bottom: 0;
+		margin-top: -12px;
 	}
 }
 
@@ -454,16 +456,14 @@
 	.navigation-item.folder &,
 	.navigation-item.folder:hover &,
 	.navigation-item.folder:active & {
-    	overflow: hidden;
-		opacity: 0;
-    	margin: 0;
-		height: 0;
 		position: absolute;
 		right: 0;
 		left: auto;
-		width: auto;
-		margin: 0;
+		opacity: 0;
+    	margin: 0.5em 0 0;
 		padding: 0.5em 0;
+		height: 0;
+		width: auto;
 		background-color: @color__navigation-list--background;
 		overflow: visible;
 		text-align: center;
@@ -496,18 +496,20 @@
 .navigation-item--child {
 	display: block;
 	white-space: nowrap;
+	padding: 0.5em 0;
 
 	@media @tablet {
 		white-space: normal;
+		padding: 0;
 	}
 
 	.item-name {
 		color: @color__navigation-item--text;
 		line-height: 1em;
-		padding: 0.5em 1em;
+		padding: 0.5em 1.5em;
 
 		@media @tablet {
-			padding: 1em 0;
+			padding: 1em 1.5em;
 		}
 		
 		&:hover {
