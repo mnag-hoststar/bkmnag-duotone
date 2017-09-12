@@ -282,7 +282,7 @@
 
 			&:before {
 				top: 9px;
-				background: @color__navigation--text;
+				background: lighten(@color__navigation--text, 40%);
 				.transform-rotate(45deg);
 
 			}
@@ -291,7 +291,7 @@
 
 			&:after {
 				bottom: 9px;
-				background: @color__navigation--text;
+				background: lighten(@color__navigation--text, 40%);
 				.transform-rotate(-45deg);
 			}
 		}
@@ -383,6 +383,7 @@
 	
 		@media @tablet {
 			padding: 0.5em 0;
+		    color: lighten(@color__navigation--text, 40%);
 		}
 	
 		.make-font-a-little-smaller(@font__navigation--font-size);
@@ -393,7 +394,7 @@
 			color: @color__navigation--text--hover;
 			
 			@media @tablet {
-				color: @color__navigation--text--hover;
+		        color: lighten(@color__navigation--text--hover, 40%);
 			}
 		}
 	}
@@ -402,7 +403,7 @@
 		color: @color__navigation--text--selected;
 
 		@media @tablet {
-			color: @color__navigation--text--selected;
+			color: lighten(@color__navigation--text--selected, 40%);
 		}
 	}
 
@@ -446,6 +447,10 @@
 	
 	&.folder-open > .item-name {
 		color: @color__navigation--text--hover;
+		
+		@media @tablet {	
+			color: lighten(@color__navigation--text--hover, 40%);
+		}
 	}
 }
 
