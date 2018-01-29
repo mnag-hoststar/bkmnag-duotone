@@ -217,6 +217,12 @@
             "font__button--line-height": "@font-swatch4-line-height",
             "font__button--letter-spacing": "unit(1.5px/10, em)"
         },
+		"socialicons": {
+			"color__socialicons--icon": "@color__button--text",
+			"color__socialicons--icon--hover": "@color__button--text--hover",
+			"color__socialicons--icon--background": "@color__button--background",
+			"color__socialicons--icon--background--hover": "@color__button--background--hover"
+		},
         "form": {
             "color__form--background": "@color__container--background"
         },

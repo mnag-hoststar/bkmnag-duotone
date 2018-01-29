@@ -169,12 +169,12 @@ a.button,
 	cursor: pointer;
 	margin: 0.5em 0.5em 0.5em 0;
     padding: 0;
-    background-color: @color__button--background;
+    background-color: @color__socialicons--icon--background;
     width: 2.5em;
     height: 2.5em;
 	
 	&:hover {
-        background-color: @color__button--background--hover;
+        background-color: @color__socialicons--icon--background--hover;
 	}
 	
 	&:last-child {
@@ -212,9 +212,13 @@ a.button,
 		display: block;
 		margin: 0 auto;
 		padding: 0;
-		line-height: 2em;
+		line-height: 2.1em;
 		font-size: 1.2em;
-		color: @color__button--text;
+		color: @color__socialicons--icon;
+	}
+	
+	&:hover:before {
+		color: @color__socialicons--icon--hover;
 	}
 }
 
