@@ -35,6 +35,23 @@ $( document ).ready(function() {
 			$('.template__header').removeClass('template__header--small');
 		}
 	});
+	
+	// ------------------------------
+	// Changes to the header when a language selector is present.
+	// ------------------------------
+	
+	if ($('.language-selector')) {
+	    var languageSelectorHeight = $('.language-selector').outerHeight();
+	    var languageSelectorSpaceClass;
+	 
+	    function languageSelectorSpace(languageSelectorSpaceClass) {
+		    var spaceCSS = $(languageSelectorSpaceClass).css('margin-top', languageSelectorHeight+'px');
+		    return (spaceCSS);
+	    }
+	    
+	    languageSelectorSpace('.page.page--home');
+	    languageSelectorSpace('.template__header');
+	}
 
 	// ------------------------------
 	// Change the top padding of the content depending on how high

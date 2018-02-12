@@ -1,0 +1,168 @@
+// ----------------------------------------
+// Duotone: LESS > Widgets > Language Selection
+// ----------------------------------------
+//
+// #General Styles
+// #Language Selector Dropdown
+// #Language Selector Single Item
+//
+// ----------------------------------------
+
+// ------------------------------
+// #General Styles
+// ------------------------------
+
+@language-padding: 0.5em;
+@language-line-height: unit(@font__navigation--line-height*0.1, em);
+
+.language-selector.language-selector--dropdown,
+.language-selector.language-selector--horizontal {
+    position: fixed;
+    box-sizing: content-box;
+    z-index: 11100;
+}
+
+// Language Selector Light
+.language-selector.language-selector--light {
+    background-color: @color__header--background;
+}
+
+// Language Selector Dark
+.language-selector.language-selector--dark {
+    background-color: @color__header--border;
+}
+
+// General styles inside the Language Selector
+.language-selector {
+    .language-selector__inner {
+        box-sizing: content-box;
+        padding: 1em;
+    }
+    
+    .language-selector__link {
+        box-sizing: border-box;
+        padding: @language-padding @language-padding*3;
+        min-height: @font__navigation--line-height;
+        border: none;
+    }
+
+    .language-selector__inner,
+    .language-selector__list,
+    .language-selector__item,
+    .language-selector__link,
+    .language-selector__name,
+    .language-selector__localised-name {
+    	text-transform: uppercase;
+    	font-family: @font__navigation--font-family;
+    	font-size: @font__navigation--font-size;
+    	font-weight: @font__navigation--font-weight;
+    	line-height: @language-line-height;
+    	letter-spacing: @font__navigation--letter-spacing;
+    	color: @color__navigation--text;
+    }
+}
+
+// ------------------------------
+// #Language Selector Dropdown
+// ------------------------------
+
+.language-selector.language-selector--dropdown {
+    height: auto;
+    text-align: left;
+    
+    .language-selector__inner {
+        height: @language-line-height+@language-padding*2;
+        
+        @media @mobile {
+            width: 100%;
+        }
+    }
+
+    .language-selector__list {
+        box-sizing: border-box;
+        margin: 1em;
+        min-width: auto;
+        
+        @media @tablet {
+            position: relative;
+            margin: 0;
+        }
+    }
+
+    .language-selector__item {
+        &--current {
+            &:after {
+                top: 0;
+                right: 0;
+                content: '\f107';
+                font-family: 'FontAwesome', sans-serif;
+                color: @color__navigation--text;
+                min-width: 1em;
+                line-height: 100%;
+                padding: @language-line-height/2 1em;
+            }
+        }
+    }
+    
+    .language-selector__link {
+        padding-right: 3em;
+        
+    }
+
+    .language-selector__name,
+    .language-selector__localised-name {
+        @media only screen and (max-width: 300px) {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 150px;
+            display: block;
+        }
+    }
+}
+
+// ------------------------------
+// #Language Selector Single Item
+// ------------------------------
+
+.language-selector__item {
+    .language-selector.language-selector--light & {
+        border: none;
+        background-color: transparent;
+        
+        .language-selector__link {
+            background-color: @color__header--background;
+        }
+        
+        .language-selector__link:hover {
+            background-color: @color__button--background;
+        }
+    }
+    
+    .language-selector--light .language-selector__item--current& {
+        .language-selector__link,
+        .language-selector__link:hover {
+            background-color: @color__button--background;
+        }
+    }
+    
+    .language-selector.language-selector--dark & {
+        border: none;
+        background-color: transparent;
+        
+        .language-selector__link {
+            background-color: @color__header--border;
+        }
+        
+        .language-selector__link:hover {
+            background-color: @color__button--background;
+        }
+    }
+        
+    .language-selector--dark .language-selector__item--current& {
+        .language-selector__link,
+        .language-selector__link:hover {
+            background-color: @color__button--background;
+        }
+    }
+}
