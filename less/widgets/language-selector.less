@@ -24,7 +24,7 @@
 
 // Language Selector Light
 .language-selector.language-selector--light {
-    background-color: @color__header--background;
+    background-color: lighten(@color__header--background, 10%);
 }
 
 // Language Selector Dark
@@ -36,12 +36,17 @@
 .language-selector {
     .language-selector__inner {
         box-sizing: content-box;
-        padding: 1em;
+        padding: @language-padding;
+        overflow: hidden;
+        
+        &:hover {
+            overflow: visible;
+        }
     }
     
     .language-selector__link {
         box-sizing: border-box;
-        padding: @language-padding @language-padding*3;
+        padding: @language-padding/2 @language-padding;
         min-height: @font__navigation--line-height;
         border: none;
     }
@@ -59,6 +64,20 @@
     	line-height: @language-line-height;
     	letter-spacing: @font__navigation--letter-spacing;
     	color: @color__navigation--text;
+    	
+    	@media @tablet {
+        	font-size: @font__navigation--font-size*0.8;
+    	}
+    }
+    
+	.language-selector__icon,
+	&.language-selector--flag-text .language-selector__icon {
+		margin-right: 0;
+	}
+	
+    .language-selector__name,
+    .language-selector__localised-name {
+		padding-left: @language-padding;
     }
 }
 
@@ -71,7 +90,7 @@
     text-align: left;
     
     .language-selector__inner {
-        height: @language-line-height+@language-padding*2;
+        height: @language-line-height+@language-padding;
         
         @media @mobile {
             width: 100%;
@@ -80,7 +99,7 @@
 
     .language-selector__list {
         box-sizing: border-box;
-        margin: 1em;
+        margin: @language-padding;
         min-width: auto;
         
         @media @tablet {
@@ -89,34 +108,70 @@
         }
     }
 
-    .language-selector__item {
-        &--current {
-            &:after {
-                top: 0;
-                right: 0;
-                content: '\f107';
-                font-family: 'FontAwesome', sans-serif;
-                color: @color__navigation--text;
-                min-width: 1em;
-                line-height: 100%;
-                padding: @language-line-height/2 1em;
+    .language-selector__item--current {
+		&:after {
+			top: 50%;
+			right: 0;
+			content: '\f107';
+			font-family: 'FontAwesome', sans-serif;
+			color: @color__navigation--text;
+			min-width: 1em;
+			height: 100%;
+			margin-top: -(@font__navigation--font-size/4*3);
+			padding: 0 @language-padding;
+            
+            @media @tablet {
+			    margin-top: -(@font__navigation--font-size*0.8/4*3);
             }
-        }
+		}
     }
     
     .language-selector__link {
-        padding-right: 3em;
+        padding-right: @language-padding*4;
         
+    }
+    
+    &.language-selector--flag-text .language-selector__icon {
+        float: left;
+        margin: 0;
+        line-height: @language-line-height;
+        box-sizing: border-box;
     }
 
     .language-selector__name,
     .language-selector__localised-name {
-        @media only screen and (max-width: 300px) {
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            max-width: 150px;
-            display: block;
+        display: block;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 800px;
+        
+        @media only screen and (max-width: 1600px) {
+            max-width: 1000px;
+        }
+        
+        @media only screen and (max-width: 1200px) {
+            max-width: 850px;
+        }
+        
+        @media only screen and (max-width: 1000px) {
+            max-width: 600px;
+        }
+        
+        @media only screen and (max-width: 800px) {
+            max-width: 500px;
+        }
+        
+        @media only screen and (max-width: 600px) {
+            max-width: 350px;
+        }
+        
+        @media only screen and (max-width: 460px) {
+            max-width: 300px;
+        }
+        
+        @media only screen and (max-width: 380px) {
+            max-width: 200px;
         }
     }
 }

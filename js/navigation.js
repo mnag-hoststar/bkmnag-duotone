@@ -2,7 +2,7 @@
 // Duotone: JS > Navigation
 // ----------------------------------------
 
-$( document ).ready(function() {
+$(document).ready(function() {
 	
 	// ------------------------------
 	// Change navigation if it matches tablet size.
@@ -40,18 +40,22 @@ $( document ).ready(function() {
 	// Changes to the header when a language selector is present.
 	// ------------------------------
 	
-	if ($('.language-selector')) {
-	    var languageSelectorHeight = $('.language-selector').outerHeight();
-	    var languageSelectorSpaceClass;
-	 
-	    function languageSelectorSpace(languageSelectorSpaceClass) {
-		    var spaceCSS = $(languageSelectorSpaceClass).css('margin-top', languageSelectorHeight+'px');
-		    return (spaceCSS);
-	    }
-	    
-	    languageSelectorSpace('.page.page--home');
-	    languageSelectorSpace('.template__header');
+	function languageSelector() {
+    	if ($('.language-selector')) {
+    	    var languageSelectorHeight = $('.language-selector').outerHeight();
+    	    var languageSelectorSpaceClass;
+    	 
+    	    function languageSelectorSpace(languageSelectorSpaceClass) {
+    		    var spaceCSS = $(languageSelectorSpaceClass).css('margin-top', languageSelectorHeight+'px');
+    		    return (spaceCSS);
+    	    }
+    	    
+    	    languageSelectorSpace('section.page');
+    	    languageSelectorSpace('.template__header');
+    	}
 	}
+	
+	languageSelector();
 
 	// ------------------------------
 	// Change the top padding of the content depending on how high
@@ -88,12 +92,13 @@ $( document ).ready(function() {
 	// The overlay of the feature should be below the header.
 	// ------------------------------
 	
-	var headerHeight = $('.template__header').outerHeight();
-	var featureOverlayTopDistance = $('.widget[data-widget-type="feature"] .widget-overlay').attr('style', 'top: ' + headerHeight + 'px');
+	function resizeHeaderHeight() {
+    	var headerHeight = $('.template__header').outerHeight();
+    	var featureOverlayTopDistance = $('.widget[data-widget-type="feature"]').attr('style', 'top: ' + headerHeight + 'px');
+	}
 
 	$(window).resize(function() {
-		var headerHeight = $('.template__header').outerHeight();
-		var featureOverlayTopDistance = $('.widget[data-widget-type="feature"] .widget-overlay').attr('style', 'top: ' + headerHeight + 'px');
+		resizeHeaderHeight();
 	});
     
 	// ------------------------------
@@ -102,5 +107,16 @@ $( document ).ready(function() {
     
     $(".navigation-item").click(function(){
         $(this).siblings(".navigation-item").removeClass("folder-open open");
+    });
+
+	// ------------------------------
+    // Changes by the editor are saved in the style elmement with the class js-compiled-styles.
+	// ------------------------------
+	
+    $(document).bind("DOMSubtreeModified",function(){
+        languageSelector();
+		resizeHeaderHeight();
+		
+        console.log('Change happend ' +  headerHeight);
     });
 });
