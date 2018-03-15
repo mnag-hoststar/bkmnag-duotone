@@ -116,7 +116,5 @@ $(document).ready(function() {
     $(document).bind("DOMSubtreeModified",function(){
         languageSelector();
 		resizeHeaderHeight();
-		
-        console.log('Change happend ' +  headerHeight);
     });
 });

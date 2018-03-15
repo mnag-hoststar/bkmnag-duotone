@@ -19,7 +19,7 @@
 .language-selector.language-selector--horizontal {
     position: fixed;
     box-sizing: content-box;
-    z-index: 11100;
+    z-index: 100;
 }
 
 // Language Selector Light
@@ -46,10 +46,14 @@
     
     .language-selector__link {
         box-sizing: border-box;
-        padding: @language-padding/2 @language-padding;
+        padding: @language-padding/2 @language-padding*2;
         min-height: @font__navigation--line-height;
         border: none;
     }
+	
+	&.language-selector--horizontal .language-selector__link {
+		text-align: right;
+	}
 
     .language-selector__inner,
     .language-selector__list,
@@ -75,8 +79,8 @@
 		margin-right: 0;
 	}
 	
-    .language-selector__name,
-    .language-selector__localised-name {
+    &.language-selector--flag-text .language-selector__name,
+    &.language-selector--flag-text .language-selector__localised-name {
 		padding-left: @language-padding;
     }
 }
@@ -117,12 +121,8 @@
 			color: @color__navigation--text;
 			min-width: 1em;
 			height: 100%;
-			margin-top: -(@font__navigation--font-size/4*3);
+			margin-top: -(@language-line-height/2);
 			padding: 0 @language-padding;
-            
-            @media @tablet {
-			    margin-top: -(@font__navigation--font-size*0.8/4*3);
-            }
 		}
     }
     
