@@ -19,7 +19,7 @@
 .language-selector.language-selector--horizontal {
     position: fixed;
     box-sizing: content-box;
-    z-index: 100;
+    z-index: 10100;
 }
 
 // Language Selector Light
@@ -68,6 +68,10 @@
     	line-height: @language-line-height;
     	letter-spacing: @font__navigation--letter-spacing;
     	color: @color__navigation--text;
+        -webkit-font-smoothing: auto;
+        -moz-osx-font-smoothing: auto;
+        font-smooth: auto;
+        text-rendering: auto;
     	
     	@media @tablet {
         	font-size: @font__navigation--font-size*0.8;
