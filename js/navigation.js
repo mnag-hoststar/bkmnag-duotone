@@ -43,15 +43,11 @@ $(document).ready(function() {
 	function languageSelector() {
     	if ($('.language-selector')) {
     	    var languageSelectorHeight = $('.language-selector').outerHeight();
-    	    var languageSelectorSpaceClass;
-    	 
-    	    function languageSelectorSpace(languageSelectorSpaceClass) {
-    		    var spaceCSS = $(languageSelectorSpaceClass).css('margin-top', languageSelectorHeight+'px');
-    		    return (spaceCSS);
-    	    }
     	    
-    	    languageSelectorSpace('section.page');
-    	    languageSelectorSpace('.template__header');
+			$('section.page').css('margin-top', languageSelectorHeight+'px');
+			$('.template__header').css('margin-top', languageSelectorHeight+'px');
+			$('.header-feature').css('padding-bottom', languageSelectorHeight+'px');
+			$('.feature__background-image').css('min-height', 'calc(95vh - '+languageSelectorHeight+'px'));
     	}
 	}
 	
@@ -76,15 +72,18 @@ $(document).ready(function() {
 
 		return headerHeight, footerHeight;
 	}
-
+	
+	function resizeContent() {
+		$('.template__content').css('padding-top', headerHeight +'px');
+		$('.default section.page').css('padding-bottom', footerHeight +'px');
+	}
+	
 	resizeHeaderFooter();
-	$('.template__content').css('padding-top', headerHeight +'px');
-	$('.default section.page').css('padding-bottom', footerHeight +'px');
+	resizeContent();
 
 	$(window).resize(function() {
 		resizeHeaderFooter();
-		$('.template__content').css('padding-top', headerHeight +'px');
-		$('.default section.page').css('padding-bottom', footerHeight +'px');
+		resizeContent();
 	});
 	
 	// ------------------------------
