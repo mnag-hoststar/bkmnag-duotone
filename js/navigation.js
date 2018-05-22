@@ -47,7 +47,7 @@ $(document).ready(function() {
 			$('section.page').css('margin-top', languageSelectorHeight+'px');
 			$('.template__header').css('margin-top', languageSelectorHeight+'px');
 			$('.header-feature').css('padding-bottom', languageSelectorHeight+'px');
-			$('.feature__background-image').css('min-height', 'calc(95vh - '+languageSelectorHeight+'px'));
+			$('.feature__background-image').css('min-height', 'calc(95vh - '+languageSelectorHeight+'px)');
     	}
 	}
 	
