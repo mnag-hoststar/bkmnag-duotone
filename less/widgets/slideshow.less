@@ -245,6 +245,7 @@
     right: 0;
 	margin: 0;
 	opacity: 0;
+	text-align: center;
 	.transition(opacity);
 	
 	// Controls are only show when the
@@ -260,9 +261,9 @@
 	// Button
 
 	.button {
-		position: absolute;
+		position: relative;
 		top: 50%;
-		margin: 0;
+		margin: 0 0.2em;
 		padding: 0;
 		height: 2.5em;
 		line-height: 1em;
@@ -277,9 +278,12 @@
 		
 		&:before,
 		&:after {
+			position: relative;
+			left: 50%;
 			display: block;
 			margin-right: 0;
-    		margin-left: 0;
+			margin-left: -0.5em;
+			width: 1em;
 			font-size: 1em;
 		}
 	}
@@ -289,35 +293,14 @@
 	}
 
 	.previous-button {
-		left: 50%;
-    	margin-left: -3.75em;
-		padding-right: 0em;
-
-		// Icon
-		&:before {
-		}
 	}
 
 	.next-button {
-    	right: 50%;
-    	margin-right: -3.75em;
 		padding-left: 0.3em;
-
-		// Icon
-		&:after {
-		}
 	}
 
 	.pause-toggle {
-		left: 50%;
-		margin-left: -1.25em;
-		padding-left: 0.15em;
-
-		// Icon
-		&:before {
-		}
-
-		// Play Icon
+		padding-left: 0.2em;
 
 		&.pause:before {
 			content: '\f04b';
