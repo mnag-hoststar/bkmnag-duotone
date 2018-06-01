@@ -19,12 +19,12 @@
 .language-selector.language-selector--horizontal {
     position: fixed;
     box-sizing: content-box;
-    z-index: 10100;
+    z-index: 11100;
 }
 
 // Language Selector Light
 .language-selector.language-selector--light {
-    background-color: lighten(@color__header--background, 10%);
+    background-color: lighten(@color__header--background, 5%);
 }
 
 // Language Selector Dark
@@ -194,14 +194,14 @@
         }
         
         .language-selector__link:hover {
-            background-color: @color__button--background;
+            background-color: darken(@color__header--background, 5%);
         }
     }
     
     .language-selector--light .language-selector__item--current& {
         .language-selector__link,
         .language-selector__link:hover {
-            background-color: @color__button--background;
+            background-color: darken(@color__header--background, 5%);
         }
     }
     
@@ -214,14 +214,14 @@
         }
         
         .language-selector__link:hover {
-            background-color: @color__button--background;
+            background-color: darken(@color__header--background, 5%);
         }
     }
         
     .language-selector--dark .language-selector__item--current& {
         .language-selector__link,
         .language-selector__link:hover {
-            background-color: @color__button--background;
+            background-color: darken(@color__header--background, 5%);
         }
     }
 }
