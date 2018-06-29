@@ -127,8 +127,6 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
 // ------------------------------
 
 .template__footer {
-	position: absolute;
-	bottom: 0;
     width: 100%;
     background-color: @color__footer--background;
     text-align: center;
@@ -181,6 +179,17 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
 			}
 		}
 	}
+}
+
+.gdpr-footer {
+    background-color: @color__footer--background;
+    padding: 10px 0;
+    
+    a[class] {
+        padding: 0 10px;
+	    font-family: @font__navigation--font-family;
+    	color: @color__navigation--text;
+    }
 }
 
 // ------------------------------

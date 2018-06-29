@@ -54,7 +54,6 @@ $(document).ready(function() {
     	    
 			$('.template__header').css('margin-top', languageSelectorHeight+'px');
 			$('.template__content').css('margin-top', languageAndNavigationHeight+'px');
-			$('.page').css('margin-bottom', footerHeight+'px');
     	}
 	}
 	
