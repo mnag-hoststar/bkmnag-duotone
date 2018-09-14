@@ -27,7 +27,6 @@ a.button,
     display: inline-block;
 	border: 0.3em solid @color__button--border;
 	padding: 0.5em 1.5em;
-	min-height: @button-height;
     .appearance(none);
     .border-radius(0);
 	.transition();
@@ -46,8 +45,6 @@ a.button,
 	.make-font-a-lot-smaller(@font__button--font-size);
 	
     &:hover {
-	    padding: 0.5em 1.5em;
-		min-height: @button-height;
 		.box-shadow(0px 10px 20px 0px fade(@color__p--text, 30%));
 		border: 0.3em solid @color__button--background--hover;
         background-color: @color__button--background--hover;
