@@ -239,109 +239,128 @@ input:focus {
 // #Radio Buttons and Checkboxes
 // ------------------------------
 
-.option-list {
-	margin-top: 1em;
-	
-	.label--radio,
-	.label--checkbox {
-		.paragraph;
-		line-height: 1.5em;
-		min-height: 1.5em;
-	}
+.widget .form {
+	.option-list,
+	[class*="form-group--terms"] {
+		margin-top: 1em;
 
-	.option-item--radio,
-	.option-item--checkbox {
-		position: relative;
-		width: 100%;
-		margin-bottom: unit(@font__p--line-height*0.1, em) / 2;
+		.label--radio,
+		.label--checkbox,
+		label[for*="input--terms"],
+		label[for*="input--terms"] span a.form__link {
+			.paragraph;
+			line-height: 1.7em;
+			min-height: 1.7em;
+		}
+
+		input[type="radio"],
+		input[type="checkbox"] {
+			opacity: 0;
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			margin: 0 !important;
+			padding: 0 !important;
+			width: 100% !important;
+			height: 100% !important;
+
+			&:checked + label:before {
+				border: 2px solid @color-text--faded;
+			}
+
+			&:checked + label:after {
+				opacity: 1;
+			}
+
+			&:focus + label:before,
+			&:focus:checked + label:before {
+				border: 2px solid @color-text--faded;
+			}
+		}
 		
-		padding: 0;
-
-		label {
+		.option-item--radio,
+		.option-item--checkbox,
+		&[class*="form-group"] {
 			position: relative;
-			margin-left: 1em * 2.5;
-			.transform-scale(1);
+			width: 100%;
+			margin-bottom: unit(@font__p--line-height*0.1, em) / 2;
+			padding: 0;
 
-			&:before {
-				content: " ";
-				position: absolute;
-				top: 0.7em;
-				left: -2.5em;
-				width: 1.5em;
-				height: 1.5em;
-				margin-top: -0.8em;
-				background-color: #fff;
-				border: 2px solid @color-text--light;
+			label {
+				position: relative;
+				cursor: pointer;
+				display: block;
+				margin-left: 1em * 2.5;
+				margin-bottom: 0;
+				
+				&:before,
+				&:after {
+					cursor: pointer;
+				}
+				
+				&:before {
+					content: " ";
+					position: absolute;
+					top: 0.9em;
+					left: -2.5em;
+					width: 1.5em;
+					height: 1.5em;
+					margin-top: -0.8em;
+					background-color: #fff;
+					border: 2px solid @color-text--light;
+				}
+
+				&:after {
+					opacity: 0;
+					position: absolute;
+					.transition(opacity, 0.1s);
+				}
 			}
+		}
 
-			&:after {
-				opacity: 0;
-				position: absolute;
-				.transition(opacity, 0.1s);
+		.option-item--radio {
+			label {
+				&:before {
+					.border-radius(1em);
+				}
+
+				&:after {
+					content: " ";
+					.border-radius(1em);
+					background-color: @color__button--background;
+					top: 0.9em;
+					left: -2.5em;
+					width: 1.5em;
+					height: 1.5em;
+					margin-top: -0.8em;
+					.transform-scale(0.5);
+				}
+			}
+		}
+
+		.option-item--checkbox,
+		&[class*="form-group"] {
+			label {
+				&:after {
+					content: "\f00c";
+					font-family: 'FontAwesome', sans-serif;
+					color: @color__button--background;
+					font-size: 1.5em;
+					top: 0.6em;
+					left: -1.5em;
+					margin-top: -0.6em;
+				}
 			}
 		}
 	}
-
-	input[type="radio"],
-	input[type="checkbox"] {
-		opacity: 0;
-		position: absolute;
-		top: 0;
-		left: 0;
-		right: 0;
-		bottom: 0;
-		margin: 0 !important;
-		padding: 0 !important;
-		width: 100% !important;
-		height: 100% !important;
-
-		&:checked + label:before {
-			border: 0.2em solid @color-text--faded;
-		}
-
-		&:checked + label:after {
-			opacity: 1;
-		}
-
-		&:focus + label:before,
-		&:focus:checked + label:before {
-			border: 0.3em solid @color__button--background--hover;
-		}
-	}
-
-	.option-item--radio {
-		label {
-			&:before {
-				.border-radius(1em);
-			}
-			&:after {
-				content: " ";
-				.border-radius(1em);
-				background-color: @color__button--background;
-				top: 0.7em;
-				left: -2.5em;
-				width: 1.5em;
-				height: 1.5em;
-				margin-top: -0.8em;
-				.transform-scale(0.5);
-			}
-		}
-	}
-
-	.option-item--checkbox {
-		label {
-			&:after {
-				content: "\f00c";
-				font-family: 'FontAwesome', sans-serif;
-				color: @color__button--background;
-				font-size: 1.5em;
-				top: 0.5em;
-				left: -1.5em;
-				margin-top: -0.6em;
-			}
-		}
+	
+	[class*="form-group--terms"] {
+		margin-top: 2em;
 	}
 }
+
 
 // ------------------------------
 // #Dropdowns
