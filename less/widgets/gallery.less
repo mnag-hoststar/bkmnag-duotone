@@ -20,6 +20,14 @@
 
 .gallery-widget-background--spacing() when not (@color__gallery--background = @color__body--background) {
 	padding: 2em 0;
+	
+	section &:first-child {
+		margin-top: -2em;
+		
+		.responsivecolumns & {
+			margin-top: 0;
+		}
+	}
 }
 
 // ------------------------------
@@ -55,8 +63,16 @@
 	font-size: 0;
 	letter-spacing: 0;
 	
+	.responsivecolumns & {
+	    margin: -8px;
+	}
+	
 	@media @mobile {
 		margin: 0 -6px;
+	
+    	.responsivecolumns & {
+    	    margin: -6px;
+    	}
 	}
 }
 
@@ -95,11 +111,8 @@
 	.responsivecolumns .columns-four-second &,
 	.responsivecolumns .columns-four-third &,
 	.responsivecolumns .columns-four-fourth & {
-	
-		@media only screen and (max-width: 1300px) {
-			width: 100%;
-			padding-bottom: 100%;
-		}
+		width: 100%;
+		padding-bottom: 100%;
 	
 		@media only screen and (max-width: 1200px) {
 			width: 100%/2;

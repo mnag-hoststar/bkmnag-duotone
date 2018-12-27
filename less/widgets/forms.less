@@ -28,6 +28,14 @@
 
 .form-widget-background--spacing() when not (@color__form--background = @color__body--background) {
 	padding: 2em 0;
+	
+	section &:first-child {
+		margin-top: -2em;
+		
+		.responsivecolumns & {
+			margin-top: 0;
+		}
+	}
 }
 
 // ------------------------------

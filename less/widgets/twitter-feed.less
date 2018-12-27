@@ -2,7 +2,6 @@
 // Duotone: LESS > Widgets > Twitter Feed
 // ----------------------------------------
 //
-// #Conditional Mixins
 // #Twitter Widget Container
 // #Tweet List
 // #Tweet Item
@@ -10,83 +9,9 @@
 // #Account Link
 // #Content
 // #Tweet Metadata
-// #Conditionals
+// #Conditional Mixins
 //
 // ----------------------------------------
-
-// ------------------------------
-// #Conditional Mixins
-// ------------------------------
-
-// Conditional if the container background 
-// is not the same as the page background.
-
-.twitter-body-background--spacing() when not (@color__twitter--background = @color__body--background) {
-	padding: 2em 0;
-}
-
-// Conditionals if the container background 
-// is the same as the item background.
-
-.twitter-widget-background--spacing() when (@color__twitter--background = @color__twitter-item--background) {
-	.widget[data-name="twitter"],
-	.widget[data-widget-type="twitter"] {
-		padding: 1em 0;
-	}
-	
-	.twitter__avatar {
-		margin: 1em 1em 0 0;
-	}
-	
-	a.twitter__account-link {
-		padding: 1em 0 0;
-		min-height: 4.6em;
-	}
-	
-	.tweet-content {
-		padding: 1em 0 5em 0;
-	
-		@media @mobile {
-			padding: 1em 0 5.5em 0;
-		}
-	}
-	
-	.tweet-metadata {
-		padding: 1.5em 0;
-
-		@media @mobile {
-			padding: 1.5em 0 2em;
-		}
-	}
-}
-
-.tweet-metadata--spacing() when (@color__twitter--background = @color__twitter-item--background) {
-
-}
-
-// Conditionals for responsive columns 
-// if body background is the same as
-// item background.
-
-.twitter-item-background--columns--spacing() when (@color__twitter-item--background = @color__body--background) {
-	.responsivecolumns {
-	 	.twitter__avatar {
-			margin: 0 1em 0 0;
-		}
-		
-	 	a.twitter__account-link {
-			padding: 0 0 0 4.6em;
-		}
-		
-		.tweet-content {
-			padding: 0 0 5.5em;
-		}
-		
-		.tweet-metadata {
-			padding: 1.5em 0 1em;
-		}
-	}
-}
 
 // ------------------------------
 // #Twitter Widget Container
@@ -95,12 +20,6 @@
 // Color correction for the background.
 // Adding the same background as the forms widget
 // to a content widget if there is one above it.
-
-.widget[data-name="twitter"],
-.widget[data-widget-type="twitter"] {
-	.twitter-body-background--spacing();
-	.twitter-widget-background--spacing();
-}
 
 .widget[data-name="twitter"],
 .widget[data-widget-type="twitter"],
@@ -187,6 +106,10 @@ a.twitter__account-link {
 .tweet-content {
 	padding: 1em 1.5em 5.5em;
 	.tweet-content--spacing();
+	
+	.responsivecolumns & {
+		padding: 1em 1.5em 0;
+	}
 }
 
 // ------------------------------
@@ -205,6 +128,11 @@ a.twitter__account-link {
 	.make-font-a-little-smaller(@font__p--font-size);
 	.make-font-smaller(@font__p--font-size);
 	.make-font-a-lot-smaller(@font__p--font-size);
+	
+	.responsivecolumns & {
+		position: static;
+		display: block;
+	}
 	
 	// Twitter link at the end.
 	
@@ -234,8 +162,74 @@ a.twitter__account-link {
 }
 
 // ------------------------------
-// #Conditionals
+// #Conditional Mixins
 // ------------------------------
 
-.twitter-item-background--columns--spacing();
-.twitter-widget-background--spacing();
+// Conditional if the container background 
+// is not the same as the page background.
+
+.twitter-body-background--spacing() when not (@color__twitter--background = @color__body--background) {
+	padding: 2em 0;
+	
+	section.column > &:first-child {
+		margin-top: -2em;
+		
+		.responsivecolumns & {
+			margin-top: 0;
+		}
+	}
+}
+
+// Conditionals if the container background 
+// is the same as the item background.
+
+.twitter-widget-background--spacing() when (@color__twitter--background = @color__twitter-item--background) {
+	padding: 1em 0;
+	
+	.twitter__avatar {
+		margin: 1em 1em 0 0;
+		
+		.responsivecolumns & {
+			margin: 0 1em 0 0;
+		}
+	}
+	
+	a.twitter__account-link {
+		padding: 1em 0 0;
+		min-height: 4.6em;
+		
+		.responsivecolumns & {
+			padding: 0;
+		}
+	}
+	
+	.tweet-content {
+		padding: 1em 0 5em 0;
+		
+		.responsivecolumns & {
+			padding: 0;
+		}
+		
+		@media @mobile {
+			padding: 1em 0 0;
+		
+			.responsivecolumns & {
+				padding: 0;
+			}
+		}
+	}
+	
+	.tweet-metadata {
+		padding: 1.5em 0;
+
+		@media @mobile {
+			padding: 1.5em 0 2em;
+		}
+	}
+}
+
+.widget[data-name="twitter"],
+.widget[data-widget-type="twitter"] {
+	.twitter-body-background--spacing();
+	.twitter-widget-background--spacing();
+}

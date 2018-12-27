@@ -11,6 +11,7 @@
 // #Content
 // #Footer
 // #Widget Overlay
+// #Texteditor Toolbar
 //
 // ----------------------------------------
 
@@ -19,7 +20,15 @@
 // ------------------------------
 
 .page {
-	padding-bottom: 2em;
+	padding: 2em 0;
+	
+	&.page--home {
+		padding: 0 0 2em;
+		
+		.template__content {
+			padding-top: 2em;
+		}
+	}
 }
 
 // ------------------------------
@@ -193,6 +202,7 @@ section.page {
 
 .widget-overlay {
 	z-index: 10000 !important;
+	
 	.widget__item {
 		padding: 0;
 	}
@@ -203,4 +213,12 @@ section.page {
 		width: auto;
 		max-width: none;
 	}
+}
+
+// ------------------------------
+// #Texteditor Toolbar
+// ------------------------------
+
+.widget.in-editing {
+	z-index: 20000 !important;
 }
