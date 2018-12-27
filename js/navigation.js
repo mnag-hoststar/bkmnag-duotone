@@ -55,6 +55,7 @@ $(document).ready(function() {
 			$('.template__header').css('margin-top', languageSelectorHeight+'px');
 			$('section.page').css('margin-top', languageAndNavigationHeight+'px');
 			$('.header-feature .widget[data-widget-type="feature"]').css('margin-top', '-'+(languageAndNavigationHeight)+'px');
+			$('.header-feature .feature__content-wrap').css('margin-top', (languageAndNavigationHeight)+'px');
     	}
 	}
 	

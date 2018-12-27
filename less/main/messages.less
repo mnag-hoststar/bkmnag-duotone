@@ -36,6 +36,22 @@
 	min-height: 3em;
     .clearfix();
 	color: #fff;
+	width: 60%;
+	max-width: 1400px;
+    margin: 0 auto;
+	
+	@media @tablet-horizontal {
+		width: @layout-width-desktop;
+	}
+	
+	@media @tablet {
+		width: @layout-width-tablet;
+	}
+
+	.responsivecolumns & {
+		width: 100%;
+		margin: 1em 0 0;
+	}
 
     // Message Heading, Paragraph
 
@@ -147,7 +163,7 @@
 // Not Found
 
 .message--not-found {
-	background-color: @message-color--not-found;
+	background-color: @message-color--information;
 
 	// Icon
 	&:before {
