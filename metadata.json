@@ -210,7 +210,7 @@
             "color__button--background--hover": "darken(@color__button--background, 4%)",
             "color__button--text": "@color-swatch7",
             "color__button--text--hover": "@color-swatch7",
-            "color__button--border": "@color__secondary",
+            "color__button--border": "@color__button--background",
             "font__button--font-family": "@font-swatch4-font-family",
             "font__button--font-size": "16px",
             "font__button--font-weight": "700",
@@ -224,7 +224,9 @@
 			"color__socialicons--icon--background--hover": "@color__button--background--hover"
 		},
         "form": {
-            "color__form--background": "@color__container--background"
+            "color__form--background": "@color__container--background",
+            "color__form-legend--text": "@color__p--text",
+            "color__form-legend--background": "@color-swatch7"
         },
         "image": {
             "color__image--background": "@color__container--background",
