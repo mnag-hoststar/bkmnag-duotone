@@ -27,6 +27,11 @@
 		    top: 50%;
 		}
     }
+	
+	.feature {
+		display: flex;
+		flex-direction: row-reverse;
+	}
 }
 
 // ------------------------------
@@ -35,7 +40,7 @@
 
 .feature__background-image {
 	.display-flex(flex);
-  	.flex-direction(column);
+	.flex-direction(column);
 	.justify-content(flex-end, end);
 	position: relative;
     background-size: cover;
@@ -43,6 +48,8 @@
     background-attachment: fixed;
     min-height: 100%;
 	min-height: 100vh;
+	width: 100%;
+	width: 100vw;
 
     @media @tablet {
         background-attachment: inherit;
