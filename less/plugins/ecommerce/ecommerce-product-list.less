@@ -73,6 +73,12 @@
 	background-color: @color__ecomproductslist-filters--background;
 	margin: 2em 0;
 	.productsearch-widget-background--spacing();
+
+	.style--light &,
+	.style--accent &,
+	.style--dark & {
+		background-color: transparent;
+	}
 	
 	.responsivecolumns & {
 		background-color: transparent;
@@ -291,6 +297,18 @@
 			width: 100%;
 			background-color: @color-text--lightest;
 			.transition();
+
+			.style--light & {
+                background-color: darken(@color--light, 10%);
+            }
+
+            .style--accent & {
+                background-color: darken(@color--accent, 10%);
+            }
+
+            .style--dark & {
+                background-color: darken(@color--dark, 10%);
+            }
 		}
 
 		// Clickable item, class added via JS
@@ -371,6 +389,18 @@
 .ecomproductslist__title-link,
 .ecomfeaturedproducts__title-link {
 	color: @color__ecomproductslist-product-title--text;
+
+	.style--light & {
+        color: @contrast--light;
+    }
+
+    .style--accent & {
+        color: @contrast--accent;
+    }
+
+    .style--dark & {
+        color: @contrast--dark;
+    }
 }
 
 .product-item-price {

@@ -31,8 +31,8 @@
 	}
 }
 
-.template__content {
-	.widget {
+#page-zones__main {
+	> .widget:not([data-name="row"]) {
 		> * {
 			.template__content--width();
 		}
@@ -314,6 +314,18 @@ hr,
 hr.line__rule {
 	height: 3px;
 	background-color: fade(@color__p--text, 60%);
+
+	.style--light & {
+        background-color: darken(@color--light, 20%);
+    }
+
+    .style--accent & {
+        background-color: darken(@color--accent, 20%);
+    }
+
+    .style--dark & {
+        background-color: darken(@color--dark, 20%);
+    }
 }
 
 // -----------------------------
