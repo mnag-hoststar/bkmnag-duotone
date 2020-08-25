@@ -84,6 +84,21 @@
     margin: 0.5em 0;
     padding: 0.4em 0.5em;
     line-height: 1em;
+
+    .style--light & {
+    	background-color: darken(@color--light, 10%);
+        color: @contrast--light;
+    }
+
+    .style--accent & {
+    	background-color: darken(@color--accent, 10%);
+        color: @contrast--accent;
+    }
+
+    .style--dark & {
+    	background-color: darken(@color--dark, 10%);
+        color: @contrast--dark;
+    }
 }
 
 // ------------------------------
@@ -145,9 +160,39 @@ a.tag-link,
 	.make-font-a-little-smaller(@font__h4--font-size, 0.7);
 	.make-font-smaller(@font__h4--font-size, 0.7);
 	.make-font-a-lot-smaller(@font__h4--font-size, 0.7, 0.6);
+
+	.style--light & {
+        background-color: fade(@color--accent, 75%);
+        color: @contrast--accent;
+    }
+
+    .style--accent & {
+        background-color: fade(@color--dark, 50%);
+        color: @contrast--dark;
+    }
+
+    .style--dark & {
+        background-color: fade(@color--accent, 75%);
+        color: @contrast--accent;
+    }
 	
 	&:hover {
 		background: fade(@color__button--background, 75%);
+
+		.style--light & {
+	        background-color: fade(@color--accent, 75%);
+	        color: @contrast--accent;
+	    }
+
+	    .style--accent & {
+	        background-color: fade(@color--dark, 75%);
+	        color: @contrast--dark;
+	    }
+
+	    .style--dark & {
+	        background-color: fade(@color--accent, 75%);
+	        color: @contrast--accent;
+	    }
 	}
 	
 	@media @tablet {

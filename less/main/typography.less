@@ -24,6 +24,18 @@
 h1, h2, h3, h4, h5, h6 {
 	margin: 0;
 	padding: 1em 0 0.2em;
+
+	.style--light & {
+	    color: @contrast--light;
+	}
+
+	.style--accent & {
+	    color: @contrast--accent;
+	}
+
+	.style--dark & {
+	    color: @contrast--dark;
+	}
 	
 	+ h2, + h3, + h4, + h5, + h6 {
 		padding-top: 0;
@@ -119,7 +131,7 @@ h6, .heading--6 {
 	.make-font-a-lot-smaller(@font__h4--letter-spacing*0.8);
 }
 
-p, .paragraph, ul, ol, li {
+p, .paragraph, ul, ol, li, .contentgroup__body {
 	font-family: @font__p--font-family;
 	font-size: @font__p--font-size;
 	font-weight: @font__p--font-weight;
@@ -129,6 +141,18 @@ p, .paragraph, ul, ol, li {
 	.make-font-a-little-smaller(@font__p--font-size);
 	.make-font-smaller(@font__p--font-size);
 	.make-font-a-lot-smaller(@font__p--font-size);
+
+	.style--light & {
+	    color: fade(@contrast--light, 80%);
+	}
+
+	.style--accent & {
+	    color: fade(@contrast--accent, 80%);
+	}
+
+	.style--dark & {
+	    color: fade(@contrast--dark, 80%);
+	}
 }
 
 // ------------------------------
@@ -148,11 +172,23 @@ u {
 // #Label
 // ------------------------------
 
-label, .label-text {
+label:not(.clicktocall__label), .label-text {
 	font-family: @font__h4--font-family;
 	font-size: 0.9em;
 	color: @color-text--faded;
 	word-wrap: normal;
+
+	.style--light & {
+	    color: fade(@contrast--light, 80%);
+	}
+
+	.style--accent & {
+	    color: fade(@contrast--accent, 80%);
+	}
+
+	.style--dark & {
+	    color: fade(@contrast--dark, 80%);
+	}
 }
 
 // -----------------------------
@@ -187,6 +223,21 @@ a {
 	height: auto;
 	.transition();
 
+	.style--light & {
+		border-color: @color--accent;
+        color: @contrast--light;
+    }
+
+    .style--accent & {
+    	border-color: @color--dark;
+        color: @contrast--accent;
+    }
+
+    .style--dark & {
+    	border-color: @color--accent;
+        color: @contrast--dark;
+    }
+
     &, &:hover {
         text-decoration: none;
     }
@@ -194,13 +245,29 @@ a {
 	&:hover {
 		background-color: fade(@color__link--text, 40%);
 		border-bottom: 0.3em solid @color-highlight--light;
+
+		.style--light & {
+	        background-color: fade(@color--accent, 40%);
+	        border-color: @color--accent;
+	        color: @contrast--accent;
+	    }
+
+	    .style--accent & {
+	        background-color: fade(@color--dark, 40%);
+	        border-color: @color--dark;
+	        color: @contrast--dark;
+	    }
+
+	    .style--dark & {
+	        background-color: fade(@color--accent, 40%);
+	        border-color: @color--accent;
+	        color: @contrast--accent;
+	    }
 	}
 }
 
 a[class] {
-	margin: 0;
-	padding: 0;
-	
+
     &, &:hover {
 		border-bottom: none;
 		background-color: transparent;
@@ -213,6 +280,18 @@ a[class] {
 
 small {
 	color: @color__p--text;
+
+	.style--light & {
+	    color: fade(@contrast--light, 80%);
+	}
+
+	.style--accent & {
+	    color: fade(@contrast--accent, 80%);
+	}
+
+	.style--dark & {
+	    color: fade(@contrast--dark, 80%);
+	}
 }
 
 // ------------------------------
@@ -254,7 +333,7 @@ ul {
 	}
 }
 
-ol {
+.bk-zone ol {
 	margin: 0.5em 0;
 	padding-left: 0;
 	counter-reset: ordered-counter;
@@ -299,6 +378,18 @@ blockquote {
     font-size: 1.5em;
 	font-family: @font__p--font-family;
 	font-style: italic;
+
+	.style--light & {
+	    color: @contrast--light;
+	}
+
+	.style--accent & {
+	    color: @contrast--accent;
+	}
+
+	.style--dark & {
+	    color: @contrast--dark;
+	}
 	
 	span {
 		display: inline-block;
@@ -324,6 +415,18 @@ blockquote {
 		.make-font-a-little-smaller(@font__p--font-size);
 		.make-font-smaller(@font__p--font-size);
 		.make-font-a-lot-smaller(@font__p--font-size);
+
+		.style--light & {
+		    border-color: darken(@color--light, 10%);
+		}
+
+		.style--accent & {
+		    border-color: darken(@color--accent, 10%);
+		}
+
+		.style--dark & {
+		    border-color: fade(@color--light, 10%);
+		}
 	}
 	
 	&:before {

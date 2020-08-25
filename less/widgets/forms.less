@@ -173,9 +173,33 @@ textarea {
 	.transition();
     .border-radius(0);
     .appearance(none);
+
+    .style--light & {
+        border-color: darken(@color--light, 20%);
+    }
+
+    .style--dark & {
+        border-color: darken(@color--accent, 20%);
+    }
+
+    .style--dark & {
+        border-color: darken(@color--dark, 20%);
+    }
 	
 	&:hover {
     	border: 1px solid @color__form-legend--text;
+
+        .style--light & {
+            border-color: darken(@color--light, 25%);
+        }
+
+        .style--dark & {
+            border-color: darken(@color--accent, 25%);
+        }
+
+        .style--dark & {
+            border-color: darken(@color--dark, 25%);
+        }
 	}
 	
 	// Focus style for easier keyboard navigation
@@ -183,6 +207,18 @@ textarea {
 	&:focus {
     	border: 0.3em solid @color__button--background--hover;
 		.box-shadow(none);
+
+        .style--light & {
+            border-color: @color--accent;
+        }
+
+        .style--accent & {
+            border-color: @color--dark;
+        }
+
+        .style--dark & {
+            border-color: @color--accent;
+        }
 	}
 }
 
@@ -276,6 +312,18 @@ input:focus {
 
 			&:checked + label:before {
 				border: 2px solid @color__button--border;
+
+                .style--light & {
+                    border-color: @color--accent;
+                }
+
+                .style--accent & {
+                    border-color: @color--dark;
+                }
+
+                .style--dark & {
+                    border-color: @color--accent;
+                }
 			}
 
 			&:checked + label:after {
@@ -285,6 +333,18 @@ input:focus {
 			&:focus + label:before,
 			&:focus:checked + label:before {
 				border: 2px solid @color__button--border;
+
+                .style--light & {
+                    border-color: @color--accent;
+                }
+
+                .style--accent & {
+                    border-color: @color--dark;
+                }
+
+                .style--dark & {
+                    border-color: @color--accent;
+                }
 			}
 		}
 		
@@ -318,6 +378,18 @@ input:focus {
 					margin-top: -0.8em;
 					background-color: @color__button--text;
 					border: 2px solid @color-form--light;
+
+                    .style--light & {
+                        border-color: darken(@color--light, 20%);
+                    }
+
+                    .style--accent & {
+                        border-color: darken(@color--accent, 20%);
+                    }
+
+                    .style--dark & {
+                        border-color: darken(@color--dark, 20%);
+                    }
 				}
 
 				&:after {
@@ -344,6 +416,18 @@ input:focus {
 					height: 1.5em;
 					margin-top: -0.8em;
 					.transform-scale(0.5);
+
+                    .style--light & {
+                        background-color: @color--accent;
+                    }
+
+                    .style--accent & {
+                        background-color: @color--dark;
+                    }
+
+                    .style--dark & {
+                        background-color: @color--accent;
+                    }
 				}
 			}
 		}
@@ -355,10 +439,22 @@ input:focus {
 					content: "\f00c";
 					font-family: 'FontAwesome', sans-serif;
 					color: @color__button--background;
-					font-size: 1.5em;
+					font-size: 1.2em;
 					top: 0.6em;
-					left: -1.5em;
+					left: -1.9em;
 					margin-top: -0.6em;
+
+                    .style--light & {
+                        color: @color--accent;
+                    }
+
+                    .style--accent & {
+                        color: @color--dark;
+                    }
+
+                    .style--dark & {
+                        color: @color--accent;
+                    }
 				}
 			}
 		}
@@ -398,6 +494,19 @@ input:focus {
         right: 0.5em;
         top: 50%;
         margin-top: -0.5em;
+        z-index: 1;
+
+        .style--light & {
+            color: @contrast--light;
+        }
+
+        .style--accent & {
+            color: @contrast--accent;
+        }
+
+        .style--dark & {
+            color: @contrast--dark;
+        }
 
 		@media @mobile {
 			font-size: 2em;
@@ -420,6 +529,21 @@ input:focus {
     .appearance(none);
 	.transition();
 
+    .style--light & {
+        background-color: darken(@color--light, 8%);
+        color: @contrast--light;
+    }
+
+    .style--accent & {
+        background-color: darken(@color--accent, 8%);
+        color: @contrast--accent;
+    }
+
+    .style--dark & {
+        background-color: fade(@color--light, 10%);
+        color: @contrast--dark;
+    }
+
     @media @mobile {
 		padding: 0 2.7em 0 0.6em;
     }
@@ -427,15 +551,54 @@ input:focus {
     &:hover {
 		border: 0.3em solid transparent;
 		background-color: @color-form--light;
+
+        .style--light & {
+            background-color: darken(@color--light, 12%);
+            color: @contrast--light;
+        }
+
+        .style--accent & {
+            background-color: darken(@color--accent, 12%);
+            color: @contrast--accent;
+        }
+
+        .style--dark & {
+            background-color: darken(@color--dark, 12%);
+            color: @contrast--dark;
+        }
     }
 
     &:focus {
 		border: 0.3em solid @color__button--background--hover;
 		background-color: @color-form--lightest;
+
+        .style--light & {
+            border-color: @color--accent;
+        }
+
+        .style--accent & {
+            border-color: @color--dark;
+        }
+
+        .style--dark & {
+            border-color: @color--accent;
+        }
 	}
 	
 	&:hover:focus {
 		background-color: @color-form--light;
+
+        .style--light & {
+            background-color: darken(@color--light, 10%);
+        }
+
+        .style--accent & {
+            background-color: darken(@color--accent, 10%);
+        }
+
+        .style--dark & {
+            background-color: darken(@color--dark, 10%);
+        }
 	}
 }
 

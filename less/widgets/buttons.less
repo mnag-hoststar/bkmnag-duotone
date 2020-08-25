@@ -16,12 +16,12 @@
 // #Button
 // -----------------------------
 
-button,
 .button,
 a.button,
 .link-button,
 .tweet .button,
-.clicktocall .phone-number-link {
+.clicktocall .phone-number-link,
+.contentgroup__link {
     cursor: pointer;
     position: relative;
     display: inline-block;
@@ -43,18 +43,66 @@ a.button,
 	.make-font-a-little-smaller(@font__button--font-size);
 	.make-font-smaller(@font__button--font-size);
 	.make-font-a-lot-smaller(@font__button--font-size);
+
+	.style--light & {
+        background-color: @color--accent;
+        border-color: @color--accent;
+        color: @contrast--accent;
+    }
+
+    .style--accent & {
+        background-color: @color--dark;
+        border-color: @color--dark;
+        color: @contrast--dark;
+    }
+
+    .style--dark & {
+        background-color: @color--accent;
+        border-color: @color--accent;
+        color: @contrast--accent;
+    }
 	
     &:hover {
 		.box-shadow(0px 10px 20px 0px fade(@color__p--text, 30%));
 		border: 0.3em solid @color__button--background--hover;
         background-color: @color__button--background--hover;
     	color: @color__button--text--hover;
+
+    	.style--light & {
+	        background-color: darken(@color--accent, 5%);
+	        border-color: darken(@color--accent, 5%);
+	        color: @contrast--accent;
+	    }
+
+	    .style--accent & {
+	        background-color: darken(@color--dark, 5%);
+	        border-color: darken(@color--dark, 5%);
+	        color: @contrast--dark;
+	    }
+
+	    .style--dark & {
+	        background-color: darken(@color--accent, 5%);
+	        border-color: darken(@color--accent, 5%);
+	        color: @contrast--accent;
+	    }
     }
 	
 	// Focus style for easier keyboard navigation
 	
 	&:focus {
     	border: 0.3em solid @color__button--background--hover;
+
+    	.style--light & {
+        	border-color: darken(@color--accent, 5%);
+	    }
+
+	    .style--accent & {
+	        border-color: darken(@color--dark, 5%);
+	    }
+
+	    .style--dark & {
+	        border-color: darken(@color--accent, 5%);
+	    }
 	}
 	
 	// Active style for when you press a button down
@@ -62,6 +110,18 @@ a.button,
 	&:active {
 		.box-shadow(none);
 		border: 0.3em solid @color__button--background;
+
+		.style--light & {
+        	border-color: @color--accent;
+	    }
+
+	    .style--accent & {
+	        border-color: @color--dark;
+	    }
+
+	    .style--dark & {
+	        border-color: @color--accent;
+	    }
 	}
 	
 	&[disabled] {
@@ -169,9 +229,40 @@ a.button,
     background-color: @color__socialicons--icon--background;
     width: 2.5em;
     height: 2.5em;
+
+    .style--light & {
+        background-color: @color--accent;
+        color: @contrast--accent;
+    }
+
+    .style--accent & {
+        background-color: @color--dark;
+        color: @contrast--dark;
+    }
+
+    .style--dark & {
+        background-color: @color--accent;
+        border-color: @color--accent;
+        color: @contrast--accent;
+    }
 	
 	&:hover {
         background-color: @color__socialicons--icon--background--hover;
+
+        .style--light & {
+            background-color: darken(@color--accent, 5%);
+            color: @contrast--accent;
+        }
+
+        .style--accent & {
+            background-color: darken(@color--dark, 5%);
+            color: @contrast--dark;
+        }
+
+        .style--dark & {
+            background-color: darken(@color--accent, 5%);
+            color: @contrast--accent;
+        }
 	}
 	
 	&:last-child {

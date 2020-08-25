@@ -5,6 +5,7 @@
     "screenshot":"duotone-screenshot.jpg",
     "templateType":"standard",
     "pageTypes": ["home", "404"],
+    "versionTenCompatible": 1,
     "tags": {
 		"en": ["large", "typography", "blocky", "bold", "colors", "sans-serif"],
 		"fr": ["grand", "typographie", "angulaire", "audacieux", "couleurs", "sans-serif"],
