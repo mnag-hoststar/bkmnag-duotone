@@ -25,7 +25,13 @@
 h1, h2, h3, h4, h5, h6 {
 	margin: 0;
 	padding: 1em 0 0.2em;
+	
+	+ h2, + h3, + h4, + h5, + h6, [class*="contentgroup__h"], [class*="contentgroup__h"] & {
+		padding-top: 0;
+	}
+}
 
+h1, h2, h3, h4, h5, h6, [class*="contentgroup__h"] {
 	.style--light & {
 	    color: @contrast--light;
 	}
@@ -36,10 +42,6 @@ h1, h2, h3, h4, h5, h6 {
 
 	.style--dark & {
 	    color: @contrast--dark;
-	}
-	
-	+ h2, + h3, + h4, + h5, + h6 {
-		padding-top: 0;
 	}
 }
 
@@ -52,7 +54,7 @@ p {
 	padding: 0.2em 0;
 }
 
-h1, .heading--1 {
+h1, .heading--1, .contentgroup__h1 {
 	font-family: @font__h1--font-family;
 	font-weight: @font__h1--font-weight;
 	font-size: @font__h1--font-size;
@@ -65,7 +67,7 @@ h1, .heading--1 {
 	.make-font-a-lot-smaller(@font__h1--font-size);
 }
 
-h2, .heading--2 {
+h2, .heading--2, .contentgroup__h2 {
 	font-family: @font__h2--font-family;
 	font-weight: @font__h2--font-weight;
 	font-size: @font__h2--font-size;
@@ -78,7 +80,7 @@ h2, .heading--2 {
 	.make-font-a-lot-smaller(@font__h2--font-size);
 }
 
-h3, .heading--3 {
+h3, .heading--3, .contentgroup__h3 {
 	font-family: @font__h3--font-family;
 	font-size: @font__h3--font-size;
 	font-weight: @font__h3--font-weight;
@@ -91,7 +93,7 @@ h3, .heading--3 {
 	.make-font-a-lot-smaller(@font__h3--font-size);
 }
 
-h4, .heading--4 {
+h4, .heading--4, .contentgroup__h4 {
 	font-family: @font__h4--font-family;
 	font-weight: @font__h4--font-weight;
 	font-size: @font__h4--font-size;
@@ -105,7 +107,7 @@ h4, .heading--4 {
 	.make-font-a-lot-smaller(@font__h4--font-size);
 }
 
-h5, .heading--5 {
+h5, .heading--5, .contentgroup__h5 {
 	font-family: @font__h4--font-family;
 	font-weight: @font__h4--font-weight;
 	font-size: @font__h4--font-size;
@@ -118,7 +120,7 @@ h5, .heading--5 {
 	.make-font-a-lot-smaller(@font__h4--font-size);
 }
 
-h6, .heading--6 {
+h6, .heading--6, .contentgroup__h6 {
 	padding-bottom: 0.2em;
 	font-family: @font__h4--font-family;
 	font-weight: @font__h4--font-weight;
@@ -454,11 +456,11 @@ ul {
 // #Block Quote
 // ------------------------------
 
-blockquote {
+[data-name="content"] blockquote {
 	position: relative;
 	margin: 0 auto 1em;
 	text-align: center;
-	padding: 1.5em 2.5em !important;
+	padding: 1.5em 2.5em;
 	width: 70%;
 	line-height: unit(@font__p--line-height*0.1, em);
     font-size: 1.5em;
@@ -538,10 +540,36 @@ blockquote {
 
 ::-moz-selection {
     background: @color-highlight--lighter;
+
+    .style--light & {
+	    background: fade(@color--dark, 5%);
+	}
+
+	.style--accent & {
+	    background: fade(@contrast--accent, 5%);
+	}
+
+	.style--dark &,
+	.style--background-image {
+	    background: fade(@contrast--light, 5%);
+	}
 }
 
 ::selection {
     background: @color-highlight--lighter;
+
+    .style--light & {
+	    background: fade(@color--dark, 5%);
+	}
+
+	.style--accent & {
+	    background: fade(@contrast--accent, 5%);
+	}
+
+	.style--dark &,
+	.style--background-image {
+	    background: fade(@contrast--light, 5%);
+	}
 }
 
 // ------------------------------

@@ -23,7 +23,9 @@
     }
 
     &.is-move-mode .template__header,
-    &.row-selection-mode .template__header {
+    &.row-selection-mode .template__header,
+    &.row-editing .template__header,
+    &.row-editing .template__footer {
         @media only screen and (max-width: 900px) {
             display: none;
         }
@@ -64,7 +66,11 @@
     // Template doesn't have a container so this just needs to apply to the row container
     [data-name="row"] .row:not(.row--width-no-padding) .row__container {
         .template__content--width();
-        width: ~"calc(80% - 100px)";       // Container padding
+        width: 80%;                // Container padding
+
+        @media @tablet {
+            width: 90%;
+        }
     }
 
     // Replaces main padding by moving this to the first widget in the zone
@@ -84,8 +90,15 @@
         margin-top: 40px;           // Widget margin bottom
     }
 
-    // Re-add widget spacing inside of rows
-    [data-name="row"] .column .widget + .widget {
-        margin-top: 12px;
+    // Remove padding when single widgets are inside a column
+    [data-name="row"] .column .widget {
+        &:only-child {
+            padding-bottom: 0;
+        }
+
+        // Re-add widget spacing inside of rows
+        + .widget {
+            margin-top: 12px;
+        }
     }
 }

@@ -201,7 +201,7 @@ section.page {
 // The green overlay of the template editor with the
 // move, settings and delete buttons.
 
-.widget-overlay {
+.widget:not([data-name="contentgroup"]) > .widget-overlay {
 	z-index: 10000 !important;
 	
 	.widget__item {
@@ -220,6 +220,6 @@ section.page {
 // #Texteditor Toolbar
 // ------------------------------
 
-.widget.in-editing {
+.widget:not([data-name="contentgroup"]).in-editing {
 	z-index: 20000 !important;
 }
