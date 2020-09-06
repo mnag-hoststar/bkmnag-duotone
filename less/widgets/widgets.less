@@ -124,7 +124,7 @@
 					}
 				}
 			    
-			    & > * {
+			    & > *:not(.widget-overlay) {
 			        width: 100%;
 			    }
 			}
@@ -316,15 +316,15 @@ hr.line__rule {
 	background-color: fade(@color__p--text, 60%);
 
 	.style--light & {
-        background-color: darken(@color--light, 20%);
+        background-color: darken(@color--light, 10%);
     }
 
     .style--accent & {
-        background-color: darken(@color--accent, 20%);
+        background-color: darken(@color--accent, 10%);
     }
 
     .style--dark & {
-        background-color: darken(@color--dark, 20%);
+        background-color: fade(@color--light, 10%);
     }
 }
 
