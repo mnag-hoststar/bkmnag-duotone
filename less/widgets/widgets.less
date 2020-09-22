@@ -32,7 +32,8 @@
 }
 
 #page-zones__main {
-	> .widget:not([data-name="row"]) {
+	> .widget:not([data-name="row"]):not([data-name="ecomproductslist"]) {
+		> .widget .ecombasket,
 		> * {
 			.template__content--width();
 		}
