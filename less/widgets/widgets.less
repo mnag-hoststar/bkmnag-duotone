@@ -132,12 +132,14 @@
 	
 			.widget[data-name="content"],
 			.widget[data-widget-type="content"] {
+				margin: 0;
 				padding: 0;
 			}
 		}
 				
 		.responsivecolumns .columns-four-first,
-		.responsivecolumns .columns-four-second {
+		.responsivecolumns .columns-four-second,
+		.responsivecolumns .columns-four-third {
 			.widget--zone-widget,
 			.widget {
 				&:last-child {
@@ -152,6 +154,10 @@
 			}
 		}
 	}
+}
+
+[data-name="responsivecolumns"] + [data-name="responsivecolumns"] {
+	padding-top: 0;
 }
 
 // Two columns
@@ -190,6 +196,12 @@
 }
 
 // Four Columns
+
+#migrated .responsivecolumns {
+	@media only screen and (max-width: 1200px) {
+		.flex-wrap(wrap);
+	}
+}
 
 .responsivecolumns .columns-four-first,
 .responsivecolumns .columns-four-second,

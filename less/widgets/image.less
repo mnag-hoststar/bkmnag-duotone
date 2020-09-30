@@ -77,10 +77,34 @@
 	margin: 1.5em 0 0.5em;
 	letter-spacing: @font__h4--letter-spacing/2;
 	color: @color__image-title--text;
+
+	.style--light & {
+	    color: @contrast--light;
+	}
+
+	.style--accent & {
+	    color: @contrast--accent;
+	}
+
+	.style--dark & {
+	    color: @contrast--dark;
+	}
 }
 
 // Image Description
 
 .imagewidget__image-description {
 	color: @color__image-description--text;
+
+	.style--light & {
+	    color: fade(@contrast--light, 80%);
+	}
+
+	.style--accent & {
+	    color: fade(@contrast--accent, 80%);
+	}
+
+	.style--dark & {
+	    color: fade(@contrast--dark, 80%);
+	}
 }
