@@ -32,11 +32,8 @@
 }
 
 #page-zones__main {
-	> .widget:not([data-name="row"]):not([data-name="ecomproductslist"]) {
-		> .widget .ecombasket,
-		> * {
-			.template__content--width();
-		}
+	> .widget:not([data-name="row"]):not([data-name="ecomproductslist"]) > * {
+		.template__content--width();
 	}
 	
 	.widget[data-name="line"] > *,
@@ -45,6 +42,10 @@
 		max-width: inherit;
 		margin: 1em 0;
 	}
+}
+
+[data-widget-type="ecombasket"] .widget__ecombasket {
+	.template__content--width();
 }
 
 // All page widgets fade in.
