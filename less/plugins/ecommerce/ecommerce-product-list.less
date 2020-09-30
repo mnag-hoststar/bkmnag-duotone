@@ -28,7 +28,7 @@
 .productsearch-widget-background--spacing() when not (@color__ecomproductslist-filters--background = @color__body--background) {
 	padding: 2em 0;
 	
-	section &:first-child {
+	body:not(#migrated) #page-zones__main > &:first-child {
 		margin-top: -2em;
 		
 		.responsivecolumns & {
