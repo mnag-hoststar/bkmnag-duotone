@@ -292,7 +292,7 @@ input:focus {
 		.label--checkbox,
 		label[for*="input--terms"],
 		label[for*="input--terms"] span a.form__link {
-			.paragraph;
+			p;
 			line-height: 1.7em;
 			min-height: 1.7em;
 		}
@@ -373,6 +373,7 @@ input:focus {
 					position: absolute;
 					top: 0.9em;
 					left: -2.5em;
+                    min-width: 0;
 					width: 1.5em;
 					height: 1.5em;
 					margin-top: -0.8em;
@@ -436,6 +437,7 @@ input:focus {
 		&[class*="form-group"] {
 			label {
 				&:after {
+                    border: 0;
 					content: "\f00c";
 					font-family: 'FontAwesome', sans-serif;
 					color: @color__button--background;
@@ -443,6 +445,7 @@ input:focus {
 					top: 0.6em;
 					left: -1.9em;
 					margin-top: -0.6em;
+                    transform: none;
 
                     .style--light & {
                         color: @color--accent;
