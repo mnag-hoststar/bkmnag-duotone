@@ -1,18 +1,6 @@
-// ----------------------------------------
 // Duotone: LESS > Widgets > Widgets
-// ----------------------------------------
-//
-// #Global Widget Styles
-// #Widget with background spacing
-// #Columns
-// #Page Title Widget
-// #Line Widget
-//
-// ----------------------------------------
 
-// -----------------------------
-// #Global Widget Styles
-// -----------------------------
+// Global Widget Styles
 
 .bk-zone {
 	width: 100%;
@@ -58,7 +46,6 @@
 }
 
 @-moz-keyframes fadein {
-	/* Firefox */
 	from {
 		opacity: 0;
 	}
@@ -68,7 +55,6 @@
 }
 
 @-webkit-keyframes fadein {
-	/* Safari and Chrome */
 	from {
 		opacity: 0;
 	}
@@ -78,7 +64,6 @@
 }
 
 @-o-keyframes fadein {
-	/* Opera */
 	from {
 		opacity: 0;
 	}
@@ -94,18 +79,14 @@
 	-o-animation: fadein 1s;
 }
 
-// ------------------------------
-// #Widget with background spacing
-// ------------------------------
+// Widget with background spacing
 
 .widget[data-name="gallery"] + .widget[data-name="image"],
 .widget[data-name="image"] + .widget[data-name="gallery"] {
 	padding: 0 0 2em;
 }
 
-// -----------------------------
-// #Columns
-// -----------------------------
+// Columns
 
 .template__content {
 	.widget[data-name="responsivecolumns"],
@@ -300,11 +281,7 @@
 	margin: 0;
 }
 
-
-
-// -----------------------------
-// #Line Widget
-// -----------------------------
+// Line Widget
 
 .line {
     line-height: 0;
@@ -316,9 +293,7 @@ hr.line__rule {
 	background-color: fade(@color__p--text, 60%);
 }
 
-// -----------------------------
-// #Page Title Widget
-// -----------------------------
+// Page Title Widget
 
 .pagetitle-text {
     h1;
