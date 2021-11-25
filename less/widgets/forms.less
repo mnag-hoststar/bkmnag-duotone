@@ -391,6 +391,16 @@ input:focus {
     }
 
     .form-group {
+		margin-bottom: 0;
+
+		@media @mobile {
+			margin-bottom: 1em;
+		}
+
+		.responsivecolumns & {
+			margin-bottom: 1em;
+		}
+
         .error {
             border: 2px solid @message-color--error !important;
 			
@@ -423,26 +433,44 @@ input.error {
 
 .signupform {
 	.form-body {
-		display: table;
-		width: 100%;
+		display: flex;
+		align-items: center;
+		
+		@media @mobile {
+			display: block;
+		}
+	
+		.responsivecolumns & {
+			display: block;
+		}
 	}
 
 	.form-group {
-		display: table-cell;
-		vertical-align: middle;
-		height: 3em;
-		
 		&:first-child {
-			width: 100%;
+			flex-grow: 1;
 			padding-right: 0.5em;
+		
+			@media @mobile {
+				display: block;
+				margin-bottom: 1em;
+				padding-right: 0;
+				width: 100%;
+			}
+		
+			.responsivecolumns & {
+				display: block;
+				margin-bottom: 1em;
+				padding-right: 0;
+				width: 100%;
+			}
+		}
+
+		input {
+			margin-bottom: 0;
 		}
 
 		label {
 			display: none;
-		}
-		
-		.button {
-			white-space: nowrap;
 		}
 	}
 }
