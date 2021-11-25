@@ -1,6 +1,4 @@
-// Duotone: LESS > Widgets > Slideshow
-
-// Slideshow Mixins
+// Slideshow
 
 .controls-font-size() {
 	font-size: 25px;
@@ -11,8 +9,6 @@
 		letter-spacing: 20px;
 	}
 }
-
-// Slideshow
 
 .widget[data-name="responsiveslideshow"] .responsiveslideshow,
 .widget[data-widget-type="responsiveslideshow"] .responsiveslideshow {
@@ -133,9 +129,6 @@
 		opacity: 1;
 	}
 	
-	// Prevents two slides from displaying at the same time
-	// because of slow JS state changes
-	
 	&.current + .slide-item {
 		display: none;
 	}
@@ -226,9 +219,6 @@
 	opacity: 0;
 	text-align: center;
 	.transition(opacity);
-	
-	// Controls are only show when the
-	// slideshow is hovered over.
 
 	.widget[data-name="responsiveslideshow"]:hover &,
 	.widget[data-widget-type="responsiveslideshow"]:hover &,

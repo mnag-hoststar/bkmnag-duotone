@@ -1,9 +1,6 @@
-// Duotone: LESS > Widgets > Forms
+// Forms
 
 // Conditional Mixins
-
-// Conditional if the form background 
-// is not the same as the page background.
 
 .form-widget-background--spacing() when not (@color__form--background = @color__body--background) {
 	padding: 2em 0;
@@ -18,10 +15,6 @@
 }
 
 // Global Form Styles
-
-// Color correction for the background.
-// Adding the same background as the forms widget
-// to a content widget if there is one above it.
 
 .widget[data-name="signupform"],
 .widget[data-widget-type="signupform"],
@@ -121,8 +114,6 @@ select {
 	height: @font__p--font-size * 2.5;
 }
 
-// Text Inputs
-
 // All Input Fields
 
 input[type="search"],
@@ -156,9 +147,6 @@ textarea {
 
 textarea {
     display: block;
-
-    @media @mobile {
-    }
 }
 
 // Placeholders
@@ -167,11 +155,11 @@ input::-webkit-input-placeholder {
    color: @color-form--light;
 }
 
-input:-moz-placeholder { /* Firefox 18- */
+input:-moz-placeholder {
    color: @color-form--light;
 }
 
-input::-moz-placeholder {  /* Firefox 19+ */
+input::-moz-placeholder {
    color: @color-form--light;
 }
 
@@ -322,8 +310,6 @@ input:focus {
 	}
 }
 
-// Dropdowns
-
 // Select Wrap
 
 .select-wrap {
@@ -399,9 +385,11 @@ input:focus {
     input.error {
         border: none !important;
     }
+
     textarea.error {
         border: 1px solid @message-color--error !important;
     }
+
     .form-group {
         .error {
             border: 2px solid @message-color--error !important;

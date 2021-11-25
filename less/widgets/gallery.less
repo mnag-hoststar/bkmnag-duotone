@@ -1,10 +1,7 @@
-// Duotone: LESS > Widgets > Gallery
+// Gallery
 
 
 // Conditional Mixins
-
-// Conditional if the gallery background 
-// is not the same as the page background.
 
 .gallery-widget-background--spacing() when not (@color__gallery--background = @color__body--background) {
 	padding: 2em 0;
@@ -19,10 +16,6 @@
 }
 
 // Whole Gallery
-
-// Color correction for the background.
-// Adding the same background as the forms widget
-// to a content widget if there is one above it.
 
 .widget[data-name="gallery"],
 .widget[data-widget-type="gallery"] {

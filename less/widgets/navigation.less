@@ -1,12 +1,9 @@
-// Duotone: LESS > Widgets > Navigation
+// Navigation
 
 // Logo & Company Name
 
 .widget[data-widget-type="companyname"],
 .widget[data-widget-type="logo"] {
-	
-	// If the header is smaller when scrolling down.
-	
 	.template__header--small & {
 		padding: 0.5em 0;
 	
@@ -45,8 +42,6 @@
 	
 	&__logo-image {
 		transition: inherit;
-		
-		// If the header is smaller when scrolling down.
 		
 		.template__header--small & {
 			max-height: 1em;
@@ -157,9 +152,6 @@
 }
 
 // Navigation Toggle Button
-
-// Navigation Toggle Button
-// It only appears on tablet and mobile sizes.
 
 .navigation-toggle {
 	display: none;
@@ -280,20 +272,14 @@
 
 // Navigation Body
 
-// Dark overlay on tablet and mobile.
-
 .navigation-body {
 	.transition(opacity, 0s);
-	
-	// This is only shown in Tablet and Mobile
 	
 	@media @tablet {
 		outline: 0;
 		height: 0;
 		width: 0;
 		opacity: 0;
-		
-		// When Navigation is open
 
 		.open & {
 			position: fixed;
@@ -330,8 +316,6 @@
 }
 
 // Navigation Items
-
-// Navigation Normal Item
 
 .navigation-item {
 	position: relative;
@@ -504,9 +488,6 @@
 }
 
 .navigation-item.folder {
-	
-	// Open Submenu
-	
 	&.folder-open:hover .navigation-list--children,
 	&.folder-open:active .navigation-list--children,
 	&.folder-open .navigation-list--children {

@@ -1,6 +1,4 @@
-// Duotone: LESS > Main > Typography
-
-// General Typography
+// Typography
 
 h1, h2, h3, h4, h5, h6 {
 	margin: 0;
@@ -11,7 +9,6 @@ h1, h2, h3, h4, h5, h6 {
 	}
 }
 
-// Break long words.
 h1, h2, h3, h4, h5, h6, a, p, ol, ul {
 	word-break: break-word;
 }
@@ -112,8 +109,6 @@ p, .paragraph, ul, ol, li {
 	.make-font-a-lot-smaller(@font__p--font-size);
 }
 
-// Bold, Italic, Underlined
-
 b, strong {
 	font-weight: 900;
 }
@@ -123,16 +118,12 @@ u {
 	border-bottom: 1px solid;
 }
 
-// Label
-
 label, .label-text {
 	font-family: @font__h4--font-family;
 	font-size: 0.9em;
 	color: @color-text--faded;
 	word-wrap: normal;
 }
-
-// Content
 
 .widget[data-name="content"]:first-child,
 .widget[data-widget-type="content"]:first-child {
@@ -146,8 +137,6 @@ label, .label-text {
 		padding-top: 0;
 	}
 }
-
-// Link
 
 a {
 	display: inline;
@@ -180,13 +169,9 @@ a[class] {
     }
 }
 
-// Small
-
 small {
 	color: @color__p--text;
 }
-
-// Preformatted Text and Code
 
 pre, code {
 	display: block;
@@ -204,8 +189,6 @@ pre, code {
 code {
 	border-left: 0.5em solid @color-highlight;
 }
-
-// Unordered and Ordered List
 
 ul {
 	margin: 0.5em 0 0.5em 1.2em;
@@ -232,8 +215,6 @@ ol {
 		margin-bottom: 0.5em;
 		list-style-type: none;
 
-		// Custom Numbers
-
 		&:before {
 			min-width: 2em;
 			padding: 0 0.4em 0 0;
@@ -251,8 +232,6 @@ ol {
 		}
 	}
 }
-
-// Block Quote
 
 blockquote {
 	position: relative;
@@ -309,8 +288,6 @@ blockquote {
 	}
 }
 
-// Highlighted Text
-
 ::-moz-selection {
     background: @color-highlight--lighter;
 }
@@ -318,8 +295,6 @@ blockquote {
 ::selection {
     background: @color-highlight--lighter;
 }
-
-// Icons
 
 .icon:before {
 	margin-right: 0.5em;

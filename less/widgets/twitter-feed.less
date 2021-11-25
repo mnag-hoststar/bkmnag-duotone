@@ -1,10 +1,6 @@
-// Duotone: LESS > Widgets > Twitter Feed
+// Twitter Feed
 
 // Twitter Widget Container
-
-// Color correction for the background.
-// Adding the same background as the forms widget
-// to a content widget if there is one above it.
 
 .widget[data-name="twitter"],
 .widget[data-widget-type="twitter"],
@@ -136,9 +132,6 @@ a.twitter__account-link {
 
 // Conditional Mixins
 
-// Conditional if the container background 
-// is not the same as the page background.
-
 .twitter-body-background--spacing() when not (@color__twitter--background = @color__body--background) {
 	padding: 2em 0;
 	
@@ -150,9 +143,6 @@ a.twitter__account-link {
 		}
 	}
 }
-
-// Conditionals if the container background 
-// is the same as the item background.
 
 .twitter-widget-background--spacing() when (@color__twitter--background = @color__twitter-item--background) {
 	padding: 1em 0;
