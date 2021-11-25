@@ -66,6 +66,14 @@
 .ecomproductslist__fieldset--filters,
 .ecomfeaturedproducts__fieldset--filters {
 	margin: 1em -0.5em 0;
+		
+	@media @mobile {
+		margin-bottom: 2em;
+	}
+
+	.responsivecolumns & {
+		margin-bottom: 2em;
+	}
 	
 	.form-body {
 		display: table;
@@ -75,19 +83,7 @@
 			display: block;
 		}
 	
-		.responsivecolumns .columns-two-left &,
-		.responsivecolumns .columns-two-right & {
-			@media @layout-width-breakpoint {
-				display: block;
-			}
-		}
-		.responsivecolumns .columns-three-left &,
-		.responsivecolumns .columns-three-middle &,
-		.responsivecolumns .columns-three-right &,
-		.responsivecolumns .columns-four-first &,
-		.responsivecolumns .columns-four-second &,
-		.responsivecolumns .columns-four-third &,
-		.responsivecolumns .columns-four-fourth & {
+		.responsivecolumns & {
 			display: block;
 		}
 	}
@@ -101,24 +97,13 @@
 		@media @mobile {
 			display: block;
     		width: 100%;
+			margin-bottom: 1em;
 		}
 	
-		.responsivecolumns .columns-two-left &,
-		.responsivecolumns .columns-two-right & {
-			@media @layout-width-breakpoint {
-				display: block;
-				width: 100%;
-			}
-		}
-		.responsivecolumns .columns-three-left &,
-		.responsivecolumns .columns-three-middle &,
-		.responsivecolumns .columns-three-right &,
-		.responsivecolumns .columns-four-first &,
-		.responsivecolumns .columns-four-second &,
-		.responsivecolumns .columns-four-third &,
-		.responsivecolumns .columns-four-fourth & {
+		.responsivecolumns & {
 			display: block;
-    		width: 100%;
+			width: 100%;
+			margin-bottom: 1em;
 		}
 
 		// Label
@@ -161,34 +146,13 @@
 		@media @tablet {
 			margin: 0 -@item--margin-size*2;
 		}
-	
-		.responsivecolumns .columns-two-left &,
-		.responsivecolumns .columns-two-right & {
-			@media only screen and (max-width: 1600px) {
-				margin: 0 -@item--margin-size*2;
-			}
-			
-			@media @tablet-horizontal {
-				margin: 0;
-			}
 
-			@media @mobile {
-				margin: 0 -@item--margin-size*2;
-			}
+		@media @mobile {
+			margin: 0;
 		}
 		
-		.responsivecolumns .columns-three-left &,
-		.responsivecolumns .columns-three-middle &,
-		.responsivecolumns .columns-three-right &,
-		.responsivecolumns .columns-four-first &,
-		.responsivecolumns .columns-four-second &,
-		.responsivecolumns .columns-four-third &,
-		.responsivecolumns .columns-four-fourth & {
+		.responsivecolumns & {
 			margin: 0;
-
-			@media @mobile {
-				margin: 0 -@item--margin-size*2;
-			}
 		}
 	}
 }
@@ -207,38 +171,15 @@
 			width: 100%/2-@item--margin-size*4;
 			margin: 1em @item--margin-size*2;
 		}
-	
-		.responsivecolumns .columns-two-left &,
-		.responsivecolumns .columns-two-right & {
-			@media only screen and (max-width: 1600px) {
-				width: 100%/2-@item--margin-size*4;
-				margin: 1em @item--margin-size*2;
-			}
-			
-			@media @tablet-horizontal {
-				width: 100%;
-				margin: 1em 0;
-			}
 
-			@media @mobile {
-				width: 100%/2-@item--margin-size*4;
-				margin: 1em @item--margin-size*2;
-			}
-		}
-		.responsivecolumns .columns-three-left &,
-		.responsivecolumns .columns-three-middle &,
-		.responsivecolumns .columns-three-right &,
-		.responsivecolumns .columns-four-first &,
-		.responsivecolumns .columns-four-second &,
-		.responsivecolumns .columns-four-third &,
-		.responsivecolumns .columns-four-fourth & {
+		@media @mobile {
 			width: 100%;
 			margin: 1em 0;
-
-			@media @mobile {
-				width: 100%/2-@item--margin-size*4;
-				margin: 1em @item--margin-size*2;
-			}
+		}
+	
+		.responsivecolumns & {
+			width: 100%;
+			margin: 1em 0;
 		}
 		
 		&:after {
