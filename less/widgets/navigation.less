@@ -1,25 +1,9 @@
-// ----------------------------------------
-// Duotone: LESS > Widgets > Navigation
-// ----------------------------------------
-//
-// #Logo & Company Name
-// #Navigation
-// #Navigation Toggle Button
-// #Navigation Body
-// #Navigation List
-// #Navigation Items
-//
-// ----------------------------------------
+// Navigation
 
-// ------------------------------
-// #Logo & Company Name
-// ------------------------------
+// Logo & Company Name
 
 .widget[data-widget-type="companyname"],
 .widget[data-widget-type="logo"] {
-	
-	// If the header is smaller when scrolling down.
-	
 	.template__header--small & {
 		padding: 0.5em 0;
 	
@@ -58,8 +42,6 @@
 	
 	&__logo-image {
 		transition: inherit;
-		
-		// If the header is smaller when scrolling down.
 		
 		.template__header--small & {
 			max-height: 1em;
@@ -122,9 +104,7 @@
 	}
 }
 
-// ------------------------------
-// #Navigation
-// ------------------------------
+// Navigation
 
 .template__navigation {
 	display: table-cell;
@@ -171,15 +151,7 @@
 	}
 }
 
-
-
-
-// ------------------------------
-// #Navigation Toggle Button
-// ------------------------------
-
 // Navigation Toggle Button
-// It only appears on tablet and mobile sizes.
 
 .navigation-toggle {
 	display: none;
@@ -298,24 +270,16 @@
 	}
 }
 
-// ------------------------------
-// #Navigation Body
-// ------------------------------
-
-// Dark overlay on tablet and mobile.
+// Navigation Body
 
 .navigation-body {
 	.transition(opacity, 0s);
-	
-	// This is only shown in Tablet and Mobile
 	
 	@media @tablet {
 		outline: 0;
 		height: 0;
 		width: 0;
 		opacity: 0;
-		
-		// When Navigation is open
 
 		.open & {
 			position: fixed;
@@ -336,9 +300,7 @@
 }
 
 
-// ------------------------------
-// #Navigation List
-// ------------------------------
+// Navigation List
 
 .navigation-list {
 	padding: 0;
@@ -353,11 +315,7 @@
 	}
 }
 
-// ------------------------------
-// #Navigation Items
-// ------------------------------
-
-// Navigation Normal Item
+// Navigation Items
 
 .navigation-item {
 	position: relative;
@@ -530,9 +488,6 @@
 }
 
 .navigation-item.folder {
-	
-	// Open Submenu
-	
 	&.folder-open:hover .navigation-list--children,
 	&.folder-open:active .navigation-list--children,
 	&.folder-open .navigation-list--children {

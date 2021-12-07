@@ -1,30 +1,6 @@
-// ----------------------------------------
-// Duotone: LESS > Widgets > Forms
-// ----------------------------------------
-//
-// #Conditional Mixins
-// #Global Form Styles
-// #Legend
-// #Form
-// #Label
-// #Text Inputs
-// #Placeholders
-// #Dropdowns
-// #Radio Buttons and Checkboxes
-// #Error Messages
-// 
-// #Sign Up Form
-// #Contact Form
-// #Advanced Contact Form
-//
-// ----------------------------------------
+// Forms
 
-// ------------------------------
-// #Conditional Mixins
-// ------------------------------
-
-// Conditional if the form background 
-// is not the same as the page background.
+// Conditional Mixins
 
 .form-widget-background--spacing() when not (@color__form--background = @color__body--background) {
 	padding: 2em 0;
@@ -38,13 +14,7 @@
 	}
 }
 
-// ------------------------------
-// #Global Form Styles
-// ------------------------------
-
-// Color correction for the background.
-// Adding the same background as the forms widget
-// to a content widget if there is one above it.
+// Global Form Styles
 
 .widget[data-name="signupform"],
 .widget[data-widget-type="signupform"],
@@ -112,32 +82,13 @@
 	}
 }
 
-// ------------------------------
-// #Legend
-// ------------------------------
+// Legend
 
 .form .legend {
 	display: none;
 }
 
-// ------------------------------
-// #Form
-// ------------------------------
-
-.form .form-body {
-}
-
-.form .form-group {
-	margin-bottom: 1em;
-
-	&:last-of-type {
-		margin-bottom: 0;
-	}
-}
-
-// ------------------------------
-// #Label
-// ------------------------------
+// Label
 
 .form label {
 	margin: 0 0 0.3em;
@@ -153,10 +104,6 @@ select {
 	height: @font__p--font-size * 2.5;
 }
 
-// ------------------------------
-// #Text Inputs
-// ------------------------------
-
 // All Input Fields
 
 input[type="search"],
@@ -165,10 +112,10 @@ input[type="password"],
 .input--single-line,
 .input--search,
 textarea {
+	margin-bottom: 1em;
     padding: 0.4em 0.6em;
     background-color: @color__form-legend--background;
     border: 1px solid @color-form--light;
-	height: 3rem;
     color: @color__form-legend--text;
 	.transition();
     .border-radius(0);
@@ -222,38 +169,23 @@ textarea {
 	}
 }
 
-// Single Line Inputs
-
-input[type="search"],
-input[type="email"],
-input[type="password"],
-.input--single-line,
-.input--search,
-.product-filters .input--search {
-}
-
 // Multiple Lines Inputs
 
 textarea {
     display: block;
-
-    @media @mobile {
-    }
 }
 
-// ------------------------------
-// #Placeholders
-// ------------------------------
+// Placeholders
 
 input::-webkit-input-placeholder {
    color: @color-form--light;
 }
 
-input:-moz-placeholder { /* Firefox 18- */
+input:-moz-placeholder {
    color: @color-form--light;
 }
 
-input::-moz-placeholder {  /* Firefox 19+ */
+input::-moz-placeholder {
    color: @color-form--light;
 }
 
@@ -279,9 +211,7 @@ input:focus {
     }
 }
 
-// ------------------------------
-// #Radio Buttons and Checkboxes
-// ------------------------------
+// Radio Buttons and Checkboxes
 
 .widget .form {
 	.option-list,
@@ -362,6 +292,7 @@ input:focus {
 				display: block;
 				margin-left: 1em * 2.5;
 				margin-bottom: 0;
+				word-break: break-word;
 				
 				&:before,
 				&:after {
@@ -467,11 +398,6 @@ input:focus {
 		margin-top: 2em;
 	}
 }
-
-
-// ------------------------------
-// #Dropdowns
-// ------------------------------
 
 // Select Wrap
 
@@ -609,18 +535,28 @@ input:focus {
     display: none;
 }
 
-// ------------------------------
-// #Error Messages
-// ------------------------------
+// Error Messages
 
 .form {
     input.error {
         border: none !important;
     }
+
     textarea.error {
         border: 1px solid @message-color--error !important;
     }
+
     .form-group {
+		margin-bottom: 0;
+
+		@media @mobile {
+			margin-bottom: 1em;
+		}
+
+		.responsivecolumns & {
+			margin-bottom: 1em;
+		}
+
         .error {
             border: 2px solid @message-color--error !important;
 			
@@ -649,44 +585,48 @@ input.error {
     }
 }
 
-// ------------------------------
-// #Sign Up Form
-// ------------------------------
+// Sign Up Form
 
 .signupform {
 	.form-body {
-		display: table;
-		width: 100%;
+		display: flex;
+		align-items: center;
+		
+		@media @mobile {
+			display: block;
+		}
+	
+		.responsivecolumns & {
+			display: block;
+		}
 	}
 
 	.form-group {
-		display: table-cell;
-		vertical-align: middle;
-		height: 3em;
-		
 		&:first-child {
-			width: 100%;
+			flex-grow: 1;
 			padding-right: 0.5em;
+		
+			@media @mobile {
+				display: block;
+				margin-bottom: 1em;
+				padding-right: 0;
+				width: 100%;
+			}
+		
+			.responsivecolumns & {
+				display: block;
+				margin-bottom: 1em;
+				padding-right: 0;
+				width: 100%;
+			}
+		}
+
+		input {
+			margin-bottom: 0;
 		}
 
 		label {
 			display: none;
 		}
-		
-		.button {
-			white-space: nowrap;
-		}
 	}
 }
-
-// ------------------------------
-// #Contact Form
-// ------------------------------
-
-.contactform {}
-
-// ------------------------------
-// #Advanced Contact Form
-// ------------------------------
-
-.advancedcontactform {}

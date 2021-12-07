@@ -1,19 +1,4 @@
-// ----------------------------------------
-// Duotone: LESS > Widgets > Slideshow
-// ----------------------------------------
-//
-// #Slideshow Mixins
-// #Slideshow
-// #Slideshow Item
-// #Slide Caption
-// #Slide Navigation Buttons
-// #Slide Pagination
-//
-// ----------------------------------------
-
-// ------------------------------
-// #Slideshow Mixins
-// ------------------------------
+// Slideshow
 
 .controls-font-size() {
 	font-size: 25px;
@@ -24,10 +9,6 @@
 		letter-spacing: 20px;
 	}
 }
-
-// ------------------------------
-// #Slideshow
-// ------------------------------
 
 .widget[data-name="responsiveslideshow"] .responsiveslideshow,
 .widget[data-widget-type="responsiveslideshow"] .responsiveslideshow {
@@ -133,9 +114,7 @@
 	bottom: 0;
 }
 
-// ------------------------------
-// #Slideshow Item
-// ------------------------------
+// Slideshow Item
 
 .responsiveslideshow__slide-item {
 	position: absolute;
@@ -149,9 +128,6 @@
 	&.current {
 		opacity: 1;
 	}
-	
-	// Prevents two slides from displaying at the same time
-	// because of slow JS state changes
 	
 	&.current + .slide-item {
 		display: none;
@@ -171,9 +147,7 @@
 	display: none;
 }
 
-// ------------------------------
-// #Slide Caption
-// ------------------------------
+// Slide Caption
 
 .responsiveslideshow .caption {
 	display: block;
@@ -233,9 +207,7 @@
     -webkit-box-orient: vertical;
 }
 
-// ------------------------------
-// #Slide Navigation Buttons
-// ------------------------------
+// Slide Navigation Buttons
 
 .slide-navigation {
 	display: block;
@@ -247,9 +219,6 @@
 	opacity: 0;
 	text-align: center;
 	.transition(opacity);
-	
-	// Controls are only show when the
-	// slideshow is hovered over.
 
 	.widget[data-name="responsiveslideshow"]:hover &,
 	.widget[data-widget-type="responsiveslideshow"]:hover &,
@@ -292,9 +261,6 @@
 		display: none;
 	}
 
-	.previous-button {
-	}
-
 	.next-button {
 		padding-left: 0.3em;
 	}
@@ -308,9 +274,7 @@
 	}
 }
 
-// ------------------------------
-// #Slide Pagination
-// ------------------------------
+// Slide Pagination
 
 .responsiveslideshow__slide-pagination {
 	position: absolute;

@@ -1,25 +1,4 @@
-// ----------------------------------------
-// Duotone: LESS > Main > Typography
-// ----------------------------------------
-//
-// #General Typography
-// #Bold, Italic, Underlined
-// #Label
-// #Content
-// #Link
-// #Small
-// #Pre
-// #Code
-// #Unordered and Ordered List
-// #Block Quote
-// #Highlighted Text
-// #Icons
-//
-// ----------------------------------------
-
-// ------------------------------
-// #General Typography
-// ------------------------------
+// Typography
 
 h1, h2, h3, h4, h5, h6 {
 	margin: 0;
@@ -45,6 +24,7 @@ h1, h2, h3, h4, h5, h6, [class*="contentgroup__h"] {
 }
 
 // Break long words.
+
 h1, h2, h3, h4, h5, h6, p, a {
 	word-break: break-word;
 }
@@ -159,9 +139,7 @@ p, ul, ol, li, .contentgroup__body {
 	}
 }
 
-// ------------------------------
 // #Bold, Italic, Underlined
-// ------------------------------
 
 b, strong {
 	font-weight: 900;
@@ -172,11 +150,11 @@ u {
 	border-bottom: 1px solid;
 }
 
-// ------------------------------
 // #Label
-// ------------------------------
 
-label:not(.clicktocall__label), .label-text {
+label,
+.label-text,
+label:not(.clicktocall__label) {
 	font-family: @font__h4--font-family;
 	font-size: 0.9em;
 	color: @color-text--faded;
@@ -195,10 +173,6 @@ label:not(.clicktocall__label), .label-text {
 	}
 }
 
-// -----------------------------
-// #Content
-// -----------------------------
-
 .widget[data-name="content"]:first-child,
 .widget[data-widget-type="content"]:first-child {
 	h1:first-child,
@@ -211,10 +185,6 @@ label:not(.clicktocall__label), .label-text {
 		padding-top: 0;
 	}
 }
-
-// ------------------------------
-// #Link
-// ------------------------------
 
 a {
 	display: inline;
@@ -279,10 +249,6 @@ a[class] {
     }
 }
 
-// ------------------------------
-// #Small
-// ------------------------------
-
 small {
 	color: @color__p--text;
 
@@ -298,10 +264,6 @@ small {
 	    color: fade(@contrast--dark, 80%);
 	}
 }
-
-// ------------------------------
-// #Preformatted Text and Code
-// ------------------------------
 
 pre, code {
 	display: block;
@@ -319,10 +281,6 @@ pre, code {
 code {
 	border-left: 0.5em solid @color-highlight;
 }
-
-// ------------------------------
-// #Unordered and Ordered List
-// ------------------------------
 
 ul {
 	margin: 0.5em 0 0.5em 1.2em;
@@ -349,8 +307,6 @@ ul {
 		margin-bottom: 0.5em;
 		list-style-type: none;
 
-		// Custom Numbers
-
 		&:before {
 			min-width: 2em;
 			padding: 0 0.4em 0 0;
@@ -369,15 +325,14 @@ ul {
 	}
 }
 
-// ------------------------------
 // #Block Quote
-// ------------------------------
 
-[data-name="content"] blockquote {
+blockquote {
 	position: relative;
 	margin: 0 auto 1em;
 	text-align: center;
 	padding: 1.5em 2.5em;
+	word-break: break-word;
 	width: 70%;
 	line-height: unit(@font__p--line-height*0.1, em);
     font-size: 1.5em;
@@ -451,10 +406,6 @@ ul {
 	}
 }
 
-// ------------------------------
-// #Highlighted Text
-// ------------------------------
-
 ::-moz-selection {
     background: @color-highlight--lighter;
 
@@ -488,10 +439,6 @@ ul {
 	    background: fade(@contrast--light, 5%);
 	}
 }
-
-// ------------------------------
-// #Icons
-// ------------------------------
 
 .icon:before {
 	margin-right: 0.5em;

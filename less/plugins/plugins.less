@@ -1,44 +1,14 @@
-// ----------------------------------------
-// Duotone: LESS > Plugins
-// ----------------------------------------
-//
-// #Search Form
-// #Item Price
-// #Tags and Categories
-// #Paginatinon
-// 
-// ----------------------------------------
+// Plugins
 
-// ------------------------------
-// #Search Form
-// ------------------------------
+// Search Form
 
 .blogsearch,
 .fieldset.ecomproductslist__fieldset--search {
 	.signupform;
 	
 	.form-group {
-		.responsivecolumns .columns-two-left &,
-		.responsivecolumns .columns-two-right &,
-		.responsivecolumns .columns-three-left &,
-		.responsivecolumns .columns-three-middle &,
-		.responsivecolumns .columns-three-right &,
-		.responsivecolumns .columns-four-first &,
-		.responsivecolumns .columns-four-second &,
-		.responsivecolumns .columns-four-third &,
-		.responsivecolumns .columns-four-fourth & {
-			display: block;
-			padding-right: 0;
-			
-			@media @mobile {
-				display: table-cell;
-			}
-			
-			&:first-child {
-				@media @mobile {
-					padding-right: 0.5em;
-				}
-			}
+		input {
+			height: @font__p--font-size * 2.5;
 		}
 	}
 }
@@ -56,16 +26,38 @@
 	@media @tablet {
 		width: @layout-width-tablet;
 	}
+	
+	@media @mobile {
+		width: 90%;
+	}
 
 	.responsivecolumns & {
 		width: 100%;
+	
+		@media @mobile {
+			width: 90%;
+		}
 	}
 }
 
 // Styles only for the Ecommerce Product List.
 
-.product-filters .input--search {
-	height: @button-height;
+.product-filters {
+	.form-group {
+		margin-right: 0;
+	
+		@media @mobile {
+			display: block;
+		}
+	
+		.responsivecolumns & {
+			display: block;
+		}
+	}
+
+	.input--search {
+		height: @button-height;
+	}
 }
 
 // Clear search button.
@@ -74,9 +66,7 @@
 	display: none;
 }
 
-// ------------------------------
-// #Item Price
-// ------------------------------
+// Item Price
 
 .item-price {
     display: inline-block;
@@ -101,9 +91,7 @@
     }
 }
 
-// ------------------------------
-// #Tags and Categories
-// ------------------------------
+// Tags and Categories
 
 .post-category,
 .post-tags {
@@ -221,12 +209,7 @@ a.tag-link,
 	}
 }
 
-// ------------------------------
-// #Paginatinon
-// ------------------------------
-
-// Styles for both the Blog Post List
-// and the Ecommerce Product List.
+// Paginatinon
 
 .ecomproductslist,
 .blogpostlist {

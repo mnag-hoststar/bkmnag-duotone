@@ -1,27 +1,10 @@
-// ----------------------------------------
-// Duotone: LESS > Plugins > Blog > Blog Search
-// ----------------------------------------
-//
-// #Conditional Mixins
-// #Search Container
-// #Back Button
-//
-// ----------------------------------------
-
-// -----------------------------
-// #Conditional Mixins
-// -----------------------------
-
-// Conditional if the container background 
-// is not the same as the page background.
+// Blog Search
 
 .blogsearch-widget-background--spacing() when not (@color__blogsearch--background = @color__body--background) {
 	padding: 2em 0;
 }
 
-// -----------------------------
-// #Search Container
-// -----------------------------
+// Search Container
 
 .widget[data-name="blogsearch"],
 .widget[data-widget-type="blogsearch"] {
@@ -41,9 +24,7 @@
 	max-width: none;
 }
 
-// -----------------------------
-// #Back Button
-// -----------------------------
+// Back Button
 
 .blogpostlist a[class].blog-home-link {
 	.button;

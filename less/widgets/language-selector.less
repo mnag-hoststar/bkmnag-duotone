@@ -1,16 +1,6 @@
-// ----------------------------------------
-// Duotone: LESS > Widgets > Language Selection
-// ----------------------------------------
-//
-// #General Styles
-// #Language Selector Dropdown
-// #Language Selector Single Item
-//
-// ----------------------------------------
+// Language Selection
 
-// ------------------------------
-// #General Styles
-// ------------------------------
+// General Styles
 
 @language-padding: 0.5em;
 @language-line-height: unit(@font__navigation--line-height*0.1, em);
@@ -23,16 +13,19 @@
 }
 
 // Language Selector Light
+
 .language-selector.language-selector--light {
     background-color: lighten(@color__header--background, 5%);
 }
 
 // Language Selector Dark
+
 .language-selector.language-selector--dark {
     background-color: @color__header--border;
 }
 
 // General styles inside the Language Selector
+
 .language-selector {
     .language-selector__inner {
         box-sizing: content-box;
@@ -89,9 +82,7 @@
     }
 }
 
-// ------------------------------
-// #Language Selector Dropdown
-// ------------------------------
+// Language Selector Dropdown
 
 .language-selector.language-selector--dropdown {
     height: auto;
@@ -180,9 +171,7 @@
     }
 }
 
-// ------------------------------
-// #Language Selector Single Item
-// ------------------------------
+// Language Selector Single Item
 
 .language-selector__item {
     .language-selector.language-selector--light & {

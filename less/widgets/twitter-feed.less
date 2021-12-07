@@ -1,25 +1,6 @@
-// ----------------------------------------
-// Duotone: LESS > Widgets > Twitter Feed
-// ----------------------------------------
-//
-// #Twitter Widget Container
-// #Tweet List
-// #Tweet Item
-// #Avatar
-// #Account Link
-// #Content
-// #Tweet Metadata
-// #Conditional Mixins
-//
-// ----------------------------------------
+// Twitter Feed
 
-// ------------------------------
-// #Twitter Widget Container
-// ------------------------------
-
-// Color correction for the background.
-// Adding the same background as the forms widget
-// to a content widget if there is one above it.
+// Twitter Widget Container
 
 .widget[data-name="twitter"],
 .widget[data-widget-type="twitter"],
@@ -36,9 +17,7 @@
 	padding-bottom: 0;
 }
 
-// ------------------------------
-// #Tweet List
-// ------------------------------
+// Tweet List
 
 .twitter__tweet-list {
 	.display-flex(flex);
@@ -50,9 +29,7 @@
 	}
 }
 
-// ------------------------------
-// #Tweet Item
-// ------------------------------
+// Tweet Item
 
 .tweet-item {
 	position: relative;
@@ -76,9 +53,7 @@
 	}
 }
 
-// ------------------------------
-// #Avatar
-// ------------------------------
+// Avatar
 
 .twitter__avatar {
 	position: static;
@@ -92,9 +67,7 @@
 	height: unit(@font__p--line-height*0.1, em)*2;
 }
 
-// ------------------------------
-// #Account Link
-// ------------------------------
+// Account Link
 
 a.twitter__account-link {
     display: block;
@@ -113,9 +86,7 @@ a.twitter__account-link {
     }
 }
 
-// ------------------------------
-// #Content
-// ------------------------------
+// Content
 
 .tweet-content {
 	padding: 1em 1.5em 5.5em;
@@ -132,7 +103,6 @@ a.twitter__account-link {
 }
 
 .tweet-content a {
-
 	.style--accent &,
     .style--dark & {
     	border-color: fade(@color--accent, 75%);
@@ -140,9 +110,7 @@ a.twitter__account-link {
     }
 }
 
-// ------------------------------
-// #Tweet Metadata
-// ------------------------------
+// Tweet Metadata
 
 .tweet-metadata {
 	position: absolute;
@@ -198,12 +166,7 @@ a.twitter__account-link {
     }
 }
 
-// ------------------------------
-// #Conditional Mixins
-// ------------------------------
-
-// Conditional if the container background 
-// is not the same as the page background.
+// Conditional Mixins
 
 .twitter-body-background--spacing() when not (@color__twitter--background = @color__body--background) {
 	padding: 2em 0;
@@ -216,9 +179,6 @@ a.twitter__account-link {
 		}
 	}
 }
-
-// Conditionals if the container background 
-// is the same as the item background.
 
 .twitter-widget-background--spacing() when (@color__twitter--background = @color__twitter-item--background) {
 	padding: 1em 0;

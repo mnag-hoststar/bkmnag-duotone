@@ -1,19 +1,6 @@
-// ----------------------------------------
-// Duotone: LESS > Widgets > Image
-// ----------------------------------------
-//
-// #Conditional Mixins
-// #Image
-// #Caption
-//
-// ----------------------------------------
+// Image
 
-// ------------------------------
-// #Conditional Mixins
-// ------------------------------
-
-// Conditional if the image background 
-// is not the same as the page background.
+// Conditional Mixins
 
 .image-widget-background--spacing() when not (@color__image--background = @color__body--background) {
 	padding: 2em 0;
@@ -27,13 +14,7 @@
 	}
 }
 
-// ------------------------------
-// #Image
-// ------------------------------
-
-// Color correction for the background.
-// Adding the same background as the forms widget
-// to a content widget if there is one above it.
+// Image
 
 .widget[data-name="image"],
 .widget[data-widget-type="image"] {
@@ -55,12 +36,7 @@
 	padding-bottom: 0;
 }
 
-// ------------------------------
-// #Caption
-// ------------------------------
-
-// Conditional if the container background 
-// is not the same as the page background.
+// Caption
 
 .image-caption--spacing() when not (@color__image--background = @color__body--background) {
 	margin-bottom: 0;

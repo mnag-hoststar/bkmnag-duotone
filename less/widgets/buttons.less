@@ -1,20 +1,4 @@
-// ----------------------------------------
-// Duotone: LESS > Widgets > Buttons
-// ----------------------------------------
-//
-// #Button
-// #Tweet Button
-// #Click to Call
-// #Dropbox
-// #Facebook Like
-// #Paypal
-// #Social Icons
-//
-// ----------------------------------------
-
-// -----------------------------
-// #Button
-// -----------------------------
+// Buttons
 
 .button,
 a.button,
@@ -39,6 +23,7 @@ a.button,
     text-transform: uppercase;
 	font-size: @font__button--font-size;
 	word-break: break-all;
+	text-align: center;
 
 	.make-font-a-little-smaller(@font__button--font-size);
 	.make-font-smaller(@font__button--font-size);
@@ -61,6 +46,10 @@ a.button,
         border-color: @color--accent;
         color: @contrast--accent;
     }
+
+	@media @mobile {
+		width: 100%;
+	}
 	
     &:hover {
 		.box-shadow(0px 10px 20px 0px fade(@color__p--text, 30%));
@@ -175,21 +164,13 @@ a.button,
     margin-right: 0.5em;
 }
 
-// -----------------------------
-// #Tweet Button
-// -----------------------------
-
-// -----------------------------
-// #Click to Call
-// -----------------------------
+// Click to Call
 
 .clicktocall .label {
     margin-left: -0.5em;
 }
 
-// -----------------------------
-// #Dropbox
-// -----------------------------
+// Dropbox
 
 .dropbox__button,
 .dropbox__label {
@@ -202,21 +183,7 @@ a.button,
 	padding-left: 1em;
 }
 
-// -----------------------------
-// #Facebook Like
-// -----------------------------
-
-
-// -----------------------------
-// #Paypal
-// -----------------------------
-
-
-// -----------------------------
-// #Social Icons
-// -----------------------------
-
-// The List of Social Icons
+// Social Icons
 
 .social-item {
 	cursor: pointer;

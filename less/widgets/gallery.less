@@ -1,22 +1,7 @@
-// ----------------------------------------
-// Duotone: LESS > Widgets > Gallery
-// ----------------------------------------
-//
-// #Conditional Mixins
-// #Whole Gallery
-// #Single Gallery Item
-// #Image
-// #Caption
-// #Gallery Open Image
-//
-// ----------------------------------------
+// Gallery
 
-// ------------------------------
-// #Conditional Mixins
-// ------------------------------
 
-// Conditional if the gallery background 
-// is not the same as the page background.
+// Conditional Mixins
 
 .gallery-widget-background--spacing() when not (@color__gallery--background = @color__body--background) {
 	padding: 2em 0;
@@ -30,13 +15,7 @@
 	}
 }
 
-// ------------------------------
-// #Whole Gallery
-// ------------------------------
-
-// Color correction for the background.
-// Adding the same background as the forms widget
-// to a content widget if there is one above it.
+// Whole Gallery
 
 .widget[data-name="gallery"],
 .widget[data-widget-type="gallery"] {
@@ -76,9 +55,7 @@
 	}
 }
 
-// ------------------------------
-// #Single Gallery Item
-// ------------------------------
+// Single Gallery Item
 
 .gallery__gallery-item {
 	position: relative;
@@ -121,9 +98,7 @@
 	}
 }
 
-// ------------------------------
-// #Image
-// ------------------------------
+// Image
 
 .gallery__figure {
 	overflow: hidden;
@@ -166,9 +141,7 @@ a.gallery__image-link {
 	display: none;
 }
 
-// ------------------------------
-// #Caption
-// ------------------------------
+// Caption
 
 .gallery__caption {
 	opacity: 0;
@@ -213,9 +186,7 @@ a.caption-link {
 	line-height: 1.3em;
 }
 
-// ------------------------------
-// #Gallery Open Image
-// ------------------------------
+// Gallery Open Image
 
 .pswp {
 	width: 100% !important;

@@ -1,18 +1,6 @@
-// ----------------------------------------
-// Duotone: LESS > Main > Messages
-// ----------------------------------------
-// 
-// #Variables
-// #General Messages
-// #Form Messages
-// #Basekit Messages
-// #Cookie Message
-// 
-// ----------------------------------------
+// Messages
 
-// ------------------------------
-// #Variables
-// ------------------------------
+// Variables
 
 @message-color--standard: #6e6e6e;
 @message-color--error: #d20000;
@@ -21,9 +9,7 @@
 @message-color--success: #9ac900;
 @message-color--not-found: #6e6e6e;
 
-// ------------------------------
-// #General Messages
-// ------------------------------
+// General Messages
 
 // Overall message styling
 
@@ -117,9 +103,7 @@
 .message--error {
 	background-color: @message-color--error;
 
-	// Icon
 	&:before {
-		// Exclamation circle
 		content: "\f12a";
 	}
 }
@@ -129,9 +113,7 @@
 .message--warning {
 	background-color: @message-color--warning;
 
-	// Icon
 	&:before {
-		// Exclamation triangle
 		content: "\f071";
 	}
 }
@@ -141,9 +123,7 @@
 .message--information {
 	background-color: @message-color--information;
 
-	// Icon
 	&:before {
-		// Circled i
 		content: "\f129";
 	}
 }
@@ -153,9 +133,7 @@
 .message--success {
 	background-color: @message-color--success;
 
-	// Icon
 	&:before {
-		// Check mark
 		content: "\f00c";
 	}
 }
@@ -165,9 +143,7 @@
 .message--not-found {
 	background-color: @message-color--information;
 
-	// Icon
 	&:before {
-		// Magnifying glass
 		content: "\f002";
 	}
 }
@@ -178,9 +154,7 @@
     margin: 0;
 }
 
-// ------------------------------
-// #Form Messages
-// ------------------------------
+// Form Messages
 
 .overlay.success .message-box {
     .message;
@@ -193,23 +167,7 @@
     .message--warning;
 }
 
-// ------------------------------
-// #Basekit Messages
-// ------------------------------
-
-// Basekit specific messages
-.bk-message {
-	
-	// If no content is provided, Basekit will provide
-	// an empty message.
-	&--empty {
-		
-	}
-}
-
-// ------------------------------
-// #Cookie Message
-// ------------------------------
+// Cookie Message
 
 .bk-cookie-container {
 	display: block;

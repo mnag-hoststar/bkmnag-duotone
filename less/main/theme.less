@@ -1,23 +1,4 @@
-// ----------------------------------------
-// Duotone: LESS > Main > Theme
-// ----------------------------------------
-// This contains all styles that are not
-// widgets.
-//
-// #Page
-// #Header
-// #Site Styles
-// #Header
-// #Content
-// #Footer
-// #Widget Overlay
-// #Texteditor Toolbar
-//
-// ----------------------------------------
-
-// ------------------------------
-// #Site Styles
-// ------------------------------
+// Theme
 
 * {
 	.box-sizing();
@@ -33,7 +14,6 @@ html, body {
 	min-height: 100%;
 	min-height: 100vh;
 	word-break: break-word;
-	word-wrap: break-word;
 	font-family: @font__p--font-family;
 	font-size: @font__p--font-size;
 	font-weight: @font__p--font-weight;
@@ -47,7 +27,6 @@ html, body {
 	.make-font-smaller(@font__p--font-size);
 	.make-font-a-lot-smaller(@font__p--font-size);
 	
-	// iOS fix of VH unit
     width: -webkit-calc(100% - 0px);
 }
 
@@ -61,14 +40,11 @@ body {
 	.justify-content(space-between, justify);
 }
 
-// HTML5 Semantic Elements
 article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, section {
 	display: block;
 }
 
-// ------------------------------
-// #Page
-// ------------------------------
+// Page
 
 .page {
 	padding: 2em 0;
@@ -82,9 +58,7 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
 	}
 }
 
-// ------------------------------
-// #Header
-// ------------------------------
+// Header
 
 .template__header {
 	display: table;
@@ -114,19 +88,14 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
 	}
 }
 
-// ------------------------------
-// #Content
-// ------------------------------
-
 // Main
+
 section.page {
 	margin-top: 4em;
 	.flex-grow(1);
 }
 
-// ------------------------------
-// #Footer
-// ------------------------------
+// Footer
 
 .template__footer {
     width: 100%;
@@ -194,12 +163,7 @@ section.page {
     }
 }
 
-// ------------------------------
-// #Widget Overlay
-// ------------------------------
-
-// The green overlay of the template editor with the
-// move, settings and delete buttons.
+// Widget Overlay
 
 .widget:not([data-name="contentgroup"]) > .widget-overlay {
 	z-index: 10000 !important;
@@ -216,9 +180,7 @@ section.page {
 	}
 }
 
-// ------------------------------
-// #Texteditor Toolbar
-// ------------------------------
+// Texteditor Toolbar
 
 .widget:not([data-name="contentgroup"]).in-editing {
 	z-index: 20000 !important;

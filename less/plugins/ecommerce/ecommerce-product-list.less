@@ -1,29 +1,6 @@
-// ----------------------------------------
-// Duotone: LESS > Plugins > Ecommerce > Product List
-// ----------------------------------------
-//
-// #Conditional Mixins
-// #Product List Container
-// #Title
-// #Product Search and Filters
-// #Product Search
-// #Product Filters
-// #Listing Order
-// #Product List
-// #Product Item
-// #Product Image
-// #Product Item Details
-// #Featured Product
-// #Paginatinon
-// 
-// ----------------------------------------
+// Product List
 
-// -----------------------------
-// #Conditional Mixins
-// -----------------------------
-
-// Conditional if the container background 
-// is not the same as the page background.
+// Conditional Mixins
 
 .productsearch-widget-background--spacing() when not (@color__ecomproductslist-filters--background = @color__body--background) {
 	padding: 2em 0;
@@ -37,9 +14,7 @@
 	}
 }
 
-// ------------------------------
-// #Product List Container
-// ------------------------------
+// Product List Container
 
 .widget[data-name="ecomproductslist"],
 .widget[data-widget-type="ecomproductslist"],
@@ -56,18 +31,14 @@
 	max-width: none;
 }
 
-// ------------------------------
-// #Title
-// ------------------------------
+// Title
 
 .ecomproductslist__listing-title,
 .ecomfeaturedproducts__listing-header {
     display: none;
 }
 
-// ------------------------------
-// #Product Search and Filters
-// ------------------------------
+// Product Search and Filters
 
 .ecomproductslist__product-filters {
 	background-color: @color__ecomproductslist-filters--background;
@@ -92,19 +63,23 @@
 	}
 }
 
-// ------------------------------
-// #Product Search
-// ------------------------------
+// Product Search
 
 // For search form styles, see less/plugins/plugins.less.
 
-// ------------------------------
-// #Product Filters
-// ------------------------------
+// Product Filters
 	
 .ecomproductslist__fieldset--filters,
 .ecomfeaturedproducts__fieldset--filters {
 	margin: 1em -0.5em 0;
+		
+	@media @mobile {
+		margin-bottom: 2em;
+	}
+
+	.responsivecolumns & {
+		margin-bottom: 2em;
+	}
 	
 	.form-body {
 		display: table;
@@ -114,19 +89,7 @@
 			display: block;
 		}
 	
-		.responsivecolumns .columns-two-left &,
-		.responsivecolumns .columns-two-right & {
-			@media @layout-width-breakpoint {
-				display: block;
-			}
-		}
-		.responsivecolumns .columns-three-left &,
-		.responsivecolumns .columns-three-middle &,
-		.responsivecolumns .columns-three-right &,
-		.responsivecolumns .columns-four-first &,
-		.responsivecolumns .columns-four-second &,
-		.responsivecolumns .columns-four-third &,
-		.responsivecolumns .columns-four-fourth & {
+		.responsivecolumns & {
 			display: block;
 		}
 	}
@@ -140,24 +103,13 @@
 		@media @mobile {
 			display: block;
     		width: 100%;
+			margin-bottom: 1em;
 		}
 	
-		.responsivecolumns .columns-two-left &,
-		.responsivecolumns .columns-two-right & {
-			@media @layout-width-breakpoint {
-				display: block;
-				width: 100%;
-			}
-		}
-		.responsivecolumns .columns-three-left &,
-		.responsivecolumns .columns-three-middle &,
-		.responsivecolumns .columns-three-right &,
-		.responsivecolumns .columns-four-first &,
-		.responsivecolumns .columns-four-second &,
-		.responsivecolumns .columns-four-third &,
-		.responsivecolumns .columns-four-fourth & {
+		.responsivecolumns & {
 			display: block;
-    		width: 100%;
+			width: 100%;
+			margin-bottom: 1em;
 		}
 
 		// Label
@@ -168,17 +120,13 @@
 	}
 }
 
-// ------------------------------
-// #Listing Order
-// ------------------------------
+// Listing Order
 
 .ecomproductslist .listing-order {
     display: none;
 }
 
-// ------------------------------
-// #Product List
-// ------------------------------
+// Product List
 
 .ecomproductslist,
 .ecomfeaturedproducts {
@@ -204,41 +152,18 @@
 		@media @tablet {
 			margin: 0 -@item--margin-size*2;
 		}
-	
-		.responsivecolumns .columns-two-left &,
-		.responsivecolumns .columns-two-right & {
-			@media only screen and (max-width: 1600px) {
-				margin: 0 -@item--margin-size*2;
-			}
-			
-			@media @tablet-horizontal {
-				margin: 0;
-			}
 
-			@media @mobile {
-				margin: 0 -@item--margin-size*2;
-			}
+		@media @mobile {
+			margin: 0;
 		}
 		
-		.responsivecolumns .columns-three-left &,
-		.responsivecolumns .columns-three-middle &,
-		.responsivecolumns .columns-three-right &,
-		.responsivecolumns .columns-four-first &,
-		.responsivecolumns .columns-four-second &,
-		.responsivecolumns .columns-four-third &,
-		.responsivecolumns .columns-four-fourth & {
+		.responsivecolumns & {
 			margin: 0;
-
-			@media @mobile {
-				margin: 0 -@item--margin-size*2;
-			}
 		}
 	}
 }
 
-// ------------------------------
-// #Product Item
-// ------------------------------
+// Product Item
 
 .ecomproductslist,
 .ecomfeaturedproducts {
@@ -252,38 +177,15 @@
 			width: 100%/2-@item--margin-size*4;
 			margin: 1em @item--margin-size*2;
 		}
-	
-		.responsivecolumns .columns-two-left &,
-		.responsivecolumns .columns-two-right & {
-			@media only screen and (max-width: 1600px) {
-				width: 100%/2-@item--margin-size*4;
-				margin: 1em @item--margin-size*2;
-			}
-			
-			@media @tablet-horizontal {
-				width: 100%;
-				margin: 1em 0;
-			}
 
-			@media @mobile {
-				width: 100%/2-@item--margin-size*4;
-				margin: 1em @item--margin-size*2;
-			}
-		}
-		.responsivecolumns .columns-three-left &,
-		.responsivecolumns .columns-three-middle &,
-		.responsivecolumns .columns-three-right &,
-		.responsivecolumns .columns-four-first &,
-		.responsivecolumns .columns-four-second &,
-		.responsivecolumns .columns-four-third &,
-		.responsivecolumns .columns-four-fourth & {
+		@media @mobile {
 			width: 100%;
 			margin: 1em 0;
-
-			@media @mobile {
-				width: 100%/2-@item--margin-size*4;
-				margin: 1em @item--margin-size*2;
-			}
+		}
+	
+		.responsivecolumns & {
+			width: 100%;
+			margin: 1em 0;
 		}
 		
 		&:after {
@@ -319,9 +221,7 @@
 	}
 }
 
-// ------------------------------
-// #Product Image
-// ------------------------------
+// Product Image
 
 .ecomproductslist,
 .ecomfeaturedproducts {
@@ -368,9 +268,7 @@
 	}
 }
 
-// ------------------------------
-// #Product Item Details
-// ------------------------------
+// Product Item Details
 
 .product-item-details {
 	margin-top: 1em;
@@ -407,14 +305,6 @@
 	.item-price;
 }
 
-// ------------------------------
-// #Featured Product
-// ------------------------------
-
-
-
-// ------------------------------
-// #Paginatinon
-// ------------------------------
+// Paginatinon
 
 // For pagination styles, see less/plugins/plugins.less.
