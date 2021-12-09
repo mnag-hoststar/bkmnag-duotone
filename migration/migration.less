@@ -1,15 +1,9 @@
+//  Migration Styles
 
-// -------------------------------------------
-//  Migration Styles -
-//
 //  These changes allow rows to work with
 //  existing templates in BK10
-// -------------------------------------------
-
-
 
 // Template styling resets
-// ------------------------------------
 
 #migrated {
 
@@ -54,20 +48,13 @@
             background-color: transparent;
         }
     }
-}
 
-
-
-// Re-add the reset styles
-// ------------------------------------
-
-
-#migrated {
+    // Re-add the reset styles
 
     // Template doesn't have a container so this just needs to apply to the row container
     [data-name="row"] .row:not(.row--width-no-padding) .row__container {
         .template__content--width();
-        width: 80%;                // Container padding
+        width: 80%; // Container padding
 
         @media @tablet {
             width: 90%;
@@ -77,17 +64,17 @@
     // Replaces main padding by moving this to the first widget in the zone
     &.edit #page-zones__main-overlay + .widget:not([data-name="row"]),
     #page-zones__main > .widget:not([data-name="row"]):not([data-name="image"]):not([data-name="gallery"]):not([data-name*="form"]):not([data-name*="twitter"]):not([data-name="blogsearch"]):first-child {
-        margin-top: 2em;           // Main padding top
+        margin-top: 2em; // Main padding top
     }
 
     // Replaces main padding by moving this to the last widget in the zone
     #page-zones__main > .widget:not([data-name="row"]):last-child {
-        margin-bottom: 2em;        // Main padding bottom
+        margin-bottom: 2em; // Main padding bottom
     }
 
     // Add spacing to the top of a widget when it follows a row
     #page-zones__main > [data-name="row"] + .widget:not([data-name="row"]):not([data-name="image"]):not([data-name="gallery"]):not([data-name*="form"]):not([data-name*="twitter"]):not([data-name="blogsearch"]) {
-        margin-top: 40px;           // Widget margin bottom
+        margin-top: 40px;
     }
 
     // Remove padding when single widgets are inside a column
