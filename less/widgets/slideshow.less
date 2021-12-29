@@ -123,7 +123,7 @@
 	margin: 0;
 	padding: 0;
 	height: 100%;
-    width: 100%;
+	width: 100%;
 
 	&.current {
 		opacity: 1;
@@ -139,7 +139,7 @@
 	background-size: cover;
 	background-position: center;
 	height: 100%;
-    width: 100%;
+	width: 100%;
 	min-height: 0;
 }
 
@@ -152,8 +152,8 @@
 .responsiveslideshow .caption {
 	display: block;
 	.display-flex(flex);
-    .flex-direction(column);
-    .justify-content(center, center);
+	.flex-direction(column);
+	.justify-content(center, center);
 	position: absolute;
 	top: 0;
 	bottom: 0;
@@ -172,14 +172,14 @@
 .responsiveslideshow__image-description {
 	margin: 0 auto;
 	max-width: 32em;
-    width: @layout-width-desktop;
+	width: @layout-width-desktop;
 
 	@media @tablet {
 		width: @layout-width-tablet;
 	}
 	
 	.responsivecolumns & {
-    	width: @layout-width-desktop;
+		width: @layout-width-desktop;
 	}
 }
 
@@ -189,8 +189,8 @@
 	font-size: @font__p--font-size*1.1;
 	line-height: 1.4em;
 	white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+	overflow: hidden;
+	text-overflow: ellipsis;
 	
 	.make-font-a-little-smaller(@font__p--font-size*1.1);
 	.make-font-smaller(@font__p--font-size*1.1);
@@ -203,8 +203,8 @@
 	max-height: 3.9em;
 	overflow: hidden;
 	display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
 }
 
 // Slide Navigation Buttons
@@ -213,8 +213,8 @@
 	display: block;
 	position: absolute;
 	top: 0;
-    left: 0;
-    right: 0;
+	left: 0;
+	right: 0;
 	margin: 0;
 	opacity: 0;
 	text-align: center;
@@ -237,7 +237,7 @@
 		height: 2.5em;
 		line-height: 1em;
 		width: 2.5em;
-	    border: none;
+		border: none;
 		background-color: fade(@color__slideshow-pagination-item--background, 80%);
 		.box-shadow(none);
 		.transition(background-color);
@@ -291,9 +291,9 @@
 	
 .responsiveslideshow__pagination-item {
 	position: relative;
-    margin: 0 0 40px;
+	margin: 0 0 40px;
 	padding: 0 8px;
-    height: 0;
+	height: 0;
 
 	@media @tablet {
 		margin: 0 0 35px;

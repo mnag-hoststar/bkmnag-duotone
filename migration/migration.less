@@ -7,82 +7,82 @@
 
 #migrated {
 
-    // Contains header to BK10 canvas
-    &.edit .template__header {
-        @media only screen and (min-width: 900px) {
-            margin-left: auto;
-            margin-right: auto;
-            width: ~"calc(100% - 200px)";
-        }
-    }
+	// Contains header to BK10 canvas
+	&.edit .template__header {
+		@media only screen and (min-width: 900px) {
+			margin-left: auto;
+			margin-right: auto;
+			width: ~"calc(100% - 200px)";
+		}
+	}
 
-    &.is-move-mode .template__header,
-    &.row-selection-mode .template__header,
-    &.row-editing .template__header,
-    &.row-editing .template__footer {
-        @media only screen and (max-width: 900px) {
-            display: none;
-        }
-    }
+	&.is-move-mode .template__header,
+	&.row-selection-mode .template__header,
+	&.row-editing .template__header,
+	&.row-editing .template__footer {
+		@media only screen and (max-width: 900px) {
+			display: none;
+		}
+	}
 
-    &.row-selection-mode .template__header {
-        z-index: 1;
-    }
+	&.row-selection-mode .template__header {
+		z-index: 1;
+	}
 
-    // Removes padding from the bottom of the main zone
-    > .page.page--home .template__content,
-    > .page {
-        padding-bottom: 0;
-        padding-top: 0;
-    }
+	// Removes padding from the bottom of the main zone
+	> .page.page--home .template__content,
+	> .page {
+		padding-bottom: 0;
+		padding-top: 0;
+	}
 
-    .template__footer {
-        margin-top: 0;
-    }
+	.template__footer {
+		margin-top: 0;
+	}
 
-    // Removes inherited widget padding
-    [data-name="row"] {
-        padding: 0;
+	// Removes inherited widget padding
+	[data-name="row"] {
+		padding: 0;
 
-        .widget {
-            background-color: transparent;
-        }
-    }
+		.widget {
+			background-color: transparent;
+		}
+	}
 
-    // Re-add the reset styles
+	// Re-add the reset styles
 
-    // Template doesn't have a container so this just needs to apply to the row container
-    [data-name="row"] .row:not(.row--width-no-padding) .row__container {
-        .template__content--width();
-        width: 80%; // Container padding
+	// Template doesn't have a container so this just needs to apply to the row container
+	[data-name="row"] .row:not(.row--width-no-padding) .row__container {
+		.template__content--width();
+		width: 80%; // Container padding
 
-        @media @tablet {
-            width: 90%;
-        }
-    }
+		@media @tablet {
+			width: 90%;
+		}
+	}
 
-    // Replaces main padding by moving this to the first widget in the zone
-    &.edit #page-zones__main-overlay + .widget:not([data-name="row"]),
-    #page-zones__main > .widget:not([data-name="row"]):not([data-name="image"]):not([data-name="gallery"]):not([data-name*="form"]):not([data-name*="twitter"]):not([data-name="blogsearch"]):first-child {
-        margin-top: 2em; // Main padding top
-    }
+	// Replaces main padding by moving this to the first widget in the zone
+	&.edit #page-zones__main-overlay + .widget:not([data-name="row"]),
+	#page-zones__main > .widget:not([data-name="row"]):not([data-name="image"]):not([data-name="gallery"]):not([data-name*="form"]):not([data-name*="twitter"]):not([data-name="blogsearch"]):first-child {
+		margin-top: 2em; // Main padding top
+	}
 
-    // Replaces main padding by moving this to the last widget in the zone
-    #page-zones__main > .widget:not([data-name="row"]):last-child {
-        margin-bottom: 2em; // Main padding bottom
-    }
+	// Replaces main padding by moving this to the last widget in the zone
+	#page-zones__main > .widget:not([data-name="row"]):last-child {
+		margin-bottom: 2em; // Main padding bottom
+	}
 
-    // Add spacing to the top of a widget when it follows a row
-    #page-zones__main > [data-name="row"] + .widget:not([data-name="row"]):not([data-name="image"]):not([data-name="gallery"]):not([data-name*="form"]):not([data-name*="twitter"]):not([data-name="blogsearch"]) {
-        margin-top: 40px;
-    }
+	// Add spacing to the top of a widget when it follows a row
+	#page-zones__main > [data-name="row"] + .widget:not([data-name="row"]):not([data-name="image"]):not([data-name="gallery"]):not([data-name*="form"]):not([data-name*="twitter"]):not([data-name="blogsearch"]) {
+		margin-top: 40px;
+	}
 
-    // Remove padding when single widgets are inside a column
-    [data-name="row"] .column .widget {
+	// Remove padding when single widgets are inside a column
+	[data-name="row"] .column .widget {
 
-        // Re-add widget spacing inside of rows
-        + .widget {
-            margin-top: 8px;
-        }
-    }
+		// Re-add widget spacing inside of rows
+		+ .widget {
+			margin-top: 8px;
+		}
+	}
 }

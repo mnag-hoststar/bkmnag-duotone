@@ -5,13 +5,13 @@
 .header-feature {
 	overflow: hidden;
 	
-    .widget[data-widget-type="feature"] {
+	.widget[data-widget-type="feature"] {
 		padding: 0;
 		
 		.widget-overlay .list--options {
-		    top: 50%;
+			top: 50%;
 		}
-    }
+	}
 	
 	.feature {
 		display: flex;
@@ -26,17 +26,17 @@
 	.flex-direction(column);
 	.justify-content(flex-end, end);
 	position: relative;
-    background-size: cover;
-    background-repeat: no-repeat;
-    min-height: 100%;
+	background-size: cover;
+	background-repeat: no-repeat;
+	min-height: 100%;
 	min-height: 100vh;
 	width: 100%;
 	width: 100vw;
 
-    @media @tablet {
-        background-attachment: inherit;
-        background-position-y: 0;
-    }
+	@media @tablet {
+		background-attachment: inherit;
+		background-position-y: 0;
+	}
 	
 	&:before {
 		content: "";
@@ -52,14 +52,14 @@
 // Content Wrap
 
 .feature__content-wrap {
-    padding: 4em 0 2em;
+	padding: 4em 0 2em;
 }
 
 // Content Inner Wrap
 
 .feature__content-inner-wrap {
-    position: relative;
-    text-align: left;
+	position: relative;
+	text-align: left;
 	.template__content--width();
 }
 
@@ -67,13 +67,13 @@
 
 .feature__headline {
 	padding: 2em 0 0.3em;
-    text-transform: uppercase;
+	text-transform: uppercase;
 	font-family: @font__feature-headline--font-family;
 	font-size: @font__feature-headline--font-size;
 	font-weight: @font__feature-headline--font-weight;
 	line-height: unit(@font__feature-headline--line-height*0.1, em);
 	letter-spacing: @font__feature-headline--letter-spacing;
-    color: @color__feature-headline--text;
+	color: @color__feature-headline--text;
 	
 	@media @layout-width-breakpoint {
 		font-size: @font__feature-headline--font-size*0.8;
@@ -101,13 +101,13 @@
 // Strapline
 
 .feature__strapline {
-    padding: 0 0 2em;
+	padding: 0 0 2em;
 	font-family: @font__feature-strapline--font-family;
 	font-size: @font__feature-strapline--font-size;
 	font-weight: @font__feature-strapline--font-weight;
 	line-height: unit(@font__feature-strapline--line-height*0.1, em);
 	letter-spacing: @font__feature-strapline--letter-spacing;
-    color: @color__feature-strapline--text;
+	color: @color__feature-strapline--text;
 	
 	@media @layout-width-breakpoint {
 		font-size: @font__feature-strapline--font-size*0.8;
@@ -135,16 +135,16 @@
 // Button
 
 .feature__button {
-    margin: 2em 0;
-    background-color: @color__feature-button--background;
-    border: 0.3em solid @color__feature-button--border;
-    color: @color__feature-button--text;
+	margin: 2em 0;
+	background-color: @color__feature-button--background;
+	border: 0.3em solid @color__feature-button--border;
+	color: @color__feature-button--text;
 	
-    &:hover {
-    	margin: 2em 0;
-        background-color: @color__feature-button--background--hover;
-	    border: 0.3em solid @color__feature-button--border;
-    }
+	&:hover {
+		margin: 2em 0;
+		background-color: @color__feature-button--background--hover;
+		border: 0.3em solid @color__feature-button--border;
+	}
 	
 	&:active {
 		top: 0;
@@ -155,7 +155,7 @@
 // Feature Overlay
 
 [data-widget-type="feature"] ul.list.list--options {
-    position: absolute;
-    top: auto !important;
-    bottom: 0 !important;
+	position: absolute;
+	top: auto !important;
+	bottom: 0 !important;
 }

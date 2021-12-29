@@ -7,11 +7,11 @@
 		}
 	}
 
-    .table-row--heading {
+	.table-row--heading {
 		@media @basketsummary-medium {
-            display: none;
+			display: none;
 		}
-    }
+	}
 	
 	.table-row {
 		@media @basketsummary-medium {
@@ -49,7 +49,7 @@
 		}
 		
 		@media @basketsummary-medium {
-        	border: none;
+			border: none;
 		}
 		
 		> * {
@@ -61,7 +61,7 @@
 // Cell Image
 
 .ecombasketsummary {
-    &__cell.cell--image {
+	&__cell.cell--image {
 		width: 10%;
 	
 		@media @layout-width-breakpoint {
@@ -91,10 +91,10 @@
 				display: inline-block;
 				vertical-align: middle;
 				max-width: 100%;
-    			max-height: 80px;
+				max-height: 80px;
 		
 				@media @basketsummary-medium {
-    				max-height: none;
+					max-height: none;
 				}
 			}
 		}
@@ -130,29 +130,29 @@
 // Cell Title
 
 .ecombasketsummary {
-    &__cell.cell--title {
-        width: auto;
-    }
+	&__cell.cell--title {
+		width: auto;
+	}
 
-    &__summary-item-title {
+	&__summary-item-title {
 		line-height: 1.5em;
-    }
+	}
 }
 
 // Cell Quantity
 
 .ecombasketsummary {
-    &__cell.cell--quantity {
+	&__cell.cell--quantity {
 		@media @basketsummary-medium {
-            position: relative;
+			position: relative;
 			width: auto;
-            .clearfix();
+			.clearfix();
 
-            &:before {
-                display: block;
-            }
-        }
-    }
+			&:before {
+				display: block;
+			}
+		}
+	}
 	
 	&__quantity-wrap {
 		background-color: transparent;
@@ -190,7 +190,7 @@
 			&:after {
 				position: absolute;
 				top: 0;
-    			left: 0;
+				left: 0;
 				margin: 0;
 				padding: 0;
 				border: none;
@@ -234,27 +234,27 @@
 	&__cell.cell--price,
 	&__cell.cell--total {
 		@media @basketsummary-medium {
-            float: left;
-            width: 30%;
+			float: left;
+			width: 30%;
 			padding-left: 0;
-        }
+		}
 	}
 	&__cell.cell--price {
 		@media @basketsummary-medium {
-            margin-left: 30%;
-        }
+			margin-left: 30%;
+		}
 	}
 }
 
 // Subtotal Row
 
 .ecombasketsummary {
-    &__cell.cell--order-total {
-        text-align: right;
-        background-color: @color-text--lightest;
+	&__cell.cell--order-total {
+		text-align: right;
+		background-color: @color-text--lightest;
 		border-top: 2px solid @color-text--light;
 		border-bottom: none;
-    }
+	}
 	
 	&__order-total {
 		@media @basketsummary-medium {
@@ -270,6 +270,6 @@
 // Button
 
 .summary-form {
-    text-align: right;
+	text-align: right;
 	max-width: 100%;
 }

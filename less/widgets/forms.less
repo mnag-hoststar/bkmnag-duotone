@@ -60,7 +60,7 @@
 .widget--contactform-background + .widget[data-widget-type="contactform"],
 .widget--advancedcontactform-background + .widget[data-name="advancedcontactform"],
 .widget--advancedcontactform-background + .widget[data-widget-type="advancedcontactform"] {
-    padding-top: 1em;
+	padding-top: 1em;
 }
 
 .widget--signupform-background,
@@ -113,66 +113,66 @@ input[type="password"],
 .input--search,
 textarea {
 	margin-bottom: 1em;
-    padding: 0.4em 0.6em;
-    background-color: @color__form-legend--background;
-    border: 1px solid @color-form--light;
-    color: @color__form-legend--text;
+	padding: 0.4em 0.6em;
+	background-color: @color__form-legend--background;
+	border: 1px solid @color-form--light;
+	color: @color__form-legend--text;
 	.transition();
-    .border-radius(0);
-    .appearance(none);
+	.border-radius(0);
+	.appearance(none);
 
-    .style--light & {
-        border-color: darken(@color--light, 20%);
-    }
+	.style--light & {
+		border-color: darken(@color--light, 20%);
+	}
 
-    .style--dark & {
-        border-color: darken(@color--accent, 20%);
-    }
+	.style--dark & {
+		border-color: darken(@color--accent, 20%);
+	}
 
-    .style--dark & {
-        border-color: darken(@color--dark, 20%);
-    }
+	.style--dark & {
+		border-color: darken(@color--dark, 20%);
+	}
 	
 	&:hover {
-    	border: 1px solid @color__form-legend--text;
+		border: 1px solid @color__form-legend--text;
 
-        .style--light & {
-            border-color: darken(@color--light, 25%);
-        }
+		.style--light & {
+			border-color: darken(@color--light, 25%);
+		}
 
-        .style--dark & {
-            border-color: darken(@color--accent, 25%);
-        }
+		.style--dark & {
+			border-color: darken(@color--accent, 25%);
+		}
 
-        .style--dark & {
-            border-color: darken(@color--dark, 25%);
-        }
+		.style--dark & {
+			border-color: darken(@color--dark, 25%);
+		}
 	}
 	
 	// Focus style for easier keyboard navigation
 	
 	&:focus {
-    	border: 0.3em solid @color__button--background--hover;
+		border: 0.3em solid @color__button--background--hover;
 		.box-shadow(none);
 
-        .style--light & {
-            border-color: @color--accent;
-        }
+		.style--light & {
+			border-color: @color--accent;
+		}
 
-        .style--accent & {
-            border-color: @color--dark;
-        }
+		.style--accent & {
+			border-color: @color--dark;
+		}
 
-        .style--dark & {
-            border-color: @color--accent;
-        }
+		.style--dark & {
+			border-color: @color--accent;
+		}
 	}
 }
 
 // Multiple Lines Inputs
 
 textarea {
-    display: block;
+	display: block;
 }
 
 // Placeholders
@@ -194,21 +194,21 @@ input:-ms-input-placeholder {
 }
 
 input:focus {
-    &::-webkit-input-placeholder {
-        color: transparent;
-    }
+	&::-webkit-input-placeholder {
+		color: transparent;
+	}
 
-    &:-moz-placeholder {
-        color: transparent;
-    }
+	&:-moz-placeholder {
+		color: transparent;
+	}
 
-    &::-moz-placeholder {
-        color: transparent;
-    }
+	&::-moz-placeholder {
+		color: transparent;
+	}
 
-    &:-ms-input-placeholder {
-        color: transparent;
-    }
+	&:-ms-input-placeholder {
+		color: transparent;
+	}
 }
 
 // Radio Buttons and Checkboxes
@@ -222,7 +222,7 @@ input:focus {
 		.label--checkbox,
 		label[for*="input--terms"],
 		label[for*="input--terms"] span a.form__link {
-			p;
+			.paragraph;
 			line-height: 1.7em;
 			min-height: 1.7em;
 		}
@@ -243,17 +243,17 @@ input:focus {
 			&:checked + label:before {
 				border: 2px solid @color__button--border;
 
-                .style--light & {
-                    border-color: @color--accent;
-                }
+				.style--light & {
+					border-color: @color--accent;
+				}
 
-                .style--accent & {
-                    border-color: @color--dark;
-                }
+				.style--accent & {
+					border-color: @color--dark;
+				}
 
-                .style--dark & {
-                    border-color: @color--accent;
-                }
+				.style--dark & {
+					border-color: @color--accent;
+				}
 			}
 
 			&:checked + label:after {
@@ -264,17 +264,17 @@ input:focus {
 			&:focus:checked + label:before {
 				border: 2px solid @color__button--border;
 
-                .style--light & {
-                    border-color: @color--accent;
-                }
+				.style--light & {
+					border-color: @color--accent;
+				}
 
-                .style--accent & {
-                    border-color: @color--dark;
-                }
+				.style--accent & {
+					border-color: @color--dark;
+				}
 
-                .style--dark & {
-                    border-color: @color--accent;
-                }
+				.style--dark & {
+					border-color: @color--accent;
+				}
 			}
 		}
 		
@@ -304,24 +304,24 @@ input:focus {
 					position: absolute;
 					top: 0.9em;
 					left: -2.5em;
-                    min-width: 0;
+					min-width: 0;
 					width: 1.5em;
 					height: 1.5em;
 					margin-top: -0.8em;
 					background-color: @color__button--text;
 					border: 2px solid @color-form--light;
 
-                    .style--light & {
-                        border-color: darken(@color--light, 20%);
-                    }
+					.style--light & {
+						border-color: darken(@color--light, 20%);
+					}
 
-                    .style--accent & {
-                        border-color: darken(@color--accent, 20%);
-                    }
+					.style--accent & {
+						border-color: darken(@color--accent, 20%);
+					}
 
-                    .style--dark & {
-                        border-color: darken(@color--dark, 20%);
-                    }
+					.style--dark & {
+						border-color: darken(@color--dark, 20%);
+					}
 				}
 
 				&:after {
@@ -349,17 +349,17 @@ input:focus {
 					margin-top: -0.8em;
 					.transform-scale(0.5);
 
-                    .style--light & {
-                        background-color: @color--accent;
-                    }
+					.style--light & {
+						background-color: @color--accent;
+					}
 
-                    .style--accent & {
-                        background-color: @color--dark;
-                    }
+					.style--accent & {
+						background-color: @color--dark;
+					}
 
-                    .style--dark & {
-                        background-color: @color--accent;
-                    }
+					.style--dark & {
+						background-color: @color--accent;
+					}
 				}
 			}
 		}
@@ -368,7 +368,7 @@ input:focus {
 		&[class*="form-group"] {
 			label {
 				&:after {
-                    border: 0;
+					border: 0;
 					content: "\f00c";
 					font-family: 'FontAwesome', sans-serif;
 					color: @color__button--background;
@@ -376,19 +376,19 @@ input:focus {
 					top: 0.6em;
 					left: -1.9em;
 					margin-top: -0.6em;
-                    transform: none;
+					transform: none;
 
-                    .style--light & {
-                        color: @color--accent;
-                    }
+					.style--light & {
+						color: @color--accent;
+					}
 
-                    .style--accent & {
-                        color: @color--dark;
-                    }
+					.style--accent & {
+						color: @color--dark;
+					}
 
-                    .style--dark & {
-                        color: @color--accent;
-                    }
+					.style--dark & {
+						color: @color--accent;
+					}
 				}
 			}
 		}
@@ -402,151 +402,151 @@ input:focus {
 // Select Wrap
 
 .select-wrap {
-    position: relative;
+	position: relative;
 
-    @media @mobile {
-        max-width: 100%;
-    }
+	@media @mobile {
+		max-width: 100%;
+	}
 	
-    // Icon
+	// Icon
 
-    &:before {
-        content: '\f107';
-        font-family: 'FontAwesome', sans-serif;
-        display: inline-block;
-        height: 1em;
-        line-height: 1em;
-        text-align: center;
+	&:before {
+		content: '\f107';
+		font-family: 'FontAwesome', sans-serif;
+		display: inline-block;
+		height: 1em;
+		line-height: 1em;
+		text-align: center;
 		font-size: 1.5em;
-        color: @color__p--text;
-        position: absolute;
-        right: 0.5em;
-        top: 50%;
-        margin-top: -0.5em;
-        z-index: 1;
+		color: @color__p--text;
+		position: absolute;
+		right: 0.5em;
+		top: 50%;
+		margin-top: -0.5em;
+		z-index: 1;
 
-        .style--light & {
-            color: @contrast--light;
-        }
+		.style--light & {
+			color: @contrast--light;
+		}
 
-        .style--accent & {
-            color: @contrast--accent;
-        }
+		.style--accent & {
+			color: @contrast--accent;
+		}
 
-        .style--dark & {
-            color: @contrast--dark;
-        }
+		.style--dark & {
+			color: @contrast--dark;
+		}
 
 		@media @mobile {
 			font-size: 2em;
 		}
-    }
+	}
 }
 
 // Select
 
 .select {
-    position: relative;
-    display: block;
+	position: relative;
+	display: block;
 	padding: 0 2em 0 0.6em;
-    width: 100%;
-    border: 0.3em solid transparent;
+	width: 100%;
+	border: 0.3em solid transparent;
 	background-color: @color-form--lightest;
-    font-size: 1em;
-    color: @color__form-legend--text;
-    .border-radius(0);
-    .appearance(none);
+	font-size: 1em;
+	color: @color__form-legend--text;
+	.border-radius(0);
+	.appearance(none);
 	.transition();
 
-    .style--light & {
-        background-color: darken(@color--light, 8%);
-        color: @contrast--light;
-    }
+	.style--light & {
+		background-color: darken(@color--light, 8%);
+		color: @contrast--light;
+	}
 
-    .style--accent & {
-        background-color: darken(@color--accent, 8%);
-        color: @contrast--accent;
-    }
+	.style--accent & {
+		background-color: darken(@color--accent, 8%);
+		color: @contrast--accent;
+	}
 
-    .style--dark & {
-        background-color: fade(@color--light, 10%);
-        color: @contrast--dark;
-    }
+	.style--dark & {
+		background-color: fade(@color--light, 10%);
+		color: @contrast--dark;
+	}
 
-    @media @mobile {
+	@media @mobile {
 		padding: 0 2.7em 0 0.6em;
-    }
+	}
 
-    &:hover {
+	&:hover {
 		border: 0.3em solid transparent;
 		background-color: @color-form--light;
 
-        .style--light & {
-            background-color: darken(@color--light, 12%);
-            color: @contrast--light;
-        }
+		.style--light & {
+			background-color: darken(@color--light, 12%);
+			color: @contrast--light;
+		}
 
-        .style--accent & {
-            background-color: darken(@color--accent, 12%);
-            color: @contrast--accent;
-        }
+		.style--accent & {
+			background-color: darken(@color--accent, 12%);
+			color: @contrast--accent;
+		}
 
-        .style--dark & {
-            background-color: darken(@color--dark, 12%);
-            color: @contrast--dark;
-        }
-    }
+		.style--dark & {
+			background-color: darken(@color--dark, 12%);
+			color: @contrast--dark;
+		}
+	}
 
-    &:focus {
+	&:focus {
 		border: 0.3em solid @color__button--background--hover;
 		background-color: @color-form--lightest;
 
-        .style--light & {
-            border-color: @color--accent;
-        }
+		.style--light & {
+			border-color: @color--accent;
+		}
 
-        .style--accent & {
-            border-color: @color--dark;
-        }
+		.style--accent & {
+			border-color: @color--dark;
+		}
 
-        .style--dark & {
-            border-color: @color--accent;
-        }
+		.style--dark & {
+			border-color: @color--accent;
+		}
 	}
 	
 	&:hover:focus {
 		background-color: @color-form--light;
 
-        .style--light & {
-            background-color: darken(@color--light, 10%);
-        }
+		.style--light & {
+			background-color: darken(@color--light, 10%);
+		}
 
-        .style--accent & {
-            background-color: darken(@color--accent, 10%);
-        }
+		.style--accent & {
+			background-color: darken(@color--accent, 10%);
+		}
 
-        .style--dark & {
-            background-color: darken(@color--dark, 10%);
-        }
+		.style--dark & {
+			background-color: darken(@color--dark, 10%);
+		}
 	}
 }
 
 .select::-ms-expand {
-    display: none;
+	display: none;
 }
 
 // Error Messages
 
 .form {
-    input.error {
-        border: none !important;
-    }
+	input.error {
+		border: none !important;
+	}
 
-    textarea.error {
-        border: 1px solid @message-color--error !important;
-    }
+	textarea.error {
+		border: 1px solid @message-color--error !important;
+	}
 
-    .form-group {
+	.form-group {
 		margin-bottom: 0;
 
 		@media @mobile {
@@ -557,32 +557,32 @@ input:focus {
 			margin-bottom: 1em;
 		}
 
-        .error {
-            border: 2px solid @message-color--error !important;
+		.error {
+			border: 2px solid @message-color--error !important;
 			
-            &:focus {
+			&:focus {
 				.box-shadow(none);
-            }
-        }
-    }
+			}
+		}
+	}
 }
 
 input.error {
-    &::-webkit-input-placeholder {
-        color: fade(@message-color--error, 60%);
-    }
+	&::-webkit-input-placeholder {
+		color: fade(@message-color--error, 60%);
+	}
 
-    &:-moz-placeholder {
-        color: fade(@message-color--error, 60%);
-    }
+	&:-moz-placeholder {
+		color: fade(@message-color--error, 60%);
+	}
 
-    &::-moz-placeholder {
-        color: fade(@message-color--error, 60%);
-    }
+	&::-moz-placeholder {
+		color: fade(@message-color--error, 60%);
+	}
 
-    &:-ms-input-placeholder {
-        color: fade(@message-color--error, 60%);
-    }
+	&:-ms-input-placeholder {
+		color: fade(@message-color--error, 60%);
+	}
 }
 
 // Sign Up Form

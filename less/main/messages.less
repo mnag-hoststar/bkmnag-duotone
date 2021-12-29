@@ -15,16 +15,16 @@
 
 .message {
 	display: block;
-    position: relative;
-    padding: 1em;
+	position: relative;
+	padding: 1em;
 	padding-left: 3.5em;
-    margin: 1em auto;
+	margin: 1em auto;
 	min-height: 3em;
-    .clearfix();
+	.clearfix();
 	color: #fff;
 	width: 60%;
 	max-width: 1400px;
-    margin: 0 auto;
+	margin: 0 auto;
 	
 	@media @tablet-horizontal {
 		width: @layout-width-desktop;
@@ -39,13 +39,13 @@
 		margin: 1em 0 0;
 	}
 
-    // Message Heading, Paragraph
+	// Message Heading, Paragraph
 
-    h3, p,
+	h3, p,
 	.message-text {
-        margin: 0;
-        padding: 0;
-    }
+		margin: 0;
+		padding: 0;
+	}
 	
 	h3 {
 		font-size: 1.4em;
@@ -69,33 +69,33 @@
 		.make-font-a-lot-smaller(@font__p--font-size);
 	}
 
-    // Consequetive Paragraphs
+	// Consequetive Paragraphs
 
-    p + p {
-        margin-top: 0.35em;
-    }
+	p + p {
+		margin-top: 0.35em;
+	}
 
-    // Strong text
+	// Strong text
 
-    strong {
-        font-weight: bold;
-    }
+	strong {
+		font-weight: bold;
+	}
 
-    // Icon
+	// Icon
 
-    &:before {
-        font-family: 'FontAwesome', sans-serif;
-        display: block;
-        width: 2.5em;
-        position: absolute;
+	&:before {
+		font-family: 'FontAwesome', sans-serif;
+		display: block;
+		width: 2.5em;
+		position: absolute;
 		top: 0.5em;
-        left: 0;
-        bottom: 0;
-        text-align: center;
+		left: 0;
+		bottom: 0;
+		text-align: center;
 		font-size: 1.4em;
 		.border-radius(50%);
 		color: #fff;
-    }
+	}
 }
 
 // Error
@@ -151,20 +151,20 @@
 // Message in Template's Footer
 
 .template__footer .message {
-    margin: 0;
+	margin: 0;
 }
 
 // Form Messages
 
 .overlay.success .message-box {
-    .message;
-    .message--success;
+	.message;
+	.message--success;
 }
 
 
 .overlay.fail .message-box {
-    .message;
-    .message--warning;
+	.message;
+	.message--warning;
 }
 
 // Cookie Message

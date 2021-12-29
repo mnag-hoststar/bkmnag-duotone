@@ -10,7 +10,7 @@
 .widget {
 	margin-top: 0;
 	margin-bottom: 0;
-    padding: 0.5em 0;
+	padding: 0.5em 0;
 	min-height: 1em;
 	
 	.responsivecolumns & {
@@ -96,7 +96,7 @@
 		.responsivecolumns {
 			.widget--zone-widget,
 			.widget {
-			    padding: 1em 0;
+				padding: 1em 0;
 				background-color: transparent;
 				
 				&:first-child {
@@ -106,10 +106,10 @@
 						padding-top: 1em;
 					}
 				}
-			    
-			    & > *:not(.widget-overlay) {
-			        width: 100%;
-			    }
+				
+				& > *:not(.widget-overlay) {
+					width: 100%;
+				}
 			}
 	
 			.widget[data-name="content"],
@@ -296,7 +296,7 @@
 // Line Widget
 
 .line {
-    line-height: 0;
+	line-height: 0;
 }
 
 hr,
@@ -305,20 +305,20 @@ hr.line__rule {
 	background-color: fade(@color__p--text, 60%);
 
 	.style--light & {
-        background-color: darken(@color--light, 10%);
-    }
+		background-color: darken(@color--light, 10%);
+	}
 
-    .style--accent & {
-        background-color: darken(@color--accent, 10%);
-    }
+	.style--accent & {
+		background-color: darken(@color--accent, 10%);
+	}
 
-    .style--dark & {
-        background-color: fade(@color--light, 10%);
-    }
+	.style--dark & {
+		background-color: fade(@color--light, 10%);
+	}
 }
 
 // Page Title Widget
 
 .pagetitle-text {
-    h1;
+	.heading--1;
 }

@@ -3,7 +3,7 @@
 * {
 	.box-sizing();
 	margin: 0;
-    padding: 0;
+	padding: 0;
 	
 	&:focus {
 		outline: none;
@@ -19,7 +19,7 @@ html, body {
 	font-weight: @font__p--font-weight;
 	line-height: unit(@font__p--line-height*0.1, em);
 	letter-spacing: @font__p--letter-spacing;
-    background-color: @color__body--background;
+	background-color: @color__body--background;
 	text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
 	text-rendering: optimizeLegibility !important;
 	
@@ -27,7 +27,7 @@ html, body {
 	.make-font-smaller(@font__p--font-size);
 	.make-font-a-lot-smaller(@font__p--font-size);
 	
-    width: -webkit-calc(100% - 0px);
+	width: -webkit-calc(100% - 0px);
 }
 
 html {
@@ -65,13 +65,13 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
 	width: 100%;
 	position: fixed;
 	top: 0;
-    left: 0;
-    right: 0;
+	left: 0;
+	right: 0;
 	background-color: @color__header--background;
-    z-index: 11000;
+	z-index: 11000;
 	padding: 0.5em 1em;
 	border-bottom: 0.5em solid @color__header--border;
-    font-size: @font__navigation--font-size;
+	font-size: @font__navigation--font-size;
 	.header-border-removal();
 	.transition();
 		
@@ -98,10 +98,10 @@ section.page {
 // Footer
 
 .template__footer {
-    width: 100%;
-    background-color: @color__footer--background;
-    text-align: center;
-    border-top: 0.5em solid @color__footer--border;
+	width: 100%;
+	background-color: @color__footer--background;
+	text-align: center;
+	border-top: 0.5em solid @color__footer--border;
 	padding: 1em 0;
 	.footer-border-removal();
 		
@@ -153,14 +153,14 @@ section.page {
 }
 
 .gdpr-footer {
-    background-color: @color__footer--background;
-    padding: 10px 0;
-    
-    a[class] {
-        padding: 0 10px;
-	    font-family: @font__navigation--font-family;
-    	color: @color__navigation--text;
-    }
+	background-color: @color__footer--background;
+	padding: 10px 0;
+	
+	a[class] {
+		padding: 0 10px;
+		font-family: @font__navigation--font-family;
+		color: @color__navigation--text;
+	}
 }
 
 // Widget Overlay

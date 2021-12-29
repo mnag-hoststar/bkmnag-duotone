@@ -46,7 +46,7 @@
 
 .blogpostlist__post-items {
 	.display-flex(flex);
-    .flex-wrap(wrap);
+	.flex-wrap(wrap);
 	.item--margin-size--border();
 	
 	.responsivecolumns & {
@@ -91,43 +91,43 @@
 // Image
 
 .blogpostlist {
-    &__post-image {
-        position: relative;
-        overflow: hidden;
-        height: 0;
+	&__post-image {
+		position: relative;
+		overflow: hidden;
+		height: 0;
 		padding-bottom: 56.25%;
 		
 		@media @mobile {
 			float: left;
 			height: 100%;
 			width: 25%;
-    		padding-bottom: 0;
+			padding-bottom: 0;
 		}
 		
 		.responsivecolumns & {
 			float: left;
 			height: 100%;
 			width: 25%;
-    		padding-bottom: 0;
+			padding-bottom: 0;
 		}
-    }
+	}
 	
-    &__image-link {
-        background-position: center center;
-        background-size: cover;
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
+	&__image-link {
+		background-position: center center;
+		background-size: cover;
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
 		.transition(all, 0.3s);
-    }
+	}
 
-    // Using the background image instead.
+	// Using the background image instead.
 
-    &__image {
-        display: none;
-    }
+	&__image {
+		display: none;
+	}
 }
 
 // Content
@@ -159,16 +159,16 @@ a.blogpostlist__title-link {
 	color: @color__blogpostlist-title--text;
 
 	.style--light & {
-        color: @contrast--light;
-    }
+		color: @contrast--light;
+	}
 
-    .style--accent & {
-        color: @contrast--accent;
-    }
+	.style--accent & {
+		color: @contrast--accent;
+	}
 
-    .style--dark & {
-        color: @contrast--dark;
-    }
+	.style--dark & {
+		color: @contrast--dark;
+	}
 }
 
 // Post Excerpt
@@ -180,19 +180,19 @@ a.blogpostlist__title-link {
 // Read more
 
 a.blogpostlist__read-more {
-	a;
+	.links;
 
 	.style--light & {
-        color: @contrast--light;
-    }
+		color: @contrast--light;
+	}
 
-    .style--accent & {
-        color: @contrast--accent;
-    }
+	.style--accent & {
+		color: @contrast--accent;
+	}
 
-    .style--dark & {
-        color: @contrast--dark;
-    }
+	.style--dark & {
+		color: @contrast--dark;
+	}
 }
 
 // This style only activates if the article has an image.
@@ -212,8 +212,8 @@ a.blogpostlist__read-more {
 .blogpostlist__post-footer {
 	position: absolute;
 	top: 0;
-    left: 0;
-    right: 0;
+	left: 0;
+	right: 0;
 	padding: 0 1.5em;
 	font-size: @font__p--font-size;
 
@@ -236,8 +236,8 @@ a.blogpostlist__read-more {
 		.style--accent &,
 		.style--dark & {
 			background-color: @color--light;
-            color: @contrast--light;
-        }
+			color: @contrast--light;
+		}
 		
 		.responsivecolumns & {
 			margin: 1em 0 0;

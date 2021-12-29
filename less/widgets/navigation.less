@@ -15,7 +15,7 @@
 
 .template__company {
 	display: table-cell;
-    vertical-align: middle;
+	vertical-align: middle;
 	margin-right: 1em;
 	padding: 0;
 	
@@ -32,7 +32,7 @@
 
 .logo {
 	padding-right: 1em;
-    font-size: 1em;
+	font-size: 1em;
 	
 	&__logo-link {
 		.flex-display(flex);
@@ -60,7 +60,7 @@
 }
 
 .companyname {
-    line-height: 0;
+	line-height: 0;
 
 	&__company-link {
 		margin: 0;
@@ -71,7 +71,7 @@
 		letter-spacing: @font__companyname--letter-spacing;
 		color: @color__companyname--text;
 		text-transform: uppercase;
-    	word-break: normal;
+		word-break: normal;
 		word-wrap: normal;
 
 		.make-font-a-little-smaller(@font__companyname--font-size);
@@ -108,7 +108,7 @@
 
 .template__navigation {
 	display: table-cell;
-    vertical-align: middle;
+	vertical-align: middle;
 	
 	@media @tablet {
 		position: relative;
@@ -173,8 +173,8 @@
 			right: 0;
 			margin: 0;
 			padding: 9px 0;
-    		min-height: 21px;
-    		height: 21px;
+			min-height: 21px;
+			height: 21px;
 			width: 28px;
 			font-size: 26px;
 			text-indent: 10000px;
@@ -306,7 +306,7 @@
 	padding: 0;
 	line-height: 1em;
 	
-    @media @tablet {
+	@media @tablet {
 		display: block;
 		height: auto;
 		max-width: 500px;
@@ -323,7 +323,7 @@
 	padding: 0;
 	line-height: 1em;
 	
-    @media @tablet {
+	@media @tablet {
 		display: block;
 		text-align: center;
 	}
@@ -341,7 +341,7 @@
 	
 		@media @tablet {
 			padding: 0.5em 0;
-		    color: lighten(@color__navigation--text, 40%);
+			color: lighten(@color__navigation--text, 40%);
 		}
 	
 		.make-font-a-little-smaller(@font__navigation--font-size);
@@ -352,7 +352,7 @@
 			color: @color__navigation--text--hover;
 			
 			@media @tablet {
-		        color: lighten(@color__navigation--text--hover, 40%);
+				color: lighten(@color__navigation--text--hover, 40%);
 			}
 		}
 	}
@@ -384,7 +384,7 @@
 			right: 0.5em;
 			margin-left: 0.3em;
 			width: 1em;
-    		height: 1em;
+			height: 1em;
 			line-height: 1em;
 			font-size: 1.2em;
 			content: "\f107";
@@ -423,7 +423,7 @@
 		right: 0;
 		left: auto;
 		opacity: 0;
-    	margin: 0.5em 0 0;
+		margin: 0.5em 0 0;
 		padding: 0.5em 0;
 		height: 0;
 		width: auto;
@@ -440,7 +440,7 @@
 	}
 	
 	.navigation-item.folder.folder-open & {
-    	overflow: visible;
+		overflow: visible;
 		display: block;
 		opacity: 1;
 		height: auto;

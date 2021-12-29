@@ -10,7 +10,7 @@
 
 .widget--twitter-background + .widget[data-name="twitter"],
 .widget--twitter-background + .widget[data-widget-type="twitter"] {
-    padding-top: 1em;
+	padding-top: 1em;
 }
 
 .widget--twitter-background {
@@ -21,7 +21,7 @@
 
 .twitter__tweet-list {
 	.display-flex(flex);
-    .flex-wrap(wrap);
+	.flex-wrap(wrap);
 	.item--margin-size--border();
 	
 	.responsivecolumns & {
@@ -39,13 +39,13 @@
 	.clearfix();
 
 	.style--light & {
-        box-shadow: 0 0 20px rgba(0,0,0, 0.125);
-    }
+		box-shadow: 0 0 20px rgba(0,0,0, 0.125);
+	}
 
-    .style--accent &,
-    .style--dark & {
-    	background-color: @color--light;
-    }
+	.style--accent &,
+	.style--dark & {
+		background-color: @color--light;
+	}
 	
 	.responsivecolumns & {
 		width: 100%;
@@ -70,7 +70,7 @@
 // Account Link
 
 a.twitter__account-link {
-    display: block;
+	display: block;
 	padding: 1.5em 1.5em 0 6.1em;
 	min-height: 5.1em;
 	.heading--4;
@@ -81,9 +81,9 @@ a.twitter__account-link {
 	.make-font-a-lot-smaller(@font__p--font-size);
 
 	.style--accent &,
-    .style--dark & {
-    	color: @contrast--light;
-    }
+	.style--dark & {
+		color: @contrast--light;
+	}
 }
 
 // Content
@@ -93,9 +93,9 @@ a.twitter__account-link {
 	.tweet-content--spacing();
 
 	.style--accent &,
-    .style--dark & {
-    	color: fade(@contrast--light, 80%);
-    }
+	.style--dark & {
+		color: fade(@contrast--light, 80%);
+	}
 	
 	.responsivecolumns & {
 		padding: 1em 1.5em 0;
@@ -104,19 +104,19 @@ a.twitter__account-link {
 
 .tweet-content a {
 	.style--accent &,
-    .style--dark & {
-    	border-color: fade(@color--accent, 75%);
-    	color: @contrast--light;
-    }
+	.style--dark & {
+		border-color: fade(@color--accent, 75%);
+		color: @contrast--light;
+	}
 }
 
 // Tweet Metadata
 
 .tweet-metadata {
 	position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
 	padding: 1.5em 1.5em 1em;
 	line-height: 1em;
 	font-size: @font__p--font-size;
@@ -140,15 +140,15 @@ a.twitter__account-link {
 		color: fade(@color__p--text, 50%);
 
 		.style--accent &,
-	    .style--dark & {
-	    	color: fade(@contrast--light, 50%);
-	    }
+		.style--dark & {
+			color: fade(@contrast--light, 50%);
+		}
 	}
 
-    a {
+	a {
 		border: none;
-    	background-color: transparent;
-    }
+		background-color: transparent;
+	}
 }
 
 // Timestamp
@@ -156,14 +156,14 @@ a.twitter__account-link {
 .twitter__timestamp {
 	display: block;
 	font-family: @font__h4--font-family;
-    letter-spacing: 1px;
-    text-transform: uppercase;
+	letter-spacing: 1px;
+	text-transform: uppercase;
 	font-size: 0.8em;
 
 	.style--accent &,
-    .style--dark & {
-    	color: fade(@contrast--light, 80%);
-    }
+	.style--dark & {
+		color: fade(@contrast--light, 80%);
+	}
 }
 
 // Conditional Mixins
