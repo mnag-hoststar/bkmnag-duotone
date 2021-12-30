@@ -11,6 +11,18 @@ table {
 	border-top: 2px solid @color-text--light;
 	margin: 0;
 	hyphens: auto;
+
+	.style--light & {
+		border-top-color: @contrast--light;
+	}
+
+	.style--accent & {
+		border-top-color: @contrast--accent;
+	}
+
+	.style--dark & {
+		border-top-color: @contrast--dark;
+	}
 }
 
 // Table Cell
@@ -18,13 +30,33 @@ table {
 td, th {
 	border: none;
 	background-color: transparent;
-	p;
 }
 
 th {
 	padding: 0.5em;
 	border-bottom: 2px solid @color-text--light;
-	.label-text;
+	text-align: left;
+	font-family: @font__h4--font-family;
+	font-weight: @font__h4--font-weight;
+	font-size: @font__h4--font-size;
+	line-height: @font__h4--line-height;
+	letter-spacing: @font__p--letter-spacing;
+	color: @color__h4--text;
+
+	.style--light & {
+		border-bottom-color: @contrast--light;
+		color: @contrast--light;
+	}
+
+	.style--accent & {
+		border-bottom-color: @contrast--accent;
+		color: @contrast--accent;
+	}
+
+	.style--dark & {
+		border-bottom-color: @contrast--dark;
+		color: @contrast--dark;
+	}
 	
 	@media @mobile {
 		display: none;
@@ -50,8 +82,24 @@ th {
 
 td {
 	border-bottom: 1px solid @color-text--light;
-	line-height: 1.2em;
 	padding: 1em 0.5em;
+	font-family: @font-swatch5-font-family;
+	font-weight: @font-swatch5-font-weight;
+	font-size: @font-swatch5-font-size;
+	line-height: @font-swatch5-line-height;
+	letter-spacing: @font-swatch5-letter-spacing;
+
+	.style--light & {
+		border-bottom-color: @contrast--light;
+	}
+
+	.style--accent & {
+		border-bottom-color: @contrast--accent;
+	}
+
+	.style--dark & {
+		border-bottom-color: @contrast--dark;
+	}
 	
 	@media @mobile {
 		display: block;
@@ -69,6 +117,18 @@ td {
 		@media @mobile {
 			padding: 0 0.5em 1em;
 			border-bottom: 1px solid @color-text--light;
+
+			.style--light & {
+				border-bottom-color: @contrast--light;
+			}
+		
+			.style--accent & {
+				border-bottom-color: @contrast--accent;
+			}
+		
+			.style--dark & {
+				border-bottom-color: @contrast--dark;
+			}
 		}
 	}
 	
@@ -90,6 +150,18 @@ td {
 			@media @tablet-horizontal {
 				padding: 0 0.5em 1em;
 				border-bottom: 1px solid @color-text--light;
+
+				.style--light & {
+					border-bottom-color: @contrast--light;
+				}
+			
+				.style--accent & {
+					border-bottom-color: @contrast--accent;
+				}
+			
+				.style--dark & {
+					border-bottom-color: @contrast--dark;
+				}
 			}
 		}
 	}
@@ -112,12 +184,36 @@ td {
 		&:last-child {
 			padding: 0 0.5em 1em;
 			border-bottom: 1px solid @color-text--light;
+
+			.style--light & {
+				border-bottom-color: @contrast--light;
+			}
+		
+			.style--accent & {
+				border-bottom-color: @contrast--accent;
+			}
+		
+			.style--dark & {
+				border-bottom-color: @contrast--dark;
+			}
 		}
 	}
 }
 
 tr:last-child td {
 	border-bottom: 2px solid @color-text--light;
+
+	.style--light & {
+		border-bottom-color: @contrast--light;
+	}
+
+	.style--accent & {
+		border-bottom-color: @contrast--accent;
+	}
+
+	.style--dark & {
+		border-bottom-color: @contrast--dark;
+	}
 	
 	@media @mobile {
 		border-bottom: none;
@@ -126,6 +222,18 @@ tr:last-child td {
 	&:last-child {
 		@media @mobile {
 			border-bottom: 2px solid @color-text--light;
+
+			.style--light & {
+				border-bottom-color: @contrast--light;
+			}
+		
+			.style--accent & {
+				border-bottom-color: @contrast--accent;
+			}
+		
+			.style--dark & {
+				border-bottom-color: @contrast--dark;
+			}
 		}
 	}
 	
@@ -138,6 +246,18 @@ tr:last-child td {
 		&:last-child {
 			@media @tablet {
 				border-bottom: 2px solid @color-text--light;
+
+				.style--light & {
+					border-bottom-color: @contrast--light;
+				}
+			
+				.style--accent & {
+					border-bottom-color: @contrast--accent;
+				}
+			
+				.style--dark & {
+					border-bottom-color: @contrast--dark;
+				}
 			}
 		}
 	}
@@ -153,6 +273,18 @@ tr:last-child td {
 
 		&:last-child {
 			border-bottom: 2px solid @color-text--light;
+
+			.style--light & {
+				border-bottom-color: @contrast--light;
+			}
+		
+			.style--accent & {
+				border-bottom-color: @contrast--accent;
+			}
+		
+			.style--dark & {
+				border-bottom-color: @contrast--dark;
+			}
 		}
 	}
 }
