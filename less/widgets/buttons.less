@@ -273,6 +273,22 @@ a.button,
 	}
 }
 
+.widget button.btn span {
+	color: @font-swatch7-color;
+
+	.style--light & {
+		color: @contrast--accent;
+	}
+
+	.style--accent & {
+		color: @contrast--dark;
+	}
+
+	.style--dark & {
+		color: @contrast--accent;
+	} 
+}
+
 // The name of the button is not displayed.
 
 .socialicons__social-name {
