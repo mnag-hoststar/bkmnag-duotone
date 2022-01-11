@@ -187,6 +187,28 @@
 	}
 }
 
+.make-line-height-a-little-smaller(@line-height-size, @size-mobile: 0.95) when (@line-height-size >= 13px) {
+	@media @mobile {
+		line-height: @line-height-size*@size-mobile;
+	}
+}
+
+.make-line-height-smaller(@line-height-size, @size-mobile: 0.9) when (@line-height-size >= 15px) {
+	@media @mobile {
+		line-height: @line-height-size*@size-mobile;
+	}
+}
+
+.make-line-height-a-lot-smaller(@line-height-size, @size-tablet: 0.9, @size-mobile: 0.8) when (@line-height-size >= 17px) {
+	@media @tablet {
+		line-height: @line-height-size*@size-tablet;
+	}
+
+	@media @mobile {
+		line-height: @line-height-size*@size-mobile;
+	}
+}
+
 // Theme Mixins
 
 .template__content--width() {
