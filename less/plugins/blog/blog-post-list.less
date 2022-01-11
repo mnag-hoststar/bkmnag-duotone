@@ -235,16 +235,16 @@ a.blogpostlist__read-more {
 		background: @color__blogpostlist-title--background;
 		.timestamp-styles;
 		.blogpostlist-title-background--spacing();
-		
-		@media @mobile {
-			margin: 1em 0 0;
-		}
 
 		.style--light &,
 		.style--accent &,
 		.style--dark & {
 			background-color: @color--light;
 			color: @contrast--light;
+		}
+		
+		@media @mobile {
+			margin: 1em 0 0;
 		}
 		
 		.responsivecolumns & {
