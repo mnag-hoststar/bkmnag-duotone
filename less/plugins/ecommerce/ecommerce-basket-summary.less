@@ -104,7 +104,8 @@
 // Cell Title and Quantity
 
 .ecombasketsummary {
-	.cell--title, .cell--quantity {
+	.cell--title,
+	.cell--quantity {
 		@media @basketsummary-medium {
 			padding-left: 30%;
 		}
@@ -114,7 +115,9 @@
 // Cell Quantity, Total and Price
 	
 .ecombasketsummary {
-	.cell--price, .cell--total, .cell--quantity {
+	.cell--price,
+	.cell--total,
+	.cell--quantity {
 		width: 7em;
 		
 		@media @basketsummary-medium {
@@ -267,9 +270,19 @@
 	}
 }
 
-// Button
+// Buttons
 
 .summary-form {
 	text-align: right;
 	max-width: 100%;
+}
+
+.ecombasketsummary {
+	&__continue-shopping,
+	&__button {
+		@media @mobile {
+			width: 100%;
+			text-align: center;
+		}
+	}
 }
