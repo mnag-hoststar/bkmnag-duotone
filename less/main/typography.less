@@ -134,35 +134,36 @@ p, .paragraph, ul, ol, li, .contentgroup__body {
 	}
 }
 
-.widget, .widget.in-editing {
-	p, span, small, pre, code,
-	table, th, td,
-	ul, ol, li, .contentgroup__body,
-	.content {
-		color: @color__p--text;
+// Normal Text
+
+.widget.content,
+.widget.content.in-editing {
+	.wysihtml-editor-content,
+	.embed-content {
+		font-size: @font__p--font-size !important;
+		line-height: unit(@font__p--line-height*0.1, em) !important;
 	
-		.style--light & {
-			color: @contrast--light;
-		}
+		.make-font-a-little-smaller(@font__p--font-size, ~"!important");
+		.make-font-smaller(@font__p--font-size, ~"!important");
+		.make-font-a-lot-smaller(@font__p--font-size, ~"!important");
 	
-		.style--accent & {
-			color: @contrast--accent;
-		}
-	
-		.style--dark & {
-			color: @contrast--dark;
+		&, p, span, small, pre, code,
+		table, th, td {
+			color: @color__p--text;
+		
+			.style--light & {
+				color: @contrast--light;
+			}
+		
+			.style--accent & {
+				color: @contrast--accent;
+			}
+		
+			.style--dark & {
+				color: @contrast--dark;
+			}
 		}
 	}
-}
-
-.widget .content,
-.widget.in-editing .content {
-	font-size: @font__p--font-size !important;
-	line-height: unit(@font__p--line-height*0.1, em) !important;
-
-	.make-font-a-little-smaller(@font__p--font-size, ~"!important");
-	.make-font-smaller(@font__p--font-size, ~"!important");
-	.make-font-a-lot-smaller(@font__p--font-size, ~"!important");
 }
 
 // Paragraph
