@@ -98,15 +98,18 @@ td {
     .make-line-height-a-lot-smaller(@font__p--line-height);
 
 	.style--light & {
-		border-bottom-color: @contrast--light;
+		border-bottom-color: fade(@contrast--light, 30%);
+		color: @contrast--light;
 	}
 
 	.style--accent & {
-		border-bottom-color: @contrast--accent;
+		border-bottom-color: fade(@contrast--accent, 30%);
+		color: @contrast--accent;
 	}
 
 	.style--dark & {
-		border-bottom-color: @contrast--dark;
+		border-bottom-color: fade(@contrast--dark, 30%);
+		color: @contrast--dark;
 	}
 	
 	@media @mobile {
