@@ -299,7 +299,6 @@
 	}
 }
 
-
 // Navigation List
 
 .navigation-list {
@@ -374,6 +373,9 @@
 // Navigation Folder Item
 
 .navigation-item.folder {
+	@media @tablet {
+		padding: 0.5em 0;
+	}
 	
 	// Folder Icon
 	
@@ -394,19 +396,10 @@
 	}
 	
 	&.folder-open > .item-name {
+		color: @color__navigation--text--hover;
+
 		@media @tablet {	
 			padding: 0 0.2em 0.5em 1em;
-		}
-	}
-	
-	@media @tablet {
-		padding: 0.5em 0;
-	}
-	
-	&.folder-open > .item-name {
-		color: @color__navigation--text--hover;
-		
-		@media @tablet {	
 			color: lighten(@color__navigation--text--hover, 40%);
 		}
 	}
@@ -415,7 +408,6 @@
 // Navigation Folder Submenu
 
 .navigation-list--children {
-	
 	.navigation-item.folder &,
 	.navigation-item.folder:hover &,
 	.navigation-item.folder:active & {
