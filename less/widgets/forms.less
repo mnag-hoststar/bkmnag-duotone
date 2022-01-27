@@ -447,7 +447,20 @@ input:focus {
 
 // Select
 
-.select {
+.select-wrap {
+	position: relative;
+	max-width: 50%;
+
+	@media @mobile {
+		max-width: 100%;
+	}
+
+	.responsivecolumns & {
+		max-width: 100%;
+	}
+}
+
+select {
 	position: relative;
 	display: block;
 	padding: 0 2em 0 0.6em;
