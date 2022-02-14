@@ -1,9 +1,9 @@
 {
-    "name":"Duotone",
+    "name": "Duotone",
     "widgetVersion": 2,
-    "thumbnail":"duotone-thumbnail.png",
-    "screenshot":"duotone-screenshot.jpg",
-    "templateType":"standard",
+    "thumbnail": "images/thumbnail.png",
+    "screenshot": "images/screenshot.jpg",
+    "templateType": "standard",
     "pageTypes": ["home", "404"],
     "versionTenCompatible": 1,
     "tags": {
@@ -15,8 +15,7 @@
         "images/gallery/gallery-image--1.jpg",
         "images/gallery/gallery-image--2.jpg",
         "images/gallery/gallery-image--3.jpg",
-        "images/gallery/gallery-image--4.jpg",
-        "images/gallery/gallery-image--5.jpg"
+        "images/gallery/gallery-image--4.jpg"
     ],
     "colorSwatches":
     {
