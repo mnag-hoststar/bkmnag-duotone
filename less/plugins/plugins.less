@@ -76,18 +76,15 @@
 	line-height: 1em;
 
 	.style--light & {
-		background-color: darken(@color--light, 10%);
-		color: @contrast--light;
+		background-color: @color-text--lightest;
 	}
 
 	.style--accent & {
 		background-color: darken(@color--accent, 10%);
-		color: @contrast--accent;
 	}
 
 	.style--dark & {
 		background-color: darken(@color--dark, 10%);
-		color: @contrast--dark;
 	}
 }
 
@@ -150,8 +147,8 @@ a.tag-link,
 	.make-font-a-lot-smaller(@font__h4--font-size, 0.7, 0.6);
 
 	.style--light & {
-		background-color: fade(@color--accent, 75%);
-		color: @contrast--accent;
+		background-color: fade(@color__button--background, 75%);
+		color: @color__button--text;
 	}
 
 	.style--accent & {
@@ -168,18 +165,15 @@ a.tag-link,
 		background: fade(@color__button--background, 75%);
 
 		.style--light & {
-			background-color: fade(@color--accent, 75%);
-			color: @contrast--accent;
+			background-color: fade(@color__button--background, 75%);
 		}
 
 		.style--accent & {
 			background-color: fade(@color--dark, 75%);
-			color: @contrast--dark;
 		}
 
 		.style--dark & {
 			background-color: fade(@color--accent, 75%);
-			color: @contrast--accent;
 		}
 	}
 	

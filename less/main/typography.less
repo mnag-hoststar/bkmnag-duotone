@@ -10,10 +10,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1, h2, h3, h4, h5, h6, [class*="contentgroup__h"] {
-	.style--light & {
-		color: @contrast--light;
-	}
-
 	.style--accent & {
 		color: @contrast--accent;
 	}
@@ -122,7 +118,7 @@ p, .paragraph, ul, ol, li, .contentgroup__body {
 	.make-font-a-lot-smaller(@font__p--font-size);
 	
 	.style--light & {
-		color: @contrast--light;
+		color: @color__p--text;
 	}
 
 	.style--accent & {
@@ -152,7 +148,7 @@ p, .paragraph, ul, ol, li, .contentgroup__body {
 			color: @color__p--text;
 		
 			.style--light & {
-				color: @contrast--light;
+				color: @color__p--text;
 			}
 		
 			.style--accent & {
@@ -195,7 +191,7 @@ label:not(.clicktocall__label) {
     word-break: break-word;
 
 	.style--light & {
-		color: fade(@contrast--light, 80%);
+		color: @color-text--faded;
 	}
 
 	.style--accent & {
@@ -235,8 +231,8 @@ a, .links {
 	.transition();
 
 	.style--light & {
-		border-color: @color--accent;
-		color: @contrast--light;
+		border-color: @color-highlight--light;
+		color: @color__p--text;
 	}
 
 	.style--accent & {
@@ -258,21 +254,18 @@ a, .links {
 		border-bottom: 0.3em solid @color-highlight--light;
 
 		.style--light & {
-			background-color: fade(@color--accent, 40%);
-			border-color: @color--accent;
-			color: @contrast--accent;
+			background-color: fade(@color__link--text, 40%);
+			border-color: @color-highlight--light;
 		}
 
 		.style--accent & {
 			background-color: fade(@color--dark, 40%);
 			border-color: @color--dark;
-			color: @contrast--dark;
 		}
 
 		.style--dark & {
 			background-color: fade(@color--accent, 40%);
 			border-color: @color--accent;
-			color: @contrast--accent;
 		}
 	}
 
@@ -340,7 +333,7 @@ pre, code {
 	font-family: monospace;
 
 	.style--light & {
-		background-color: fade(@contrast--light, 10%);
+		background-color: @color-text--lightest;
 	}
 
 	.style--accent & {
@@ -356,7 +349,7 @@ code {
 	border-left: 0.5em solid @color-highlight;
 
 	.style--light & {
-		border-color: @contrast--light;
+		border-color: @color-highlight;
 	}
 
 	.style--accent & {
@@ -384,7 +377,7 @@ blockquote {
 	color: @color__p--text;
 
 	.style--light & {
-		color: @contrast--light;
+		color: @color__p--text;
 	}
 
 	.style--accent & {
@@ -421,7 +414,7 @@ blockquote {
 		.make-font-a-lot-smaller(@font__p--font-size);
 
 		.style--light & {
-			border-color: darken(@color--light, 10%);
+			border-color: @color-text--lightest;
 		}
 
 		.style--accent & {
@@ -509,7 +502,7 @@ blockquote {
 	background: @color-highlight--lighter;
 
 	.style--light & {
-		background: fade(@color--dark, 5%);
+		background: @color-highlight--lighter;
 	}
 
 	.style--accent & {
@@ -526,7 +519,7 @@ blockquote {
 	background: @color-highlight--lighter;
 
 	.style--light & {
-		background: fade(@color--dark, 5%);
+		background: @color-highlight--lighter;
 	}
 
 	.style--accent & {

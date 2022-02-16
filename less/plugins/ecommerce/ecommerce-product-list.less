@@ -44,8 +44,12 @@
 	background-color: @color__ecomproductslist-filters--background;
 	margin: 2em 0;
 	.productsearch-widget-background--spacing();
+	background-color: transparent;
 
-	.style--light &,
+	.style--light & {
+		background-color: @color__ecomproductslist-filters--background;
+	}
+
 	.style--accent &,
 	.style--dark & {
 		background-color: transparent;
@@ -201,7 +205,7 @@
 			.transition();
 
 			.style--light & {
-				background-color: darken(@color--light, 10%);
+				background-color: @color-text--lightest;
 			}
 
 			.style--accent & {
@@ -289,7 +293,7 @@
 	color: @color__ecomproductslist-product-title--text;
 
 	.style--light & {
-		color: @contrast--light;
+		color: @color__ecomproductslist-product-title--text;
 	}
 
 	.style--accent & {

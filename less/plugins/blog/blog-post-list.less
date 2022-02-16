@@ -37,7 +37,10 @@
 	padding: 2em 0;
 	.blogpostlist-widget-background--spacing();
 
-	.style--light &,
+	.style--light & {
+		background-color: @color__blogpostlist--background;
+	}
+
 	.style--accent &,
 	.style--dark & {
 		background-color: transparent;
@@ -65,19 +68,6 @@
 	@media @mobile {
 		.display-flex(flex);
 		.flex-direction(inherit);
-	}
-
-
-	.style--light & {
-		background-color: darken(@color--light, 10%);
-	}
-
-	.style--accent & {
-		background-color: darken(@color--accent, 8%);
-	}
-
-	.style--dark & {
-		background-color: fade(@color--light, 10%);
 	}
 	
 	.responsivecolumns & {
@@ -163,7 +153,7 @@ a.blogpostlist__title-link {
 	color: @color__blogpostlist-title--text;
 
 	.style--light & {
-		color: @contrast--light;
+		color: @color__blogpostlist-title--text;
 	}
 
 	.style--accent & {
@@ -185,18 +175,6 @@ a.blogpostlist__title-link {
 
 a.blogpostlist__read-more {
 	.links;
-
-	.style--light & {
-		color: @contrast--light;
-	}
-
-	.style--accent & {
-		color: @contrast--accent;
-	}
-
-	.style--dark & {
-		color: @contrast--dark;
-	}
 }
 
 // This style only activates if the article has an image.
@@ -236,7 +214,11 @@ a.blogpostlist__read-more {
 		.timestamp-styles;
 		.blogpostlist-title-background--spacing();
 
-		.style--light &,
+		.style--light & {
+			background: @color__blogpostlist-title--background;
+			color: @color__p--text;
+		}
+
 		.style--accent &,
 		.style--dark & {
 			background-color: @color--light;

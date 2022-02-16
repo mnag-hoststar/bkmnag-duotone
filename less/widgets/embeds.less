@@ -8,7 +8,10 @@
 	width: auto;
 	max-width: none;
 
-	.style--light &,
+	.style--light & {
+		background-color: @color__container--background;
+	}
+
 	.style--accent &,
 	.style--dark & {
 		background-color: transparent;

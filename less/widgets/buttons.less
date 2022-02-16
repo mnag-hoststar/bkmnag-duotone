@@ -31,9 +31,9 @@ a.button,
 	.make-font-a-lot-smaller(@font__button--font-size);
 
 	.style--light & {
-		background-color: @color--accent;
-		border-color: @color--accent;
-		color: @contrast--accent;
+		background-color: @color__button--background;
+		border-color: @color__button--border;
+		color: @color__button--text;
 	}
 
 	.style--accent & {
@@ -59,9 +59,9 @@ a.button,
 		color: @color__button--text--hover;
 
 		.style--light & {
-			background-color: darken(@color--accent, 5%);
-			border-color: darken(@color--accent, 5%);
-			color: @contrast--accent;
+			background-color: @color__button--background--hover;
+			border-color: @color__button--background--hover;
+			color: @color__button--text--hover;
 		}
 
 		.style--accent & {
@@ -83,7 +83,7 @@ a.button,
 		border: 0.3em solid @color__button--background--hover;
 
 		.style--light & {
-			border-color: darken(@color--accent, 5%);
+			border-color: @color__button--background--hover;
 		}
 
 		.style--accent & {
@@ -102,7 +102,7 @@ a.button,
 		border: 0.3em solid @color__button--background;
 
 		.style--light & {
-			border-color: @color--accent;
+			border-color: @color__button--background;
 		}
 
 		.style--accent & {
@@ -195,37 +195,30 @@ a.button,
 	height: 2.5em;
 
 	.style--light & {
-		background-color: @color--accent;
-		color: @contrast--accent;
+		background-color: @color__socialicons--icon--background;
 	}
 
 	.style--accent & {
 		background-color: @color--dark;
-		color: @contrast--dark;
 	}
 
 	.style--dark & {
 		background-color: @color--accent;
-		border-color: @color--accent;
-		color: @contrast--accent;
 	}
 	
 	&:hover {
 		background-color: @color__socialicons--icon--background--hover;
 
 		.style--light & {
-			background-color: darken(@color--accent, 5%);
-			color: @contrast--accent;
+			background-color: @color__socialicons--icon--background--hover;
 		}
 
 		.style--accent & {
 			background-color: darken(@color--dark, 5%);
-			color: @contrast--dark;
 		}
 
 		.style--dark & {
 			background-color: darken(@color--accent, 5%);
-			color: @contrast--accent;
 		}
 	}
 	
@@ -278,7 +271,7 @@ a.button,
 	color: @font-swatch7-color;
 
 	.style--light & {
-		color: @contrast--accent;
+		color: @font-swatch7-color;
 	}
 
 	.style--accent & {

@@ -124,7 +124,7 @@ textarea {
 	.appearance(none);
 
 	.style--light & {
-		border-color: darken(@color--light, 20%);
+		border-color: @color__form-legend--background;
 	}
 
 	.style--dark & {
@@ -139,7 +139,7 @@ textarea {
 		border: 1px solid @color__form-legend--text;
 
 		.style--light & {
-			border-color: darken(@color--light, 25%);
+			border-color: @color__form-legend--text;
 		}
 
 		.style--dark & {
@@ -158,7 +158,7 @@ textarea {
 		.box-shadow(none);
 
 		.style--light & {
-			border-color: @color--accent;
+			border-color: @color__button--background--hover;
 		}
 
 		.style--accent & {
@@ -246,7 +246,7 @@ input:focus {
 				border: 2px solid @color__button--border;
 
 				.style--light & {
-					border-color: @color--accent;
+					border-color: @color__button--border;
 				}
 
 				.style--accent & {
@@ -267,7 +267,7 @@ input:focus {
 				border: 2px solid @color__button--border;
 
 				.style--light & {
-					border-color: @color--accent;
+					border-color: @color__button--border;
 				}
 
 				.style--accent & {
@@ -314,7 +314,7 @@ input:focus {
 					border: 2px solid @color-form--light;
 
 					.style--light & {
-						border-color: darken(@color--light, 20%);
+						border-color: @color-form--light;
 					}
 
 					.style--accent & {
@@ -352,7 +352,7 @@ input:focus {
 					.transform-scale(0.5);
 
 					.style--light & {
-						background-color: @color--accent;
+						background-color: @color__button--background;
 					}
 
 					.style--accent & {
@@ -381,7 +381,7 @@ input:focus {
 					transform: none;
 
 					.style--light & {
-						color: @color--accent;
+						color: @color__button--background;
 					}
 
 					.style--accent & {
@@ -428,7 +428,7 @@ input:focus {
 		z-index: 1;
 
 		.style--light & {
-			color: @contrast--light;
+			color: @color__p--text;
 		}
 
 		.style--accent & {
@@ -477,8 +477,8 @@ select {
 	.transition();
 
 	.style--light & {
-		background-color: darken(@color--light, 8%);
-		color: @contrast--light;
+		background-color: @color-form--lightest;
+		color: @color__form-legend--text;
 	}
 
 	.style--accent & {
@@ -500,18 +500,15 @@ select {
 		background-color: @color-form--light;
 
 		.style--light & {
-			background-color: darken(@color--light, 12%);
-			color: @contrast--light;
+			background-color: @color-form--light;
 		}
 
 		.style--accent & {
 			background-color: darken(@color--accent, 12%);
-			color: @contrast--accent;
 		}
 
 		.style--dark & {
 			background-color: darken(@color--dark, 12%);
-			color: @contrast--dark;
 		}
 	}
 
@@ -520,7 +517,7 @@ select {
 		background-color: @color-form--lightest;
 
 		.style--light & {
-			border-color: @color--accent;
+			border-color: @color__button--background--hover;
 		}
 
 		.style--accent & {
@@ -536,7 +533,7 @@ select {
 		background-color: @color-form--light;
 
 		.style--light & {
-			background-color: darken(@color--light, 10%);
+			background-color: @color-form--light;
 		}
 
 		.style--accent & {
