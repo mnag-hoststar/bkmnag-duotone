@@ -44,21 +44,41 @@
 	background-color: @color__ecomproductslist-filters--background;
 	margin: 2em 0;
 	.productsearch-widget-background--spacing();
-	background-color: transparent;
 
 	.style--light & {
 		background-color: @color__ecomproductslist-filters--background;
 	}
 
-	.style--accent &,
+	.style--accent & {
+		background-color: darken(@color--accent, 10%);
+	}
+
 	.style--dark & {
+		background-color: lighten(@color--accent, 10%);
+	}
+		
+	@media @mobile {
 		background-color: transparent;
+		margin: 0;
+		padding: 0;
+
+		.style--light &,
+		.style--accent &,
+		.style--dark & {
+			background-color: transparent;
+		}
 	}
 	
 	.responsivecolumns & {
 		background-color: transparent;
 		margin: 0;
 		padding: 0;
+
+		.style--light &,
+		.style--accent &,
+		.style--dark & {
+			background-color: transparent;
+		}
 	}
 	
 	form {
@@ -136,7 +156,6 @@
 .ecomfeaturedproducts {
 	&__listing-body {
 		padding: 1em 0;
-		.template__content--width();
 	
 		.responsivecolumns & {
 			padding: 0;
@@ -173,34 +192,30 @@
 .ecomfeaturedproducts {
 	&__product-item {
 		position: relative;
-		width: 100%/3-@item--margin-size*2;
-		margin: 1em @item--margin-size 2em;
+		width: 100%/3;
+		margin: 2em 0;
 		padding: 0 0 1em;
 
 		@media @tablet {
-			width: 100%/2-@item--margin-size*4;
-			margin: 1em @item--margin-size*2;
+			width: 100%/2;
 		}
 
 		@media @mobile {
 			width: 100%;
-			margin: 1em 0;
 		}
 	
 		.responsivecolumns & {
 			width: 100%;
-			margin: 1em 0;
 		}
 		
 		&:after {
 			content: " ";
 			position: absolute;
 			bottom: 0;
-			left: 0;
-			right: 0;
+			left: 1em;
+			right: 1em;
 			display: block;
 			height: 0.2em;
-			width: 100%;
 			background-color: @color-text--lightest;
 			.transition();
 
@@ -214,6 +229,16 @@
 
 			.style--dark & {
 				background-color: darken(@color--dark, 10%);
+			}
+
+			@media @mobile {
+				left: 0;
+				right: 0;
+			}
+		
+			.responsivecolumns & {
+				left: 0;
+				right: 0;
 			}
 		}
 
@@ -234,6 +259,7 @@
 		.display-flex(flex);
 		.justify-content(center, center);
 		background-color: transparent;
+		background-size: contain;
 		width: auto;
 		line-height: 1em;
 		background-color: transparent;
@@ -276,6 +302,7 @@
 
 .product-item-details {
 	margin-top: 1em;
+	text-align: center;
 }
 
 .product-item-title {

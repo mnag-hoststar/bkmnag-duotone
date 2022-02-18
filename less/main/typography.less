@@ -30,6 +30,7 @@ h1, .heading--1, .contentgroup__h1 {
 	line-height: unit(@font__h1--line-height*0.1, em);
 	letter-spacing: @font__h1--letter-spacing;
 	color: @color__h1--text;
+	padding: 0.2em 0;
 	
 	.make-font-a-little-smaller(@font__h1--font-size);
 	.make-font-smaller(@font__h1--font-size);
@@ -132,32 +133,30 @@ p, .paragraph, ul, ol, li, .contentgroup__body {
 
 // Normal Text
 
-.widget.content,
-.widget.content.in-editing {
-	.wysihtml-editor-content,
-	.embed-content {
-		font-size: @font__p--font-size !important;
-		line-height: unit(@font__p--line-height*0.1, em) !important;
+.widget .content,
+.widget .content.in-editing,
+.widget .embed .embed-content {
+	font-size: @font__p--font-size !important;
+	line-height: unit(@font__p--line-height*0.1, em) !important;
+
+	.make-font-a-little-smaller(@font__p--font-size, ~"!important");
+	.make-font-smaller(@font__p--font-size, ~"!important");
+	.make-font-a-lot-smaller(@font__p--font-size, ~"!important");
+
+	&, p, span, small, pre, code,
+	table, th, td {
+		color: @color__p--text;
 	
-		.make-font-a-little-smaller(@font__p--font-size, ~"!important");
-		.make-font-smaller(@font__p--font-size, ~"!important");
-		.make-font-a-lot-smaller(@font__p--font-size, ~"!important");
-	
-		&, p, span, small, pre, code,
-		table, th, td {
+		.style--light & {
 			color: @color__p--text;
-		
-			.style--light & {
-				color: @color__p--text;
-			}
-		
-			.style--accent & {
-				color: @contrast--accent;
-			}
-		
-			.style--dark & {
-				color: @contrast--dark;
-			}
+		}
+	
+		.style--accent & {
+			color: @contrast--accent;
+		}
+	
+		.style--dark & {
+			color: @contrast--dark;
 		}
 	}
 }
@@ -227,95 +226,113 @@ a, .links {
 	margin: 0;
 	padding: 0;
 	height: auto;
-	text-decoration: none;
+	text-decoration: none !important;
 	.transition();
-
+	
 	.style--light & {
-		border-color: @color-highlight--light;
 		color: @color__p--text;
+		border-bottom-color: @color-highlight--light;
 	}
 
 	.style--accent & {
-		border-color: @color--dark;
 		color: @contrast--accent;
+		border-bottom-color: darken(@color--accent, 20%);
 	}
 
 	.style--dark & {
-		border-color: @color--accent;
 		color: @contrast--dark;
+		border-bottom-color: @color-highlight--light;
 	}
 
 	&, &:hover {
-		text-decoration: none;
+		text-decoration: none !important;
 	}
 	
 	&:hover {
 		background-color: fade(@color__link--text, 40%);
 		border-bottom: 0.3em solid @color-highlight--light;
-
+	
 		.style--light & {
 			background-color: fade(@color__link--text, 40%);
-			border-color: @color-highlight--light;
+			border-bottom-color: @color-highlight--light;
 		}
-
+	
 		.style--accent & {
-			background-color: fade(@color--dark, 40%);
-			border-color: @color--dark;
+			background-color: fade(darken(@color--accent, 8%), 40%);
+			border-bottom-color: darken(@color--accent, 20%);
 		}
-
+	
 		.style--dark & {
-			background-color: fade(@color--accent, 40%);
-			border-color: @color--accent;
-		}
-	}
-
-	&[class] {
-		&, &:hover {
-			border-bottom: none;
-			background-color: transparent;
+			background-color: fade(@color__link--text, 40%);
+			border-bottom-color: @color-highlight--light;
 		}
 	}
 }
 
-ul {
-	margin: 0.5em 0 0.5em 1.2em;
-	padding: 0;
-
-	li {
-		padding: 0 0 0 0.5em;
-		margin: 0 0 0.5em 0;
-
-		@media @tablet {
-			padding-left: 0;
-		}
+a[class] {
+	&, &:hover {
+		border-bottom: none;
+		background-color: transparent;
 	}
 }
 
-.bk-zone ol {
-	margin: 0.5em 0;
-	padding-left: 0;
-	counter-reset: ordered-counter;
+// Ordered and Unordered Lists
 
-	li {
-		position: relative;
-		padding-left: 3em;
-		margin-bottom: 0.5em;
-		list-style-type: none;
+.widget .content,
+.blogpost__post-body,
+.ecomproduct__product-body {
+	ul {
+		margin: 0.5em 0 0.5em 1.2em;
+		padding: 0;
 
-		&:before {
-			min-width: 2em;
-			padding: 0 0.4em 0 0;
-			display: inline-block;
-			position: absolute;
-			top: 0;
-			left: 0;
-			bottom: 0;
-			.box-sizing();
-			border-right: 1px solid @color-text--lighter;
-			font-family: @font__h1--font-family;
-			content: counter(ordered-counter);
-			counter-increment: ordered-counter;
-			text-align: left;
+		li {
+			padding: 0 0 0 0.5em;
+			margin: 0 0 0.5em 0;
+
+			@media @tablet {
+				padding-left: 0;
+			}
+		}
+	}
+
+	ol {
+		margin: 0.5em 0;
+		padding-left: 0;
+		counter-reset: ordered-counter;
+
+		li {
+			position: relative;
+			padding-left: 3em;
+			margin-bottom: 0.5em;
+			list-style-type: none;
+
+			&:before {
+				min-width: 2em;
+				padding: 0 0.4em 0 0;
+				display: inline-block;
+				position: absolute;
+				top: 0;
+				left: 0;
+				bottom: 0;
+				.box-sizing();
+				border-right: 1px solid @color-text--lighter;
+				font-family: @font__h1--font-family;
+				content: counter(ordered-counter);
+				counter-increment: ordered-counter;
+				text-align: left;
+
+				.style--light & {
+					border-right-color: @color-text--lighter;
+				}
+			
+				.style--accent & {
+					border-right-color: fade(@contrast--accent, 40%);
+				}
+			
+				.style--dark & {
+					border-right-color: fade(@contrast--dark, 40%);
+				}
+			}
 		}
 	}
 }
@@ -331,6 +348,7 @@ pre, code {
 	background-color: @color-text--lightest;
 	overflow: auto;
 	font-family: monospace;
+	font-size: 0.8em;
 
 	.style--light & {
 		background-color: @color-text--lightest;
@@ -365,7 +383,7 @@ code {
 
 blockquote {
 	position: relative;
-	margin: 0 auto 1em;
+	margin: 1em auto;
 	text-align: center;
 	padding: 1.5em 2.5em;
 	word-break: break-word;
@@ -418,11 +436,11 @@ blockquote {
 		}
 
 		.style--accent & {
-			border-color: darken(@color--accent, 10%);
+			border-color: fade(@contrast--accent, 10%);
 		}
 
 		.style--dark & {
-			border-color: fade(@color--light, 10%);
+			border-color: fade(@contrast--dark, 10%);
 		}
 	}
 	
@@ -440,59 +458,6 @@ blockquote {
 		width: auto;
 		max-width: none;
 		margin-top: 0.5em;
-	}
-}
-
-// Unordered and Ordered List
-
-.widget.content,
-.blog-post-content,
-.ecom-product-long-description {
-	ul {
-		margin: 0.5em 0 0.5em 2em;
-		padding-left: 0;
-		list-style: none;
-	
-		li {
-			position: relative;
-			padding: 0;
-			margin: 0 0 0.25em 0;
-	
-			&:before {
-				position: absolute;
-				content: "\2013";
-				left: -2em;
-			}
-		}
-	}
-	
-	ol {
-		margin: 0.5em 0;
-		padding-left: 0;
-		counter-reset: ordered-counter;
-	
-		li {
-			position: relative;
-			padding-left: 2em;
-			margin: 0 0 0.25em 0;
-			list-style-type: none;
-	
-			// Custom Numbers
-	
-			&:before {
-				min-width: 2em;
-				padding: 0 0.4em 0 0;
-				display: inline-block;
-				position: absolute;
-				top: 0;
-				left: 0;
-				bottom: 0;
-				.box-sizing(border-box);
-				content: counter(ordered-counter) ".";
-				counter-increment: ordered-counter;
-				text-align: left;
-			}
-		}
 	}
 }
 

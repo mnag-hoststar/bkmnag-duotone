@@ -64,10 +64,24 @@
 	.item--margin-size--3to1-cols();
 	background-color: @color__blogpostlist-article--background;
 	.clearfix();
+
+	.style--light & {
+		background-color: @color__blogpostlist-article--background;
+	}
+
+	.style--accent & {
+		background-color: fade(@contrast--accent, 20%);
+	}
+
+	.style--dark & {
+		background-color: fade(@contrast--dark, 20%);
+	}
 	
 	@media @mobile {
 		.display-flex(flex);
 		.flex-direction(inherit);
+		width: 100%;
+		margin: 0 0 1em;
 	}
 	
 	.responsivecolumns & {
@@ -193,7 +207,7 @@ a.blogpostlist__read-more {
 
 .blogpostlist__post-footer {
 	position: absolute;
-	top: 0;
+	top: 1em;
 	left: 0;
 	right: 0;
 	padding: 0 1.5em;
@@ -224,30 +238,22 @@ a.blogpostlist__read-more {
 			background-color: @color--light;
 			color: @contrast--light;
 		}
-		
-		@media @mobile {
-			margin: 1em 0 0;
-		}
-		
-		.responsivecolumns & {
-			margin: 1em 0 0;
-		}
 	}
-}
 
-// This style only activates if the article has an image.
-
-.blogpostlist__post-image ~ .blogpostlist__post-footer {
-	margin-top: 56.25%;
+	// This style only activates if the article has an image.
 	
-	@media @mobile {
-		left: 25%;
-		margin-top: 0;
-	}
-		
-	.responsivecolumns & {
-		left: 25%;
-		margin-top: 0;
+	.blogpostlist__post-image ~ & {
+		margin-top: 56.25%;
+	
+		@media @mobile {
+			left: 25%;
+			margin-top: 0;
+		}
+			
+		.responsivecolumns & {
+			left: 25%;
+			margin-top: 0;
+		}
 	}
 }
 

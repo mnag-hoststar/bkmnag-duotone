@@ -15,6 +15,18 @@
 		letter-spacing: 1px;
 		font-size: 0.7em;
 		color: fade(@color__p--text, 50%);
+	
+		.style--light & {
+			color: fade(@color__p--text, 50%);
+		}
+	
+		.style--accent & {
+			color: fade(@contrast--accent, 50%);
+		}
+	
+		.style--dark & {
+			color: fade(@contrast--dark, 50%);
+		}
 	}
 	
 	&__review-author {
@@ -42,11 +54,6 @@
 		}
 		.review-link {
 			.links;
-			font-size: @font__p--font-size;
-
-			.make-font-a-little-smaller(@font__p--font-size);
-			.make-font-smaller(@font__p--font-size);
-			.make-font-a-lot-smaller(@font__p--font-size);
 		}
 	}
 

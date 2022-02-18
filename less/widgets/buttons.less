@@ -185,85 +185,87 @@ a.button,
 }
 
 // Social Icons
-
-.social-item {
-	cursor: pointer;
-	margin: 0.5em 0.5em 0.5em 0;
-	padding: 0;
-	background-color: @color__socialicons--icon--background;
-	width: 2.5em;
-	height: 2.5em;
-
-	.style--light & {
+.social-list {
+	.social-item {
+		cursor: pointer;
+		margin: 0.5em 0.5em 0.5em 0;
+		padding: 0;
 		background-color: @color__socialicons--icon--background;
-	}
-
-	.style--accent & {
-		background-color: @color--dark;
-	}
-
-	.style--dark & {
-		background-color: @color--accent;
-	}
-	
-	&:hover {
-		background-color: @color__socialicons--icon--background--hover;
+		width: 2.5em;
+		height: 2.5em;
 
 		.style--light & {
-			background-color: @color__socialicons--icon--background--hover;
+			background-color: @color__socialicons--icon--background;
 		}
 
 		.style--accent & {
-			background-color: darken(@color--dark, 5%);
+			background-color: @color--dark;
 		}
 
 		.style--dark & {
-			background-color: darken(@color--accent, 5%);
+			background-color: @color--accent;
 		}
-	}
-	
-	&:last-child {
-		margin-right: 0;
-	}
-	
-	.template__footer-container-left & {
-		margin: 0.5em 0.5em 0.5em 0;
-	
-		@media @mobile {
-			margin: 0.5em 0.25em;
+		
+		&:hover {
+			background-color: @color__socialicons--icon--background--hover;
+
+			.style--light & {
+				background-color: @color__socialicons--icon--background--hover;
+			}
+
+			.style--accent & {
+				background-color: darken(@color--dark, 5%);
+			}
+
+			.style--dark & {
+				background-color: darken(@color--accent, 5%);
+			}
 		}
-	}
-	
-	.template__footer-container-right & {
-		margin: 0.5em 0 0.5em 0.5em;
-	
-		@media @mobile {
-			margin: 0.5em 0.25em;
+		
+		&:last-child {
+			margin-right: 0;
 		}
-	}
-}
-
-.social-link {
-	display: block;
-	text-align: center;
-
-	&:hover {
-		text-decoration: none;
-	}
-
-	// Icon
-
-	&:before {
-		display: block;
-		margin: 0 auto;
-		padding: 0;
-		line-height: 2.1em;
-		font-size: 1.2em;
-		color: @color__socialicons--icon;
-	}
-	
-	&:hover:before {
-		color: @color__socialicons--icon--hover;
+		
+		.template__footer-container-left & {
+			margin: 0.5em 0.5em 0.5em 0;
+		
+			@media @mobile {
+				margin: 0.5em 0.25em;
+			}
+		}
+		
+		.template__footer-container-right & {
+			margin: 0.5em 0 0.5em 0.5em;
+		
+			@media @mobile {
+				margin: 0.5em 0.25em;
+			}
+		}
+		
+		.social-link {
+			display: block;
+			text-align: center;
+			padding: 0;
+		
+			&:hover {
+				text-decoration: none;
+			}
+		
+			// Icon
+		
+			&:before {
+				display: block;
+				margin: 0 auto;
+				padding: 0;
+				line-height: 2.1em;
+				font-size: 1.2em;
+				color: @color__socialicons--icon;
+			}
+			
+			&:hover:before {
+				color: @color__socialicons--icon--hover;
+			}
+		}
 	}
 }
 

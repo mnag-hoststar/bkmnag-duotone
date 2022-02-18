@@ -160,9 +160,12 @@ a.twitter__account-link {
 	text-transform: uppercase;
 	font-size: 0.8em;
 
-	.style--accent &,
+	.style--accent & {
+		color: fade(@contrast--accent, 20%);
+	}
+
 	.style--dark & {
-		color: fade(@contrast--light, 80%);
+		color: fade(@contrast--dark, 20%);
 	}
 }
 
