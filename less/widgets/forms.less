@@ -115,6 +115,7 @@ input[type="password"],
 .input--search,
 textarea {
 	margin-bottom: 1em;
+    height: auto !important;
 	padding: 0.4em 0.6em;
 	background-color: @color__form-legend--background;
 	border: 1px solid @color-form--light;
@@ -123,16 +124,16 @@ textarea {
 	.border-radius(0);
 	.appearance(none);
 
+	.style--dark & {
+		border-color: @color-form--light;
+	}
+
 	.style--light & {
-		border-color: @color__form-legend--background;
-	}
-
-	.style--dark & {
-		border-color: darken(@color--accent, 20%);
-	}
-
-	.style--dark & {
 		border-color: darken(@color--dark, 20%);
+	}
+
+	.style--accent & {
+		border-color: darken(@color--accent, 20%);
 	}
 	
 	&:hover {
@@ -142,30 +143,32 @@ textarea {
 			border-color: @color__form-legend--text;
 		}
 
-		.style--dark & {
-			border-color: darken(@color--accent, 25%);
+		.style--accent & {
+			border-color: @color--dark;
 		}
 
 		.style--dark & {
-			border-color: darken(@color--dark, 25%);
+			border-color: @color--accent;
 		}
 	}
 	
 	// Focus style for easier keyboard navigation
 	
 	&:focus {
-		border: 0.3em solid @color__button--background--hover;
-		.box-shadow(none);
+		.box-shadow(inset 0px 0px 0px 0.3em @color__button--background--hover);
 
 		.style--light & {
-			border-color: @color__button--background--hover;
+			.box-shadow(inset 0px 0px 0px 0.3em @color__button--background--hover);
+			border-color: @color__form-legend--text;
 		}
 
 		.style--accent & {
+			.box-shadow(inset 0px 0px 0px 0.3em @color--dark);
 			border-color: @color--dark;
 		}
 
 		.style--dark & {
+			.box-shadow(inset 0px 0px 0px 0.3em @color--accent);
 			border-color: @color--accent;
 		}
 	}
@@ -482,12 +485,12 @@ select {
 	}
 
 	.style--accent & {
-		background-color: darken(@color--accent, 8%);
+		background-color: fade(@contrast--accent, 15%);
 		color: @contrast--accent;
 	}
 
 	.style--dark & {
-		background-color: fade(@color--light, 10%);
+		background-color: fade(@contrast--dark, 15%);
 		color: @contrast--dark;
 	}
 
@@ -504,11 +507,11 @@ select {
 		}
 
 		.style--accent & {
-			background-color: darken(@color--accent, 12%);
+			background-color: fade(@contrast--accent, 25%);
 		}
 
 		.style--dark & {
-			background-color: darken(@color--dark, 12%);
+			background-color: fade(@contrast--dark, 25%);
 		}
 	}
 

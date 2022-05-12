@@ -355,11 +355,11 @@ pre, code {
 	}
 
 	.style--accent & {
-		background-color: fade(@contrast--accent, 10%);
+		background-color: fade(@contrast--accent, 25%);
 	}
 
 	.style--dark & {
-		background-color: fade(@contrast--dark, 10%);
+		background-color: fade(@contrast--dark, 25%);
 	}
 }
 
@@ -371,11 +371,11 @@ code {
 	}
 
 	.style--accent & {
-		border-color: @contrast--accent;
+		border-color: @color--dark;
 	}
 
 	.style--dark & {
-		border-color: @contrast--dark;
+		border-color: @color--accent;
 	}
 }
 
@@ -436,11 +436,11 @@ blockquote {
 		}
 
 		.style--accent & {
-			border-color: fade(@contrast--accent, 10%);
+			border-color: fade(@contrast--accent, 25%);
 		}
 
 		.style--dark & {
-			border-color: fade(@contrast--dark, 10%);
+			border-color: fade(@contrast--dark, 25%);
 		}
 	}
 	

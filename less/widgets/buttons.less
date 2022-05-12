@@ -11,8 +11,9 @@ a.button,
 	position: relative;
 	display: inline-block;
 	border: 0.3em solid @color__button--border;
-	padding: 0.5em 1.5em;
-	height: auto !important;
+	padding: 0.25em 1.5em;
+	height: auto;
+	min-height: 38px;
 	.appearance(none);
 	.border-radius(0);
 	.transition();
@@ -123,6 +124,23 @@ a.button,
 			.box-shadow(none);
 		}
 	}
+
+	span {
+		color: @color__button--text;
+
+		.style--light & {
+			color: @color__button--text;
+		}
+	
+		.style--accent & {
+			color: @contrast--dark;
+		}
+	
+		.style--dark & {
+			color: @contrast--accent;
+		}
+
+	}
 }
 
 .link-button,
@@ -132,12 +150,9 @@ a.button,
 .paypalbuynow .button {
 	&:before,
 	&:after {
-		font-size: @font__button--font-size*1.5;
+		float: left;
+		font-size: 1em;
 		font-weight: 400;
-	
-		.make-font-a-little-smaller(@font__button--font-size*1.5);
-		.make-font-smaller(@font__button--font-size*1.5);
-		.make-font-a-lot-smaller(@font__button--font-size*1.5);
 	}
 	
 	&:before {
@@ -151,41 +166,8 @@ a.button,
 	}
 }
 
-.dropbox .button {
-	padding-left: 3.8em;
-	word-break: normal;
-	
-	&:before {
-		position: absolute;
-		display: block;
-		margin: 0;
-	}
-}
-
-.widget[data-name="filedownload"] button {
-	margin-right: 0.5em;
-}
-
-// Click to Call
-
-.clicktocall label {
-	margin-left: -0.5em;
-}
-
-// Dropbox
-
-.dropbox__button,
-.dropbox__label {
-	display: table-cell;
-	vertical-align: middle;
-}
-
-.dropbox__label {
-	width: 100%;
-	padding-left: 1em;
-}
-
 // Social Icons
+
 .social-list {
 	.social-item {
 		cursor: pointer;

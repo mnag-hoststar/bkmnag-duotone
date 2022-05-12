@@ -325,31 +325,13 @@
 	}
 
 	.style--accent & {
-		background-color: lighten(@color--accent, 10%);
+		background-color: fade(@contrast--accent, 15%);
 		color: @contrast--accent;
 	}
 
 	.style--dark & {
-		background-color: lighten(@color--dark, 10%);
+		background-color: fade(@contrast--dark, 15%);
 		color: @contrast--dark;
-	}
-
-	&:hover,
-	&:active {
-		text-decoration: none;
-		background-color: @color-text--lighter;
-
-		.style--light & {
-			background-color: @color-text--lighter;
-		}
-	
-		.style--accent & {
-			background-color: lighten(@color--accent, 20%);
-		}
-	
-		.style--dark & {
-			background-color: lighten(@color--dark, 20%);
-		}
 	}
 }
 

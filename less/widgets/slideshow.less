@@ -195,6 +195,12 @@
 	.make-font-a-little-smaller(@font__p--font-size*1.1);
 	.make-font-smaller(@font__p--font-size*1.1);
 	.make-font-a-lot-smaller(@font__p--font-size*1.1);
+
+	.style--light &,
+	.style--accent &,
+	.style--dark & {
+		color: @color__slideshow-title--text;
+	}
 }
 
 .responsiveslideshow__image-description {
@@ -205,6 +211,12 @@
 	display: -webkit-box;
 	-webkit-line-clamp: 3;
 	-webkit-box-orient: vertical;
+
+	.style--light &,
+	.style--accent &,
+	.style--dark & {
+		color: @color__slideshow-description--text;
+	}
 }
 
 // Slide Navigation Buttons

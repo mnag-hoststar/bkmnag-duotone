@@ -50,11 +50,11 @@
 	}
 
 	.style--accent & {
-		background-color: darken(@color--accent, 10%);
+		background-color: fade(@contrast--accent, 25%);
 	}
 
 	.style--dark & {
-		background-color: lighten(@color--accent, 10%);
+		background-color: fade(@contrast--dark, 25%);
 	}
 		
 	@media @mobile {
@@ -224,11 +224,11 @@
 			}
 
 			.style--accent & {
-				background-color: darken(@color--accent, 10%);
+				background-color: fade(@contrast--accent, 25%);
 			}
 
 			.style--dark & {
-				background-color: darken(@color--dark, 10%);
+				background-color: fade(@contrast--dark, 25%);
 			}
 
 			@media @mobile {
