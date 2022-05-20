@@ -126,14 +126,17 @@ textarea {
 
 	.style--dark & {
 		border-color: @color-form--light;
+		color: @color__form-legend--text;
 	}
 
 	.style--light & {
 		border-color: darken(@color--dark, 20%);
+		color: @color__form-legend--text;
 	}
 
 	.style--accent & {
 		border-color: darken(@color--accent, 20%);
+		color: @color__form-legend--text;
 	}
 	
 	&:hover {
@@ -178,6 +181,7 @@ textarea {
 
 textarea {
 	display: block;
+	min-height: 100px;
 }
 
 // Placeholders
