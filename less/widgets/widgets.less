@@ -300,9 +300,11 @@
 }
 
 hr,
-hr.line__rule {
+hr.line__rule,
+.content hr {
 	height: 3px;
 	background-color: fade(@color__p--text, 60%);
+	border: none;
 
 	.style--light & {
 		background-color: fade(@color__p--text, 60%);
