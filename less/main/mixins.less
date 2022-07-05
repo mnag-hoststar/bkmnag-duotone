@@ -223,9 +223,9 @@
 
 // Item margin size
 
-.item--margin-size--border(@item--margin-size: 1%) {
-	margin-left: -@item--margin-size;
-	margin-right: -@item--margin-size;
+.item--margin-size--border() {
+	margin-left: -10px;
+	margin-right: -10px;
 	
     @media @mobile {
 		margin-left: 0;
@@ -238,10 +238,10 @@
     }
 }
 
-.item--margin-size--2cols(@item--margin-size: 1%) {
-	width: 100%/2-@item--margin-size*2;
-	margin-left: @item--margin-size;
-	margin-right: @item--margin-size;
+.item--margin-size--2cols() {
+	width: ~"100%/2-20px";
+	margin-left: 10px;
+	margin-right: 10px;
 	
     @media @mobile {
 		width: 100%;
@@ -257,9 +257,9 @@
 }
 
 .item--margin-size--2to1-cols(@item--margin-size: 1%) {
-	width: 100%/2-@item--margin-size*2;
-	margin-left: @item--margin-size;
-	margin-right: @item--margin-size;
+	width: ~"100%/2-20px";
+	margin-left: 10px;
+	margin-right: 10px;
 	
     @media @mobile {
 		width: 100%;
@@ -275,12 +275,12 @@
 }
 
 .item--margin-size--3to1-cols(@item--margin-size: 1%) {
-    width: 100%/3-@item--margin-size*2;
-	margin-left: @item--margin-size;
-	margin-right: @item--margin-size;
+	width: ~"100%/2-20px";
+	margin-left: 10px;
+	margin-right: 10px;
 	
     @media @tablet-horizontal {
-		width: 100%/2-@item--margin-size*2;
+		width: ~"100%/2-20px";
 	}
 
 	@media @mobile {

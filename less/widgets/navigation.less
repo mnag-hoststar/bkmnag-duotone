@@ -14,18 +14,18 @@
 }
 
 .template__company {
-	display: table-cell;
-	vertical-align: middle;
+	display: flex;
+	align-items: center;
 	margin-right: 1em;
 	padding: 0;
+	max-width: 50%;
 	
 	@media @tablet {
 		margin-right: 4em;
+		max-width: none;
 	}
 	
 	.widget {
-		display: table-cell;
-		vertical-align: middle;
 		padding: 0;
 	}
 }
@@ -44,14 +44,14 @@
 		transition: inherit;
 		
 		.template__header--small & {
-			max-height: 1em;
+			max-height: 100px;
 			width: auto !important;
 			height: auto !important;
 		}
 		
 		@media @tablet {
 			&, .template__header--small & {
-				max-height: 1.5em;
+				max-height: 100px;
 				width: auto !important;
 				height: auto !important;
 			}
@@ -71,7 +71,7 @@
 		letter-spacing: @font__companyname--letter-spacing;
 		color: @color__companyname--text;
 		text-transform: uppercase;
-		word-break: normal;
+		word-break: break-word;
 		word-wrap: normal;
 
 		.make-font-a-little-smaller(@font__companyname--font-size);
@@ -107,9 +107,6 @@
 // Navigation
 
 .template__navigation {
-	display: table-cell;
-	vertical-align: middle;
-	
 	@media @tablet {
 		position: relative;
 		height: 21px;
