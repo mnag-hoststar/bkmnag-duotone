@@ -29,6 +29,11 @@
 .widget[data-widget-type="ecomfeaturedproducts"] .ecomfeaturedproducts {
 	width: auto;
 	max-width: none;
+
+	@media @mobile {
+		width: 90%;
+		margin: 0 auto;
+	}
 }
 
 // Title
@@ -155,7 +160,27 @@
 .ecomproductslist,
 .ecomfeaturedproducts {
 	&__listing-body {
+		margin: 0 auto;
 		padding: 1em 0;
+		width: 80%;
+		max-width: 1400px;
+	
+		@media @tablet-horizontal {
+			width: @layout-width-desktop;
+		}
+		
+		@media @tablet {
+			width: @layout-width-tablet;
+		}
+		
+		@media @mobile {
+			padding: 0;
+			width: 100%;
+
+			@media @mobile {
+				padding: 0;
+			}
+		}
 	
 		.responsivecolumns & {
 			padding: 0;
