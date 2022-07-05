@@ -114,7 +114,6 @@
 	}
 }
 
-.tag-list,
 .tag-item,
 .dietary-list {
 	display: block;
@@ -126,6 +125,7 @@
 a.category-link,
 a.tag-link {
 	display: inline-block;
+	word-break: break-word;
 	background: fade(@color__button--background, 75%);
 	margin: 0.4em 0.8em 0.4em 0;
 	padding: 0.6em;
@@ -195,6 +195,10 @@ a.tag-link {
 		@media @mobile {
 			padding: 1em;
 		}
+	}
+
+	span {
+		word-break: break-word;
 	}
 }
 
