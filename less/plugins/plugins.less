@@ -278,6 +278,58 @@ a.tag-link {
 	}
 }
 
+// Pagination
+
+.listing-pagination {
+    .pagination-list {
+        margin-left: 0;
+
+        .pagination-item {
+            margin: 0.25em;
+            padding: 0;
+
+            .responsivecolumns & {
+                margin: 0.25em 0.1em;
+            }
+
+            @media @mobile {
+                margin: 0.25em 0.1em;
+            }
+
+            &, &:hover {
+                border: none;
+                background: none;
+            }
+
+            a.button {
+                padding: 0;
+                width: 32px;
+                height: 32px;
+                letter-spacing: 0;
+                line-height: 30px;
+				border-color: @color__button--background;
+				background-color: @color__button--background;
+                font-size: 14px;
+                
+                &:hover {
+                    border-color: @color__button--background--hover;
+                    background-color: @color__button--background--hover;
+                }
+
+                &:before,
+                &:after {
+                    content: none;
+                }
+            }
+
+            &.current a.button {
+				border-color: @color__button--background--hover;
+				background-color: @color__button--background--hover;
+            }
+        }
+    }
+}
+
 // Styles only for the Ecommerce Product List.
 
 .ecomproductslist,
