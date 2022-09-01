@@ -142,23 +142,6 @@ p, .paragraph, ul, ol, li, .contentgroup__body {
 	.make-font-a-little-smaller(@font__p--font-size, ~"!important");
 	.make-font-smaller(@font__p--font-size, ~"!important");
 	.make-font-a-lot-smaller(@font__p--font-size, ~"!important");
-
-	&, p, span, small, pre, code,
-	table, th, td {
-		color: @color__p--text;
-	
-		.style--light & {
-			color: @color__p--text;
-		}
-	
-		.style--accent & {
-			color: @contrast--accent;
-		}
-	
-		.style--dark & {
-			color: @contrast--dark;
-		}
-	}
 }
 
 // Paragraph
@@ -459,48 +442,4 @@ blockquote {
 		max-width: none;
 		margin-top: 0.5em;
 	}
-}
-
-// Selection
-
-::-moz-selection {
-	background: @color-highlight--lighter;
-
-	.style--light & {
-		background: @color-highlight--lighter;
-	}
-
-	.style--accent & {
-		background: fade(@contrast--accent, 5%);
-	}
-
-	.style--dark &,
-	.style--background-image {
-		background: fade(@contrast--light, 5%);
-	}
-}
-
-::selection {
-	background: @color-highlight--lighter;
-
-	.style--light & {
-		background: @color-highlight--lighter;
-	}
-
-	.style--accent & {
-		background: fade(@contrast--accent, 5%);
-	}
-
-	.style--dark &,
-	.style--background-image {
-		background: fade(@contrast--light, 5%);
-	}
-}
-
-.icon:before {
-	margin-right: 0.5em;
-}
-
-.icon:after {
-	margin-left: 0.5em;
 }

@@ -119,3 +119,26 @@
         }
     }
 }
+
+// Normal Text
+
+.widget .content,
+.widget .content.in-editing,
+.widget .embed .embed-content {
+	&, p, span, small, pre, code,
+	table, th, td {
+		color: @color__p--text;
+	
+		#migrated .style--light & {
+			color: @color__p--text;
+		}
+	
+		#migrated .style--accent & {
+			color: @contrast--accent;
+		}
+	
+		#migrated .style--dark & {
+			color: @contrast--dark;
+		}
+	}
+}
